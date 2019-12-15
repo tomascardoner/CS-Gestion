@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Application\Application.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -124,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Windows\Window - Fit To Size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Application\Application.ico" />
+    <None Include="Resources\Application\Application_32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

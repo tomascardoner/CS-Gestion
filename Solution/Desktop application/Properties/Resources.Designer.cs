@@ -61,6 +61,16 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ICON_APPLICATION_32 {
+            get {
+                object obj = ResourceManager.GetObject("ICON_APPLICATION_32", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap IMAGE_MENU_WINDOW_CLOSE_ALL {
