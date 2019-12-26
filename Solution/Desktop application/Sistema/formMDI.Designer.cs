@@ -1,6 +1,6 @@
 ﻿namespace CS_Gestion
 {
-    partial class formMDI
+    partial class formMdi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMDI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMdi));
             this.menustripMain = new System.Windows.Forms.MenuStrip();
             this.menuitemArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemArchivoOpciones = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +62,9 @@
             this.labelEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.navigationDrawer1 = new Syncfusion.Windows.Forms.Tools.NavigationDrawer();
+            this.drawerheaderTablas = new Syncfusion.Windows.Forms.Tools.DrawerHeader();
+            this.drawermenuitemEntidad = new Syncfusion.Windows.Forms.Tools.DrawerMenuItem();
             this.menustripMain.SuspendLayout();
             this.statusstripMain.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +80,7 @@
             this.menustripMain.Location = new System.Drawing.Point(0, 0);
             this.menustripMain.MdiWindowListItem = this.menuitemVentana;
             this.menustripMain.Name = "menustripMain";
-            this.menustripMain.Size = new System.Drawing.Size(632, 24);
+            this.menustripMain.Size = new System.Drawing.Size(768, 24);
             this.menustripMain.TabIndex = 0;
             this.menustripMain.Text = "MenuStrip";
             // 
@@ -123,6 +126,7 @@
             this.menuitemArchivoSalir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.menuitemArchivoSalir.Size = new System.Drawing.Size(244, 22);
             this.menuitemArchivoSalir.Text = "&Salir";
+            this.menuitemArchivoSalir.Click += new System.EventHandler(this.menuitemArchivoSalir_Click);
             // 
             // menuitemEditar
             // 
@@ -231,7 +235,7 @@
             this.menuitemVentanaMosaicoHorizontal.Name = "menuitemVentanaMosaicoHorizontal";
             this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaMosaicoHorizontal.Text = "Mosaico &Horizontal";
-            this.menuitemVentanaMosaicoHorizontal.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
+            this.menuitemVentanaMosaicoHorizontal.Click += new System.EventHandler(this.menuitemVentanaMosaicoHorizontal_Click);
             // 
             // menuitemVentanaMosaicoVertical
             // 
@@ -239,21 +243,21 @@
             this.menuitemVentanaMosaicoVertical.Name = "menuitemVentanaMosaicoVertical";
             this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaMosaicoVertical.Text = "Mosaico &Vertical";
-            this.menuitemVentanaMosaicoVertical.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
+            this.menuitemVentanaMosaicoVertical.Click += new System.EventHandler(this.menuitemVentanaMosaicoVertical_Click);
             // 
             // menuitemVentanaCascada
             // 
             this.menuitemVentanaCascada.Name = "menuitemVentanaCascada";
             this.menuitemVentanaCascada.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaCascada.Text = "&Cascada";
-            this.menuitemVentanaCascada.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            this.menuitemVentanaCascada.Click += new System.EventHandler(this.menuitemVentanaCascada_Click);
             // 
             // menuitemVentanaOrganizarIconos
             // 
             this.menuitemVentanaOrganizarIconos.Name = "menuitemVentanaOrganizarIconos";
             this.menuitemVentanaOrganizarIconos.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaOrganizarIconos.Text = "&Organizar Íconos";
-            this.menuitemVentanaOrganizarIconos.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
+            this.menuitemVentanaOrganizarIconos.Click += new System.EventHandler(this.menuitemVentanaOrganizarIconos_Click);
             // 
             // menuitemVentanaSeparadorCerrarTodas
             // 
@@ -266,7 +270,7 @@
             this.menuitemVentanaCerrarTodas.Name = "menuitemVentanaCerrarTodas";
             this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaCerrarTodas.Text = "Ce&rrar Todas";
-            this.menuitemVentanaCerrarTodas.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
+            this.menuitemVentanaCerrarTodas.Click += new System.EventHandler(this.menuitemVentanaCerrarTodas_Click);
             // 
             // menuitemVentanaEncajarEnVentana
             // 
@@ -274,6 +278,7 @@
             this.menuitemVentanaEncajarEnVentana.Name = "menuitemVentanaEncajarEnVentana";
             this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaEncajarEnVentana.Text = "Encajar en ventana";
+            this.menuitemVentanaEncajarEnVentana.Click += new System.EventHandler(this.menuitemVentanaEncajarEnVentana_Click);
             // 
             // menuitemVentanaSeparadorListaVentanas
             // 
@@ -301,14 +306,14 @@
             this.labelUsuarioNombre});
             this.statusstripMain.Location = new System.Drawing.Point(0, 431);
             this.statusstripMain.Name = "statusstripMain";
-            this.statusstripMain.Size = new System.Drawing.Size(632, 22);
+            this.statusstripMain.Size = new System.Drawing.Size(768, 22);
             this.statusstripMain.TabIndex = 2;
             // 
             // labelEstado
             // 
             this.labelEstado.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(617, 17);
+            this.labelEstado.Size = new System.Drawing.Size(753, 17);
             this.labelEstado.Spring = true;
             // 
             // labelUsuarioNombre
@@ -316,19 +321,59 @@
             this.labelUsuarioNombre.Name = "labelUsuarioNombre";
             this.labelUsuarioNombre.Size = new System.Drawing.Size(0, 17);
             // 
-            // formMDI
+            // navigationDrawer1
+            // 
+            this.navigationDrawer1.BackColor = System.Drawing.Color.White;
+            this.navigationDrawer1.Items.Add(this.drawerheaderTablas);
+            this.navigationDrawer1.Items.Add(this.drawermenuitemEntidad);
+            this.navigationDrawer1.Location = new System.Drawing.Point(0, 27);
+            this.navigationDrawer1.Name = "navigationDrawer1";
+            this.navigationDrawer1.Size = new System.Drawing.Size(217, 401);
+            this.navigationDrawer1.TabIndex = 4;
+            this.navigationDrawer1.Text = "navigationDrawer1";
+            this.navigationDrawer1.Transition = Syncfusion.Windows.Forms.Tools.Transition.Reveal;
+            // 
+            // drawerheaderTablas
+            // 
+            this.drawerheaderTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(165)))), ((int)(((byte)(221)))));
+            this.drawerheaderTablas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawerheaderTablas.HeaderText = "drawerheaderTablas";
+            this.drawerheaderTablas.ItemText = "Tablas";
+            this.drawerheaderTablas.Location = new System.Drawing.Point(2, 0);
+            this.drawerheaderTablas.Margin = new System.Windows.Forms.Padding(0);
+            this.drawerheaderTablas.Name = "drawerheaderTablas";
+            this.drawerheaderTablas.Size = new System.Drawing.Size(100, 50);
+            this.drawerheaderTablas.TabIndex = 0;
+            this.drawerheaderTablas.Text = "Tablas";
+            this.drawerheaderTablas.TextColor = System.Drawing.Color.White;
+            // 
+            // drawermenuitemEntidad
+            // 
+            this.drawermenuitemEntidad.BackColor = System.Drawing.Color.White;
+            this.drawermenuitemEntidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawermenuitemEntidad.Location = new System.Drawing.Point(2, 50);
+            this.drawermenuitemEntidad.Margin = new System.Windows.Forms.Padding(0);
+            this.drawermenuitemEntidad.Name = "drawermenuitemEntidad";
+            this.drawermenuitemEntidad.Size = new System.Drawing.Size(100, 50);
+            this.drawermenuitemEntidad.TabIndex = 1;
+            this.drawermenuitemEntidad.Text = "Entidades";
+            // 
+            // formMdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(768, 453);
+            this.Controls.Add(this.navigationDrawer1);
             this.Controls.Add(this.statusstripMain);
             this.Controls.Add(this.menustripMain);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menustripMain;
-            this.Name = "formMDI";
+            this.Name = "formMdi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Title";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Me_Closing);
+            this.Resize += new System.EventHandler(this.Me_Resize);
             this.menustripMain.ResumeLayout(false);
             this.menustripMain.PerformLayout();
             this.statusstripMain.ResumeLayout(false);
@@ -372,6 +417,9 @@
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorCerrarTodas;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaEncajarEnVentana;
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorListaVentanas;
+        private Syncfusion.Windows.Forms.Tools.NavigationDrawer navigationDrawer1;
+        private Syncfusion.Windows.Forms.Tools.DrawerHeader drawerheaderTablas;
+        private Syncfusion.Windows.Forms.Tools.DrawerMenuItem drawermenuitemEntidad;
     }
 }
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5295b513b4054a1680ee6669ee709d7d" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="CSGestionModel.Banco" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.BancoSucursal" Width="1.5" PointX="7.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Cheque" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.ChequeTalonario" Width="1.5" PointX="7.5" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.ChequeTalonarioTipo" Width="1.5" PointX="5.25" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.CuentaBancariaTipo" Width="1.5" PointX="7.5" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.DocumentoTipo" Width="1.5" PointX="5.25" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.DomicilioTipo" Width="1.5" PointX="5.25" PointY="44.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EmailTipo" Width="1.5" PointX="5.25" PointY="47.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Empresa" Width="1.5" PointX="5.25" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Entidad" Width="1.5" PointX="5.25" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadCuentaBancaria" Width="1.5" PointX="13.5" PointY="46.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadDomicilio" Width="1.5" PointX="10.5" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadEmail" Width="1.5" PointX="7.5" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadEmpresa" Width="1.5" PointX="10.5" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadTelefono" Width="1.5" PointX="10.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Localidad" Width="1.5" PointX="8.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Moneda" Width="1.5" PointX="5.25" PointY="61.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Movimiento" Width="1.5" PointX="7.5" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.MovimientoAplicacion" Width="2.25" PointX="9.125" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.MovimientoTipo" Width="1.5" PointX="5.25" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Provincia" Width="1.5" PointX="6" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.TelefonoTipo" Width="1.5" PointX="5.25" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Usuario" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.UsuarioGrupo" Width="1.5" PointX="0.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.UsuarioGrupoPermiso" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <AssociationConnector Association="CSGestionModel.FK__Banco__BancoSucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Banco__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Banco__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__BancoSucursal__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__BancoSucursal__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Cheque__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Cheque__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__ChequeTalonarioTipo__ChequeTalonario" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ChequeTalonario__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ChequeTalonario__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ChequeTalonarioTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ChequeTalonarioTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Moneda__CuentaBancariaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__CuentaBancariaTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__CuentaBancariaTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__DocumentoTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__DocumentoTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__DomicilioTipo__EntidadDomicilio" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__DomicilioTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__DomicilioTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__EmailTipo__EntidadEmail" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EmailTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EmailTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Empresa__EntidadEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Empresa__Movimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Empresa__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Empresa__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadCuentaBancaria" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadDomicilio" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadEmail" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadTelefono" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Entidad__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Entidad__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadCuentaBancaria__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadCuentaBancaria__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Localidad__EntidadDomicilio" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadDomicilio__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadDomicilio__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadEmail__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadEmail__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__TelefonoTipo__EntidadTelefono" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadTelefono__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadTelefono__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Provincia__Localidad" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Moneda__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Moneda__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__MovimientoTipo__Movimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Movimiento__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Movimiento__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__MovimientoTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__MovimientoTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__TelefonoTipo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__TelefonoTipo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__UsuarioGrupo__Creacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__UsuarioGrupo__Modificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__UsuarioGrupo__Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__UsuarioGrupo__UsuarioGrupoPermiso" ManuallyRouted="false" />
+        <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion__Aplicado" />
+        <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion_Aplicante" />
+        <AssociationConnector Association="CSGestionModel.FK_Movimiento_Movimiento" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
