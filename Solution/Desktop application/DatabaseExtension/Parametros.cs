@@ -48,7 +48,7 @@ namespace CS_Gestion
             {
                 using (CSGestionContext dbContext = new CSGestionContext(true))
                 {
-                    Program.pParametros = dbContext.Parametro.ToList();
+                    Program.Parametros = dbContext.Parametro.ToList();
                 }
                 return true;
             }
@@ -63,7 +63,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.Texto == null)
             {
                 return defaultValue;
@@ -78,7 +78,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.NumeroEntero == null)
             {
                 return defaultValue;
@@ -93,7 +93,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.NumeroEntero == null)
             {
                 return defaultValue;
@@ -108,7 +108,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.NumeroEntero == null)
             {
                 return defaultValue;
@@ -123,7 +123,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.NumeroDecimal == null)
             {
                 return defaultValue;
@@ -138,7 +138,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.FechaHora == null)
             {
                 return defaultValue;
@@ -153,7 +153,7 @@ namespace CS_Gestion
         {
             Parametro parametro;
 
-            parametro = Program.pParametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
             if (parametro == null || parametro.SiNo == null)
             {
                 return defaultValue;

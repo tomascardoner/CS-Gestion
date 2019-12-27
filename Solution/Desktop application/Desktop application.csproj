@@ -230,6 +230,7 @@
     <Compile Include="Usuario.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\UsuarioExtension.cs" />
     <Compile Include="UsuarioGrupo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>

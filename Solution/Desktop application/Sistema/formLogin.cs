@@ -95,7 +95,7 @@ namespace CS_Gestion
             Usuario usuario = context.Usuario.Where(usr => usr.Nombre == textboxNombre.Text).FirstOrDefault();
             if (usuario == null)
             {
-                // eventl.WriteEntry(String.Format("Se intentó iniciar sesión con el Usuario '{0}', pero es inexistente.", textboxNombre.Text.Trim), TraceEventType.Warning)
+                Program.EventLog.WriteEntry(string.Format("Se intentó iniciar sesión con el Usuario '{0}', pero es inexistente.", textboxNombre.Text.Trim()), System.Diagnostics.EventLogEntryType.FailureAudit, Constantes.EventUserLoginFailure);
                 MessageBox.Show("El Nombre de Usuario ingresado no existe.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 textboxNombre.SelectAll();
                 textboxNombre.Focus();
@@ -111,7 +111,7 @@ namespace CS_Gestion
 
             if (string.Compare(textboxPassword.Text, usuario.Password, false) != 0)
             {
-                // Log.WriteEntry(String.Format("Se intentó iniciar sesión con el Usuario '{0}', pero la Contraseña es incorrecta.", textboxNombre.Text.Trim), TraceEventType.Warning)
+                Program.EventLog.WriteEntry(string.Format("Se intentó iniciar sesión con el Usuario '{0}', pero la Contraseña es incorrecta.", textboxNombre.Text.Trim()), System.Diagnostics.EventLogEntryType.FailureAudit, Constantes.EventUserLoginFailure);
                 MessageBox.Show("La contraseña ingresada es incorrecta.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 textboxPassword.SelectAll();
                 textboxPassword.Focus();
@@ -125,14 +125,14 @@ namespace CS_Gestion
                 return;
             }
 
-            Program.pUsuario = usuario;
+            Program.Usuario = usuario;
             usuario = null;
 
             // Guardo el Nombre de Usuario para mostrarlo la próxima vez
-            Properties.Settings.Default.LastUserLoggedIn = Program.pUsuario.Nombre;
+            Properties.Settings.Default.LastUserLoggedIn = Program.Usuario.Nombre;
             Properties.Settings.Default.Save();
 
-            // MiscFunctions.UserLoggedIn();
+            Program.Usuario.LoggedIn();
 
             this.Cursor = Cursors.Default;
 
