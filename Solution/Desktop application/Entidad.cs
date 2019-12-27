@@ -29,6 +29,7 @@ namespace CS_Gestion
         public string NombreFantasia { get; set; }
         public string Apellido { get; set; }
         public string Nombre { get; set; }
+        public string NombreParaMostrar { get; set; }
         public string CUIT { get; set; }
         public string IngresosBrutos { get; set; }
         public string Notas { get; set; }

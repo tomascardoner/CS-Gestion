@@ -35,6 +35,7 @@ namespace CS_Gestion
             menuitemAyudaAcercaDe.Text = "&Acerca de " + CardonerSistemas.My.Application.Info.Title + "...";
 
             this.Icon = Properties.Resources.ICON_APPLICATION_32;
+
         }
 
         private void Me_Resize(object sender, EventArgs e)
@@ -160,5 +161,13 @@ namespace CS_Gestion
 
         #endregion
 
+        private void groupviewEntidades_GroupViewItemSelected(object sender, EventArgs e)
+        {
+            Syncfusion.Windows.Forms.Tools.GroupViewItem groupViewItem = (Syncfusion.Windows.Forms.Tools.GroupViewItem)sender;
+            if (groupViewItem.Text == "Entidades")
+            {
+
+            }
+        }
     }
 }

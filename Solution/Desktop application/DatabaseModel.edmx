@@ -168,6 +168,7 @@
           <Property Name="NombreFantasia" Type="varchar" MaxLength="150" />
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="NombreParaMostrar" Type="varchar" MaxLength="150" StoreGeneratedPattern="Computed" />
           <Property Name="CUIT" Type="char" MaxLength="11" />
           <Property Name="IngresosBrutos" Type="varchar" MaxLength="12" />
           <Property Name="Notas" Type="varchar(max)" />
@@ -1680,6 +1681,7 @@
           <Property Name="NombreFantasia" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreParaMostrar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="IngresosBrutos" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -3266,6 +3268,7 @@
           <EntitySetMapping Name="Entidad">
             <EntityTypeMapping TypeName="CSGestionModel.Entidad">
               <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="NombreParaMostrar" ColumnName="NombreParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
                 <ScalarProperty Name="NombreFantasia" ColumnName="NombreFantasia" />

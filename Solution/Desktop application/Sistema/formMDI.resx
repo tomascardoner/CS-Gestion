@@ -196,6 +196,22 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>281, 20</value>
   </metadata>
+  <data name="groupbarMain.CollapseImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABdSURBVChTY8AH
+        KisrbSsqKrY1NDTwQIVwA6BCByD+CsT/gbgUKowdQE3+DFIMZC8PDQ1lhkphgkGiGATKy8ttkDUAQ4YF
+        KoUbDHJNQMXERxwMQDVtBtrABRFhYAAAIHdpDnKGNlcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="groupbarMain.ExpandImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABGSURBVChTY4CB
+        hoYGroqKis1A7AQVwg+ACkuB+D8QfwViB6gwbgC0gQmocAGSJsI2DWJNJGkYJIpBAKiA5IiDJQ08ihkY
+        AK3/au/MGY8lAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>51</value>
   </metadata>

@@ -62,12 +62,16 @@
             this.labelEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.navigationDrawer1 = new Syncfusion.Windows.Forms.Tools.NavigationDrawer();
-            this.drawerHeader1 = new Syncfusion.Windows.Forms.Tools.DrawerHeader();
-            this.drawerheaderTablas = new Syncfusion.Windows.Forms.Tools.DrawerHeader();
-            this.drawermenuitemEntidad = new Syncfusion.Windows.Forms.Tools.DrawerMenuItem();
+            this.groupbarMain = new Syncfusion.Windows.Forms.Tools.GroupBar();
+            this.groupbaritemEntidades = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
+            this.groupbaritemTablas = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
+            this.groupbaritemReportes = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
+            this.groupviewTablas = new Syncfusion.Windows.Forms.Tools.GroupView();
+            this.groupviewEntidades = new Syncfusion.Windows.Forms.Tools.GroupView();
             this.menustripMain.SuspendLayout();
             this.statusstripMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).BeginInit();
+            this.groupbarMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menustripMain
@@ -322,69 +326,103 @@
             this.labelUsuarioNombre.Name = "labelUsuarioNombre";
             this.labelUsuarioNombre.Size = new System.Drawing.Size(0, 17);
             // 
-            // navigationDrawer1
+            // groupbarMain
             // 
-            this.navigationDrawer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.navigationDrawer1.Items.Add(this.drawerheaderTablas);
-            this.navigationDrawer1.Items.Add(this.drawerHeader1);
-            this.navigationDrawer1.Items.Add(this.drawermenuitemEntidad);
-            this.navigationDrawer1.Location = new System.Drawing.Point(0, 27);
-            this.navigationDrawer1.Name = "navigationDrawer1";
-            this.navigationDrawer1.Size = new System.Drawing.Size(181, 401);
-            this.navigationDrawer1.Style = Syncfusion.Windows.Forms.Tools.NavigationDrawerStyle.Office2016White;
-            this.navigationDrawer1.TabIndex = 4;
-            this.navigationDrawer1.Text = "navigationDrawer1";
-            this.navigationDrawer1.ThemeName = "Office2016White";
-            this.navigationDrawer1.Transition = Syncfusion.Windows.Forms.Tools.Transition.Push;
+            this.groupbarMain.AllowDrop = true;
+            this.groupbarMain.BackColor = System.Drawing.SystemColors.Control;
+            this.groupbarMain.BeforeTouchSize = new System.Drawing.Size(153, 407);
+            this.groupbarMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(198)))));
+            this.groupbarMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.groupbarMain.CollapseImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.CollapseImage")));
+            this.groupbarMain.Controls.Add(this.groupviewEntidades);
+            this.groupbarMain.Controls.Add(this.groupviewTablas);
+            this.groupbarMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupbarMain.ExpandButtonToolTip = null;
+            this.groupbarMain.ExpandImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.ExpandImage")));
+            this.groupbarMain.FlatLook = true;
+            this.groupbarMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupbarMain.ForeColor = System.Drawing.Color.Black;
+            this.groupbarMain.GroupBarDropDownToolTip = null;
+            this.groupbarMain.GroupBarItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupBarItem[] {
+            this.groupbaritemEntidades,
+            this.groupbaritemTablas,
+            this.groupbaritemReportes});
+            this.groupbarMain.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.groupbarMain.HeaderForeColor = System.Drawing.Color.Black;
+            this.groupbarMain.IndexOnVisibleItems = true;
+            this.groupbarMain.Location = new System.Drawing.Point(0, 24);
+            this.groupbarMain.MinimizeButtonToolTip = null;
+            this.groupbarMain.Name = "groupbarMain";
+            this.groupbarMain.NavigationPaneTooltip = null;
+            this.groupbarMain.PopupClientSize = new System.Drawing.Size(0, 0);
+            this.groupbarMain.SelectedItem = 0;
+            this.groupbarMain.Size = new System.Drawing.Size(153, 407);
+            this.groupbarMain.SmartSizeBox = false;
+            this.groupbarMain.Splittercolor = System.Drawing.Color.Red;
+            this.groupbarMain.TabIndex = 6;
+            this.groupbarMain.ThemeName = "Office2016Colorful";
+            this.groupbarMain.ThemeStyle.CollapsedViewStyle.ItemStyle.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupbarMain.ThemeStyle.ItemStyle.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupbarMain.ThemeStyle.StackedViewStyle.CollapsedItemStyle.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupbarMain.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Office2016Colorful;
             // 
-            // drawerHeader1
+            // groupbaritemEntidades
             // 
-            this.drawerHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(165)))), ((int)(((byte)(221)))));
-            this.drawerHeader1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drawerHeader1.HeaderText = "drawerHeader1";
-            this.drawerHeader1.Location = new System.Drawing.Point(2, 0);
-            this.drawerHeader1.Margin = new System.Windows.Forms.Padding(0);
-            this.drawerHeader1.Name = "drawerHeader1";
-            this.drawerHeader1.Size = new System.Drawing.Size(100, 50);
-            this.drawerHeader1.TabIndex = 2;
-            this.drawerHeader1.Text = "drawerHeader1";
-            this.drawerHeader1.TextColor = System.Drawing.Color.White;
+            this.groupbaritemEntidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupbaritemEntidades.Client = this.groupviewEntidades;
+            this.groupbaritemEntidades.Text = "Entidades";
             // 
-            // drawerheaderTablas
+            // groupbaritemTablas
             // 
-            this.drawerheaderTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.drawerheaderTablas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drawerheaderTablas.HeaderText = "drawerheaderTablas";
-            this.drawerheaderTablas.ItemText = "Tablas";
-            this.drawerheaderTablas.Location = new System.Drawing.Point(2, 50);
-            this.drawerheaderTablas.Margin = new System.Windows.Forms.Padding(0);
-            this.drawerheaderTablas.Name = "drawerheaderTablas";
-            this.drawerheaderTablas.Size = new System.Drawing.Size(100, 50);
-            this.drawerheaderTablas.TabIndex = 0;
-            this.drawerheaderTablas.Text = "Tablas";
-            this.drawerheaderTablas.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupbaritemTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupbaritemTablas.Client = this.groupviewTablas;
+            this.groupbaritemTablas.Text = "Tablas";
             // 
-            // drawermenuitemEntidad
+            // groupbaritemReportes
             // 
-            this.drawermenuitemEntidad.BackColor = System.Drawing.Color.White;
-            this.drawermenuitemEntidad.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.drawermenuitemEntidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drawermenuitemEntidad.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
-            this.drawermenuitemEntidad.Location = new System.Drawing.Point(2, 100);
-            this.drawermenuitemEntidad.Margin = new System.Windows.Forms.Padding(0);
-            this.drawermenuitemEntidad.Name = "drawermenuitemEntidad";
-            this.drawermenuitemEntidad.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.drawermenuitemEntidad.Size = new System.Drawing.Size(100, 50);
-            this.drawermenuitemEntidad.TabIndex = 1;
-            this.drawermenuitemEntidad.Text = "Entidades";
-            this.drawermenuitemEntidad.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupbaritemReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.groupbaritemReportes.Client = null;
+            this.groupbaritemReportes.Text = "Reportes";
+            // 
+            // groupviewTablas
+            // 
+            this.groupviewTablas.BeforeTouchSize = new System.Drawing.Size(151, 0);
+            this.groupviewTablas.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Bancos", -1, true, null, "Bancos"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Sucursales bancos", -1, true, null, "Sucursales bancos"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de documento", -1, true, null, "Tipos de documento"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de domicilio", -1, true, null, "Tipos de domicilio"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de email", -1, true, null, "Tipos de email"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de cuenta bancaria", -1, true, null, "Tipos de cuenta bancaria"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de movimiento", -1, true, null, "Tipos de movimiento"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de teléfono", -1, true, null, "Tipos de teléfono"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Grupos de usuarios", -1, true, null, "Grupos de usuarios"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Usuarios", -1, true, null, "Usuarios")});
+            this.groupviewTablas.Location = new System.Drawing.Point(1, 384);
+            this.groupviewTablas.Name = "groupviewTablas";
+            this.groupviewTablas.Size = new System.Drawing.Size(151, 0);
+            this.groupviewTablas.TabIndex = 0;
+            this.groupviewTablas.Text = "groupView1";
+            this.groupviewTablas.TextWrap = true;
+            // 
+            // groupviewEntidades
+            // 
+            this.groupviewEntidades.BeforeTouchSize = new System.Drawing.Size(151, 339);
+            this.groupviewEntidades.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Entidades", -1)});
+            this.groupviewEntidades.Location = new System.Drawing.Point(1, 23);
+            this.groupviewEntidades.Name = "groupviewEntidades";
+            this.groupviewEntidades.Size = new System.Drawing.Size(151, 339);
+            this.groupviewEntidades.TabIndex = 1;
+            this.groupviewEntidades.Text = "groupviewEntidades";
+            this.groupviewEntidades.GroupViewItemSelected += new System.EventHandler(this.groupviewEntidades_GroupViewItemSelected);
             // 
             // formMdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 453);
-            this.Controls.Add(this.navigationDrawer1);
+            this.Controls.Add(this.groupbarMain);
             this.Controls.Add(this.statusstripMain);
             this.Controls.Add(this.menustripMain);
             this.IsMdiContainer = true;
@@ -399,6 +437,8 @@
             this.menustripMain.PerformLayout();
             this.statusstripMain.ResumeLayout(false);
             this.statusstripMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).EndInit();
+            this.groupbarMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,12 +476,14 @@
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorCerrarTodas;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaEncajarEnVentana;
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorListaVentanas;
-        private Syncfusion.Windows.Forms.Tools.NavigationDrawer navigationDrawer1;
-        private Syncfusion.Windows.Forms.Tools.DrawerHeader drawerheaderTablas;
-        private Syncfusion.Windows.Forms.Tools.DrawerMenuItem drawermenuitemEntidad;
-        private Syncfusion.Windows.Forms.Tools.DrawerHeader drawerHeader1;
         internal System.Windows.Forms.ToolStripMenuItem menuitemDebug;
         internal System.Windows.Forms.ToolStripStatusLabel labelUsuarioNombre;
+        private Syncfusion.Windows.Forms.Tools.GroupBar groupbarMain;
+        private Syncfusion.Windows.Forms.Tools.GroupBarItem groupbaritemEntidades;
+        private Syncfusion.Windows.Forms.Tools.GroupBarItem groupbaritemTablas;
+        private Syncfusion.Windows.Forms.Tools.GroupBarItem groupbaritemReportes;
+        private Syncfusion.Windows.Forms.Tools.GroupView groupviewTablas;
+        private Syncfusion.Windows.Forms.Tools.GroupView groupviewEntidades;
     }
 }
 
