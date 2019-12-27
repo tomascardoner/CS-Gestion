@@ -96,6 +96,7 @@
         <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion__Aplicado" />
         <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion_Aplicante" />
         <AssociationConnector Association="CSGestionModel.FK_Movimiento_Movimiento" />
+        <EntityTypeShape EntityType="CSGestionModel.Parametro" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

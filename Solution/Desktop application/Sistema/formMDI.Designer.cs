@@ -65,6 +65,7 @@
             this.navigationDrawer1 = new Syncfusion.Windows.Forms.Tools.NavigationDrawer();
             this.drawerheaderTablas = new Syncfusion.Windows.Forms.Tools.DrawerHeader();
             this.drawermenuitemEntidad = new Syncfusion.Windows.Forms.Tools.DrawerMenuItem();
+            this.drawerHeader1 = new Syncfusion.Windows.Forms.Tools.DrawerHeader();
             this.menustripMain.SuspendLayout();
             this.statusstripMain.SuspendLayout();
             this.SuspendLayout();
@@ -323,19 +324,22 @@
             // 
             // navigationDrawer1
             // 
-            this.navigationDrawer1.BackColor = System.Drawing.Color.White;
+            this.navigationDrawer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.navigationDrawer1.Items.Add(this.drawerHeader1);
             this.navigationDrawer1.Items.Add(this.drawerheaderTablas);
             this.navigationDrawer1.Items.Add(this.drawermenuitemEntidad);
             this.navigationDrawer1.Location = new System.Drawing.Point(0, 27);
             this.navigationDrawer1.Name = "navigationDrawer1";
-            this.navigationDrawer1.Size = new System.Drawing.Size(217, 401);
+            this.navigationDrawer1.Size = new System.Drawing.Size(181, 401);
+            this.navigationDrawer1.Style = Syncfusion.Windows.Forms.Tools.NavigationDrawerStyle.Office2016White;
             this.navigationDrawer1.TabIndex = 4;
             this.navigationDrawer1.Text = "navigationDrawer1";
-            this.navigationDrawer1.Transition = Syncfusion.Windows.Forms.Tools.Transition.Reveal;
+            this.navigationDrawer1.ThemeName = "Office2016White";
+            this.navigationDrawer1.Transition = Syncfusion.Windows.Forms.Tools.Transition.Push;
             // 
             // drawerheaderTablas
             // 
-            this.drawerheaderTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(165)))), ((int)(((byte)(221)))));
+            this.drawerheaderTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.drawerheaderTablas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drawerheaderTablas.HeaderText = "drawerheaderTablas";
             this.drawerheaderTablas.ItemText = "Tablas";
@@ -345,18 +349,35 @@
             this.drawerheaderTablas.Size = new System.Drawing.Size(100, 50);
             this.drawerheaderTablas.TabIndex = 0;
             this.drawerheaderTablas.Text = "Tablas";
-            this.drawerheaderTablas.TextColor = System.Drawing.Color.White;
+            this.drawerheaderTablas.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             // 
             // drawermenuitemEntidad
             // 
             this.drawermenuitemEntidad.BackColor = System.Drawing.Color.White;
+            this.drawermenuitemEntidad.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.drawermenuitemEntidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawermenuitemEntidad.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
             this.drawermenuitemEntidad.Location = new System.Drawing.Point(2, 50);
             this.drawermenuitemEntidad.Margin = new System.Windows.Forms.Padding(0);
             this.drawermenuitemEntidad.Name = "drawermenuitemEntidad";
+            this.drawermenuitemEntidad.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.drawermenuitemEntidad.Size = new System.Drawing.Size(100, 50);
             this.drawermenuitemEntidad.TabIndex = 1;
             this.drawermenuitemEntidad.Text = "Entidades";
+            this.drawermenuitemEntidad.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            // 
+            // drawerHeader1
+            // 
+            this.drawerHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(165)))), ((int)(((byte)(221)))));
+            this.drawerHeader1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawerHeader1.HeaderText = "drawerHeader1";
+            this.drawerHeader1.Location = new System.Drawing.Point(2, 100);
+            this.drawerHeader1.Margin = new System.Windows.Forms.Padding(0);
+            this.drawerHeader1.Name = "drawerHeader1";
+            this.drawerHeader1.Size = new System.Drawing.Size(100, 50);
+            this.drawerHeader1.TabIndex = 2;
+            this.drawerHeader1.Text = "drawerHeader1";
+            this.drawerHeader1.TextColor = System.Drawing.Color.White;
             // 
             // formMdi
             // 
@@ -420,6 +441,7 @@
         private Syncfusion.Windows.Forms.Tools.NavigationDrawer navigationDrawer1;
         private Syncfusion.Windows.Forms.Tools.DrawerHeader drawerheaderTablas;
         private Syncfusion.Windows.Forms.Tools.DrawerMenuItem drawermenuitemEntidad;
+        private Syncfusion.Windows.Forms.Tools.DrawerHeader drawerHeader1;
     }
 }
 

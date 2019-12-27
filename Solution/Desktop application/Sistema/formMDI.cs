@@ -6,6 +6,7 @@ namespace CS_Gestion
 {
     public partial class formMdi : Form
     {
+
         #region Declarations
 
         private Size formMdiClientSize;
@@ -41,18 +42,18 @@ namespace CS_Gestion
             if (this.WindowState != FormWindowState.Minimized)
             {
                 // Obtengo las medidas del client area del form MDI
-                // formClientSize = new Size(this.ClientSize.Width - toolstripMain.Width - My.Settings.MDIFormMargin, Me.ClientSize.Height - menustripMain.Height - statusstripMain.Height - My.Settings.MDIFormMargin)
+                formMdiClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height - menustripMain.Height - statusstripMain.Height);
 
                 // Hago un resize de todos los childs que estén abiertos
                 foreach (Form form in this.MdiChildren)
                 {
                     if (form.FormBorderStyle == FormBorderStyle.Sizable)
                     {
-                        CardonerSistemas.Form.MdiChildPositionAndSizeToFit(this, form);
+                        CardonerSistemas.Forms.MdiChildPositionAndSizeToFit(this, form);
                     }
                     else
                     {
-                        CardonerSistemas.Form.MdiChildCenterToClientArea(form, formMdiClientSize);
+                        CardonerSistemas.Forms.MdiChildCenterToClientArea(form, formMdiClientSize);
                     }
                 }
             }

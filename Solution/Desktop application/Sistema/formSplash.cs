@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CS_Gestion
 {
@@ -15,6 +7,13 @@ namespace CS_Gestion
         public formSplash()
         {
             InitializeComponent();
+
+            this.Text = CardonerSistemas.My.Application.Info.Title;
+            labelCompanyName.Text = CardonerSistemas.My.Application.Info.CompanyName;
+            labelAppTitle.Text = CardonerSistemas.My.Application.Info.Title;
+            labelLicensedTo.Text = "";
+            labelStatus.Text = "Iniciando...";
+            labelCopyright.Text = CardonerSistemas.My.Application.Info.Copyright;
         }
     }
 }

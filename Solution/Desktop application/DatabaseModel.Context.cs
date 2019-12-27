@@ -9,14 +9,13 @@
 
 namespace CS_Gestion
 {
-    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class CSGestionContext : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public CSGestionContext()
+            : base("name=CSGestionContext")
         {
         }
     
@@ -51,5 +50,6 @@ namespace CS_Gestion
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<UsuarioGrupo> UsuarioGrupo { get; set; }
         public virtual DbSet<UsuarioGrupoPermiso> UsuarioGrupoPermiso { get; set; }
+        public virtual DbSet<Parametro> Parametro { get; set; }
     }
 }

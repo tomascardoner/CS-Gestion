@@ -85,8 +85,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\framework-csharp\Form.cs">
-      <Link>Framework\Form.cs</Link>
+    <Compile Include="..\..\..\framework-csharp\Constants.cs">
+      <Link>Framework\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Database.ADO.SQLServer.cs">
+      <Link>Framework\Database.ADO.SQLServer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Database.EntityFramework.cs">
+      <Link>Framework\Database.EntityFramework.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Encrypt.TripleDES.cs">
+      <Link>Framework\Encrypt.TripleDES.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Error.cs">
+      <Link>Framework\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\ErrorMessageBox.cs">
+      <Link>Framework\ErrorMessageBox.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\ErrorMessageBox.designer.cs">
+      <Link>Framework\ErrorMessageBox.designer.cs</Link>
+      <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Forms.cs">
+      <Link>Framework\Forms.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Instance.cs">
+      <Link>Framework\Instance.cs</Link>
     </Compile>
     <Compile Include="..\..\..\framework-csharp\My.cs">
       <Link>Framework\My.cs</Link>
@@ -106,6 +132,7 @@
     <Compile Include="ChequeTalonarioTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\CSGestionContext.cs" />
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -124,6 +151,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\Parametros.cs" />
     <Compile Include="DocumentoTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -169,9 +197,13 @@
     <Compile Include="MovimientoTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Parametro.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Provincia.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\Constantes.cs" />
     <Compile Include="Sistema\formMdi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +230,10 @@
     <Compile Include="UsuarioGrupoPermiso.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="..\..\..\framework-csharp\ErrorMessageBox.resx">
+      <Link>Framework\ErrorMessageBox.resx</Link>
+      <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sistema\formMdi.resx">
       <DependentUpon>formMdi.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,5 +312,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

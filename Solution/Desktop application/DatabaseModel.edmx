@@ -337,6 +337,19 @@
           <Property Name="IdUsuarioModificacion" Type="smallint" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="smalldatetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Parametro">
+          <Key>
+            <PropertyRef Name="IdParametro" />
+          </Key>
+          <Property Name="IdParametro" Type="char" MaxLength="100" Nullable="false" />
+          <Property Name="Texto" Type="varchar(max)" />
+          <Property Name="NumeroEntero" Type="int" />
+          <Property Name="NumeroDecimal" Type="decimal" Precision="18" Scale="9" />
+          <Property Name="Moneda" Type="money" />
+          <Property Name="FechaHora" Type="smalldatetime" />
+          <Property Name="SiNo" Type="bit" />
+          <Property Name="Notas" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="Provincia">
           <Key>
             <PropertyRef Name="IdProvincia" />
@@ -1204,6 +1217,7 @@
           <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovimientoAplicacion" EntityType="Self.MovimientoAplicacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovimientoTipo" EntityType="Self.MovimientoTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parametro" EntityType="Self.Parametro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TelefonoTipo" EntityType="Self.TelefonoTipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
@@ -2739,7 +2753,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CSGestionContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Banco" EntityType="Self.Banco" />
           <EntitySet Name="BancoSucursal" EntityType="Self.BancoSucursal" />
           <EntitySet Name="Cheque" EntityType="Self.Cheque" />
@@ -3026,6 +3040,7 @@
             <End Role="Movimiento" EntitySet="Movimiento" />
             <End Role="Movimiento1" EntitySet="Movimiento" />
           </AssociationSet>
+          <EntitySet Name="Parametro" EntityType="CSGestionModel.Parametro" />
         </EntityContainer>
         <Association Name="FK__Movimiento__MovimientoAplicacion__Aplicado">
           <End Type="CSGestionModel.Movimiento" Role="Movimiento" Multiplicity="1" />
@@ -3069,12 +3084,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Parametro">
+          <Key>
+            <PropertyRef Name="IdParametro" />
+          </Key>
+          <Property Name="IdParametro" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="Texto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroEntero" Type="Int32" />
+          <Property Name="NumeroDecimal" Type="Decimal" Precision="18" Scale="9" />
+          <Property Name="Moneda" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FechaHora" Type="DateTime" Precision="0" />
+          <Property Name="SiNo" Type="Boolean" />
+          <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CSGestionModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="CSGestionModelStoreContainer" CdmEntityContainer="CSGestionContext">
           <EntitySetMapping Name="Banco">
             <EntityTypeMapping TypeName="CSGestionModel.Banco">
               <MappingFragment StoreEntitySet="Banco">
@@ -3473,6 +3501,20 @@
               <MappingFragment StoreEntitySet="UsuarioGrupoPermiso">
                 <ScalarProperty Name="IdUsuarioGrupo" ColumnName="IdUsuarioGrupo" />
                 <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parametro">
+            <EntityTypeMapping TypeName="CSGestionModel.Parametro">
+              <MappingFragment StoreEntitySet="Parametro">
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="SiNo" ColumnName="SiNo" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="NumeroDecimal" ColumnName="NumeroDecimal" />
+                <ScalarProperty Name="NumeroEntero" ColumnName="NumeroEntero" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="IdParametro" ColumnName="IdParametro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
