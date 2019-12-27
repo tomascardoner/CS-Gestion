@@ -39,7 +39,7 @@
             // 
             this.labelStatus.BackColor = System.Drawing.Color.Transparent;
             this.labelStatus.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.ForeColor = System.Drawing.Color.White;
+            this.labelStatus.ForeColor = System.Drawing.Color.Black;
             this.labelStatus.Location = new System.Drawing.Point(13, 257);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(474, 16);
@@ -51,7 +51,7 @@
             // 
             this.labelLicensedTo.BackColor = System.Drawing.Color.Transparent;
             this.labelLicensedTo.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLicensedTo.ForeColor = System.Drawing.Color.White;
+            this.labelLicensedTo.ForeColor = System.Drawing.Color.Blue;
             this.labelLicensedTo.Location = new System.Drawing.Point(13, 215);
             this.labelLicensedTo.Name = "labelLicensedTo";
             this.labelLicensedTo.Size = new System.Drawing.Size(474, 31);
@@ -63,7 +63,7 @@
             // 
             this.labelCopyright.BackColor = System.Drawing.Color.Transparent;
             this.labelCopyright.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCopyright.ForeColor = System.Drawing.Color.White;
+            this.labelCopyright.ForeColor = System.Drawing.Color.Black;
             this.labelCopyright.Location = new System.Drawing.Point(13, 283);
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(474, 16);
@@ -75,7 +75,7 @@
             // 
             this.labelCompanyName.BackColor = System.Drawing.Color.Transparent;
             this.labelCompanyName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCompanyName.ForeColor = System.Drawing.Color.Gold;
+            this.labelCompanyName.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelCompanyName.Location = new System.Drawing.Point(61, 33);
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(426, 23);
@@ -88,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAppTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelAppTitle.Font = new System.Drawing.Font("Tahoma", 38.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAppTitle.ForeColor = System.Drawing.Color.White;
+            this.labelAppTitle.ForeColor = System.Drawing.Color.Black;
             this.labelAppTitle.Location = new System.Drawing.Point(18, 48);
             this.labelAppTitle.Name = "labelAppTitle";
             this.labelAppTitle.Size = new System.Drawing.Size(469, 71);
@@ -99,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CS_Gestion.Properties.Resources.IMAGE_SPLASH;
             this.ClientSize = new System.Drawing.Size(500, 330);
             this.ControlBox = false;
             this.Controls.Add(this.labelStatus);

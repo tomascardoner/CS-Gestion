@@ -122,7 +122,7 @@ namespace CS_Gestion
             Application.DoEvents();
 
             // Espero el tiempo mínimo para mostrar el Splash Screen y después lo cierro
-            if (!CardonerSistemas.Instance.IsRunningUnderIDE())
+            if (!CardonerSistemas.Instance.IsRunningUnderIde())
             {
                 while (DateTime.Now.Subtract(startupDateTime).Seconds < Properties.Settings.Default.SplashScreenMinimumDisplaySeconds)
                 {
@@ -132,21 +132,27 @@ namespace CS_Gestion
             formSplashI.Close();
             formSplashI.Dispose();
 
-            //If CS_Instance.IsRunningUnderIDE Then
-            //    ' Como se está ejecutando dentro del IDE de Visual Studio, en lugar de pedir Usuario y contraseña, asumo que es el Administrador
-            //    Using dbcontext As New CSBomberosContext(True)
-            //        pUsuario = dbcontext.Usuario.Find(1)
-            //        MiscFunctions.UserLoggedIn()
-            //    End Using
-            //Else
-            //    If Not formLogin.ShowDialog(pFormMDIMain) = DialogResult.OK Then
-            //        Application.Exit()
-            //        eventLog.WriteEntry("La Aplicación ha finalizado porque el Usuario no ha iniciado sesión.", TraceEventType.Warning);
-            //        Exit Sub
-            //    End If
-            //    formLogin.Close()
-            //    formLogin.Dispose()
-            //End If
+            if (CardonerSistemas.Instance.IsRunningUnderIde())
+            {
+                // Como se está ejecutando dentro del IDE de Visual Studio, en lugar de pedir Usuario y contraseña, asumo que es el Administrador
+                using (CSGestionContext context = new CSGestionContext(true))
+                {
+                    pUsuario = context.Usuario.Find(1);
+                    //MiscFunctions.UserLoggedIn();
+                }
+            }
+            else
+            {
+                formLogin login = new formLogin();
+                if (login.ShowDialog(pFormMdi) != DialogResult.OK)
+                {
+                    Application.Exit();
+                    eventLog.WriteEntry("La Aplicación ha finalizado porque el Usuario no ha iniciado sesión.", EventLogEntryType.Information);
+                    return;
+                }
+                login.Close();
+                login.Dispose();
+            }
 
             // Está todo listo. Cambio el puntero del mouse a modo normal y habilito el form MDI principal
             pFormMdi.Cursor = Cursors.Default;

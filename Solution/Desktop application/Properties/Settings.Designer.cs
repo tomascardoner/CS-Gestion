@@ -85,5 +85,17 @@ namespace CS_Gestion.Properties {
                 return ((byte)(this["SplashScreenMinimumDisplaySeconds"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastUserLoggedIn {
+            get {
+                return ((string)(this["LastUserLoggedIn"]));
+            }
+            set {
+                this["LastUserLoggedIn"] = value;
+            }
+        }
     }
 }

@@ -23,5 +23,8 @@
     <Setting Name="SplashScreenMinimumDisplaySeconds" Type="System.Byte" Scope="Application">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="LastUserLoggedIn" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

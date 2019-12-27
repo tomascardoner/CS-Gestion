@@ -182,6 +182,12 @@
     <Compile Include="EntidadTelefono.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Localidad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -233,6 +239,9 @@
     <EmbeddedResource Include="..\..\..\framework-csharp\ErrorMessageBox.resx">
       <Link>Framework\ErrorMessageBox.resx</Link>
       <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\formMdi.resx">
       <DependentUpon>formMdi.cs</DependentUpon>
@@ -306,7 +315,35 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Office-Girl-icon %285%29.png" />
+    <None Include="Resources\Office-Girl-icon %288%29.png" />
+    <None Include="Resources\User-Coat-Red-icon %285%29.png" />
+    <None Include="Resources\User-Coat-Red-icon %288%29.png" />
+    <None Include="Resources\School2_3211.png" />
+    <None Include="Resources\Search-icon %288%29.png" />
+    <None Include="Resources\ReportWithChart32.png" />
+    <None Include="Resources\document-print-preview %286%29.png" />
+    <None Include="Resources\document-print-preview %287%29.png" />
+    <None Include="Resources\printer %286%29.png" />
+    <None Include="Resources\printer %287%29.png" />
+    <None Include="Resources\Move Previous %28Arrow%29 Red24.png" />
+    <None Include="Resources\Move Next %28Arrow%29 Green24.png" />
+    <None Include="Resources\export-icon_32.png" />
+    <None Include="Resources\Mail-icon %286%29.png" />
+    <None Include="Resources\Mail-icon %287%29.png" />
+    <None Include="Resources\Cardoner Sistemas.gif" />
+    <None Include="Resources\Actions-dialog-cancel-icon %286%29.png" />
+    <None Include="Resources\Actions-dialog-close-icon %288%29.png" />
+    <None Include="Resources\Actions-dialog-close-icon %286%29.png" />
+    <None Include="Resources\Actions-document-new-icon %286%29.png" />
+    <None Include="Resources\Actions-edit-copy-icon_32.png" />
+    <None Include="Resources\Actions-edit-delete-icon %286%29.png" />
+    <None Include="Resources\Actions-document-edit-icon %286%29.png" />
+    <None Include="Resources\Actions-dialog-ok-apply-icon %286%29.png" />
+    <None Include="Resources\Actions-view-pim-contacts-icon %285%29.png" />
     <Content Include="Resources\Application\Application.ico" />
+    <None Include="Resources\Login Manager %285%29.png" />
+    <None Include="Resources\erp-icons.png" />
     <None Include="Resources\Application\Application_32.ico" />
   </ItemGroup>
   <ItemGroup>

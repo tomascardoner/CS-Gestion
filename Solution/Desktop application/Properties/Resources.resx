@@ -121,6 +121,42 @@
   <data name="ICON_APPLICATION_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Application\Application_32.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IMAGE_CANCEL_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-dialog-cancel-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_CARDONERSISTEMAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cardoner Sistemas.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_CLOSE_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-dialog-close-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_CLOSE_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-dialog-close-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_EMAIL_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mail-icon (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_EMAIL_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mail-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_EXPORT_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\export-icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_INICIO_SESION_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login Manager (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_ITEM_ADD_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-document-new-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_ITEM_COPY_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-edit-copy-icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_ITEM_DELETE_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-edit-delete-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_ITEM_EDIT_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-document-edit-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IMAGE_MENU_WINDOW_CLOSE_ALL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows\Window - Close All.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,5 +168,53 @@
   </data>
   <data name="IMAGE_MENU_WINDOW_TILE_VERTICALLY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows\Window - Tile Vertically.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_MOVE_NEXT_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Move Next (Arrow) Green24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_MOVE_PREVIOUS_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Move Previous (Arrow) Red24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_OK_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-dialog-ok-apply-icon (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_PERSONA_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-view-pim-contacts-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_PRINT_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_PRINT_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_PRINT_PREVIEW_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-print-preview (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_PRINT_PREVIEW_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-print-preview (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_REPORTES_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportWithChart32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_SEARCH_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_SPLASH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\erp-icons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_TABLAS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\School2_3211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_USUARIO_HOMBRE_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-Coat-Red-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_USUARIO_HOMBRE_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-Coat-Red-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_USUARIO_MUJER_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Office-Girl-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMAGE_USUARIO_MUJER_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Office-Girl-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
