@@ -151,7 +151,7 @@
           </Key>
           <Property Name="IdEmpresa" Type="tinyint" Nullable="false" />
           <Property Name="RazonSocial" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="CUIT" Type="char" MaxLength="11" />
+          <Property Name="Cuit" Type="char" MaxLength="11" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -169,7 +169,7 @@
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="NombreParaMostrar" Type="varchar" MaxLength="150" StoreGeneratedPattern="Computed" />
-          <Property Name="CUIT" Type="char" MaxLength="11" />
+          <Property Name="Cuit" Type="char" MaxLength="11" />
           <Property Name="IngresosBrutos" Type="varchar" MaxLength="12" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
@@ -189,8 +189,8 @@
           <Property Name="IdCuentaBancariaTipo" Type="tinyint" Nullable="false" />
           <Property Name="Sucursal" Type="smallint" />
           <Property Name="Numero" Type="varchar" MaxLength="20" />
-          <Property Name="CBU" Type="char" MaxLength="22" />
-          <Property Name="CBUAlias" Type="varchar" MaxLength="20" />
+          <Property Name="Cbu" Type="char" MaxLength="22" />
+          <Property Name="CbuAlias" Type="varchar" MaxLength="20" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -1660,7 +1660,7 @@
           </Key>
           <Property Name="IdEmpresa" Type="Byte" Nullable="false" />
           <Property Name="RazonSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -1682,7 +1682,7 @@
           <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NombreParaMostrar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="IngresosBrutos" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
@@ -1709,8 +1709,8 @@
           <Property Name="IdCuentaBancariaTipo" Type="Byte" Nullable="false" />
           <Property Name="Sucursal" Type="Int16" />
           <Property Name="Numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CBU" Type="String" MaxLength="22" FixedLength="true" Unicode="false" />
-          <Property Name="CBUAlias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cbu" Type="String" MaxLength="22" FixedLength="true" Unicode="false" />
+          <Property Name="CbuAlias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -1859,13 +1859,11 @@
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Empresa" Relationship="Self.FK__Empresa__Movimiento" FromRole="Movimiento" ToRole="Empresa" />
           <NavigationProperty Name="MovimientoTipo" Relationship="Self.FK__MovimientoTipo__Movimiento" FromRole="Movimiento" ToRole="MovimientoTipo" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Movimiento__Creacion" FromRole="Movimiento" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__Movimiento__Modificacion" FromRole="Movimiento" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__Movimiento__Creacion" FromRole="Movimiento" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__Movimiento__Modificacion" FromRole="Movimiento" ToRole="Usuario" />
           <NavigationProperty Name="MovimientoAplicacion" Relationship="CSGestionModel.FK__Movimiento__MovimientoAplicacion__Aplicado" FromRole="Movimiento" ToRole="MovimientoAplicacion" />
           <NavigationProperty Name="MovimientoAplicacion1" Relationship="CSGestionModel.FK__Movimiento__MovimientoAplicacion_Aplicante" FromRole="Movimiento" ToRole="MovimientoAplicacion" />
-          <NavigationProperty Name="Movimiento1" Relationship="CSGestionModel.FK_Movimiento_Movimiento" FromRole="Movimiento" ToRole="Movimiento1" />
-          <NavigationProperty Name="Movimiento2" Relationship="CSGestionModel.FK_Movimiento_Movimiento" FromRole="Movimiento1" ToRole="Movimiento" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="MovimientoAplicacion">
           <Key>
             <PropertyRef Name="IdMovimiento" />
@@ -1967,8 +1965,8 @@
           <NavigationProperty Name="EntidadTelefonosModificados" Relationship="Self.FK__Usuario__EntidadTelefono__Modificacion" FromRole="Usuario" ToRole="EntidadTelefono" />
           <NavigationProperty Name="MonedasCreadas" Relationship="Self.FK__Usuario__Moneda__Creacion" FromRole="Usuario" ToRole="Moneda" />
           <NavigationProperty Name="MonedasModificadas" Relationship="Self.FK__Usuario__Moneda__Modificacion" FromRole="Usuario" ToRole="Moneda" />
-          <NavigationProperty Name="Movimiento" Relationship="Self.FK__Usuario__Movimiento__Creacion" FromRole="Usuario" ToRole="Movimiento" />
-          <NavigationProperty Name="Movimiento1" Relationship="Self.FK__Usuario__Movimiento__Modificacion" FromRole="Usuario" ToRole="Movimiento" />
+          <NavigationProperty Name="MovimientosCreados" Relationship="Self.FK__Usuario__Movimiento__Creacion" FromRole="Usuario" ToRole="Movimiento" />
+          <NavigationProperty Name="MovimientosModificados" Relationship="Self.FK__Usuario__Movimiento__Modificacion" FromRole="Usuario" ToRole="Movimiento" />
           <NavigationProperty Name="MovimientoTiposCreados" Relationship="Self.FK__Usuario__MovimientoTipo__Creacion" FromRole="Usuario" ToRole="MovimientoTipo" />
           <NavigationProperty Name="MovimientoTiposModificados" Relationship="Self.FK__Usuario__MovimientoTipo__Modificacion" FromRole="Usuario" ToRole="MovimientoTipo" />
           <NavigationProperty Name="TelefonoTiposCreados" Relationship="Self.FK__Usuario__TelefonoTipo__Creacion" FromRole="Usuario" ToRole="TelefonoTipo" />
@@ -3038,10 +3036,6 @@
             <End Role="Movimiento" EntitySet="Movimiento" />
             <End Role="MovimientoAplicacion" EntitySet="MovimientoAplicacion" />
           </AssociationSet>
-          <AssociationSet Name="FK_Movimiento_Movimiento" Association="CSGestionModel.FK_Movimiento_Movimiento">
-            <End Role="Movimiento" EntitySet="Movimiento" />
-            <End Role="Movimiento1" EntitySet="Movimiento" />
-          </AssociationSet>
           <EntitySet Name="Parametro" EntityType="CSGestionModel.Parametro" />
         </EntityContainer>
         <Association Name="FK__Movimiento__MovimientoAplicacion__Aplicado">
@@ -3067,20 +3061,6 @@
               <PropertyRef Name="IdMovimiento" />
             </Principal>
             <Dependent Role="MovimientoAplicacion">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMovimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Movimiento_Movimiento">
-          <End Type="CSGestionModel.Movimiento" Role="Movimiento" Multiplicity="1" />
-          <End Type="CSGestionModel.Movimiento" Role="Movimiento1" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Movimiento">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMovimiento" />
-            </Principal>
-            <Dependent Role="Movimiento1">
               <PropertyRef Name="IdEmpresa" />
               <PropertyRef Name="IdMovimiento" />
             </Dependent>
@@ -3253,9 +3233,9 @@
           <EntitySetMapping Name="Empresa">
             <EntityTypeMapping TypeName="CSGestionModel.Empresa">
               <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
-                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
                 <ScalarProperty Name="Notas" ColumnName="Notas" />
                 <ScalarProperty Name="EsActivo" ColumnName="EsActivo" />
                 <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
@@ -3268,13 +3248,13 @@
           <EntitySetMapping Name="Entidad">
             <EntityTypeMapping TypeName="CSGestionModel.Entidad">
               <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="NombreParaMostrar" ColumnName="NombreParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
                 <ScalarProperty Name="NombreFantasia" ColumnName="NombreFantasia" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
                 <ScalarProperty Name="IngresosBrutos" ColumnName="IngresosBrutos" />
                 <ScalarProperty Name="Notas" ColumnName="Notas" />
                 <ScalarProperty Name="EsActivo" ColumnName="EsActivo" />
@@ -3288,14 +3268,14 @@
           <EntitySetMapping Name="EntidadCuentaBancaria">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadCuentaBancaria">
               <MappingFragment StoreEntitySet="EntidadCuentaBancaria">
+                <ScalarProperty Name="CbuAlias" ColumnName="CbuAlias" />
+                <ScalarProperty Name="Cbu" ColumnName="Cbu" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="IdCuentaBancaria" ColumnName="IdCuentaBancaria" />
                 <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
                 <ScalarProperty Name="IdCuentaBancariaTipo" ColumnName="IdCuentaBancariaTipo" />
                 <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="CBU" ColumnName="CBU" />
-                <ScalarProperty Name="CBUAlias" ColumnName="CBUAlias" />
                 <ScalarProperty Name="Notas" ColumnName="Notas" />
                 <ScalarProperty Name="EsActivo" ColumnName="EsActivo" />
                 <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />

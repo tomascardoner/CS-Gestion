@@ -1,4 +1,6 @@
-﻿namespace CS_Gestion
+﻿using System.Drawing;
+
+namespace CS_Gestion
 {
     static class Constantes
     {
@@ -6,6 +8,12 @@
 
         // Hex Key - 128 bits
         internal const string ApplicationLicensePassword = "8a62a4359253fb51c88105b852bac2bb";
+
+        // Appearance
+        internal const string DefaultFontString = "Microsoft Sans Serif; 8,25pt";
+
+        // Usuarios
+        internal const byte IdUsuarioGrupoAdministradores = 1;
 
         // Persona
         internal const string PersonaGeneroNoEspecifica = "-";

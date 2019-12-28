@@ -50,8 +50,8 @@ namespace CS_Gestion
             this.EntidadTelefonosModificados = new HashSet<EntidadTelefono>();
             this.MonedasCreadas = new HashSet<Moneda>();
             this.MonedasModificadas = new HashSet<Moneda>();
-            this.Movimiento = new HashSet<Movimiento>();
-            this.Movimiento1 = new HashSet<Movimiento>();
+            this.MovimientosCreados = new HashSet<Movimiento>();
+            this.MovimientosModificados = new HashSet<Movimiento>();
             this.MovimientoTiposCreados = new HashSet<MovimientoTipo>();
             this.MovimientoTiposModificados = new HashSet<MovimientoTipo>();
             this.TelefonoTiposCreados = new HashSet<TelefonoTipo>();
@@ -142,9 +142,9 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Moneda> MonedasModificadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movimiento> Movimiento { get; set; }
+        public virtual ICollection<Movimiento> MovimientosCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movimiento> Movimiento1 { get; set; }
+        public virtual ICollection<Movimiento> MovimientosModificados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MovimientoTipo> MovimientoTiposCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

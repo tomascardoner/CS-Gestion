@@ -1,6 +1,6 @@
 ﻿namespace CS_Gestion
 {
-    partial class formEntidades
+    partial class FormEntidades
     {
         /// <summary>
         /// Required designer variable.
@@ -34,19 +34,16 @@
             this.toolstripButtons = new System.Windows.Forms.ToolStrip();
             this.buttonAgregar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
-            this.buttonEliminar = new System.Windows.Forms.ToolStripButton();
+            this.buttonBorrar = new System.Windows.Forms.ToolStripButton();
             this.buttonImprimir = new System.Windows.Forms.ToolStripSplitButton();
             this.menuitemImprimirFichaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstripBuscar = new System.Windows.Forms.ToolStrip();
             this.labelBuscar = new System.Windows.Forms.ToolStripLabel();
             this.textboxBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.buttonBuscarBorrar = new System.Windows.Forms.ToolStripButton();
-            this.toolstripCuartel = new System.Windows.Forms.ToolStrip();
-            this.labelCuartel = new System.Windows.Forms.ToolStripLabel();
-            this.comboboxCuartel = new System.Windows.Forms.ToolStripComboBox();
-            this.toolstripEstado = new System.Windows.Forms.ToolStrip();
-            this.labelEstadoActual = new System.Windows.Forms.ToolStripLabel();
-            this.comboboxEstadoActual = new System.Windows.Forms.ToolStripComboBox();
+            this.toolstripActivo = new System.Windows.Forms.ToolStrip();
+            this.labelActivo = new System.Windows.Forms.ToolStripLabel();
+            this.comboboxActivo = new System.Windows.Forms.ToolStripComboBox();
             this.statusstripMain = new System.Windows.Forms.StatusStrip();
             this.statuslabelMain = new System.Windows.Forms.ToolStripStatusLabel();
             this.datagridviewMain = new System.Windows.Forms.DataGridView();
@@ -55,8 +52,7 @@
             this.panelToolbars.SuspendLayout();
             this.toolstripButtons.SuspendLayout();
             this.toolstripBuscar.SuspendLayout();
-            this.toolstripCuartel.SuspendLayout();
-            this.toolstripEstado.SuspendLayout();
+            this.toolstripActivo.SuspendLayout();
             this.statusstripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewMain)).BeginInit();
             this.SuspendLayout();
@@ -67,12 +63,11 @@
             this.panelToolbars.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelToolbars.Controls.Add(this.toolstripButtons);
             this.panelToolbars.Controls.Add(this.toolstripBuscar);
-            this.panelToolbars.Controls.Add(this.toolstripCuartel);
-            this.panelToolbars.Controls.Add(this.toolstripEstado);
+            this.panelToolbars.Controls.Add(this.toolstripActivo);
             this.panelToolbars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelToolbars.Location = new System.Drawing.Point(0, 0);
             this.panelToolbars.Name = "panelToolbars";
-            this.panelToolbars.Size = new System.Drawing.Size(969, 39);
+            this.panelToolbars.Size = new System.Drawing.Size(724, 39);
             this.panelToolbars.TabIndex = 3;
             // 
             // toolstripButtons
@@ -82,46 +77,49 @@
             this.toolstripButtons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buttonAgregar,
             this.buttonEditar,
-            this.buttonEliminar,
+            this.buttonBorrar,
             this.buttonImprimir});
             this.toolstripButtons.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolstripButtons.Location = new System.Drawing.Point(0, 0);
             this.toolstripButtons.Name = "toolstripButtons";
-            this.toolstripButtons.Size = new System.Drawing.Size(348, 39);
+            this.toolstripButtons.Size = new System.Drawing.Size(337, 39);
             this.toolstripButtons.TabIndex = 0;
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.Image = global::CS_Gestion.Properties.Resources.IMAGE_ITEM_ADD_32;
+            this.buttonAgregar.Image = global::CS_Gestion.Properties.Resources.ImageItemAdd32;
             this.buttonAgregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(85, 36);
             this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Image = global::CS_Gestion.Properties.Resources.IMAGE_ITEM_EDIT_32;
+            this.buttonEditar.Image = global::CS_Gestion.Properties.Resources.ImageItemEdit32;
             this.buttonEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(73, 36);
             this.buttonEditar.Text = "Editar";
+            this.buttonEditar.Click += new System.EventHandler(this.Editar_Click);
             // 
-            // buttonEliminar
+            // buttonBorrar
             // 
-            this.buttonEliminar.Image = global::CS_Gestion.Properties.Resources.IMAGE_ITEM_DELETE_32;
-            this.buttonEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.buttonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(86, 36);
-            this.buttonEliminar.Text = "Eliminar";
+            this.buttonBorrar.Image = global::CS_Gestion.Properties.Resources.ImageItemDelete32;
+            this.buttonBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(75, 36);
+            this.buttonBorrar.Text = "Borrar";
+            this.buttonBorrar.Click += new System.EventHandler(this.Borrar_Click);
             // 
             // buttonImprimir
             // 
             this.buttonImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuitemImprimirFichaPersonal});
-            this.buttonImprimir.Image = global::CS_Gestion.Properties.Resources.IMAGE_PRINT_32;
+            this.buttonImprimir.Image = global::CS_Gestion.Properties.Resources.ImagePrint32;
             this.buttonImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonImprimir.Name = "buttonImprimir";
@@ -132,7 +130,7 @@
             // 
             this.menuitemImprimirFichaPersonal.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuitemImprimirFichaPersonal.Name = "menuitemImprimirFichaPersonal";
-            this.menuitemImprimirFichaPersonal.Size = new System.Drawing.Size(180, 22);
+            this.menuitemImprimirFichaPersonal.Size = new System.Drawing.Size(150, 22);
             this.menuitemImprimirFichaPersonal.Text = "Ficha Personal";
             // 
             // toolstripBuscar
@@ -143,7 +141,7 @@
             this.labelBuscar,
             this.textboxBuscar,
             this.buttonBuscarBorrar});
-            this.toolstripBuscar.Location = new System.Drawing.Point(348, 0);
+            this.toolstripBuscar.Location = new System.Drawing.Point(337, 0);
             this.toolstripBuscar.Name = "toolstripBuscar";
             this.toolstripBuscar.Size = new System.Drawing.Size(193, 39);
             this.toolstripBuscar.TabIndex = 2;
@@ -160,63 +158,43 @@
             this.textboxBuscar.MaxLength = 100;
             this.textboxBuscar.Name = "textboxBuscar";
             this.textboxBuscar.Size = new System.Drawing.Size(120, 39);
+            this.textboxBuscar.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            this.textboxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Buscar_KeyPress);
             // 
             // buttonBuscarBorrar
             // 
             this.buttonBuscarBorrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.buttonBuscarBorrar.Image = global::CS_Gestion.Properties.Resources.IMAGE_CLOSE_16;
+            this.buttonBuscarBorrar.Image = global::CS_Gestion.Properties.Resources.ImageClose16;
             this.buttonBuscarBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonBuscarBorrar.Name = "buttonBuscarBorrar";
             this.buttonBuscarBorrar.Size = new System.Drawing.Size(23, 36);
             this.buttonBuscarBorrar.ToolTipText = "Limpiar búsqueda";
+            this.buttonBuscarBorrar.Click += new System.EventHandler(this.BuscarBorrar_Click);
             // 
-            // toolstripCuartel
+            // toolstripActivo
             // 
-            this.toolstripCuartel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolstripCuartel.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolstripCuartel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelCuartel,
-            this.comboboxCuartel});
-            this.toolstripCuartel.Location = new System.Drawing.Point(541, 0);
-            this.toolstripCuartel.Name = "toolstripCuartel";
-            this.toolstripCuartel.Size = new System.Drawing.Size(183, 39);
-            this.toolstripCuartel.TabIndex = 4;
+            this.toolstripActivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolstripActivo.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripActivo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelActivo,
+            this.comboboxActivo});
+            this.toolstripActivo.Location = new System.Drawing.Point(530, 0);
+            this.toolstripActivo.Name = "toolstripActivo";
+            this.toolstripActivo.Size = new System.Drawing.Size(124, 39);
+            this.toolstripActivo.TabIndex = 13;
             // 
-            // labelCuartel
+            // labelActivo
             // 
-            this.labelCuartel.Name = "labelCuartel";
-            this.labelCuartel.Size = new System.Drawing.Size(48, 36);
-            this.labelCuartel.Text = "Cuartel:";
+            this.labelActivo.Name = "labelActivo";
+            this.labelActivo.Size = new System.Drawing.Size(44, 36);
+            this.labelActivo.Text = "Activo:";
             // 
-            // comboboxCuartel
+            // comboboxActivo
             // 
-            this.comboboxCuartel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboboxCuartel.Name = "comboboxCuartel";
-            this.comboboxCuartel.Size = new System.Drawing.Size(130, 39);
-            // 
-            // toolstripEstado
-            // 
-            this.toolstripEstado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolstripEstado.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolstripEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelEstadoActual,
-            this.comboboxEstadoActual});
-            this.toolstripEstado.Location = new System.Drawing.Point(724, 0);
-            this.toolstripEstado.Name = "toolstripEstado";
-            this.toolstripEstado.Size = new System.Drawing.Size(235, 39);
-            this.toolstripEstado.TabIndex = 3;
-            // 
-            // labelEstadoActual
-            // 
-            this.labelEstadoActual.Name = "labelEstadoActual";
-            this.labelEstadoActual.Size = new System.Drawing.Size(80, 36);
-            this.labelEstadoActual.Text = "Estado actual:";
-            // 
-            // comboboxEstadoActual
-            // 
-            this.comboboxEstadoActual.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboboxEstadoActual.Name = "comboboxEstadoActual";
-            this.comboboxEstadoActual.Size = new System.Drawing.Size(150, 39);
+            this.comboboxActivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxActivo.Name = "comboboxActivo";
+            this.comboboxActivo.Size = new System.Drawing.Size(75, 39);
+            this.comboboxActivo.SelectedIndexChanged += new System.EventHandler(this.Activo_SelectedIndexChanged);
             // 
             // statusstripMain
             // 
@@ -224,13 +202,13 @@
             this.statuslabelMain});
             this.statusstripMain.Location = new System.Drawing.Point(0, 351);
             this.statusstripMain.Name = "statusstripMain";
-            this.statusstripMain.Size = new System.Drawing.Size(969, 22);
+            this.statusstripMain.Size = new System.Drawing.Size(724, 22);
             this.statusstripMain.TabIndex = 4;
             // 
             // statuslabelMain
             // 
             this.statuslabelMain.Name = "statuslabelMain";
-            this.statuslabelMain.Size = new System.Drawing.Size(954, 17);
+            this.statuslabelMain.Size = new System.Drawing.Size(709, 17);
             this.statuslabelMain.Spring = true;
             this.statuslabelMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -257,8 +235,10 @@
             this.datagridviewMain.RowHeadersVisible = false;
             this.datagridviewMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewMain.Size = new System.Drawing.Size(969, 312);
+            this.datagridviewMain.Size = new System.Drawing.Size(724, 312);
             this.datagridviewMain.TabIndex = 5;
+            this.datagridviewMain.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_ColumnHeaderMouseClick);
+            this.datagridviewMain.DoubleClick += new System.EventHandler(this.Verr_Click);
             // 
             // columnNombreParaMostrar
             // 
@@ -280,26 +260,27 @@
             this.columnCuit.ReadOnly = true;
             this.columnCuit.Width = 57;
             // 
-            // formEntidades
+            // FormEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 373);
+            this.ClientSize = new System.Drawing.Size(724, 373);
             this.Controls.Add(this.datagridviewMain);
             this.Controls.Add(this.statusstripMain);
             this.Controls.Add(this.panelToolbars);
-            this.Name = "formEntidades";
+            this.KeyPreview = true;
+            this.Name = "FormEntidades";
             this.Text = "Entidades";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.this_KeyPress);
             this.panelToolbars.ResumeLayout(false);
             this.panelToolbars.PerformLayout();
             this.toolstripButtons.ResumeLayout(false);
             this.toolstripButtons.PerformLayout();
             this.toolstripBuscar.ResumeLayout(false);
             this.toolstripBuscar.PerformLayout();
-            this.toolstripCuartel.ResumeLayout(false);
-            this.toolstripCuartel.PerformLayout();
-            this.toolstripEstado.ResumeLayout(false);
-            this.toolstripEstado.PerformLayout();
+            this.toolstripActivo.ResumeLayout(false);
+            this.toolstripActivo.PerformLayout();
             this.statusstripMain.ResumeLayout(false);
             this.statusstripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewMain)).EndInit();
@@ -314,23 +295,20 @@
         internal System.Windows.Forms.ToolStrip toolstripButtons;
         internal System.Windows.Forms.ToolStripButton buttonAgregar;
         internal System.Windows.Forms.ToolStripButton buttonEditar;
-        internal System.Windows.Forms.ToolStripButton buttonEliminar;
+        internal System.Windows.Forms.ToolStripButton buttonBorrar;
         internal System.Windows.Forms.ToolStripSplitButton buttonImprimir;
         internal System.Windows.Forms.ToolStripMenuItem menuitemImprimirFichaPersonal;
         internal System.Windows.Forms.ToolStrip toolstripBuscar;
         internal System.Windows.Forms.ToolStripLabel labelBuscar;
         internal System.Windows.Forms.ToolStripTextBox textboxBuscar;
         internal System.Windows.Forms.ToolStripButton buttonBuscarBorrar;
-        internal System.Windows.Forms.ToolStrip toolstripCuartel;
-        internal System.Windows.Forms.ToolStripLabel labelCuartel;
-        internal System.Windows.Forms.ToolStripComboBox comboboxCuartel;
-        internal System.Windows.Forms.ToolStrip toolstripEstado;
-        internal System.Windows.Forms.ToolStripLabel labelEstadoActual;
-        internal System.Windows.Forms.ToolStripComboBox comboboxEstadoActual;
         internal System.Windows.Forms.StatusStrip statusstripMain;
         internal System.Windows.Forms.ToolStripStatusLabel statuslabelMain;
         internal System.Windows.Forms.DataGridView datagridviewMain;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnNombreParaMostrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCuit;
+        internal System.Windows.Forms.ToolStrip toolstripActivo;
+        internal System.Windows.Forms.ToolStripLabel labelActivo;
+        internal System.Windows.Forms.ToolStripComboBox comboboxActivo;
     }
 }

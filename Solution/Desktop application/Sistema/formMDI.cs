@@ -23,19 +23,15 @@ namespace CS_Gestion
 
         private void SetAppearance()
         {
-            // Cambio el puntero del mouse para indicar que la aplicación está iniciando
             this.Cursor = Cursors.AppStarting;
-
-            // Deshabilito el Form hasta que se cierre el SplashScreen
+            this.Icon = Properties.Resources.IconApplication32;
             this.Enabled = false;
-
-            // Título del form
             this.Text = CardonerSistemas.My.Application.Info.Title;
 
             menuitemAyudaAcercaDe.Text = "&Acerca de " + CardonerSistemas.My.Application.Info.Title + "...";
 
-            this.Icon = Properties.Resources.ICON_APPLICATION_32;
-
+            // GroupView de comandos
+            imagelistMain.Images.Add(Properties.Resources.ImageEntidad48);
         }
 
         private void Me_Resize(object sender, EventArgs e)
@@ -163,11 +159,35 @@ namespace CS_Gestion
 
         private void groupviewEntidades_GroupViewItemSelected(object sender, EventArgs e)
         {
-            Syncfusion.Windows.Forms.Tools.GroupViewItem groupViewItem = (Syncfusion.Windows.Forms.Tools.GroupViewItem)sender;
-            if (groupViewItem.Text == "Entidades")
+            if (GroupViewItemSelected(sender, "Entidades"))
             {
-
+                if (Permisos.Verificar(Permisos.Entidad))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    FormEntidades entidades = new FormEntidades();
+                    CardonerSistemas.Forms.MdiChildPositionAndSizeToFit(this, entidades);
+                    entidades.Show();
+                    if (entidades.WindowState == FormWindowState.Minimized)
+                    {
+                        entidades.WindowState = FormWindowState.Normal;
+                    }
+                    entidades.Focus();
+                    this.Cursor = Cursors.Default;
+                }
             }
+        }
+
+        private bool GroupViewItemSelected(object sender, string itemText)
+        {
+            Syncfusion.Windows.Forms.Tools.GroupView group = (Syncfusion.Windows.Forms.Tools.GroupView)sender;
+            if (group.SelectedItem >= 0)
+            {
+                if (group.GroupViewItems[group.SelectedItem].Text == itemText)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

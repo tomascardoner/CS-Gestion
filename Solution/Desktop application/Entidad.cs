@@ -30,7 +30,7 @@ namespace CS_Gestion
         public string Apellido { get; set; }
         public string Nombre { get; set; }
         public string NombreParaMostrar { get; set; }
-        public string CUIT { get; set; }
+        public string Cuit { get; set; }
         public string IngresosBrutos { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }

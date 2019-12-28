@@ -14,7 +14,7 @@ namespace CS_Gestion
 
             context = new CSGestionContext(true);
 
-            if (Properties.Settings.Default.LastUserLoggedIn != "")
+            if (Properties.Settings.Default.LastUserLoggedInShow && Properties.Settings.Default.LastUserLoggedIn.Length > 0)
             {
                 textboxNombre.Text = Properties.Settings.Default.LastUserLoggedIn;
                 labelPassword.TabIndex = 0;
@@ -24,7 +24,7 @@ namespace CS_Gestion
             }
         }
 
-        private void Me_KeyPress(object sender, KeyPressEventArgs e)
+        private void this_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Return)
             {
@@ -36,12 +36,12 @@ namespace CS_Gestion
             }
         }
 
-        private void Me_FormClosed(object sender, FormClosedEventArgs e)
+        private void this_FormClosed(object sender, FormClosedEventArgs e)
         {
             context.Dispose();
         }
 
-        private void TextBoxs_GotFocus(object sender, System.EventArgs e)
+        private void TextBoxs_Enter(object sender, System.EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             textBox.SelectAll();
@@ -125,14 +125,18 @@ namespace CS_Gestion
                 return;
             }
 
+            if (!usuario.Login())
+            {
+                this.DialogResult = DialogResult.Cancel;
+                return;
+            }
+
             Program.Usuario = usuario;
             usuario = null;
 
             // Guardo el Nombre de Usuario para mostrarlo la próxima vez
             Properties.Settings.Default.LastUserLoggedIn = Program.Usuario.Nombre;
             Properties.Settings.Default.Save();
-
-            Program.Usuario.LoggedIn();
 
             this.Cursor = Cursors.Default;
 

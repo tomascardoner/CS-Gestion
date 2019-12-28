@@ -20,8 +20,8 @@ namespace CS_Gestion
         public byte IdCuentaBancariaTipo { get; set; }
         public Nullable<short> Sucursal { get; set; }
         public string Numero { get; set; }
-        public string CBU { get; set; }
-        public string CBUAlias { get; set; }
+        public string Cbu { get; set; }
+        public string CbuAlias { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }

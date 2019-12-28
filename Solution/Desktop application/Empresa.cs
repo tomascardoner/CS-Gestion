@@ -23,7 +23,7 @@ namespace CS_Gestion
     
         public byte IdEmpresa { get; set; }
         public string RazonSocial { get; set; }
-        public string CUIT { get; set; }
+        public string Cuit { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }

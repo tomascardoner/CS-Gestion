@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +33,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,14 +56,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Application\Application.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Application\IconApplication.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -178,12 +186,20 @@
     <Compile Include="EntidadTelefono.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="formEntidades.cs">
+    <Compile Include="Entidades\FormEntidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formEntidades.Designer.cs">
-      <DependentUpon>formEntidades.cs</DependentUpon>
+    <Compile Include="Entidades\FormEntidades.Designer.cs">
+      <DependentUpon>FormEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Framework\Graphics.cs" />
+    <Compile Include="Listas\ListasComunes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Permisos.cs" />
     <Compile Include="Sistema\Appearance.cs" />
     <Compile Include="Sistema\formLogin.cs">
       <SubType>Form</SubType>
@@ -244,8 +260,8 @@
       <Link>Framework\ErrorMessageBox.resx</Link>
       <DependentUpon>ErrorMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formEntidades.resx">
-      <DependentUpon>formEntidades.cs</DependentUpon>
+    <EmbeddedResource Include="Entidades\FormEntidades.resx">
+      <DependentUpon>FormEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
@@ -255,14 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Sistema\formSplash.resx">
       <DependentUpon>formSplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,16 +311,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Windows\Window - Tile Horizontally.png" />
+    <None Include="Resources\Windows\ImageWindowTileHorizontally.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Windows\Window - Tile Vertically.png" />
+    <None Include="Resources\Windows\ImageWindowTileVertically.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Windows\Window - Close All.png" />
+    <None Include="Resources\Windows\ImageWindowCloseAll.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Windows\Window - Fit To Size.png" />
+    <None Include="Resources\Windows\ImageWindowFitToSize.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseModel.Context.tt">
@@ -322,42 +333,67 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\Office-Girl-icon %285%29.png" />
-    <None Include="Resources\Office-Girl-icon %288%29.png" />
-    <None Include="Resources\User-Coat-Red-icon %285%29.png" />
-    <None Include="Resources\User-Coat-Red-icon %288%29.png" />
-    <None Include="Resources\School2_3211.png" />
-    <None Include="Resources\Search-icon %288%29.png" />
-    <None Include="Resources\ReportWithChart32.png" />
-    <None Include="Resources\document-print-preview %286%29.png" />
-    <None Include="Resources\document-print-preview %287%29.png" />
-    <None Include="Resources\printer %286%29.png" />
-    <None Include="Resources\printer %287%29.png" />
-    <None Include="Resources\Move Previous %28Arrow%29 Red24.png" />
-    <None Include="Resources\Move Next %28Arrow%29 Green24.png" />
-    <None Include="Resources\export-icon_32.png" />
-    <None Include="Resources\Mail-icon %286%29.png" />
-    <None Include="Resources\Mail-icon %287%29.png" />
-    <None Include="Resources\Cardoner Sistemas.gif" />
-    <None Include="Resources\Actions-dialog-cancel-icon %286%29.png" />
-    <None Include="Resources\Actions-dialog-close-icon %288%29.png" />
-    <None Include="Resources\Actions-dialog-close-icon %286%29.png" />
-    <None Include="Resources\Actions-document-new-icon %286%29.png" />
-    <None Include="Resources\Actions-edit-copy-icon_32.png" />
-    <None Include="Resources\Actions-edit-delete-icon %286%29.png" />
-    <None Include="Resources\Actions-document-edit-icon %286%29.png" />
-    <None Include="Resources\Actions-dialog-ok-apply-icon %286%29.png" />
-    <None Include="Resources\Actions-view-pim-contacts-icon %285%29.png" />
-    <Content Include="Resources\Application\Application.ico" />
-    <None Include="Resources\Login Manager %285%29.png" />
-    <None Include="Resources\erp-icons.png" />
-    <None Include="Resources\Application\Application_32.ico" />
+    <None Include="Resources\ImageUsuarioGrupo16.png" />
+    <None Include="Resources\ImageUsuarioGrupo48.png" />
+    <None Include="Resources\ImageMujer48.png" />
+    <None Include="Resources\ImageMujer16.png" />
+    <None Include="Resources\ImageHombre48.png" />
+    <None Include="Resources\ImageHombre16.png" />
+    <None Include="Resources\ImageTablas32.png" />
+    <None Include="Resources\ImageSearch16.png" />
+    <None Include="Resources\ImageReports32.png" />
+    <None Include="Resources\ImagePrintPreview32.png" />
+    <None Include="Resources\ImagePrintPreview24.png" />
+    <None Include="Resources\ImagePrint32.png" />
+    <None Include="Resources\ImagePrint24.png" />
+    <None Include="Resources\ImagePrevious24.png" />
+    <None Include="Resources\ImageNext24.png" />
+    <None Include="Resources\ImageExport32.png" />
+    <None Include="Resources\ImageEmail32.png" />
+    <None Include="Resources\ImageEmail24.png" />
+    <None Include="Resources\ImageCardonerSistemas.gif" />
+    <None Include="Resources\ImageCancel32.png" />
+    <None Include="Resources\ImageClose16.png" />
+    <None Include="Resources\ImageClose32.png" />
+    <None Include="Resources\ImageItemAdd32.png" />
+    <None Include="Resources\ImageItemCopy32.png" />
+    <None Include="Resources\ImageItemDelete32.png" />
+    <None Include="Resources\ImageItemEdit32.png" />
+    <None Include="Resources\ImageOk32.png" />
+    <Content Include="Resources\Application\ImageSplash.png" />
+    <Content Include="Resources\ImageEntidad16.png" />
+    <Content Include="Resources\ImageEntidad48.png" />
+    <Content Include="Resources\Application\IconApplication.ico" />
+    <None Include="Resources\ImageLogin48.png" />
+    <None Include="Resources\Application\Application32.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Entidades\" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

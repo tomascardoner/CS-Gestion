@@ -63,9 +63,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon ICON_APPLICATION_32 {
+        internal static System.Drawing.Icon IconApplication32 {
             get {
-                object obj = ResourceManager.GetObject("ICON_APPLICATION_32", resourceCulture);
+                object obj = ResourceManager.GetObject("IconApplication32", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_CANCEL_32 {
+        internal static System.Drawing.Bitmap ImageCancel32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_CANCEL_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageCancel32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_CARDONERSISTEMAS {
+        internal static System.Drawing.Bitmap ImageCardonerSistemas {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_CARDONERSISTEMAS", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageCardonerSistemas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_CLOSE_16 {
+        internal static System.Drawing.Bitmap ImageClose16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_CLOSE_16", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageClose16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_CLOSE_32 {
+        internal static System.Drawing.Bitmap ImageClose32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_CLOSE_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageClose32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_EMAIL_24 {
+        internal static System.Drawing.Bitmap ImageEmail24 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_EMAIL_24", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageEmail24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_EMAIL_32 {
+        internal static System.Drawing.Bitmap ImageEmail32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_EMAIL_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageEmail32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_EXPORT_32 {
+        internal static System.Drawing.Bitmap ImageEntidad16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_EXPORT_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageEntidad16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_INICIO_SESION_48 {
+        internal static System.Drawing.Bitmap ImageEntidad48 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_INICIO_SESION_48", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageEntidad48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_ITEM_ADD_32 {
+        internal static System.Drawing.Bitmap ImageExport32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_ITEM_ADD_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageExport32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_ITEM_COPY_32 {
+        internal static System.Drawing.Bitmap ImageHombre16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_ITEM_COPY_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageHombre16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_ITEM_DELETE_32 {
+        internal static System.Drawing.Bitmap ImageHombre48 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_ITEM_DELETE_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageHombre48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_ITEM_EDIT_32 {
+        internal static System.Drawing.Bitmap ImageItemAdd32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_ITEM_EDIT_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageItemAdd32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MENU_WINDOW_CLOSE_ALL {
+        internal static System.Drawing.Bitmap ImageItemCopy32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MENU_WINDOW_CLOSE_ALL", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageItemCopy32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MENU_WINDOW_FIT_SIZE {
+        internal static System.Drawing.Bitmap ImageItemDelete32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MENU_WINDOW_FIT_SIZE", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageItemDelete32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MENU_WINDOW_TILE_HORIZONTALLY {
+        internal static System.Drawing.Bitmap ImageItemEdit32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MENU_WINDOW_TILE_HORIZONTALLY", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageItemEdit32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MENU_WINDOW_TILE_VERTICALLY {
+        internal static System.Drawing.Bitmap ImageLogin48 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MENU_WINDOW_TILE_VERTICALLY", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageLogin48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MOVE_NEXT_24 {
+        internal static System.Drawing.Bitmap ImageMujer16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MOVE_NEXT_24", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageMujer16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_MOVE_PREVIOUS_24 {
+        internal static System.Drawing.Bitmap ImageMujer48 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_MOVE_PREVIOUS_24", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageMujer48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_OK_32 {
+        internal static System.Drawing.Bitmap ImageNext24 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_OK_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageNext24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_PERSONA_48 {
+        internal static System.Drawing.Bitmap ImageOk32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_PERSONA_48", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageOk32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_PRINT_24 {
+        internal static System.Drawing.Bitmap ImagePrevious24 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_PRINT_24", resourceCulture);
+                object obj = ResourceManager.GetObject("ImagePrevious24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_PRINT_32 {
+        internal static System.Drawing.Bitmap ImagePrint24 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_PRINT_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImagePrint24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_PRINT_PREVIEW_24 {
+        internal static System.Drawing.Bitmap ImagePrint32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_PRINT_PREVIEW_24", resourceCulture);
+                object obj = ResourceManager.GetObject("ImagePrint32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_PRINT_PREVIEW_32 {
+        internal static System.Drawing.Bitmap ImagePrintPreview24 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_PRINT_PREVIEW_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImagePrintPreview24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_REPORTES_32 {
+        internal static System.Drawing.Bitmap ImagePrintPreview32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_REPORTES_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImagePrintPreview32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_SEARCH_16 {
+        internal static System.Drawing.Bitmap ImageReports32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_SEARCH_16", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageReports32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_SPLASH {
+        internal static System.Drawing.Bitmap ImageSearch16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_SPLASH", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageSearch16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_TABLAS_32 {
+        internal static System.Drawing.Bitmap ImageSplash {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_TABLAS_32", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageSplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_USUARIO_HOMBRE_16 {
+        internal static System.Drawing.Bitmap ImageTablas32 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_USUARIO_HOMBRE_16", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageTablas32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +363,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_USUARIO_HOMBRE_48 {
+        internal static System.Drawing.Bitmap ImageUsuarioGrupo16 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_USUARIO_HOMBRE_48", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageUsuarioGrupo16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +373,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_USUARIO_MUJER_16 {
+        internal static System.Drawing.Bitmap ImageUsuarioGrupo161 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_USUARIO_MUJER_16", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageUsuarioGrupo161", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,10 +383,267 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IMAGE_USUARIO_MUJER_48 {
+        internal static System.Drawing.Bitmap ImageUsuarioGrupo48 {
             get {
-                object obj = ResourceManager.GetObject("IMAGE_USUARIO_MUJER_48", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageUsuarioGrupo48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageUsuarioGrupo481 {
+            get {
+                object obj = ResourceManager.GetObject("ImageUsuarioGrupo481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageWindowCloseAll {
+            get {
+                object obj = ResourceManager.GetObject("ImageWindowCloseAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageWindowFitToSize {
+            get {
+                object obj = ResourceManager.GetObject("ImageWindowFitToSize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageWindowTileHorizontally {
+            get {
+                object obj = ResourceManager.GetObject("ImageWindowTileHorizontally", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageWindowTileVertically {
+            get {
+                object obj = ResourceManager.GetObject("ImageWindowTileVertically", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al guardar los cambios en la Base de Datos..
+        /// </summary>
+        internal static string STRING_ERROR_SAVING_CHANGES {
+            get {
+                return ResourceManager.GetString("STRING_ERROR_SAVING_CHANGES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Femenino.
+        /// </summary>
+        internal static string STRING_GENERO_FEMENINO {
+            get {
+                return ResourceManager.GetString("STRING_GENERO_FEMENINO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Masculino.
+        /// </summary>
+        internal static string STRING_GENERO_MASCULINO {
+            get {
+                return ResourceManager.GetString("STRING_GENERO_MASCULINO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Todas».
+        /// </summary>
+        internal static string STRING_ITEM_ALL_FEMALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_ALL_FEMALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Todos».
+        /// </summary>
+        internal static string STRING_ITEM_ALL_MALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_ALL_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Completa».
+        /// </summary>
+        internal static string STRING_ITEM_COMPLETE_FEMALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_COMPLETE_FEMALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Completo».
+        /// </summary>
+        internal static string STRING_ITEM_COMPLETE_MALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_COMPLETE_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Vacía».
+        /// </summary>
+        internal static string STRING_ITEM_EMPTY_FEMALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_EMPTY_FEMALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Vacío».
+        /// </summary>
+        internal static string STRING_ITEM_EMPTY_MALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_EMPTY_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ».
+        /// </summary>
+        internal static string STRING_ITEM_END_CHAR {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_END_CHAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Nuevo».
+        /// </summary>
+        internal static string STRING_ITEM_NEW_MALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NEW_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ----------.
+        /// </summary>
+        internal static string STRING_ITEM_NONE_CHARS10 {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --.
+        /// </summary>
+        internal static string STRING_ITEM_NONE_CHARS2 {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --------------------.
+        /// </summary>
+        internal static string STRING_ITEM_NONE_CHARS20 {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -----.
+        /// </summary>
+        internal static string STRING_ITEM_NONE_CHARS5 {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Ninguno».
+        /// </summary>
+        internal static string STRING_ITEM_NONE_FEMALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_FEMALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Ninguna».
+        /// </summary>
+        internal static string STRING_ITEM_NONE_MALE {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NONE_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «No especifica».
+        /// </summary>
+        internal static string STRING_ITEM_NOT_SPECIFIED {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_NOT_SPECIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «.
+        /// </summary>
+        internal static string STRING_ITEM_START_CHAR {
+            get {
+                return ResourceManager.GetString("STRING_ITEM_START_CHAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string STRING_NO {
+            get {
+                return ResourceManager.GetString("STRING_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compra.
+        /// </summary>
+        internal static string STRING_OPERACIONTIPO_COMPRA {
+            get {
+                return ResourceManager.GetString("STRING_OPERACIONTIPO_COMPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Venta.
+        /// </summary>
+        internal static string STRING_OPERACIONTIPO_VENTA {
+            get {
+                return ResourceManager.GetString("STRING_OPERACIONTIPO_VENTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sí.
+        /// </summary>
+        internal static string STRING_YES {
+            get {
+                return ResourceManager.GetString("STRING_YES", resourceCulture);
             }
         }
     }

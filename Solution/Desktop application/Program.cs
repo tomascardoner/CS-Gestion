@@ -7,17 +7,16 @@ namespace CS_Gestion
 {
     static class Program
     {
-        static public EventLog EventLog = new EventLog(Constantes.EventLogName);
+        static internal EventLog EventLog = new EventLog(Constantes.EventLogName);
 
-        static public CardonerSistemas.Database.ADO.SQLServer Database;
-        //FillAndRefreshLists pFillAndRefreshLists;
-
-        static public formMdi FormMdi;
-        //pPermisos As List(Of UsuarioGrupoPermiso)
-        static public List<Parametro> Parametros;
-        static public Usuario Usuario;
+        static internal CardonerSistemas.Database.ADO.SQLServer Database;
+        static internal formMdi FormMdi;
+        static internal List<UsuarioGrupoPermiso> Permisos;
+        static internal List<Parametro> Parametros;
+        static internal Appearance Appearance;
+        static internal Usuario Usuario;
         //pUsuarioParametros As List(Of UsuarioParametro)
-        static public string LicensedTo;
+        static internal string LicensedTo;
 
         [STAThread]
         static void Main()
@@ -113,8 +112,8 @@ namespace CS_Gestion
             splash.labelLicensedTo.Text = LicensedTo;
             Application.DoEvents();
 
-            // Preparo instancia de clase para llenar los ComboBox
-            //pFillAndRefreshLists = New FillAndRefreshLists
+            // Preparo los parámetros que hacen a la apriencia
+            Appearance = new Appearance();
 
             // Tomo el tiempo de inicio para controlar los segundos mínimos que se debe mostrar el Splash Screen
             startupDateTime = DateTime.Now;
@@ -143,7 +142,12 @@ namespace CS_Gestion
                 using (CSGestionContext context = new CSGestionContext(true))
                 {
                     Usuario = context.Usuario.Find(1);
-                    Usuario.LoggedIn();
+                    if (!Usuario.Login())
+                    {
+                        EventLog.WriteEntry("La Aplicación finalizará porque no se pudieron obtener los datos del Usuario.", EventLogEntryType.FailureAudit, Constantes.EventUserLoginFailure);
+                        TerminateApplication();
+                        return;
+                    }
                 }
             }
             else
@@ -176,10 +180,10 @@ namespace CS_Gestion
                 CardonerSistemas.Forms.MdiChildCloseAll(FormMdi);
             }
             Database = null;
-            // pFillAndRefreshLists = Nothing
-            // pPermisos = Nothing
+            Permisos = null;
             Parametros = null;
             LicensedTo = null;
+            Appearance = null;
             Usuario = null;
 
             try

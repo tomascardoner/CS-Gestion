@@ -55,7 +55,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.buttonCancelar.Image = global::CS_Gestion.Properties.Resources.IMAGE_CANCEL_32;
+            this.buttonCancelar.Image = global::CS_Gestion.Properties.Resources.ImageCancel32;
             this.buttonCancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonCancelar.Name = "buttonCancelar";
@@ -66,7 +66,7 @@
             // buttonAceptar
             // 
             this.buttonAceptar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.buttonAceptar.Image = global::CS_Gestion.Properties.Resources.IMAGE_OK_32;
+            this.buttonAceptar.Image = global::CS_Gestion.Properties.Resources.ImageOk32;
             this.buttonAceptar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonAceptar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonAceptar.Name = "buttonAceptar";
@@ -91,7 +91,7 @@
             this.textboxPassword.Size = new System.Drawing.Size(158, 20);
             this.textboxPassword.TabIndex = 10;
             this.textboxPassword.UseSystemPasswordChar = true;
-            this.textboxPassword.Enter += new System.EventHandler(this.TextBoxs_GotFocus);
+            this.textboxPassword.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
             // textboxNombre
             // 
@@ -100,7 +100,7 @@
             this.textboxNombre.Name = "textboxNombre";
             this.textboxNombre.Size = new System.Drawing.Size(158, 20);
             this.textboxNombre.TabIndex = 8;
-            this.textboxNombre.Enter += new System.EventHandler(this.TextBoxs_GotFocus);
+            this.textboxNombre.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
             // labelPassword
             // 
@@ -137,8 +137,8 @@
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inicio de sesión";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Me_FormClosed);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Me_KeyPress);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.this_KeyPress);
             this.toolstripMain.ResumeLayout(false);
             this.toolstripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxMain)).EndInit();

@@ -37,13 +37,11 @@ namespace CS_Gestion
     
         public virtual Empresa Empresa { get; set; }
         public virtual MovimientoTipo MovimientoTipo { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public virtual Usuario UsuarioCreacion { get; set; }
+        public virtual Usuario UsuarioModificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MovimientoAplicacion> MovimientoAplicacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MovimientoAplicacion> MovimientoAplicacion1 { get; set; }
-        public virtual Movimiento Movimiento1 { get; set; }
-        public virtual Movimiento Movimiento2 { get; set; }
     }
 }

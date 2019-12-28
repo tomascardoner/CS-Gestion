@@ -63,13 +63,13 @@
             this.labelUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupbarMain = new Syncfusion.Windows.Forms.Tools.GroupBar();
+            this.groupviewEntidades = new Syncfusion.Windows.Forms.Tools.GroupView();
+            this.imagelistMain = new System.Windows.Forms.ImageList(this.components);
+            this.groupviewTablas = new Syncfusion.Windows.Forms.Tools.GroupView();
             this.groupbaritemEntidades = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
             this.groupbaritemTablas = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
             this.groupbaritemReportes = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
-            this.groupviewTablas = new Syncfusion.Windows.Forms.Tools.GroupView();
-            this.groupviewEntidades = new Syncfusion.Windows.Forms.Tools.GroupView();
             this.menustripMain.SuspendLayout();
-            this.statusstripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).BeginInit();
             this.groupbarMain.SuspendLayout();
             this.SuspendLayout();
@@ -236,7 +236,7 @@
             // 
             // menuitemVentanaMosaicoHorizontal
             // 
-            this.menuitemVentanaMosaicoHorizontal.Image = global::CS_Gestion.Properties.Resources.IMAGE_MENU_WINDOW_TILE_HORIZONTALLY;
+            this.menuitemVentanaMosaicoHorizontal.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileHorizontally;
             this.menuitemVentanaMosaicoHorizontal.Name = "menuitemVentanaMosaicoHorizontal";
             this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaMosaicoHorizontal.Text = "Mosaico &Horizontal";
@@ -244,7 +244,7 @@
             // 
             // menuitemVentanaMosaicoVertical
             // 
-            this.menuitemVentanaMosaicoVertical.Image = global::CS_Gestion.Properties.Resources.IMAGE_MENU_WINDOW_TILE_VERTICALLY;
+            this.menuitemVentanaMosaicoVertical.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileVertically;
             this.menuitemVentanaMosaicoVertical.Name = "menuitemVentanaMosaicoVertical";
             this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaMosaicoVertical.Text = "Mosaico &Vertical";
@@ -271,7 +271,7 @@
             // 
             // menuitemVentanaCerrarTodas
             // 
-            this.menuitemVentanaCerrarTodas.Image = global::CS_Gestion.Properties.Resources.IMAGE_MENU_WINDOW_CLOSE_ALL;
+            this.menuitemVentanaCerrarTodas.Image = global::CS_Gestion.Properties.Resources.ImageWindowCloseAll;
             this.menuitemVentanaCerrarTodas.Name = "menuitemVentanaCerrarTodas";
             this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaCerrarTodas.Text = "Ce&rrar Todas";
@@ -279,7 +279,7 @@
             // 
             // menuitemVentanaEncajarEnVentana
             // 
-            this.menuitemVentanaEncajarEnVentana.Image = global::CS_Gestion.Properties.Resources.IMAGE_MENU_WINDOW_FIT_SIZE;
+            this.menuitemVentanaEncajarEnVentana.Image = global::CS_Gestion.Properties.Resources.ImageWindowFitToSize;
             this.menuitemVentanaEncajarEnVentana.Name = "menuitemVentanaEncajarEnVentana";
             this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(177, 22);
             this.menuitemVentanaEncajarEnVentana.Text = "Encajar en ventana";
@@ -306,9 +306,6 @@
             // 
             // statusstripMain
             // 
-            this.statusstripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelEstado,
-            this.labelUsuarioNombre});
             this.statusstripMain.Location = new System.Drawing.Point(0, 431);
             this.statusstripMain.Name = "statusstripMain";
             this.statusstripMain.Size = new System.Drawing.Size(768, 22);
@@ -329,8 +326,8 @@
             // groupbarMain
             // 
             this.groupbarMain.AllowDrop = true;
-            this.groupbarMain.BackColor = System.Drawing.SystemColors.Control;
-            this.groupbarMain.BeforeTouchSize = new System.Drawing.Size(153, 407);
+            this.groupbarMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.groupbarMain.BeforeTouchSize = new System.Drawing.Size(119, 407);
             this.groupbarMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(198)))));
             this.groupbarMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.groupbarMain.CollapseImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.CollapseImage")));
@@ -341,14 +338,12 @@
             this.groupbarMain.ExpandImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.ExpandImage")));
             this.groupbarMain.FlatLook = true;
             this.groupbarMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.groupbarMain.ForeColor = System.Drawing.Color.Black;
+            this.groupbarMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.groupbarMain.GroupBarDropDownToolTip = null;
             this.groupbarMain.GroupBarItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupBarItem[] {
             this.groupbaritemEntidades,
             this.groupbaritemTablas,
             this.groupbaritemReportes});
-            this.groupbarMain.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.groupbarMain.HeaderForeColor = System.Drawing.Color.Black;
             this.groupbarMain.IndexOnVisibleItems = true;
             this.groupbarMain.Location = new System.Drawing.Point(0, 24);
             this.groupbarMain.MinimizeButtonToolTip = null;
@@ -356,7 +351,7 @@
             this.groupbarMain.NavigationPaneTooltip = null;
             this.groupbarMain.PopupClientSize = new System.Drawing.Size(0, 0);
             this.groupbarMain.SelectedItem = 0;
-            this.groupbarMain.Size = new System.Drawing.Size(153, 407);
+            this.groupbarMain.Size = new System.Drawing.Size(119, 407);
             this.groupbarMain.SmartSizeBox = false;
             this.groupbarMain.Splittercolor = System.Drawing.Color.Red;
             this.groupbarMain.TabIndex = 6;
@@ -366,11 +361,57 @@
             this.groupbarMain.ThemeStyle.StackedViewStyle.CollapsedItemStyle.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.groupbarMain.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Office2016Colorful;
             // 
+            // groupviewEntidades
+            // 
+            this.groupviewEntidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.groupviewEntidades.BeforeTouchSize = new System.Drawing.Size(117, 339);
+            this.groupviewEntidades.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Entidades", 0, true, null, "Entidades")});
+            this.groupviewEntidades.LargeImageList = this.imagelistMain;
+            this.groupviewEntidades.Location = new System.Drawing.Point(1, 23);
+            this.groupviewEntidades.Name = "groupviewEntidades";
+            this.groupviewEntidades.Size = new System.Drawing.Size(117, 339);
+            this.groupviewEntidades.TabIndex = 1;
+            this.groupviewEntidades.Text = "groupviewEntidades";
+            this.groupviewEntidades.TextSpacing = 16;
+            this.groupviewEntidades.ThemeName = "Default";
+            this.groupviewEntidades.ThemesEnabled = true;
+            this.groupviewEntidades.ThemeStyle.BorderThickness = 1;
+            this.groupviewEntidades.ThemeStyle.ItemStyle.BorderThickness = 1;
+            this.groupviewEntidades.GroupViewItemSelected += new System.EventHandler(this.groupviewEntidades_GroupViewItemSelected);
+            // 
+            // imagelistMain
+            // 
+            this.imagelistMain.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imagelistMain.ImageSize = new System.Drawing.Size(48, 48);
+            this.imagelistMain.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // groupviewTablas
+            // 
+            this.groupviewTablas.BeforeTouchSize = new System.Drawing.Size(151, 361);
+            this.groupviewTablas.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Bancos", -1, true, null, "Bancos"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Sucursales bancos", -1, true, null, "Sucursales bancos"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de documento", -1, true, null, "Tipos de documento"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de domicilio", -1, true, null, "Tipos de domicilio"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de email", -1, true, null, "Tipos de email"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de cuenta bancaria", -1, true, null, "Tipos de cuenta bancaria"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de movimiento", -1, true, null, "Tipos de movimiento"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de teléfono", -1, true, null, "Tipos de teléfono"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Grupos de usuarios", -1, true, null, "Grupos de usuarios"),
+            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Usuarios", -1, true, null, "Usuarios")});
+            this.groupviewTablas.Location = new System.Drawing.Point(1, 45);
+            this.groupviewTablas.Name = "groupviewTablas";
+            this.groupviewTablas.Size = new System.Drawing.Size(151, 361);
+            this.groupviewTablas.TabIndex = 0;
+            this.groupviewTablas.Text = "groupView1";
+            this.groupviewTablas.TextWrap = true;
+            // 
             // groupbaritemEntidades
             // 
             this.groupbaritemEntidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.groupbaritemEntidades.Client = this.groupviewEntidades;
-            this.groupbaritemEntidades.Text = "Entidades";
+            this.groupbaritemEntidades.Text = "Principal";
             // 
             // groupbaritemTablas
             // 
@@ -383,39 +424,6 @@
             this.groupbaritemReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.groupbaritemReportes.Client = null;
             this.groupbaritemReportes.Text = "Reportes";
-            // 
-            // groupviewTablas
-            // 
-            this.groupviewTablas.BeforeTouchSize = new System.Drawing.Size(151, 0);
-            this.groupviewTablas.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Bancos", -1, true, null, "Bancos"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Sucursales bancos", -1, true, null, "Sucursales bancos"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de documento", -1, true, null, "Tipos de documento"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de domicilio", -1, true, null, "Tipos de domicilio"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de email", -1, true, null, "Tipos de email"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de cuenta bancaria", -1, true, null, "Tipos de cuenta bancaria"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de movimiento", -1, true, null, "Tipos de movimiento"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Tipos de teléfono", -1, true, null, "Tipos de teléfono"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Grupos de usuarios", -1, true, null, "Grupos de usuarios"),
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Usuarios", -1, true, null, "Usuarios")});
-            this.groupviewTablas.Location = new System.Drawing.Point(1, 384);
-            this.groupviewTablas.Name = "groupviewTablas";
-            this.groupviewTablas.Size = new System.Drawing.Size(151, 0);
-            this.groupviewTablas.TabIndex = 0;
-            this.groupviewTablas.Text = "groupView1";
-            this.groupviewTablas.TextWrap = true;
-            // 
-            // groupviewEntidades
-            // 
-            this.groupviewEntidades.BeforeTouchSize = new System.Drawing.Size(151, 339);
-            this.groupviewEntidades.GroupViewItems.AddRange(new Syncfusion.Windows.Forms.Tools.GroupViewItem[] {
-            new Syncfusion.Windows.Forms.Tools.GroupViewItem("Entidades", -1)});
-            this.groupviewEntidades.Location = new System.Drawing.Point(1, 23);
-            this.groupviewEntidades.Name = "groupviewEntidades";
-            this.groupviewEntidades.Size = new System.Drawing.Size(151, 339);
-            this.groupviewEntidades.TabIndex = 1;
-            this.groupviewEntidades.Text = "groupviewEntidades";
-            this.groupviewEntidades.GroupViewItemSelected += new System.EventHandler(this.groupviewEntidades_GroupViewItemSelected);
             // 
             // formMdi
             // 
@@ -435,8 +443,6 @@
             this.Resize += new System.EventHandler(this.Me_Resize);
             this.menustripMain.ResumeLayout(false);
             this.menustripMain.PerformLayout();
-            this.statusstripMain.ResumeLayout(false);
-            this.statusstripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).EndInit();
             this.groupbarMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -484,6 +490,7 @@
         private Syncfusion.Windows.Forms.Tools.GroupBarItem groupbaritemReportes;
         private Syncfusion.Windows.Forms.Tools.GroupView groupviewTablas;
         private Syncfusion.Windows.Forms.Tools.GroupView groupviewEntidades;
+        private System.Windows.Forms.ImageList imagelistMain;
     }
 }
 

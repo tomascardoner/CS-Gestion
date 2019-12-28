@@ -97,5 +97,14 @@ namespace CS_Gestion.Properties {
                 this["LastUserLoggedIn"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool LastUserLoggedInShow {
+            get {
+                return ((bool)(this["LastUserLoggedInShow"]));
+            }
+        }
     }
 }
