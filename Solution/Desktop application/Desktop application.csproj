@@ -92,8 +92,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\framework-csharp\Afip.cs">
+      <Link>Framework\Afip.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Constants.cs">
       <Link>Framework\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\ControlValueTranslation.cs">
+      <Link>Framework\ControlValueTranslation.cs</Link>
     </Compile>
     <Compile Include="..\..\..\framework-csharp\Database.ADO.SQLServer.cs">
       <Link>Framework\Database.ADO.SQLServer.cs</Link>
@@ -123,9 +129,6 @@
     </Compile>
     <Compile Include="..\..\..\framework-csharp\My.cs">
       <Link>Framework\My.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\framework-csharp\ValueTranslation.cs">
-      <Link>Framework\ValueTranslation.cs</Link>
     </Compile>
     <Compile Include="Banco.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>

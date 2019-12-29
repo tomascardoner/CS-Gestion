@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CS_Gestion
@@ -95,8 +96,8 @@ namespace CS_Gestion
         }
 
         private void SetAppearance()
-        { 
-
+        {
+            this.Icon = CardonerSistemas.Graphics.GetIconFromBitmap(Properties.Resources.ImageEntidad16);
         }
 
         private void this_FormClosed(object sender, FormClosedEventArgs e)
@@ -116,16 +117,25 @@ namespace CS_Gestion
             // General
             radiobuttonTipoPersonaFisica.Checked = entidad.EsPersonaFisica;
             radiobuttonTipoPersonaJuridica.Checked = !entidad.EsPersonaFisica;
-            textboxRazonSocial.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.RazonSocial);
-            textboxNombreFantasia.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.NombreFantasia);
-            textboxApellido.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.Apellido);
-            textboxNombre.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.Nombre);
-            maskedtextboxCuit.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.Cuit);
-            textboxIngresosBrutos.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.IngresosBrutos);
+            if (entidad.EsPersonaFisica)
+            {
+                textboxRazonSocial.Clear();
+                textboxApellido.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Apellido);
+                textboxNombre.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Nombre);
+            }
+            else
+            {
+                textboxRazonSocial.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.RazonSocial);
+                textboxApellido.Clear();
+                textboxNombre.Clear();
+            }
+            textboxNombreFantasia.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.NombreFantasia);
+            maskedtextboxCuit.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Cuit);
+            textboxIngresosBrutos.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.IngresosBrutos);
 
             // Notas y Auditoría
-            textboxNotas.Text = CardonerSistemas.ValueTranslation.ObjectStringToTextBox(entidad.Notas);
-            checkboxEsActivo.CheckState = CardonerSistemas.ValueTranslation.ObjectBooleanToCheckBox(entidad.EsActivo);
+            textboxNotas.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Notas);
+            checkboxEsActivo.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.EsActivo);
             textboxId.Text = entidad.IdEntidadFormatted;
             textboxFechaHoraCreacion.Text = entidad.FechaHoraCreacionFormatted;
             textboxUsuarioCreacion.Text = entidad.UsuarioCreacionFormatted;
@@ -137,8 +147,25 @@ namespace CS_Gestion
         {
             // General
             entidad.EsPersonaFisica = (radiobuttonTipoPersonaFisica.Checked);
-            //entidad.RazonSocial = textboxRazonSocial.Text;
+            if (radiobuttonTipoPersonaFisica.Checked)
+            {
+                entidad.RazonSocial = null;
+                entidad.Apellido = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxApellido.Text);
+                entidad.Nombre = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNombre.Text);
+            }
+            else
+            {
+                entidad.RazonSocial = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxRazonSocial.Text);
+                entidad.Apellido = null;
+                entidad.Nombre = null;
+            }
+            entidad.NombreFantasia = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNombreFantasia.Text);
+            entidad.Cuit = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCuit.Text);
+            entidad.IngresosBrutos = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxIngresosBrutos.Text);
 
+            // Notas y Auditoría
+            entidad.Notas = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNotas.Text);
+            entidad.EsActivo = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxEsActivo.CheckState).Value;
         }
 
         #endregion
@@ -204,6 +231,110 @@ namespace CS_Gestion
 
         private void Guardar_Click(object sender, EventArgs e)
         {
+            if (!radiobuttonTipoPersonaFisica.Checked & !radiobuttonTipoPersonaJuridica.Checked)
+            {
+                MessageBox.Show("Debe seleccionar el Tipo de Persona.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (radiobuttonTipoPersonaFisica.Checked)
+            {
+                if (textboxApellido.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Debe ingresar el Apellido.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textboxApellido.Focus();
+                    return;
+                }
+            }
+            else
+            {
+                if (textboxRazonSocial.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Debe ingresar la Razón Social.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textboxRazonSocial.Focus();
+                    return;
+                }
+            }
+
+            if (maskedtextboxCuit.Text.Length > 0)
+            {
+                if (maskedtextboxCuit.Text.Length < 11)
+                {
+                    MessageBox.Show("El CUIT está incompleto. Debe tener 11 dígitos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    maskedtextboxCuit.Focus();
+                    return;
+                }
+                if (!CardonerSistemas.Afip.VerificarCuit(maskedtextboxCuit.Text))
+                {
+                    MessageBox.Show("El CUIT es incorrecto. Verifíquelo.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    maskedtextboxCuit.Focus();
+                    return;
+                }
+            }
+
+            // Calculo el nuevo Id
+            if (isNew)
+            {
+                using (CSGestionContext context = new CSGestionContext(true))
+                {
+                    if (context.Entidad.Any())
+                    {
+                        entidad.IdEntidad = (from ent in context.Entidad select ent.IdEntidad).Max() + 1;
+                    }
+                    else
+                    {
+                        entidad.IdEntidad = 1;
+                    }
+                }
+            }
+
+            // Paso los datos desde los controles al Objecto de EF
+            SetDataFromControlsToObject();
+
+            if (context.ChangeTracker.HasChanges())
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                entidad.IdUsuarioModificacion = Program.Usuario.IdUsuario;
+                entidad.FechaHoraModificacion = DateTime.Now;
+
+                try
+                {
+                    context.SaveChanges();
+
+                    if (CardonerSistemas.Forms.MdiChildIsLoaded(Program.FormMdi, "FormEntidades"))
+                    {
+                        FormEntidades entidades = (FormEntidades)CardonerSistemas.Forms.MdiChildGetInstance(Program.FormMdi, "FormEntidades");
+                        entidades.RefreshData(entidad.IdEntidad);
+                        entidades = null;
+                    }
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException dbuex)
+                {
+                    this.Cursor = Cursors.Default;
+
+                    switch (CardonerSistemas.Database.EntityFramework.TryDecodeDbUpdateException(dbuex))
+                    {
+                        case CardonerSistemas.Database.EntityFramework.Errors.DuplicatedEntity:
+                            MessageBox.Show("No se puede agregar la Entidad porque ya existe una Entidad con el mismo nombre.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case CardonerSistemas.Database.EntityFramework.Errors.Unknown:
+                            CardonerSistemas.Error.ProcessError((Exception)dbuex, Properties.Resources.STRING_ERROR_SAVING_CHANGES);
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    this.Cursor = Cursors.Default;
+                    CardonerSistemas.Error.ProcessError(ex, Properties.Resources.STRING_ERROR_SAVING_CHANGES);
+                    return;
+                }
+
+            }
+
             this.Close();
         }
 
