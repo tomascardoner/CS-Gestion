@@ -305,7 +305,8 @@ namespace CS_Gestion
                 this.Cursor = Cursors.WaitCursor;
 
                 datagridviewMain.Enabled = false;
-                // formPersona
+                FormEntidad entidad = new FormEntidad();
+                entidad.LoadAndShow(true, this, 0);
                 datagridviewMain.Enabled = true;
 
                 this.Cursor = Cursors.Default;
@@ -325,7 +326,8 @@ namespace CS_Gestion
                     this.Cursor = Cursors.WaitCursor;
 
                     datagridviewMain.Enabled = false;
-                    // formPersona
+                    FormEntidad entidad = new FormEntidad();
+                    entidad.LoadAndShow(true, this, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).IdEntidad);
                     datagridviewMain.Enabled = true;
 
                     this.Cursor = Cursors.Default;
@@ -396,7 +398,8 @@ namespace CS_Gestion
                     this.Cursor = Cursors.WaitCursor;
 
                     datagridviewMain.Enabled = false;
-                    // formPersona
+                    FormEntidad entidad = new FormEntidad();
+                    entidad.LoadAndShow(false, this, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).IdEntidad);
                     datagridviewMain.Enabled = true;
 
                     this.Cursor = Cursors.Default;

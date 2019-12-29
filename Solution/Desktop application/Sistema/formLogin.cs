@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace CS_Gestion
 {
-    public partial class formLogin : Form
+    public partial class FormLogin : Form
     {
         private int intentos = 0;
         private CSGestionContext context;
 
-        public formLogin()
+        public FormLogin()
         {
             InitializeComponent();
 

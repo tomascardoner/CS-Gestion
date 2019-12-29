@@ -646,5 +646,14 @@ namespace CS_Gestion.Properties {
                 return ResourceManager.GetString("STRING_YES", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Nueva».
+        /// </summary>
+        internal static string StringItemNewFemale {
+            get {
+                return ResourceManager.GetString("StringItemNewFemale", resourceCulture);
+            }
+        }
     }
 }

@@ -2,9 +2,9 @@
 
 namespace CS_Gestion
 {
-    public partial class formSplash : Form
+    public partial class FormSplash : Form
     {
-        public formSplash()
+        public FormSplash()
         {
             InitializeComponent();
 

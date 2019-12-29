@@ -10,7 +10,7 @@ namespace CS_Gestion
         static internal EventLog EventLog = new EventLog(Constantes.EventLogName);
 
         static internal CardonerSistemas.Database.ADO.SQLServer Database;
-        static internal formMdi FormMdi;
+        static internal FormMdi FormMdi;
         static internal List<UsuarioGrupoPermiso> Permisos;
         static internal List<Parametro> Parametros;
         static internal Appearance Appearance;
@@ -38,7 +38,7 @@ namespace CS_Gestion
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Muestro el SplashScreen y cambio el puntero del mouse para indicar que la aplicación está iniciando.
-            formSplash splash = new formSplash();
+            FormSplash splash = new FormSplash();
             splash.Show();
             splash.Cursor = Cursors.AppStarting;
             splash.labelStatus.Text = "Obteniendo los parámetros de conexión a la Base de datos...";
@@ -119,7 +119,7 @@ namespace CS_Gestion
             startupDateTime = DateTime.Now;
 
             // Muestro el form MDI principal
-            FormMdi = new formMdi();
+            FormMdi = new FormMdi();
             FormMdi.Show();
 
             splash.labelStatus.Text = "Todo completado.";
@@ -152,7 +152,7 @@ namespace CS_Gestion
             }
             else
             {
-                formLogin login = new formLogin();
+                FormLogin login = new FormLogin();
                 if (login.ShowDialog(FormMdi) != DialogResult.OK)
                 {
                     EventLog.WriteEntry("La Aplicación finalizará porque no se ha iniciado sesión.", EventLogEntryType.FailureAudit, Constantes.EventUserLoginFailure);

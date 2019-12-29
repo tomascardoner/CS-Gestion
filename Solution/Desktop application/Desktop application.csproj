@@ -59,6 +59,9 @@
     <ApplicationIcon>Resources\Application\IconApplication.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSTabControl">
+      <HintPath>..\..\..\components\cstab\bin\Debug\CSTabControl.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -121,6 +124,9 @@
     <Compile Include="..\..\..\framework-csharp\My.cs">
       <Link>Framework\My.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\ValueTranslation.cs">
+      <Link>Framework\ValueTranslation.cs</Link>
+    </Compile>
     <Compile Include="Banco.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -140,6 +146,7 @@
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadExtension.cs" />
     <Compile Include="DatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,7 +199,14 @@
     <Compile Include="Entidades\FormEntidades.Designer.cs">
       <DependentUpon>FormEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\FormEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidad.Designer.cs">
+      <DependentUpon>FormEntidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Framework\Graphics.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Listas\ListasComunes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,11 +215,11 @@
     </Compile>
     <Compile Include="Sistema\Permisos.cs" />
     <Compile Include="Sistema\Appearance.cs" />
-    <Compile Include="Sistema\formLogin.cs">
+    <Compile Include="Sistema\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\formLogin.Designer.cs">
-      <DependentUpon>formLogin.cs</DependentUpon>
+    <Compile Include="Sistema\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Localidad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -229,19 +243,19 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Constantes.cs" />
-    <Compile Include="Sistema\formMdi.cs">
+    <Compile Include="Sistema\FormMdi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\formMdi.Designer.cs">
-      <DependentUpon>formMdi.cs</DependentUpon>
+    <Compile Include="Sistema\FormMdi.Designer.cs">
+      <DependentUpon>FormMdi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Sistema\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sistema\formSplash.cs">
+    <Compile Include="Sistema\FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\formSplash.Designer.cs">
-      <DependentUpon>formSplash.cs</DependentUpon>
+    <Compile Include="Sistema\FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="TelefonoTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -263,19 +277,22 @@
     <EmbeddedResource Include="Entidades\FormEntidades.resx">
       <DependentUpon>FormEntidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\formLogin.resx">
-      <DependentUpon>formLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Entidades\FormEntidad.resx">
+      <DependentUpon>FormEntidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\formMdi.resx">
-      <DependentUpon>formMdi.cs</DependentUpon>
+    <EmbeddedResource Include="Sistema\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\FormMdi.resx">
+      <DependentUpon>FormMdi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\formSplash.resx">
-      <DependentUpon>formSplash.cs</DependentUpon>
+    <EmbeddedResource Include="Sistema\FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

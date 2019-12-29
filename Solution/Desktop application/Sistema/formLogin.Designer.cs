@@ -1,6 +1,6 @@
 ﻿namespace CS_Gestion
 {
-    partial class formLogin
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCancelar = new System.Windows.Forms.ToolStripButton();
             this.buttonAceptar = new System.Windows.Forms.ToolStripButton();

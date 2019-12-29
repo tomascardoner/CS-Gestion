@@ -164,6 +164,7 @@
             <PropertyRef Name="IdEntidad" />
           </Key>
           <Property Name="IdEntidad" Type="int" Nullable="false" />
+          <Property Name="EsPersonaFisica" Type="bit" Nullable="false" />
           <Property Name="RazonSocial" Type="varchar" MaxLength="150" />
           <Property Name="NombreFantasia" Type="varchar" MaxLength="150" />
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
@@ -1182,20 +1183,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Movimiento_Movimiento">
-          <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="1" />
-          <End Role="Movimiento1" Type="Self.Movimiento" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Movimiento">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMovimiento" />
-            </Principal>
-            <Dependent Role="Movimiento1">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdMovimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CSGestionModelStoreContainer">
           <EntitySet Name="Banco" EntityType="Self.Banco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BancoSucursal" EntityType="Self.BancoSucursal" Schema="dbo" store:Type="Tables" />
@@ -1480,10 +1467,6 @@
             <End Role="UsuarioGrupo" EntitySet="UsuarioGrupo" />
             <End Role="UsuarioGrupoPermiso" EntitySet="UsuarioGrupoPermiso" />
           </AssociationSet>
-          <AssociationSet Name="FK_Movimiento_Movimiento" Association="Self.FK_Movimiento_Movimiento">
-            <End Role="Movimiento" EntitySet="Movimiento" />
-            <End Role="Movimiento1" EntitySet="Movimiento" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -1677,6 +1660,7 @@
             <PropertyRef Name="IdEntidad" />
           </Key>
           <Property Name="IdEntidad" Type="Int32" Nullable="false" />
+          <Property Name="EsPersonaFisica" Type="Boolean" Nullable="false" />
           <Property Name="RazonSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="NombreFantasia" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -3248,6 +3232,7 @@
           <EntitySetMapping Name="Entidad">
             <EntityTypeMapping TypeName="CSGestionModel.Entidad">
               <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="EsPersonaFisica" ColumnName="EsPersonaFisica" />
                 <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="NombreParaMostrar" ColumnName="NombreParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />

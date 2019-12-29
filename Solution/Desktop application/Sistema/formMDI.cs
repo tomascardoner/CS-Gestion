@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace CS_Gestion
 {
-    public partial class formMdi : Form
+    public partial class FormMdi : Form
     {
 
         #region Declarations
@@ -15,7 +15,7 @@ namespace CS_Gestion
 
         #region Form stuff
 
-        public formMdi()
+        public FormMdi()
         {
             InitializeComponent();
             SetAppearance();

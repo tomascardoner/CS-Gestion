@@ -1,6 +1,6 @@
 ﻿namespace CS_Gestion
 {
-    partial class formSplash
+    partial class FormSplash
     {
         /// <summary>
         /// Required designer variable.

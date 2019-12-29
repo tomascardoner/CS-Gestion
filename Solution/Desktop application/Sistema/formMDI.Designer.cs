@@ -1,6 +1,6 @@
 ﻿namespace CS_Gestion
 {
-    partial class formMdi
+    partial class FormMdi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMdi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMdi));
             this.menustripMain = new System.Windows.Forms.MenuStrip();
             this.menuitemArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemArchivoOpciones = new System.Windows.Forms.ToolStripMenuItem();

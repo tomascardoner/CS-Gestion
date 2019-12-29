@@ -25,6 +25,7 @@ namespace CS_Gestion
         }
     
         public int IdEntidad { get; set; }
+        public bool EsPersonaFisica { get; set; }
         public string RazonSocial { get; set; }
         public string NombreFantasia { get; set; }
         public string Apellido { get; set; }
