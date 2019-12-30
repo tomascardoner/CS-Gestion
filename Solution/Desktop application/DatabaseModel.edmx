@@ -214,6 +214,7 @@
           <Property Name="Departamento" Type="varchar" MaxLength="10" />
           <Property Name="Calle2" Type="varchar" MaxLength="50" />
           <Property Name="Calle3" Type="varchar" MaxLength="50" />
+          <Property Name="DomicilioParaMostrar" Type="varchar" MaxLength="250" StoreGeneratedPattern="Computed" />
           <Property Name="CodigoPostal" Type="varchar" MaxLength="8" />
           <Property Name="IdProvincia" Type="tinyint" />
           <Property Name="IdLocalidad" Type="smallint" />
@@ -1553,8 +1554,8 @@
           <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="ChequeTalonarioTipo" Relationship="Self.FK__ChequeTalonarioTipo__ChequeTalonario" FromRole="ChequeTalonario" ToRole="ChequeTalonarioTipo" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ChequeTalonario__Creacion" FromRole="ChequeTalonario" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__ChequeTalonario__Modificacion" FromRole="ChequeTalonario" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__ChequeTalonario__Creacion" FromRole="ChequeTalonario" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__ChequeTalonario__Modificacion" FromRole="ChequeTalonario" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="ChequeTalonarioTipo">
           <Key>
@@ -1720,6 +1721,7 @@
           <Property Name="Departamento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Calle2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Calle3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DomicilioParaMostrar" Type="String" MaxLength="250" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="CodigoPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="IdProvincia" Type="Byte" />
           <Property Name="IdLocalidad" Type="Int16" />
@@ -1854,10 +1856,10 @@
             <PropertyRef Name="IdMovimientoAplicado" />
             <PropertyRef Name="IdEmpresa" />
           </Key>
+          <Property Name="IdEmpresa" Type="Byte" Nullable="false" />
           <Property Name="IdMovimiento" Type="Int32" Nullable="false" />
           <Property Name="IdMovimientoAplicado" Type="Int32" Nullable="false" />
           <Property Name="ImporteAplicado" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="IdEmpresa" Type="Byte" Nullable="false" />
           <NavigationProperty Name="MovimientoAplicado" Relationship="CSGestionModel.FK__Movimiento__MovimientoAplicacion__Aplicado" FromRole="MovimientoAplicacion" ToRole="Movimiento" />
           <NavigationProperty Name="MovimientoAplicante" Relationship="CSGestionModel.FK__Movimiento__MovimientoAplicacion_Aplicante" FromRole="MovimientoAplicacion" ToRole="Movimiento" />
         </EntityType>
@@ -1922,8 +1924,8 @@
           <NavigationProperty Name="BancoSucursalesModificadas" Relationship="Self.FK__Usuario__BancoSucursal__Modificacion" FromRole="Usuario" ToRole="BancoSucursal" />
           <NavigationProperty Name="Cheque" Relationship="Self.FK__Usuario__Cheque__Creacion" FromRole="Usuario" ToRole="Cheque" />
           <NavigationProperty Name="Cheque1" Relationship="Self.FK__Usuario__Cheque__Modificacion" FromRole="Usuario" ToRole="Cheque" />
-          <NavigationProperty Name="ChequeTalonario" Relationship="Self.FK__Usuario__ChequeTalonario__Creacion" FromRole="Usuario" ToRole="ChequeTalonario" />
-          <NavigationProperty Name="ChequeTalonario1" Relationship="Self.FK__Usuario__ChequeTalonario__Modificacion" FromRole="Usuario" ToRole="ChequeTalonario" />
+          <NavigationProperty Name="ChequeTalonariosCreados" Relationship="Self.FK__Usuario__ChequeTalonario__Creacion" FromRole="Usuario" ToRole="ChequeTalonario" />
+          <NavigationProperty Name="ChequeTalonariosModificados" Relationship="Self.FK__Usuario__ChequeTalonario__Modificacion" FromRole="Usuario" ToRole="ChequeTalonario" />
           <NavigationProperty Name="ChequeTalonarioTipoCreados" Relationship="Self.FK__Usuario__ChequeTalonarioTipo__Creacion" FromRole="Usuario" ToRole="ChequeTalonarioTipo" />
           <NavigationProperty Name="ChequeTalonarioTiposModificados" Relationship="Self.FK__Usuario__ChequeTalonarioTipo__Modificacion" FromRole="Usuario" ToRole="ChequeTalonarioTipo" />
           <NavigationProperty Name="CuentaBancariaTiposCreados" Relationship="Self.FK__Usuario__CuentaBancariaTipo__Creacion" FromRole="Usuario" ToRole="CuentaBancariaTipo" />
@@ -1961,9 +1963,9 @@
           <NavigationProperty Name="Usuario3" Relationship="Self.FK__Usuario__Usuario__Creacion" FromRole="Usuario1" ToRole="Usuario" />
           <NavigationProperty Name="Usuario12" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario" ToRole="Usuario1" />
           <NavigationProperty Name="Usuario4" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario1" ToRole="Usuario" />
-          <NavigationProperty Name="UsuarioGrupo" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
-          <NavigationProperty Name="UsuarioGrupo1" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
-          <NavigationProperty Name="UsuarioGrupo2" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="Usuario" ToRole="UsuarioGrupo" />
+          <NavigationProperty Name="UsuarioGruposCreados" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
+          <NavigationProperty Name="UsuarioGruposModificados" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
+          <NavigationProperty Name="UsuarioGrupo" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="Usuario" ToRole="UsuarioGrupo" />
         </EntityType>
         <EntityType Name="UsuarioGrupo">
           <Key>
@@ -1977,9 +1979,9 @@
           <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="UsuarioGrupo" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="UsuarioGrupo" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario2" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="UsuarioGrupo" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="UsuarioGrupo" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="UsuarioGrupo" ToRole="Usuario" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="UsuarioGrupo" ToRole="Usuario" />
           <NavigationProperty Name="UsuarioGrupoPermiso" Relationship="Self.FK__UsuarioGrupo__UsuarioGrupoPermiso" FromRole="UsuarioGrupo" ToRole="UsuarioGrupoPermiso" />
         </EntityType>
         <EntityType Name="UsuarioGrupoPermiso">
@@ -3273,6 +3275,7 @@
           <EntitySetMapping Name="EntidadDomicilio">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadDomicilio">
               <MappingFragment StoreEntitySet="EntidadDomicilio">
+                <ScalarProperty Name="DomicilioParaMostrar" ColumnName="DomicilioParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="IdDomicilio" ColumnName="IdDomicilio" />
                 <ScalarProperty Name="IdDomicilioTipo" ColumnName="IdDomicilioTipo" />

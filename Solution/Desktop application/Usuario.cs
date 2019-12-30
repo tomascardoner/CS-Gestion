@@ -23,8 +23,8 @@ namespace CS_Gestion
             this.BancoSucursalesModificadas = new HashSet<BancoSucursal>();
             this.Cheque = new HashSet<Cheque>();
             this.Cheque1 = new HashSet<Cheque>();
-            this.ChequeTalonario = new HashSet<ChequeTalonario>();
-            this.ChequeTalonario1 = new HashSet<ChequeTalonario>();
+            this.ChequeTalonariosCreados = new HashSet<ChequeTalonario>();
+            this.ChequeTalonariosModificados = new HashSet<ChequeTalonario>();
             this.ChequeTalonarioTipoCreados = new HashSet<ChequeTalonarioTipo>();
             this.ChequeTalonarioTiposModificados = new HashSet<ChequeTalonarioTipo>();
             this.CuentaBancariaTiposCreados = new HashSet<CuentaBancariaTipo>();
@@ -58,8 +58,8 @@ namespace CS_Gestion
             this.TelefonoTiposModificados = new HashSet<TelefonoTipo>();
             this.Usuario11 = new HashSet<Usuario>();
             this.Usuario12 = new HashSet<Usuario>();
-            this.UsuarioGrupo = new HashSet<UsuarioGrupo>();
-            this.UsuarioGrupo1 = new HashSet<UsuarioGrupo>();
+            this.UsuarioGruposCreados = new HashSet<UsuarioGrupo>();
+            this.UsuarioGruposModificados = new HashSet<UsuarioGrupo>();
         }
     
         public short IdUsuario { get; set; }
@@ -88,9 +88,9 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cheque> Cheque1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChequeTalonario> ChequeTalonario { get; set; }
+        public virtual ICollection<ChequeTalonario> ChequeTalonariosCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChequeTalonario> ChequeTalonario1 { get; set; }
+        public virtual ICollection<ChequeTalonario> ChequeTalonariosModificados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChequeTalonarioTipo> ChequeTalonarioTipoCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -162,9 +162,9 @@ namespace CS_Gestion
         public virtual ICollection<Usuario> Usuario12 { get; set; }
         public virtual Usuario Usuario4 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsuarioGrupo> UsuarioGrupo { get; set; }
+        public virtual ICollection<UsuarioGrupo> UsuarioGruposCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsuarioGrupo> UsuarioGrupo1 { get; set; }
-        public virtual UsuarioGrupo UsuarioGrupo2 { get; set; }
+        public virtual ICollection<UsuarioGrupo> UsuarioGruposModificados { get; set; }
+        public virtual UsuarioGrupo UsuarioGrupo { get; set; }
     }
 }

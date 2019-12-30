@@ -32,6 +32,7 @@
             System.Windows.Forms.Label labelEsActivo;
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -54,7 +55,7 @@
             this.labelIngresosBrutos = new System.Windows.Forms.Label();
             this.tabcontrolMain = new CardonerSistemas.TabControl();
             this.tabpageGeneral = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabpageNotasAuditoria = new System.Windows.Forms.TabPage();
             this.checkboxEsActivo = new System.Windows.Forms.CheckBox();
             this.labelId = new System.Windows.Forms.Label();
             this.textboxUsuarioModificacion = new System.Windows.Forms.TextBox();
@@ -63,6 +64,15 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.tabpageDomicilios = new System.Windows.Forms.TabPage();
+            this.datagridviewDomicilios = new System.Windows.Forms.DataGridView();
+            this.toolstripDomicilios = new System.Windows.Forms.ToolStrip();
+            this.buttonDomiciliosAgregar = new System.Windows.Forms.ToolStripButton();
+            this.buttonDomiciliosEditar = new System.Windows.Forms.ToolStripButton();
+            this.buttonDomiciliosBorrar = new System.Windows.Forms.ToolStripButton();
+            this.columnDomiciliosTipoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDomiciliosDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDomiciliosLocalidadNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             labelNotas = new System.Windows.Forms.Label();
             labelEsActivo = new System.Windows.Forms.Label();
             labelModificacion = new System.Windows.Forms.Label();
@@ -70,7 +80,10 @@
             this.toolstripMain.SuspendLayout();
             this.tabcontrolMain.SuspendLayout();
             this.tabpageGeneral.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabpageNotasAuditoria.SuspendLayout();
+            this.tabpageDomicilios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewDomicilios)).BeginInit();
+            this.toolstripDomicilios.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNotas
@@ -320,13 +333,15 @@
             // 
             this.tabcontrolMain.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabcontrolMain.Controls.Add(this.tabpageGeneral);
-            this.tabcontrolMain.Controls.Add(this.tabPage2);
+            this.tabcontrolMain.Controls.Add(this.tabpageDomicilios);
+            this.tabcontrolMain.Controls.Add(this.tabpageNotasAuditoria);
             this.tabcontrolMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrolMain.Location = new System.Drawing.Point(0, 39);
             this.tabcontrolMain.Name = "tabcontrolMain";
             this.tabcontrolMain.SelectedIndex = 0;
             this.tabcontrolMain.Size = new System.Drawing.Size(522, 219);
             this.tabcontrolMain.TabIndex = 0;
+            this.tabcontrolMain.SelectedIndexChanged += new System.EventHandler(this.TabControlChanged);
             // 
             // tabpageGeneral
             // 
@@ -353,27 +368,27 @@
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabpageNotasAuditoria
             // 
-            this.tabPage2.Controls.Add(this.checkboxEsActivo);
-            this.tabPage2.Controls.Add(labelEsActivo);
-            this.tabPage2.Controls.Add(this.labelId);
-            this.tabPage2.Controls.Add(this.textboxUsuarioModificacion);
-            this.tabPage2.Controls.Add(this.textboxId);
-            this.tabPage2.Controls.Add(this.textboxUsuarioCreacion);
-            this.tabPage2.Controls.Add(this.textboxFechaHoraModificacion);
-            this.tabPage2.Controls.Add(this.textboxFechaHoraCreacion);
-            this.tabPage2.Controls.Add(labelModificacion);
-            this.tabPage2.Controls.Add(labelCreacion);
-            this.tabPage2.Controls.Add(labelNotas);
-            this.tabPage2.Controls.Add(this.textboxNotas);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(514, 190);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Notas y Auditoría";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabpageNotasAuditoria.Controls.Add(this.checkboxEsActivo);
+            this.tabpageNotasAuditoria.Controls.Add(labelEsActivo);
+            this.tabpageNotasAuditoria.Controls.Add(this.labelId);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxUsuarioModificacion);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxId);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxUsuarioCreacion);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxFechaHoraModificacion);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxFechaHoraCreacion);
+            this.tabpageNotasAuditoria.Controls.Add(labelModificacion);
+            this.tabpageNotasAuditoria.Controls.Add(labelCreacion);
+            this.tabpageNotasAuditoria.Controls.Add(labelNotas);
+            this.tabpageNotasAuditoria.Controls.Add(this.textboxNotas);
+            this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
+            this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
+            this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(514, 190);
+            this.tabpageNotasAuditoria.TabIndex = 1;
+            this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
+            this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
             // 
             // checkboxEsActivo
             // 
@@ -461,6 +476,121 @@
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
+            // tabpageDomicilios
+            // 
+            this.tabpageDomicilios.Controls.Add(this.datagridviewDomicilios);
+            this.tabpageDomicilios.Controls.Add(this.toolstripDomicilios);
+            this.tabpageDomicilios.Location = new System.Drawing.Point(4, 25);
+            this.tabpageDomicilios.Name = "tabpageDomicilios";
+            this.tabpageDomicilios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpageDomicilios.Size = new System.Drawing.Size(514, 190);
+            this.tabpageDomicilios.TabIndex = 2;
+            this.tabpageDomicilios.Text = "Domicilios";
+            this.tabpageDomicilios.UseVisualStyleBackColor = true;
+            // 
+            // datagridviewDomicilios
+            // 
+            this.datagridviewDomicilios.AllowUserToAddRows = false;
+            this.datagridviewDomicilios.AllowUserToDeleteRows = false;
+            this.datagridviewDomicilios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.datagridviewDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewDomicilios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnDomiciliosTipoNombre,
+            this.columnDomiciliosDomicilio,
+            this.columnDomiciliosLocalidadNombre});
+            this.datagridviewDomicilios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridviewDomicilios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.datagridviewDomicilios.Location = new System.Drawing.Point(89, 3);
+            this.datagridviewDomicilios.MultiSelect = false;
+            this.datagridviewDomicilios.Name = "datagridviewDomicilios";
+            this.datagridviewDomicilios.ReadOnly = true;
+            this.datagridviewDomicilios.RowHeadersVisible = false;
+            this.datagridviewDomicilios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridviewDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewDomicilios.Size = new System.Drawing.Size(422, 184);
+            this.datagridviewDomicilios.TabIndex = 8;
+            this.datagridviewDomicilios.DoubleClick += new System.EventHandler(this.DomiciliosVer_Click);
+            // 
+            // toolstripDomicilios
+            // 
+            this.toolstripDomicilios.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolstripDomicilios.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripDomicilios.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolstripDomicilios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonDomiciliosAgregar,
+            this.buttonDomiciliosEditar,
+            this.buttonDomiciliosBorrar});
+            this.toolstripDomicilios.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolstripDomicilios.Location = new System.Drawing.Point(3, 3);
+            this.toolstripDomicilios.Name = "toolstripDomicilios";
+            this.toolstripDomicilios.Size = new System.Drawing.Size(86, 184);
+            this.toolstripDomicilios.TabIndex = 9;
+            // 
+            // buttonDomiciliosAgregar
+            // 
+            this.buttonDomiciliosAgregar.Image = global::CS_Gestion.Properties.Resources.ImageItemAdd32;
+            this.buttonDomiciliosAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDomiciliosAgregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonDomiciliosAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonDomiciliosAgregar.Name = "buttonDomiciliosAgregar";
+            this.buttonDomiciliosAgregar.Size = new System.Drawing.Size(83, 36);
+            this.buttonDomiciliosAgregar.Text = "Agregar";
+            this.buttonDomiciliosAgregar.Click += new System.EventHandler(this.DomiciliosAgregar_Click);
+            // 
+            // buttonDomiciliosEditar
+            // 
+            this.buttonDomiciliosEditar.Image = global::CS_Gestion.Properties.Resources.ImageItemEdit32;
+            this.buttonDomiciliosEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDomiciliosEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonDomiciliosEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonDomiciliosEditar.Name = "buttonDomiciliosEditar";
+            this.buttonDomiciliosEditar.Size = new System.Drawing.Size(83, 36);
+            this.buttonDomiciliosEditar.Text = "Editar";
+            this.buttonDomiciliosEditar.Click += new System.EventHandler(this.DomiciliosEditar_Click);
+            // 
+            // buttonDomiciliosBorrar
+            // 
+            this.buttonDomiciliosBorrar.Image = global::CS_Gestion.Properties.Resources.ImageItemDelete32;
+            this.buttonDomiciliosBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDomiciliosBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonDomiciliosBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonDomiciliosBorrar.Name = "buttonDomiciliosBorrar";
+            this.buttonDomiciliosBorrar.Size = new System.Drawing.Size(83, 36);
+            this.buttonDomiciliosBorrar.Text = "Borrar";
+            this.buttonDomiciliosBorrar.Click += new System.EventHandler(this.DomiciliosBorrar_Click);
+            // 
+            // columnDomiciliosTipoNombre
+            // 
+            this.columnDomiciliosTipoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnDomiciliosTipoNombre.DataPropertyName = "DomicilioTipoNombre";
+            this.columnDomiciliosTipoNombre.HeaderText = "Tipo";
+            this.columnDomiciliosTipoNombre.Name = "columnDomiciliosTipoNombre";
+            this.columnDomiciliosTipoNombre.ReadOnly = true;
+            this.columnDomiciliosTipoNombre.Width = 53;
+            // 
+            // columnDomiciliosDomicilio
+            // 
+            this.columnDomiciliosDomicilio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnDomiciliosDomicilio.DataPropertyName = "DomicilioParaMostrar";
+            this.columnDomiciliosDomicilio.HeaderText = "Domicilio";
+            this.columnDomiciliosDomicilio.Name = "columnDomiciliosDomicilio";
+            this.columnDomiciliosDomicilio.ReadOnly = true;
+            this.columnDomiciliosDomicilio.Width = 74;
+            // 
+            // columnDomiciliosLocalidadNombre
+            // 
+            this.columnDomiciliosLocalidadNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnDomiciliosLocalidadNombre.DataPropertyName = "LocalidadNombre";
+            this.columnDomiciliosLocalidadNombre.HeaderText = "Localidad";
+            this.columnDomiciliosLocalidadNombre.Name = "columnDomiciliosLocalidadNombre";
+            this.columnDomiciliosLocalidadNombre.ReadOnly = true;
+            this.columnDomiciliosLocalidadNombre.Width = 78;
+            // 
             // FormEntidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,8 +608,13 @@
             this.tabcontrolMain.ResumeLayout(false);
             this.tabpageGeneral.ResumeLayout(false);
             this.tabpageGeneral.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabpageNotasAuditoria.ResumeLayout(false);
+            this.tabpageNotasAuditoria.PerformLayout();
+            this.tabpageDomicilios.ResumeLayout(false);
+            this.tabpageDomicilios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewDomicilios)).EndInit();
+            this.toolstripDomicilios.ResumeLayout(false);
+            this.toolstripDomicilios.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,7 +644,7 @@
         private System.Windows.Forms.Label labelIngresosBrutos;
         private CardonerSistemas.TabControl tabcontrolMain;
         private System.Windows.Forms.TabPage tabpageGeneral;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabpageNotasAuditoria;
         internal System.Windows.Forms.TextBox textboxNotas;
         internal System.Windows.Forms.CheckBox checkboxEsActivo;
         internal System.Windows.Forms.Label labelId;
@@ -518,5 +653,14 @@
         internal System.Windows.Forms.TextBox textboxUsuarioCreacion;
         internal System.Windows.Forms.TextBox textboxFechaHoraModificacion;
         internal System.Windows.Forms.TextBox textboxFechaHoraCreacion;
+        private System.Windows.Forms.TabPage tabpageDomicilios;
+        internal System.Windows.Forms.DataGridView datagridviewDomicilios;
+        internal System.Windows.Forms.ToolStrip toolstripDomicilios;
+        internal System.Windows.Forms.ToolStripButton buttonDomiciliosAgregar;
+        internal System.Windows.Forms.ToolStripButton buttonDomiciliosEditar;
+        internal System.Windows.Forms.ToolStripButton buttonDomiciliosBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosTipoNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosDomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosLocalidadNombre;
     }
 }

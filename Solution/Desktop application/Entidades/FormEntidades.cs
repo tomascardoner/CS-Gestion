@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -201,7 +201,7 @@ namespace CS_Gestion
 
         #region Controls behavior
 
-        private void TextBoxs_Enter(object sender, System.EventArgs e)
+        private void TextBoxs_Enter(object sender, EventArgs e)
         {
             ((ToolStripTextBox)sender).SelectAll();
         }
@@ -243,7 +243,7 @@ namespace CS_Gestion
             }
         }
 
-        private void BuscarBorrar_Click(object sender, System.EventArgs e)
+        private void BuscarBorrar_Click(object sender, EventArgs e)
         {
             if (busquedaAplicada)
             {
@@ -253,7 +253,7 @@ namespace CS_Gestion
             }
         }
 
-        private void Activo_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void Activo_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterData();
         }
@@ -298,7 +298,7 @@ namespace CS_Gestion
 
         #region Main toolbar
 
-        private void Agregar_Click(object sender, System.EventArgs e)
+        private void Agregar_Click(object sender, EventArgs e)
         {
             if (Permisos.Verificar(Permisos.EntidadAgregar))
             {
@@ -313,7 +313,7 @@ namespace CS_Gestion
             }
         }
 
-        private void Editar_Click(object sender, System.EventArgs e)
+        private void Editar_Click(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {
@@ -335,7 +335,7 @@ namespace CS_Gestion
             }
         }
 
-        private void Borrar_Click(object sender, System.EventArgs e)
+        private void Borrar_Click(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {
@@ -345,7 +345,7 @@ namespace CS_Gestion
             {
                 if (Permisos.Verificar(Permisos.EntidadBorrar))
                 {
-                    string mensaje = string.Format("Se eliminará la Entidad seleccionada.{0}{0}Nombre: {1}{0}CUIT: {2}{0}{0}¿Confirma la eliminación definitiva?", System.Environment.NewLine, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).NombreParaMostrar, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).Cuit);
+                    string mensaje = string.Format("Se borrará la Entidad seleccionada.{0}{0}Nombre: {1}{0}CUIT: {2}{0}{0}¿Confirma el borrado definitivo?", System.Environment.NewLine, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).NombreParaMostrar, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).Cuit);
                     if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.Cursor = Cursors.WaitCursor;
@@ -385,7 +385,7 @@ namespace CS_Gestion
             }
         }
 
-        private void Verr_Click(object sender, System.EventArgs e)
+        private void Ver_Click(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {

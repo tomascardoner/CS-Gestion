@@ -36,7 +36,6 @@
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
             this.buttonBorrar = new System.Windows.Forms.ToolStripButton();
             this.buttonImprimir = new System.Windows.Forms.ToolStripSplitButton();
-            this.menuitemImprimirFichaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstripBuscar = new System.Windows.Forms.ToolStrip();
             this.labelBuscar = new System.Windows.Forms.ToolStripLabel();
             this.textboxBuscar = new System.Windows.Forms.ToolStripTextBox();
@@ -117,21 +116,12 @@
             // 
             // buttonImprimir
             // 
-            this.buttonImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemImprimirFichaPersonal});
             this.buttonImprimir.Image = global::CS_Gestion.Properties.Resources.ImagePrint32;
             this.buttonImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buttonImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(101, 36);
             this.buttonImprimir.Text = "Imprimir";
-            // 
-            // menuitemImprimirFichaPersonal
-            // 
-            this.menuitemImprimirFichaPersonal.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuitemImprimirFichaPersonal.Name = "menuitemImprimirFichaPersonal";
-            this.menuitemImprimirFichaPersonal.Size = new System.Drawing.Size(150, 22);
-            this.menuitemImprimirFichaPersonal.Text = "Ficha Personal";
             // 
             // toolstripBuscar
             // 
@@ -238,7 +228,7 @@
             this.datagridviewMain.Size = new System.Drawing.Size(724, 312);
             this.datagridviewMain.TabIndex = 5;
             this.datagridviewMain.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_ColumnHeaderMouseClick);
-            this.datagridviewMain.DoubleClick += new System.EventHandler(this.Verr_Click);
+            this.datagridviewMain.DoubleClick += new System.EventHandler(this.Ver_Click);
             // 
             // columnNombreParaMostrar
             // 
@@ -297,7 +287,6 @@
         internal System.Windows.Forms.ToolStripButton buttonEditar;
         internal System.Windows.Forms.ToolStripButton buttonBorrar;
         internal System.Windows.Forms.ToolStripSplitButton buttonImprimir;
-        internal System.Windows.Forms.ToolStripMenuItem menuitemImprimirFichaPersonal;
         internal System.Windows.Forms.ToolStrip toolstripBuscar;
         internal System.Windows.Forms.ToolStripLabel labelBuscar;
         internal System.Windows.Forms.ToolStripTextBox textboxBuscar;

@@ -149,6 +149,7 @@
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadDomicilioExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadExtension.cs" />
     <Compile Include="DatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>

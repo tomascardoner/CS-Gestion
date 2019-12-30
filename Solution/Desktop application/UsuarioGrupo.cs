@@ -17,7 +17,7 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UsuarioGrupo()
         {
-            this.Usuario2 = new HashSet<Usuario>();
+            this.Usuarios = new HashSet<Usuario>();
             this.UsuarioGrupoPermiso = new HashSet<UsuarioGrupoPermiso>();
         }
     
@@ -30,10 +30,10 @@ namespace CS_Gestion
         public short IdUsuarioModificacion { get; set; }
         public System.DateTime FechaHoraModificacion { get; set; }
     
-        public virtual Usuario Usuario { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public virtual Usuario UsuarioCreacion { get; set; }
+        public virtual Usuario UsuarioModificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario2 { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UsuarioGrupoPermiso> UsuarioGrupoPermiso { get; set; }
     }

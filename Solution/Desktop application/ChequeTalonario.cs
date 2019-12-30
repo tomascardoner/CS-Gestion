@@ -29,7 +29,7 @@ namespace CS_Gestion
         public System.DateTime FechaHoraModificacion { get; set; }
     
         public virtual ChequeTalonarioTipo ChequeTalonarioTipo { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public virtual Usuario UsuarioCreacion { get; set; }
+        public virtual Usuario UsuarioModificacion { get; set; }
     }
 }

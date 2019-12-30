@@ -9,6 +9,11 @@ namespace CS_Gestion
         internal const string EntidadEditar = "EntidadEditar";
         internal const string EntidadBorrar = "EntidadBorrar";
 
+        internal const string EntidadDomicilio = "EntidadDomicilio";
+        internal const string EntidadDomicilioAgregar = "EntidadDomicilioAgregar";
+        internal const string EntidadDomicilioEditar = "EntidadDomicilioEditar";
+        internal const string EntidadDomicilioBorrar = "EntidadDomicilioBorrar";
+
         internal static bool Verificar(string idPermiso, bool mostrarAviso = true)
         {
             if (Program.Usuario.IdUsuarioGrupo == Constantes.IdUsuarioGrupoAdministradores)

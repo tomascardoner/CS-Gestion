@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -176,6 +177,18 @@ namespace CS_Gestion
         #endregion
 
         #region Controls behavior
+
+        private void TabControlChanged(object sender, EventArgs e)
+        {
+            if (entidad.IdEntidad != 0)
+            {
+                if (tabcontrolMain.SelectedTab.Name == tabpageDomicilios.Name && tabpageDomicilios.Tag == null)
+                {
+                    DomiciliosRefreshData();
+                    tabpageDomicilios.Tag = "Refreshed";
+                }
+            }
+        }
 
         private void this_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -360,6 +373,142 @@ namespace CS_Gestion
             else
             {
                 this.Close();
+            }
+        }
+
+        #endregion
+
+        #region Domicilios
+
+        internal class DomiciliosGridRowData
+        {
+            public byte IdDomicilio { get; set; }
+            public string DomicilioTipoNombre { get; set; }
+            public string DomicilioParaMostrar { get; set; }
+            public string LocalidadNombre { get; set; }
+        }
+
+        internal void DomiciliosRefreshData(byte positionIdDomicilio = 0, bool restorePosition = false)
+        {
+            List<DomiciliosGridRowData> listDomicilios;
+
+            if (restorePosition)
+            {
+                if (datagridviewDomicilios.CurrentRow == null)
+                {
+                    positionIdDomicilio = 0;
+                }
+                else
+                {
+                    positionIdDomicilio = ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio;
+                }
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                listDomicilios = (from ed in context.EntidadDomicilio
+                                  join dt in context.DomicilioTipo on ed.IdDomicilioTipo equals dt.IdDomicilioTipo
+                                  join l in context.Localidad on new { k1 = ed.IdProvincia, k2 = ed.IdLocalidad } equals new { k1 = (byte?)l.IdProvincia, k2 = (short?)l.IdLocalidad } into grupolocalidades
+                                  from gl in grupolocalidades.DefaultIfEmpty()
+                                  where ed.IdEntidad == entidad.IdEntidad
+                                  orderby dt.Nombre
+                                  select new DomiciliosGridRowData() { IdDomicilio = ed.IdDomicilio, DomicilioTipoNombre = dt.Nombre, DomicilioParaMostrar = ed.DomicilioParaMostrar, LocalidadNombre = (gl == null ? string.Empty : gl.Nombre) }).ToList();
+
+                datagridviewDomicilios.AutoGenerateColumns = false;
+                datagridviewDomicilios.DataSource = listDomicilios;
+            }
+            catch (Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer los Domicilios.");
+                this.Cursor = Cursors.Default;
+                return;
+            }
+
+            this.Cursor = Cursors.Default;
+
+        }
+
+        private void DomiciliosAgregar_Click(object sender, EventArgs e)
+        {
+            if (Permisos.Verificar(Permisos.EntidadDomicilioAgregar))
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                // formDomicilio.LoadDataAndShow(true, this, entidad.IdEntidad, 0);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void DomiciliosEditar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewDomicilios.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Domicilio para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadDomicilioEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                    // formDomicilio.LoadDataAndShow(true, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio;
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void DomiciliosBorrar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewDomicilios.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Domicilio para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadDomicilioBorrar))
+                {
+                    DomiciliosGridRowData rowData = (DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem;
+                    string mensaje = string.Format("Se borrará el Domicilio seleccionado.{0}{0}Tipo: {1}{0}Domicilio: {2}{0}Localidad: {3}{0}{0}¿Confirma el borrado definitivo?", Environment.NewLine, rowData.DomicilioTipoNombre, rowData.DomicilioParaMostrar, rowData.LocalidadNombre);
+                    if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        EntidadDomicilio domicilioEntidad = context.EntidadDomicilio.Find(entidad.IdEntidad, rowData.IdDomicilio);
+                        context.EntidadDomicilio.Remove(domicilioEntidad);
+                        context.SaveChanges();
+                        domicilioEntidad = null;
+
+                        DomiciliosRefreshData();
+
+                        this.Cursor = Cursors.Default;
+                    }
+                }
+            }
+        }
+
+        private void DomiciliosVer_Click(object sender, EventArgs e)
+        {
+            if (datagridviewDomicilios.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Domicilio para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadDomicilioEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                    // formDomicilio.LoadDataAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio;
+
+                    this.Cursor = Cursors.Default;
+                }
             }
         }
 

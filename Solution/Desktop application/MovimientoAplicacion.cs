@@ -14,10 +14,10 @@ namespace CS_Gestion
     
     public partial class MovimientoAplicacion
     {
+        public byte IdEmpresa { get; set; }
         public int IdMovimiento { get; set; }
         public int IdMovimientoAplicado { get; set; }
         public decimal ImporteAplicado { get; set; }
-        public byte IdEmpresa { get; set; }
     
         public virtual Movimiento MovimientoAplicado { get; set; }
         public virtual Movimiento MovimientoAplicante { get; set; }
