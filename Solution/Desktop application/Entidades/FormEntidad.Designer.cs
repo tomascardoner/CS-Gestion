@@ -217,6 +217,7 @@
             this.radiobuttonTipoPersonaJuridica.TabStop = true;
             this.radiobuttonTipoPersonaJuridica.Text = "Jurídica";
             this.radiobuttonTipoPersonaJuridica.UseVisualStyleBackColor = true;
+            this.radiobuttonTipoPersonaJuridica.CheckedChanged += new System.EventHandler(this.TipoPersona_CheckedChanged);
             // 
             // radiobuttonTipoPersonaFisica
             // 
@@ -227,6 +228,7 @@
             this.radiobuttonTipoPersonaFisica.TabIndex = 2;
             this.radiobuttonTipoPersonaFisica.Text = "Física";
             this.radiobuttonTipoPersonaFisica.UseVisualStyleBackColor = true;
+            this.radiobuttonTipoPersonaFisica.CheckedChanged += new System.EventHandler(this.TipoPersona_CheckedChanged);
             // 
             // textboxApellido
             // 

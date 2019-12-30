@@ -443,207 +443,90 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Error al guardar los cambios en la Base de Datos..
         /// </summary>
-        internal static string STRING_ERROR_SAVING_CHANGES {
+        internal static string StringErrorSavingChanges {
             get {
-                return ResourceManager.GetString("STRING_ERROR_SAVING_CHANGES", resourceCulture);
+                return ResourceManager.GetString("StringErrorSavingChanges", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Femenino.
         /// </summary>
-        internal static string STRING_GENERO_FEMENINO {
+        internal static string StringGeneroFemenino {
             get {
-                return ResourceManager.GetString("STRING_GENERO_FEMENINO", resourceCulture);
+                return ResourceManager.GetString("StringGeneroFemenino", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Masculino.
         /// </summary>
-        internal static string STRING_GENERO_MASCULINO {
+        internal static string StringGeneroMasculino {
             get {
-                return ResourceManager.GetString("STRING_GENERO_MASCULINO", resourceCulture);
+                return ResourceManager.GetString("StringGeneroMasculino", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Todas».
         /// </summary>
-        internal static string STRING_ITEM_ALL_FEMALE {
+        internal static string StringItemAllFemale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_ALL_FEMALE", resourceCulture);
+                return ResourceManager.GetString("StringItemAllFemale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Todos».
         /// </summary>
-        internal static string STRING_ITEM_ALL_MALE {
+        internal static string StringItemAllMale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_ALL_MALE", resourceCulture);
+                return ResourceManager.GetString("StringItemAllMale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Completa».
         /// </summary>
-        internal static string STRING_ITEM_COMPLETE_FEMALE {
+        internal static string StringItemCompleteFemale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_COMPLETE_FEMALE", resourceCulture);
+                return ResourceManager.GetString("StringItemCompleteFemale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Completo».
         /// </summary>
-        internal static string STRING_ITEM_COMPLETE_MALE {
+        internal static string StringItemCompleteMale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_COMPLETE_MALE", resourceCulture);
+                return ResourceManager.GetString("StringItemCompleteMale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Vacía».
         /// </summary>
-        internal static string STRING_ITEM_EMPTY_FEMALE {
+        internal static string StringItemEmptyFemale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_EMPTY_FEMALE", resourceCulture);
+                return ResourceManager.GetString("StringItemEmptyFemale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to «Vacío».
         /// </summary>
-        internal static string STRING_ITEM_EMPTY_MALE {
+        internal static string StringItemEmptyMale {
             get {
-                return ResourceManager.GetString("STRING_ITEM_EMPTY_MALE", resourceCulture);
+                return ResourceManager.GetString("StringItemEmptyMale", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ».
         /// </summary>
-        internal static string STRING_ITEM_END_CHAR {
+        internal static string StringItemEndChar {
             get {
-                return ResourceManager.GetString("STRING_ITEM_END_CHAR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to «Nuevo».
-        /// </summary>
-        internal static string STRING_ITEM_NEW_MALE {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NEW_MALE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ----------.
-        /// </summary>
-        internal static string STRING_ITEM_NONE_CHARS10 {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS10", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to --.
-        /// </summary>
-        internal static string STRING_ITEM_NONE_CHARS2 {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to --------------------.
-        /// </summary>
-        internal static string STRING_ITEM_NONE_CHARS20 {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS20", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -----.
-        /// </summary>
-        internal static string STRING_ITEM_NONE_CHARS5 {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_CHARS5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to «Ninguno».
-        /// </summary>
-        internal static string STRING_ITEM_NONE_FEMALE {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_FEMALE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to «Ninguna».
-        /// </summary>
-        internal static string STRING_ITEM_NONE_MALE {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NONE_MALE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to «No especifica».
-        /// </summary>
-        internal static string STRING_ITEM_NOT_SPECIFIED {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_NOT_SPECIFIED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to «.
-        /// </summary>
-        internal static string STRING_ITEM_START_CHAR {
-            get {
-                return ResourceManager.GetString("STRING_ITEM_START_CHAR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No.
-        /// </summary>
-        internal static string STRING_NO {
-            get {
-                return ResourceManager.GetString("STRING_NO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Compra.
-        /// </summary>
-        internal static string STRING_OPERACIONTIPO_COMPRA {
-            get {
-                return ResourceManager.GetString("STRING_OPERACIONTIPO_COMPRA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Venta.
-        /// </summary>
-        internal static string STRING_OPERACIONTIPO_VENTA {
-            get {
-                return ResourceManager.GetString("STRING_OPERACIONTIPO_VENTA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sí.
-        /// </summary>
-        internal static string STRING_YES {
-            get {
-                return ResourceManager.GetString("STRING_YES", resourceCulture);
+                return ResourceManager.GetString("StringItemEndChar", resourceCulture);
             }
         }
         
@@ -653,6 +536,123 @@ namespace CS_Gestion.Properties {
         internal static string StringItemNewFemale {
             get {
                 return ResourceManager.GetString("StringItemNewFemale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Nuevo».
+        /// </summary>
+        internal static string StringItemNewMale {
+            get {
+                return ResourceManager.GetString("StringItemNewMale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ----------.
+        /// </summary>
+        internal static string StringItemNoneChars10 {
+            get {
+                return ResourceManager.GetString("StringItemNoneChars10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --.
+        /// </summary>
+        internal static string StringItemNoneChars2 {
+            get {
+                return ResourceManager.GetString("StringItemNoneChars2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --------------------.
+        /// </summary>
+        internal static string StringItemNoneChars20 {
+            get {
+                return ResourceManager.GetString("StringItemNoneChars20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -----.
+        /// </summary>
+        internal static string StringItemNoneChars5 {
+            get {
+                return ResourceManager.GetString("StringItemNoneChars5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Ninguna».
+        /// </summary>
+        internal static string StringItemNoneFemale {
+            get {
+                return ResourceManager.GetString("StringItemNoneFemale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «Ninguno».
+        /// </summary>
+        internal static string StringItemNoneMale {
+            get {
+                return ResourceManager.GetString("StringItemNoneMale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «No especifica».
+        /// </summary>
+        internal static string StringItemNotSpecified {
+            get {
+                return ResourceManager.GetString("StringItemNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to «.
+        /// </summary>
+        internal static string StringItemStartChar {
+            get {
+                return ResourceManager.GetString("StringItemStartChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string StringNo {
+            get {
+                return ResourceManager.GetString("StringNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compra.
+        /// </summary>
+        internal static string StringOperacionTipoCompra {
+            get {
+                return ResourceManager.GetString("StringOperacionTipoCompra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Venta.
+        /// </summary>
+        internal static string StringOperacionTipoVenta {
+            get {
+                return ResourceManager.GetString("StringOperacionTipoVenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sí.
+        /// </summary>
+        internal static string StringYes {
+            get {
+                return ResourceManager.GetString("StringYes", resourceCulture);
             }
         }
     }

@@ -78,16 +78,21 @@ namespace CS_Gestion
             // General
             radiobuttonTipoPersonaFisica.Enabled = isEditMode;
             radiobuttonTipoPersonaJuridica.Enabled = isEditMode;
-            textboxRazonSocial.ReadOnly = !isEditMode;
+            ChangeEditModeTipoPersona();
             textboxNombreFantasia.ReadOnly = !isEditMode;
-            textboxApellido.ReadOnly = !isEditMode;
-            textboxNombre.ReadOnly = !isEditMode;
             maskedtextboxCuit.ReadOnly = !isEditMode;
             textboxIngresosBrutos.ReadOnly = !isEditMode;
 
             // Notas y Auditoría
             textboxNotas.ReadOnly = !isEditMode;
             checkboxEsActivo.Enabled = isEditMode;
+        }
+
+        private void ChangeEditModeTipoPersona()
+        {
+            textboxRazonSocial.ReadOnly = (radiobuttonTipoPersonaFisica.Checked | !isEditMode);
+            textboxApellido.ReadOnly = (radiobuttonTipoPersonaJuridica.Checked | !isEditMode);
+            textboxNombre.ReadOnly = (radiobuttonTipoPersonaJuridica.Checked | !isEditMode);
         }
 
         private void InitializeFormAndControls()
@@ -199,6 +204,11 @@ namespace CS_Gestion
                 default:
                     break;
             }
+        }
+
+        private void TipoPersona_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeEditModeTipoPersona();
         }
 
         private void TextBoxs_Enter(object sender, EventArgs e)
@@ -318,7 +328,7 @@ namespace CS_Gestion
                             MessageBox.Show("No se puede agregar la Entidad porque ya existe una Entidad con el mismo nombre.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case CardonerSistemas.Database.EntityFramework.Errors.Unknown:
-                            CardonerSistemas.Error.ProcessError((Exception)dbuex, Properties.Resources.STRING_ERROR_SAVING_CHANGES);
+                            CardonerSistemas.Error.ProcessError((Exception)dbuex, Properties.Resources.StringErrorSavingChanges);
                             break;
                         default:
                             break;
@@ -329,7 +339,7 @@ namespace CS_Gestion
                 catch (Exception ex)
                 {
                     this.Cursor = Cursors.Default;
-                    CardonerSistemas.Error.ProcessError(ex, Properties.Resources.STRING_ERROR_SAVING_CHANGES);
+                    CardonerSistemas.Error.ProcessError(ex, Properties.Resources.StringErrorSavingChanges);
                     return;
                 }
 

@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace CS_Gestion
+﻿namespace CS_Gestion
 {
     static class Constantes
     {

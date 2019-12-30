@@ -232,76 +232,76 @@
   <data name="ImageWindowTileVertically" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\windows\imagewindowtilevertically.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="StringErrorSavingChanges" xml:space="preserve">
+    <value>Error al guardar los cambios en la Base de Datos.</value>
+  </data>
+  <data name="StringGeneroFemenino" xml:space="preserve">
+    <value>Femenino</value>
+  </data>
+  <data name="StringGeneroMasculino" xml:space="preserve">
+    <value>Masculino</value>
+  </data>
+  <data name="StringItemAllFemale" xml:space="preserve">
+    <value>«Todas»</value>
+  </data>
+  <data name="StringItemAllMale" xml:space="preserve">
+    <value>«Todos»</value>
+  </data>
+  <data name="StringItemCompleteFemale" xml:space="preserve">
+    <value>«Completa»</value>
+  </data>
+  <data name="StringItemCompleteMale" xml:space="preserve">
+    <value>«Completo»</value>
+  </data>
+  <data name="StringItemEmptyFemale" xml:space="preserve">
+    <value>«Vacía»</value>
+  </data>
+  <data name="StringItemEmptyMale" xml:space="preserve">
+    <value>«Vacío»</value>
+  </data>
+  <data name="StringItemEndChar" xml:space="preserve">
+    <value>»</value>
+  </data>
   <data name="StringItemNewFemale" xml:space="preserve">
     <value>«Nueva»</value>
   </data>
-  <data name="STRING_ERROR_SAVING_CHANGES" xml:space="preserve">
-    <value>Error al guardar los cambios en la Base de Datos.</value>
-  </data>
-  <data name="STRING_GENERO_FEMENINO" xml:space="preserve">
-    <value>Femenino</value>
-  </data>
-  <data name="STRING_GENERO_MASCULINO" xml:space="preserve">
-    <value>Masculino</value>
-  </data>
-  <data name="STRING_ITEM_ALL_FEMALE" xml:space="preserve">
-    <value>«Todas»</value>
-  </data>
-  <data name="STRING_ITEM_ALL_MALE" xml:space="preserve">
-    <value>«Todos»</value>
-  </data>
-  <data name="STRING_ITEM_COMPLETE_FEMALE" xml:space="preserve">
-    <value>«Completa»</value>
-  </data>
-  <data name="STRING_ITEM_COMPLETE_MALE" xml:space="preserve">
-    <value>«Completo»</value>
-  </data>
-  <data name="STRING_ITEM_EMPTY_FEMALE" xml:space="preserve">
-    <value>«Vacía»</value>
-  </data>
-  <data name="STRING_ITEM_EMPTY_MALE" xml:space="preserve">
-    <value>«Vacío»</value>
-  </data>
-  <data name="STRING_ITEM_END_CHAR" xml:space="preserve">
-    <value>»</value>
-  </data>
-  <data name="STRING_ITEM_NEW_MALE" xml:space="preserve">
+  <data name="StringItemNewMale" xml:space="preserve">
     <value>«Nuevo»</value>
   </data>
-  <data name="STRING_ITEM_NONE_CHARS10" xml:space="preserve">
+  <data name="StringItemNoneChars10" xml:space="preserve">
     <value>----------</value>
   </data>
-  <data name="STRING_ITEM_NONE_CHARS2" xml:space="preserve">
+  <data name="StringItemNoneChars2" xml:space="preserve">
     <value>--</value>
   </data>
-  <data name="STRING_ITEM_NONE_CHARS20" xml:space="preserve">
+  <data name="StringItemNoneChars20" xml:space="preserve">
     <value>--------------------</value>
   </data>
-  <data name="STRING_ITEM_NONE_CHARS5" xml:space="preserve">
+  <data name="StringItemNoneChars5" xml:space="preserve">
     <value>-----</value>
   </data>
-  <data name="STRING_ITEM_NONE_FEMALE" xml:space="preserve">
-    <value>«Ninguno»</value>
-  </data>
-  <data name="STRING_ITEM_NONE_MALE" xml:space="preserve">
+  <data name="StringItemNoneFemale" xml:space="preserve">
     <value>«Ninguna»</value>
   </data>
-  <data name="STRING_ITEM_NOT_SPECIFIED" xml:space="preserve">
+  <data name="StringItemNoneMale" xml:space="preserve">
+    <value>«Ninguno»</value>
+  </data>
+  <data name="StringItemNotSpecified" xml:space="preserve">
     <value>«No especifica»</value>
   </data>
-  <data name="STRING_ITEM_START_CHAR" xml:space="preserve">
+  <data name="StringItemStartChar" xml:space="preserve">
     <value>«</value>
   </data>
-  <data name="STRING_NO" xml:space="preserve">
+  <data name="StringNo" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="STRING_OPERACIONTIPO_COMPRA" xml:space="preserve">
+  <data name="StringOperacionTipoCompra" xml:space="preserve">
     <value>Compra</value>
   </data>
-  <data name="STRING_OPERACIONTIPO_VENTA" xml:space="preserve">
+  <data name="StringOperacionTipoVenta" xml:space="preserve">
     <value>Venta</value>
   </data>
-  <data name="STRING_YES" xml:space="preserve">
+  <data name="StringYes" xml:space="preserve">
     <value>Sí</value>
   </data>
 </root>
