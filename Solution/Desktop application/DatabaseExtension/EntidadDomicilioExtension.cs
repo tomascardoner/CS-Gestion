@@ -21,6 +21,67 @@ namespace CS_Gestion
         private const string Calles3PrimerSeparador = " entre ";
         private const string Calles3SegundoSeparador = " y ";
 
+        internal string IdDomicilioFormatted
+        {
+            get
+            {
+                if (IdDomicilio == 0)
+                {
+                    return Properties.Resources.StringItemNewMale;
+                }
+                else
+                {
+                    return IdDomicilio.ToString(CardonerSistemas.Constants.FormatStringToNumberInteger);
+                }
+            }
+        }
+
+        internal string FechaHoraCreacionFormatted
+        {
+            get
+            {
+                return string.Format("{0} {1}", FechaHoraCreacion.ToShortDateString(), FechaHoraCreacion.ToShortTimeString());
+            }
+        }
+
+        internal string UsuarioCreacionFormatted
+        {
+            get
+            {
+                if (UsuarioCreacion == null)
+                {
+                    return string.Empty;
+                }
+                else
+                {
+                    return UsuarioCreacion.Descripcion;
+                }
+            }
+        }
+
+        internal string FechaHoraModificacionFormatted
+        {
+            get
+            {
+                return string.Format("{0} {1}", FechaHoraModificacion.ToShortDateString(), FechaHoraModificacion.ToShortTimeString());
+            }
+        }
+
+        internal string UsuarioModificacionFormatted
+        {
+            get
+            {
+                if (UsuarioModificacion == null)
+                {
+                    return string.Empty;
+                }
+                else
+                {
+                    return UsuarioModificacion.Descripcion;
+                }
+            }
+        }
+
         internal string DomicilioParaMostrarLocal
         {
             get

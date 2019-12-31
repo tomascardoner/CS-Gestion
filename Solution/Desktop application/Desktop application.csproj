@@ -95,6 +95,9 @@
     <Compile Include="..\..\..\framework-csharp\Afip.cs">
       <Link>Framework\Afip.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\ComboBox.cs">
+      <Link>Framework\ComboBox.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Constants.cs">
       <Link>Framework\Constants.cs</Link>
     </Compile>

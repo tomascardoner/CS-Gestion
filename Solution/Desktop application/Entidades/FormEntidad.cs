@@ -68,7 +68,6 @@ namespace CS_Gestion
             if (isLoading)
             {
                 return;
-
             }
 
             buttonGuardar.Visible = isEditMode;
@@ -351,8 +350,6 @@ namespace CS_Gestion
                         default:
                             break;
                     }
-
-
                 }
                 catch (Exception ex)
                 {
@@ -441,8 +438,8 @@ namespace CS_Gestion
             {
                 this.Cursor = Cursors.WaitCursor;
 
-                // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
-                // formDomicilio.LoadDataAndShow(true, this, entidad.IdEntidad, 0);
+                FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                formDomicilio.LoadAndShow(true, this, entidad.IdEntidad, 0);
 
                 this.Cursor = Cursors.Default;
             }
@@ -460,8 +457,8 @@ namespace CS_Gestion
                 {
                     this.Cursor = Cursors.WaitCursor;
 
-                    // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
-                    // formDomicilio.LoadDataAndShow(true, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio;
+                    FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                    formDomicilio.LoadAndShow(true, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio);
 
                     this.Cursor = Cursors.Default;
                 }
@@ -509,8 +506,8 @@ namespace CS_Gestion
                 {
                     this.Cursor = Cursors.WaitCursor;
 
-                    // FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
-                    // formDomicilio.LoadDataAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio;
+                    FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                    formDomicilio.LoadAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio);
 
                     this.Cursor = Cursors.Default;
                 }

@@ -598,6 +598,7 @@
             this.ClientSize = new System.Drawing.Size(522, 258);
             this.Controls.Add(this.tabcontrolMain);
             this.Controls.Add(this.toolstripMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "FormEntidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
