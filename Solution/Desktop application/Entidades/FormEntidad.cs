@@ -39,7 +39,7 @@ namespace CS_Gestion
                 entidad.IdUsuarioCreacion = Program.Usuario.IdUsuario;
                 entidad.FechaHoraCreacion = DateTime.Now;
                 entidad.IdUsuarioModificacion = Program.Usuario.IdUsuario;
-                entidad.FechaHoraModificacion = DateTime.Now;
+                entidad.FechaHoraModificacion = entidad.FechaHoraCreacion;
                 context.Entidad.Add(entidad);
             }
             else
@@ -256,6 +256,7 @@ namespace CS_Gestion
         {
             if (!radiobuttonTipoPersonaFisica.Checked & !radiobuttonTipoPersonaJuridica.Checked)
             {
+                tabcontrolMain.SelectedTab = tabpageGeneral;
                 MessageBox.Show("Debe seleccionar el Tipo de Persona.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -263,6 +264,7 @@ namespace CS_Gestion
             {
                 if (textboxApellido.Text.Trim().Length == 0)
                 {
+                    tabcontrolMain.SelectedTab = tabpageGeneral;
                     MessageBox.Show("Debe ingresar el Apellido.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textboxApellido.Focus();
                     return;
@@ -272,6 +274,7 @@ namespace CS_Gestion
             {
                 if (textboxRazonSocial.Text.Trim().Length == 0)
                 {
+                    tabcontrolMain.SelectedTab = tabpageGeneral;
                     MessageBox.Show("Debe ingresar la Razón Social.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textboxRazonSocial.Focus();
                     return;
@@ -282,12 +285,14 @@ namespace CS_Gestion
             {
                 if (maskedtextboxCuit.Text.Length < 11)
                 {
+                    tabcontrolMain.SelectedTab = tabpageGeneral;
                     MessageBox.Show("El CUIT está incompleto. Debe tener 11 dígitos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     maskedtextboxCuit.Focus();
                     return;
                 }
                 if (!CardonerSistemas.Afip.VerificarCuit(maskedtextboxCuit.Text))
                 {
+                    tabcontrolMain.SelectedTab = tabpageGeneral;
                     MessageBox.Show("El CUIT es incorrecto. Verifíquelo.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     maskedtextboxCuit.Focus();
                     return;
