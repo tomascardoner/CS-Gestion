@@ -326,6 +326,7 @@
             this.comboboxTipo.Name = "comboboxTipo";
             this.comboboxTipo.Size = new System.Drawing.Size(150, 21);
             this.comboboxTipo.TabIndex = 1;
+            this.comboboxTipo.SelectedValueChanged += new System.EventHandler(this.Tipo_Cambio);
             // 
             // textboxTipoOtro
             // 

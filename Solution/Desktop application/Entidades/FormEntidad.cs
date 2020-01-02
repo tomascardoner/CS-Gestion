@@ -430,6 +430,18 @@ namespace CS_Gestion
 
             this.Cursor = Cursors.Default;
 
+            if (positionIdDomicilio != 0)
+            {
+                foreach (DataGridViewRow row in datagridviewDomicilios.Rows)
+                {
+                    if (((DomiciliosGridRowData)row.DataBoundItem).IdDomicilio == positionIdDomicilio)
+                    {
+                        datagridviewDomicilios.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
         }
 
         private void DomiciliosAgregar_Click(object sender, EventArgs e)

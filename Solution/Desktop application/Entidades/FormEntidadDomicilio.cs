@@ -132,7 +132,10 @@ namespace CS_Gestion
             textboxCalle3.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Calle3);
             CardonerSistemas.ComboBox.SetSelectedValue(comboboxProvincia, CardonerSistemas.ComboBox.SelectedItemOptions.Value, entidadDomicilio.IdProvincia, CardonerSistemas.Constants.ByteFieldValueNotSpecified);
             CardonerSistemas.ComboBox.SetSelectedValue(comboboxLocalidad, CardonerSistemas.ComboBox.SelectedItemOptions.Value, entidadDomicilio.IdLocalidad, CardonerSistemas.Constants.ShortFieldValueNotSpecified);
-            textboxCodigoPostal.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.CodigoPostal);
+            if (!isNew)
+            {
+                textboxCodigoPostal.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.CodigoPostal);
+            }
 
             // Notas y Auditoría
             textboxNotas.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Notas);
@@ -201,6 +204,18 @@ namespace CS_Gestion
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void Tipo_Cambio(object sender, EventArgs e)
+        {
+            if (comboboxTipo.SelectedValue == null)
+            {
+                textboxTipoOtro.Visible = false;
+            }
+            else
+            {
+                textboxTipoOtro.Visible = ((byte)comboboxTipo.SelectedValue == CardonerSistemas.Constants.ByteFieldValueOther);
             }
         }
 
@@ -300,7 +315,7 @@ namespace CS_Gestion
                     }
                     else
                     {
-                        entidadDomicilio.IdEntidad = 1;
+                        entidadDomicilio.IdDomicilio = 1;
                     }
                 }
             }
