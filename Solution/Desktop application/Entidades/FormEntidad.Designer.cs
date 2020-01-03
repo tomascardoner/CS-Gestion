@@ -33,6 +33,7 @@
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -64,6 +65,15 @@
             this.buttonDomiciliosAgregar = new System.Windows.Forms.ToolStripButton();
             this.buttonDomiciliosEditar = new System.Windows.Forms.ToolStripButton();
             this.buttonDomiciliosBorrar = new System.Windows.Forms.ToolStripButton();
+            this.tabpageEmails = new System.Windows.Forms.TabPage();
+            this.datagridviewEmails = new System.Windows.Forms.DataGridView();
+            this.columnEmailsTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEmailsEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEmailsNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolstripEmails = new System.Windows.Forms.ToolStrip();
+            this.buttonEmailsAgregar = new System.Windows.Forms.ToolStripButton();
+            this.buttonEmailsEditar = new System.Windows.Forms.ToolStripButton();
+            this.buttonEmailsBorrar = new System.Windows.Forms.ToolStripButton();
             this.tabpageNotasAuditoria = new System.Windows.Forms.TabPage();
             this.checkboxEsActivo = new System.Windows.Forms.CheckBox();
             this.labelId = new System.Windows.Forms.Label();
@@ -83,6 +93,9 @@
             this.tabpageDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewDomicilios)).BeginInit();
             this.toolstripDomicilios.SuspendLayout();
+            this.tabpageEmails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewEmails)).BeginInit();
+            this.toolstripEmails.SuspendLayout();
             this.tabpageNotasAuditoria.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -334,6 +347,7 @@
             this.tabcontrolMain.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabcontrolMain.Controls.Add(this.tabpageGeneral);
             this.tabcontrolMain.Controls.Add(this.tabpageDomicilios);
+            this.tabcontrolMain.Controls.Add(this.tabpageEmails);
             this.tabcontrolMain.Controls.Add(this.tabpageNotasAuditoria);
             this.tabcontrolMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrolMain.Location = new System.Drawing.Point(0, 39);
@@ -483,6 +497,121 @@
             this.buttonDomiciliosBorrar.Text = "Borrar";
             this.buttonDomiciliosBorrar.Click += new System.EventHandler(this.DomiciliosBorrar_Click);
             // 
+            // tabpageEmails
+            // 
+            this.tabpageEmails.Controls.Add(this.datagridviewEmails);
+            this.tabpageEmails.Controls.Add(this.toolstripEmails);
+            this.tabpageEmails.Location = new System.Drawing.Point(4, 25);
+            this.tabpageEmails.Name = "tabpageEmails";
+            this.tabpageEmails.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpageEmails.Size = new System.Drawing.Size(514, 190);
+            this.tabpageEmails.TabIndex = 3;
+            this.tabpageEmails.Text = "e-Mails";
+            this.tabpageEmails.UseVisualStyleBackColor = true;
+            // 
+            // datagridviewEmails
+            // 
+            this.datagridviewEmails.AllowUserToAddRows = false;
+            this.datagridviewEmails.AllowUserToDeleteRows = false;
+            this.datagridviewEmails.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.datagridviewEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewEmails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnEmailsTipo,
+            this.columnEmailsEmail,
+            this.columnEmailsNombre});
+            this.datagridviewEmails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridviewEmails.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.datagridviewEmails.Location = new System.Drawing.Point(89, 3);
+            this.datagridviewEmails.MultiSelect = false;
+            this.datagridviewEmails.Name = "datagridviewEmails";
+            this.datagridviewEmails.ReadOnly = true;
+            this.datagridviewEmails.RowHeadersVisible = false;
+            this.datagridviewEmails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridviewEmails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewEmails.Size = new System.Drawing.Size(422, 184);
+            this.datagridviewEmails.TabIndex = 10;
+            this.datagridviewEmails.DoubleClick += new System.EventHandler(this.EmailsVer_Click);
+            // 
+            // columnEmailsTipo
+            // 
+            this.columnEmailsTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnEmailsTipo.DataPropertyName = "EmailTipoNombre";
+            this.columnEmailsTipo.HeaderText = "Tipo";
+            this.columnEmailsTipo.Name = "columnEmailsTipo";
+            this.columnEmailsTipo.ReadOnly = true;
+            this.columnEmailsTipo.Width = 53;
+            // 
+            // columnEmailsEmail
+            // 
+            this.columnEmailsEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnEmailsEmail.DataPropertyName = "Email";
+            this.columnEmailsEmail.HeaderText = "Email";
+            this.columnEmailsEmail.Name = "columnEmailsEmail";
+            this.columnEmailsEmail.ReadOnly = true;
+            this.columnEmailsEmail.Width = 57;
+            // 
+            // columnEmailsNombre
+            // 
+            this.columnEmailsNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnEmailsNombre.DataPropertyName = "Nombre";
+            this.columnEmailsNombre.HeaderText = "Nombre";
+            this.columnEmailsNombre.Name = "columnEmailsNombre";
+            this.columnEmailsNombre.ReadOnly = true;
+            this.columnEmailsNombre.Width = 69;
+            // 
+            // toolstripEmails
+            // 
+            this.toolstripEmails.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolstripEmails.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripEmails.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolstripEmails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonEmailsAgregar,
+            this.buttonEmailsEditar,
+            this.buttonEmailsBorrar});
+            this.toolstripEmails.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolstripEmails.Location = new System.Drawing.Point(3, 3);
+            this.toolstripEmails.Name = "toolstripEmails";
+            this.toolstripEmails.Size = new System.Drawing.Size(86, 184);
+            this.toolstripEmails.TabIndex = 11;
+            // 
+            // buttonEmailsAgregar
+            // 
+            this.buttonEmailsAgregar.Image = global::CS_Gestion.Properties.Resources.ImageItemAdd32;
+            this.buttonEmailsAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmailsAgregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonEmailsAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonEmailsAgregar.Name = "buttonEmailsAgregar";
+            this.buttonEmailsAgregar.Size = new System.Drawing.Size(83, 36);
+            this.buttonEmailsAgregar.Text = "Agregar";
+            this.buttonEmailsAgregar.Click += new System.EventHandler(this.EmailsAgregar_Click);
+            // 
+            // buttonEmailsEditar
+            // 
+            this.buttonEmailsEditar.Image = global::CS_Gestion.Properties.Resources.ImageItemEdit32;
+            this.buttonEmailsEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmailsEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonEmailsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonEmailsEditar.Name = "buttonEmailsEditar";
+            this.buttonEmailsEditar.Size = new System.Drawing.Size(83, 36);
+            this.buttonEmailsEditar.Text = "Editar";
+            this.buttonEmailsEditar.Click += new System.EventHandler(this.EmailsEditar_Click);
+            // 
+            // buttonEmailsBorrar
+            // 
+            this.buttonEmailsBorrar.Image = global::CS_Gestion.Properties.Resources.ImageItemDelete32;
+            this.buttonEmailsBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmailsBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonEmailsBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonEmailsBorrar.Name = "buttonEmailsBorrar";
+            this.buttonEmailsBorrar.Size = new System.Drawing.Size(83, 36);
+            this.buttonEmailsBorrar.Text = "Borrar";
+            this.buttonEmailsBorrar.Click += new System.EventHandler(this.EmailsBorrar_Click);
+            // 
             // tabpageNotasAuditoria
             // 
             this.tabpageNotasAuditoria.Controls.Add(this.checkboxEsActivo);
@@ -600,6 +729,7 @@
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "FormEntidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Entidad";
@@ -615,6 +745,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewDomicilios)).EndInit();
             this.toolstripDomicilios.ResumeLayout(false);
             this.toolstripDomicilios.PerformLayout();
+            this.tabpageEmails.ResumeLayout(false);
+            this.tabpageEmails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewEmails)).EndInit();
+            this.toolstripEmails.ResumeLayout(false);
+            this.toolstripEmails.PerformLayout();
             this.tabpageNotasAuditoria.ResumeLayout(false);
             this.tabpageNotasAuditoria.PerformLayout();
             this.ResumeLayout(false);
@@ -664,5 +799,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosTipoNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDomiciliosLocalidadNombre;
+        private System.Windows.Forms.TabPage tabpageEmails;
+        internal System.Windows.Forms.DataGridView datagridviewEmails;
+        internal System.Windows.Forms.ToolStrip toolstripEmails;
+        internal System.Windows.Forms.ToolStripButton buttonEmailsAgregar;
+        internal System.Windows.Forms.ToolStripButton buttonEmailsEditar;
+        internal System.Windows.Forms.ToolStripButton buttonEmailsBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsNombre;
     }
 }

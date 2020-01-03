@@ -34,6 +34,25 @@ namespace CS_Gestion
             domiciliotipos = null;
         }
 
+        static internal void EmailTipo(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
+        {
+            comboBox.ValueMember = "IdEmailTipo";
+            comboBox.DisplayMember = "Nombre";
+
+            List<EmailTipo> Emailtipos = context.EmailTipo.OrderBy(dt => dt.Nombre).ToList();
+
+            if (mostrarNoEspecifica)
+            {
+                EmailTipo noespecifica = new EmailTipo();
+                noespecifica.IdEmailTipo = CardonerSistemas.Constants.ByteFieldValueNotSpecified;
+                noespecifica.Nombre = Properties.Resources.StringItemNotSpecified;
+                Emailtipos.Insert(0, noespecifica);
+            }
+
+            comboBox.DataSource = Emailtipos;
+            Emailtipos = null;
+        }
+
         static internal void Provincia(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
         {
             comboBox.ValueMember = "IdProvincia";

@@ -19,6 +19,7 @@ namespace CS_Gestion
         public byte IdEmailTipo { get; set; }
         public string TipoOtro { get; set; }
         public string Email { get; set; }
+        public string Nombre { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }

@@ -186,6 +186,11 @@ namespace CS_Gestion
                     DomiciliosRefreshData();
                     tabpageDomicilios.Tag = "Refreshed";
                 }
+                if (tabcontrolMain.SelectedTab.Name == tabpageEmails.Name && tabpageEmails.Tag == null)
+                {
+                    EmailsRefreshData();
+                    tabpageEmails.Tag = "Refreshed";
+                }
             }
         }
 
@@ -520,6 +525,152 @@ namespace CS_Gestion
 
                     FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
                     formDomicilio.LoadAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Emails
+
+        internal class EmailsGridRowData
+        {
+            public byte IdEmail { get; set; }
+            public string EmailTipoNombre { get; set; }
+            public string Email { get; set; }
+            public string Nombre { get; set; }
+        }
+
+        internal void EmailsRefreshData(byte positionIdEmail = 0, bool restorePosition = false)
+        {
+            List<EmailsGridRowData> listEmails;
+
+            if (restorePosition)
+            {
+                if (datagridviewEmails.CurrentRow == null)
+                {
+                    positionIdEmail = 0;
+                }
+                else
+                {
+                    positionIdEmail = ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail;
+                }
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                listEmails = (from ee in context.EntidadEmail
+                                join dt in context.EmailTipo on ee.IdEmailTipo equals dt.IdEmailTipo
+                                where ee.IdEntidad == entidad.IdEntidad
+                                orderby dt.Nombre
+                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = dt.Nombre, Email = ee.Email, Nombre = ee.Nombre }).ToList();
+
+                datagridviewEmails.AutoGenerateColumns = false;
+                datagridviewEmails.DataSource = listEmails;
+            }
+            catch (Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer los e-mails.");
+                this.Cursor = Cursors.Default;
+                return;
+            }
+
+            this.Cursor = Cursors.Default;
+
+            if (positionIdEmail != 0)
+            {
+                foreach (DataGridViewRow row in datagridviewEmails.Rows)
+                {
+                    if (((EmailsGridRowData)row.DataBoundItem).IdEmail == positionIdEmail)
+                    {
+                        datagridviewEmails.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        private void EmailsAgregar_Click(object sender, EventArgs e)
+        {
+            if (Permisos.Verificar(Permisos.EntidadEmailAgregar))
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                FormEntidadEmail formEmail = new FormEntidadEmail();
+                formEmail.LoadAndShow(true, this, entidad.IdEntidad, 0);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void EmailsEditar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewEmails.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Email para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadEmailEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadEmail formEmail = new FormEntidadEmail();
+                    formEmail.LoadAndShow(true, this, entidad.IdEntidad, ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void EmailsBorrar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewEmails.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Email para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadEmailBorrar))
+                {
+                    EmailsGridRowData rowData = (EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem;
+                    string mensaje = string.Format("Se borrará el e-mail seleccionado.{0}{0}Tipo: {1}{0}e-mail: {2}{0}Nombre: {3}{0}{0}¿Confirma el borrado definitivo?", Environment.NewLine, rowData.EmailTipoNombre, rowData.Email, rowData.Nombre);
+                    if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        EntidadEmail EmailEntidad = context.EntidadEmail.Find(entidad.IdEntidad, rowData.IdEmail);
+                        context.EntidadEmail.Remove(EmailEntidad);
+                        context.SaveChanges();
+                        EmailEntidad = null;
+
+                        EmailsRefreshData();
+
+                        this.Cursor = Cursors.Default;
+                    }
+                }
+            }
+        }
+
+        private void EmailsVer_Click(object sender, EventArgs e)
+        {
+            if (datagridviewEmails.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Email para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadEmailEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadEmail formEmail = new FormEntidadEmail();
+                    formEmail.LoadAndShow(false, this, entidad.IdEntidad, ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail);
 
                     this.Cursor = Cursors.Default;
                 }

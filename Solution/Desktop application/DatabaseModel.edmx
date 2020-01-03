@@ -234,7 +234,8 @@
           <Property Name="IdEmail" Type="tinyint" Nullable="false" />
           <Property Name="IdEmailTipo" Type="tinyint" Nullable="false" />
           <Property Name="TipoOtro" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -1746,7 +1747,8 @@
           <Property Name="IdEmail" Type="Byte" Nullable="false" />
           <Property Name="IdEmailTipo" Type="Byte" Nullable="false" />
           <Property Name="TipoOtro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -3301,6 +3303,7 @@
           <EntitySetMapping Name="EntidadEmail">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadEmail">
               <MappingFragment StoreEntitySet="EntidadEmail">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="IdEmail" ColumnName="IdEmail" />
                 <ScalarProperty Name="IdEmailTipo" ColumnName="IdEmailTipo" />

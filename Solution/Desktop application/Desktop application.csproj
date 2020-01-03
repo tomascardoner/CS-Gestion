@@ -152,6 +152,7 @@
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadEmailExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadDomicilioExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadExtension.cs" />
     <Compile Include="DatabaseModel.Context.cs">
@@ -196,6 +197,12 @@
     </Compile>
     <Compile Include="EntidadEmpresa.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadEmail.Designer.cs">
+      <DependentUpon>FormEntidadEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="EntidadTelefono.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -286,6 +293,9 @@
     <EmbeddedResource Include="..\..\..\framework-csharp\ErrorMessageBox.resx">
       <Link>Framework\ErrorMessageBox.resx</Link>
       <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entidades\FormEntidadEmail.resx">
+      <DependentUpon>FormEntidadEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entidades\FormEntidades.resx">
       <DependentUpon>FormEntidades.cs</DependentUpon>
