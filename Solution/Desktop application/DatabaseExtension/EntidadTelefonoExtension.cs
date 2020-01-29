@@ -1,18 +1,18 @@
 ﻿namespace CS_Gestion
 {
-    public partial class EntidadEmail
+    public partial class EntidadTelefono
     {
-        internal string IdEmailFormatted
+        internal string IdTelefonoFormatted
         {
             get
             {
-                if (IdEmail == 0)
+                if (IdTelefono == 0)
                 {
                     return Properties.Resources.StringItemNewMale;
                 }
                 else
                 {
-                    return IdEmail.ToString(CardonerSistemas.Constants.FormatStringToNumberInteger);
+                    return IdTelefono.ToString(CardonerSistemas.Constants.FormatStringToNumberInteger);
                 }
             }
         }
@@ -62,6 +62,5 @@
                 }
             }
         }
-
     }
 }

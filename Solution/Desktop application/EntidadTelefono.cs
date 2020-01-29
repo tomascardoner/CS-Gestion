@@ -18,10 +18,7 @@ namespace CS_Gestion
         public byte IdTelefono { get; set; }
         public byte IdTelefonoTipo { get; set; }
         public string TipoOtro { get; set; }
-        public Nullable<byte> CodigoPais { get; set; }
-        public Nullable<short> CodigoArea { get; set; }
-        public int Numero { get; set; }
-        public Nullable<short> Interno { get; set; }
+        public string Numero { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }

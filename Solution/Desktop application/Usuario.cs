@@ -17,12 +17,12 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
-            this.Banco = new HashSet<Banco>();
-            this.Banco1 = new HashSet<Banco>();
+            this.BancosCreados = new HashSet<Banco>();
+            this.BancosModificados = new HashSet<Banco>();
             this.BancoSucursalesCreadas = new HashSet<BancoSucursal>();
             this.BancoSucursalesModificadas = new HashSet<BancoSucursal>();
-            this.Cheque = new HashSet<Cheque>();
-            this.Cheque1 = new HashSet<Cheque>();
+            this.ChequesCreados = new HashSet<Cheque>();
+            this.ChequesModificados = new HashSet<Cheque>();
             this.ChequeTalonariosCreados = new HashSet<ChequeTalonario>();
             this.ChequeTalonariosModificados = new HashSet<ChequeTalonario>();
             this.ChequeTalonarioTipoCreados = new HashSet<ChequeTalonarioTipo>();
@@ -39,8 +39,8 @@ namespace CS_Gestion
             this.EmpresasModificadas = new HashSet<Empresa>();
             this.EntidadesCreadas = new HashSet<Entidad>();
             this.EntidadesModificadas = new HashSet<Entidad>();
-            this.EntidadCuentaBancaria = new HashSet<EntidadCuentaBancaria>();
-            this.EntidadCuentaBancaria1 = new HashSet<EntidadCuentaBancaria>();
+            this.EntidadCuentasBancariasCreadas = new HashSet<EntidadCuentaBancaria>();
+            this.EntidadCuentasBancariasModificadas = new HashSet<EntidadCuentaBancaria>();
             this.EntidadDomiciliosCreados = new HashSet<EntidadDomicilio>();
             this.EntidadDomiciliosModificados = new HashSet<EntidadDomicilio>();
             this.EntidadEmailsCreados = new HashSet<EntidadEmail>();
@@ -56,8 +56,8 @@ namespace CS_Gestion
             this.MovimientoTiposModificados = new HashSet<MovimientoTipo>();
             this.TelefonoTiposCreados = new HashSet<TelefonoTipo>();
             this.TelefonoTiposModificados = new HashSet<TelefonoTipo>();
-            this.Usuario11 = new HashSet<Usuario>();
-            this.Usuario12 = new HashSet<Usuario>();
+            this.UsuariosCreados = new HashSet<Usuario>();
+            this.UsuariosModificados = new HashSet<Usuario>();
             this.UsuarioGruposCreados = new HashSet<UsuarioGrupo>();
             this.UsuarioGruposModificados = new HashSet<UsuarioGrupo>();
         }
@@ -76,17 +76,17 @@ namespace CS_Gestion
         public System.DateTime FechaHoraModificacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Banco> Banco { get; set; }
+        public virtual ICollection<Banco> BancosCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Banco> Banco1 { get; set; }
+        public virtual ICollection<Banco> BancosModificados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BancoSucursal> BancoSucursalesCreadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BancoSucursal> BancoSucursalesModificadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cheque> Cheque { get; set; }
+        public virtual ICollection<Cheque> ChequesCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cheque> Cheque1 { get; set; }
+        public virtual ICollection<Cheque> ChequesModificados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChequeTalonario> ChequeTalonariosCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -120,9 +120,9 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entidad> EntidadesModificadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntidadCuentaBancaria> EntidadCuentaBancaria { get; set; }
+        public virtual ICollection<EntidadCuentaBancaria> EntidadCuentasBancariasCreadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntidadCuentaBancaria> EntidadCuentaBancaria1 { get; set; }
+        public virtual ICollection<EntidadCuentaBancaria> EntidadCuentasBancariasModificadas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntidadDomicilio> EntidadDomiciliosCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -153,14 +153,12 @@ namespace CS_Gestion
         public virtual ICollection<TelefonoTipo> TelefonoTiposCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TelefonoTipo> TelefonoTiposModificados { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
-        public virtual Usuario Usuario2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario11 { get; set; }
-        public virtual Usuario Usuario3 { get; set; }
+        public virtual ICollection<Usuario> UsuariosCreados { get; set; }
+        public virtual Usuario UsuarioCreacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario12 { get; set; }
-        public virtual Usuario Usuario4 { get; set; }
+        public virtual ICollection<Usuario> UsuariosModificados { get; set; }
+        public virtual Usuario UsuarioModificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UsuarioGrupo> UsuarioGruposCreados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

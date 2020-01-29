@@ -53,6 +53,63 @@ namespace CS_Gestion
             Emailtipos = null;
         }
 
+        static internal void TelefonoTipo(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
+        {
+            comboBox.ValueMember = "IdTelefonoTipo";
+            comboBox.DisplayMember = "Nombre";
+
+            List<TelefonoTipo> Telefonotipos = context.TelefonoTipo.OrderBy(dt => dt.Nombre).ToList();
+
+            if (mostrarNoEspecifica)
+            {
+                TelefonoTipo noespecifica = new TelefonoTipo();
+                noespecifica.IdTelefonoTipo = CardonerSistemas.Constants.ByteFieldValueNotSpecified;
+                noespecifica.Nombre = Properties.Resources.StringItemNotSpecified;
+                Telefonotipos.Insert(0, noespecifica);
+            }
+
+            comboBox.DataSource = Telefonotipos;
+            Telefonotipos = null;
+        }
+
+        static internal void Banco(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
+        {
+            comboBox.ValueMember = "IdBanco";
+            comboBox.DisplayMember = "Nombre";
+
+            List<Banco> Bancos = context.Banco.OrderBy(dt => dt.Nombre).ToList();
+
+            if (mostrarNoEspecifica)
+            {
+                Banco noespecifica = new Banco();
+                noespecifica.IdBanco = CardonerSistemas.Constants.ByteFieldValueNotSpecified;
+                noespecifica.Nombre = Properties.Resources.StringItemNotSpecified;
+                Bancos.Insert(0, noespecifica);
+            }
+
+            comboBox.DataSource = Bancos;
+            Bancos = null;
+        }
+
+        static internal void CuentaBancariaTipo(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
+        {
+            comboBox.ValueMember = "IdCuentaBancariaTipo";
+            comboBox.DisplayMember = "Nombre";
+
+            List<CuentaBancariaTipo> CuentaBancariatipos = context.CuentaBancariaTipo.OrderBy(dt => dt.Nombre).ToList();
+
+            if (mostrarNoEspecifica)
+            {
+                CuentaBancariaTipo noespecifica = new CuentaBancariaTipo();
+                noespecifica.IdCuentaBancariaTipo = CardonerSistemas.Constants.ByteFieldValueNotSpecified;
+                noespecifica.Nombre = Properties.Resources.StringItemNotSpecified;
+                CuentaBancariatipos.Insert(0, noespecifica);
+            }
+
+            comboBox.DataSource = CuentaBancariatipos;
+            CuentaBancariatipos = null;
+        }
+
         static internal void Provincia(ComboBox comboBox, CSGestionContext context, bool mostrarNoEspecifica)
         {
             comboBox.ValueMember = "IdProvincia";

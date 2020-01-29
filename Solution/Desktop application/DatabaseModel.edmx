@@ -262,10 +262,7 @@
           <Property Name="IdTelefono" Type="tinyint" Nullable="false" />
           <Property Name="IdTelefonoTipo" Type="tinyint" Nullable="false" />
           <Property Name="TipoOtro" Type="varchar" MaxLength="50" />
-          <Property Name="CodigoPais" Type="tinyint" />
-          <Property Name="CodigoArea" Type="smallint" />
-          <Property Name="Numero" Type="int" Nullable="false" />
-          <Property Name="Interno" Type="smallint" />
+          <Property Name="Numero" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -1101,18 +1098,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__Usuario">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Usuario1" Type="Self.Usuario" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Usuario1">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Usuario__Usuario__Creacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Usuario1" Type="Self.Usuario" Multiplicity="*" />
@@ -1441,10 +1426,6 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="TelefonoTipo" EntitySet="TelefonoTipo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__Usuario" Association="Self.FK__Usuario__Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Usuario1" EntitySet="Usuario" />
-          </AssociationSet>
           <AssociationSet Name="FK__Usuario__Usuario__Creacion" Association="Self.FK__Usuario__Usuario__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Usuario1" EntitySet="Usuario" />
@@ -1532,8 +1513,8 @@
           <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Cheque__Creacion" FromRole="Cheque" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__Cheque__Modificacion" FromRole="Cheque" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__Cheque__Creacion" FromRole="Cheque" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__Cheque__Modificacion" FromRole="Cheque" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="ChequeTalonario">
           <Key>
@@ -1704,8 +1685,8 @@
           <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Entidad" Relationship="Self.FK__Entidad__EntidadCuentaBancaria" FromRole="EntidadCuentaBancaria" ToRole="Entidad" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Creacion" FromRole="EntidadCuentaBancaria" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Modificacion" FromRole="EntidadCuentaBancaria" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Creacion" FromRole="EntidadCuentaBancaria" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Modificacion" FromRole="EntidadCuentaBancaria" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="EntidadDomicilio">
           <Key>
@@ -1782,10 +1763,7 @@
           <Property Name="IdTelefono" Type="Byte" Nullable="false" />
           <Property Name="IdTelefonoTipo" Type="Byte" Nullable="false" />
           <Property Name="TipoOtro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CodigoPais" Type="Byte" />
-          <Property Name="CodigoArea" Type="Int16" />
-          <Property Name="Numero" Type="Int32" Nullable="false" />
-          <Property Name="Interno" Type="Int16" />
+          <Property Name="Numero" Type="String" Nullable="false" FixedLength="false" MaxLength="30" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -1920,12 +1898,12 @@
           <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
           <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Banco" Relationship="Self.FK__Usuario__Banco__Creacion" FromRole="Usuario" ToRole="Banco" />
-          <NavigationProperty Name="Banco1" Relationship="Self.FK__Usuario__Banco__Modificacion" FromRole="Usuario" ToRole="Banco" />
+          <NavigationProperty Name="BancosCreados" Relationship="Self.FK__Usuario__Banco__Creacion" FromRole="Usuario" ToRole="Banco" />
+          <NavigationProperty Name="BancosModificados" Relationship="Self.FK__Usuario__Banco__Modificacion" FromRole="Usuario" ToRole="Banco" />
           <NavigationProperty Name="BancoSucursalesCreadas" Relationship="Self.FK__Usuario__BancoSucursal__Creacion" FromRole="Usuario" ToRole="BancoSucursal" />
           <NavigationProperty Name="BancoSucursalesModificadas" Relationship="Self.FK__Usuario__BancoSucursal__Modificacion" FromRole="Usuario" ToRole="BancoSucursal" />
-          <NavigationProperty Name="Cheque" Relationship="Self.FK__Usuario__Cheque__Creacion" FromRole="Usuario" ToRole="Cheque" />
-          <NavigationProperty Name="Cheque1" Relationship="Self.FK__Usuario__Cheque__Modificacion" FromRole="Usuario" ToRole="Cheque" />
+          <NavigationProperty Name="ChequesCreados" Relationship="Self.FK__Usuario__Cheque__Creacion" FromRole="Usuario" ToRole="Cheque" />
+          <NavigationProperty Name="ChequesModificados" Relationship="Self.FK__Usuario__Cheque__Modificacion" FromRole="Usuario" ToRole="Cheque" />
           <NavigationProperty Name="ChequeTalonariosCreados" Relationship="Self.FK__Usuario__ChequeTalonario__Creacion" FromRole="Usuario" ToRole="ChequeTalonario" />
           <NavigationProperty Name="ChequeTalonariosModificados" Relationship="Self.FK__Usuario__ChequeTalonario__Modificacion" FromRole="Usuario" ToRole="ChequeTalonario" />
           <NavigationProperty Name="ChequeTalonarioTipoCreados" Relationship="Self.FK__Usuario__ChequeTalonarioTipo__Creacion" FromRole="Usuario" ToRole="ChequeTalonarioTipo" />
@@ -1942,8 +1920,8 @@
           <NavigationProperty Name="EmpresasModificadas" Relationship="Self.FK__Usuario__Empresa__Modificacion" FromRole="Usuario" ToRole="Empresa" />
           <NavigationProperty Name="EntidadesCreadas" Relationship="Self.FK__Usuario__Entidad__Creacion" FromRole="Usuario" ToRole="Entidad" />
           <NavigationProperty Name="EntidadesModificadas" Relationship="Self.FK__Usuario__Entidad__Modificacion" FromRole="Usuario" ToRole="Entidad" />
-          <NavigationProperty Name="EntidadCuentaBancaria" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Creacion" FromRole="Usuario" ToRole="EntidadCuentaBancaria" />
-          <NavigationProperty Name="EntidadCuentaBancaria1" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Modificacion" FromRole="Usuario" ToRole="EntidadCuentaBancaria" />
+          <NavigationProperty Name="EntidadCuentasBancariasCreadas" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Creacion" FromRole="Usuario" ToRole="EntidadCuentaBancaria" />
+          <NavigationProperty Name="EntidadCuentasBancariasModificadas" Relationship="Self.FK__Usuario__EntidadCuentaBancaria__Modificacion" FromRole="Usuario" ToRole="EntidadCuentaBancaria" />
           <NavigationProperty Name="EntidadDomiciliosCreados" Relationship="Self.FK__Usuario__EntidadDomicilio__Creacion" FromRole="Usuario" ToRole="EntidadDomicilio" />
           <NavigationProperty Name="EntidadDomiciliosModificados" Relationship="Self.FK__Usuario__EntidadDomicilio__Modificacion" FromRole="Usuario" ToRole="EntidadDomicilio" />
           <NavigationProperty Name="EntidadEmailsCreados" Relationship="Self.FK__Usuario__EntidadEmail__Creacion" FromRole="Usuario" ToRole="EntidadEmail" />
@@ -1959,12 +1937,10 @@
           <NavigationProperty Name="MovimientoTiposModificados" Relationship="Self.FK__Usuario__MovimientoTipo__Modificacion" FromRole="Usuario" ToRole="MovimientoTipo" />
           <NavigationProperty Name="TelefonoTiposCreados" Relationship="Self.FK__Usuario__TelefonoTipo__Creacion" FromRole="Usuario" ToRole="TelefonoTipo" />
           <NavigationProperty Name="TelefonoTiposModificados" Relationship="Self.FK__Usuario__TelefonoTipo__Modificacion" FromRole="Usuario" ToRole="TelefonoTipo" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Usuario__Usuario" FromRole="Usuario" ToRole="Usuario1" />
-          <NavigationProperty Name="Usuario2" Relationship="Self.FK__Usuario__Usuario" FromRole="Usuario1" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario11" Relationship="Self.FK__Usuario__Usuario__Creacion" FromRole="Usuario" ToRole="Usuario1" />
-          <NavigationProperty Name="Usuario3" Relationship="Self.FK__Usuario__Usuario__Creacion" FromRole="Usuario1" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario12" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario" ToRole="Usuario1" />
-          <NavigationProperty Name="Usuario4" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario1" ToRole="Usuario" />
+          <NavigationProperty Name="UsuariosCreados" Relationship="Self.FK__Usuario__Usuario__Creacion" FromRole="Usuario" ToRole="Usuario1" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__Usuario__Creacion" FromRole="Usuario1" ToRole="Usuario" />
+          <NavigationProperty Name="UsuariosModificados" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario" ToRole="Usuario2" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__Usuario__Modificacion" FromRole="Usuario2" ToRole="Usuario" />
           <NavigationProperty Name="UsuarioGruposCreados" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
           <NavigationProperty Name="UsuarioGruposModificados" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
           <NavigationProperty Name="UsuarioGrupo" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="Usuario" ToRole="UsuarioGrupo" />
@@ -2657,18 +2633,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__Usuario">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Usuario1" Type="Self.Usuario" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Usuario1">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Usuario__Usuario__Creacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Usuario1" Type="Self.Usuario" Multiplicity="*" />
@@ -2683,12 +2647,12 @@
         </Association>
         <Association Name="FK__Usuario__Usuario__Modificacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Usuario1" Type="Self.Usuario" Multiplicity="*" />
+          <End Role="Usuario2" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
               <PropertyRef Name="IdUsuario" />
             </Principal>
-            <Dependent Role="Usuario1">
+            <Dependent Role="Usuario2">
               <PropertyRef Name="IdUsuarioModificacion" />
             </Dependent>
           </ReferentialConstraint>
@@ -2988,17 +2952,13 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="TelefonoTipo" EntitySet="TelefonoTipo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__Usuario" Association="Self.FK__Usuario__Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Usuario1" EntitySet="Usuario" />
-          </AssociationSet>
           <AssociationSet Name="FK__Usuario__Usuario__Creacion" Association="Self.FK__Usuario__Usuario__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Usuario1" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuario__Usuario__Modificacion" Association="Self.FK__Usuario__Usuario__Modificacion">
             <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Usuario1" EntitySet="Usuario" />
+            <End Role="Usuario2" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuario__UsuarioGrupo__Creacion" Association="Self.FK__Usuario__UsuarioGrupo__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
@@ -3335,10 +3295,7 @@
                 <ScalarProperty Name="IdTelefono" ColumnName="IdTelefono" />
                 <ScalarProperty Name="IdTelefonoTipo" ColumnName="IdTelefonoTipo" />
                 <ScalarProperty Name="TipoOtro" ColumnName="TipoOtro" />
-                <ScalarProperty Name="CodigoPais" ColumnName="CodigoPais" />
-                <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Interno" ColumnName="Interno" />
                 <ScalarProperty Name="Notas" ColumnName="Notas" />
                 <ScalarProperty Name="EsActivo" ColumnName="EsActivo" />
                 <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />

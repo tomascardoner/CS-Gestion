@@ -95,6 +95,9 @@
     <Compile Include="..\..\..\framework-csharp\Afip.cs">
       <Link>Framework\Afip.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\Bank.cs">
+      <Link>Framework\Bank.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\ComboBox.cs">
       <Link>Framework\ComboBox.cs</Link>
     </Compile>
@@ -189,6 +192,7 @@
     <Compile Include="EntidadCuentaBancaria.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadCuentaBancariaExtension.cs" />
     <Compile Include="EntidadDomicilio.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -197,6 +201,18 @@
     </Compile>
     <Compile Include="EntidadEmpresa.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCuentaBancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCuentaBancaria.Designer.cs">
+      <DependentUpon>FormEntidadCuentaBancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadTelefono.Designer.cs">
+      <DependentUpon>FormEntidadTelefono.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\FormEntidadEmail.cs">
       <SubType>Form</SubType>
@@ -225,6 +241,7 @@
     <Compile Include="Entidades\FormEntidadDomicilio.Designer.cs">
       <DependentUpon>FormEntidadDomicilio.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadTelefonoExtension.cs" />
     <Compile Include="Framework\Graphics.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Listas\ListasComunes.cs" />
@@ -293,6 +310,12 @@
     <EmbeddedResource Include="..\..\..\framework-csharp\ErrorMessageBox.resx">
       <Link>Framework\ErrorMessageBox.resx</Link>
       <DependentUpon>ErrorMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entidades\FormEntidadCuentaBancaria.resx">
+      <DependentUpon>FormEntidadCuentaBancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entidades\FormEntidadTelefono.resx">
+      <DependentUpon>FormEntidadTelefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entidades\FormEntidadEmail.resx">
       <DependentUpon>FormEntidadEmail.cs</DependentUpon>

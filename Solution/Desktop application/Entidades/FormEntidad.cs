@@ -83,6 +83,12 @@ namespace CS_Gestion
             maskedtextboxCuit.ReadOnly = !isEditMode;
             textboxIngresosBrutos.ReadOnly = !isEditMode;
 
+            // Grillas
+            toolstripDomicilios.Enabled = !isEditMode;
+            toolstripEmails.Enabled = !isEditMode;
+            toolstripTelefonos.Enabled = !isEditMode;
+            toolstripCuentasBancarias.Enabled = !isEditMode;
+
             // Notas y Auditoría
             textboxNotas.ReadOnly = !isEditMode;
             checkboxEsActivo.Enabled = isEditMode;
@@ -190,6 +196,16 @@ namespace CS_Gestion
                 {
                     EmailsRefreshData();
                     tabpageEmails.Tag = "Refreshed";
+                }
+                if (tabcontrolMain.SelectedTab.Name == tabpageTelefonos.Name && tabpageTelefonos.Tag == null)
+                {
+                    TelefonosRefreshData();
+                    tabpageTelefonos.Tag = "Refreshed";
+                }
+                if (tabcontrolMain.SelectedTab.Name == tabpageCuentasBancarias.Name && tabpageCuentasBancarias.Tag == null)
+                {
+                    CuentasBancariasRefreshData();
+                    tabpageCuentasBancarias.Tag = "Refreshed";
                 }
             }
         }
@@ -564,10 +580,10 @@ namespace CS_Gestion
             try
             {
                 listEmails = (from ee in context.EntidadEmail
-                                join dt in context.EmailTipo on ee.IdEmailTipo equals dt.IdEmailTipo
+                                join et in context.EmailTipo on ee.IdEmailTipo equals et.IdEmailTipo
                                 where ee.IdEntidad == entidad.IdEntidad
-                                orderby dt.Nombre
-                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = dt.Nombre, Email = ee.Email, Nombre = ee.Nombre }).ToList();
+                                orderby et.Nombre
+                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = et.Nombre, Email = ee.Email, Nombre = ee.Nombre }).ToList();
 
                 datagridviewEmails.AutoGenerateColumns = false;
                 datagridviewEmails.DataSource = listEmails;
@@ -671,6 +687,299 @@ namespace CS_Gestion
 
                     FormEntidadEmail formEmail = new FormEntidadEmail();
                     formEmail.LoadAndShow(false, this, entidad.IdEntidad, ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Telefonos
+
+        internal class TelefonosGridRowData
+        {
+            public byte IdTelefono { get; set; }
+            public string TelefonoTipoNombre { get; set; }
+            public string Numero { get; set; }
+        }
+
+        internal void TelefonosRefreshData(byte positionIdTelefono = 0, bool restorePosition = false)
+        {
+            List<TelefonosGridRowData> listTelefonos;
+
+            if (restorePosition)
+            {
+                if (datagridviewTelefonos.CurrentRow == null)
+                {
+                    positionIdTelefono = 0;
+                }
+                else
+                {
+                    positionIdTelefono = ((TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem).IdTelefono;
+                }
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                listTelefonos = (from et in context.EntidadTelefono
+                              join tt in context.TelefonoTipo on et.IdTelefonoTipo equals tt.IdTelefonoTipo
+                              where et.IdEntidad == entidad.IdEntidad
+                              orderby tt.Nombre
+                              select new TelefonosGridRowData() { IdTelefono = et.IdTelefono, TelefonoTipoNombre = tt.Nombre, Numero = et.Numero }).ToList();
+
+                datagridviewTelefonos.AutoGenerateColumns = false;
+                datagridviewTelefonos.DataSource = listTelefonos;
+            }
+            catch (Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer los teléfonos.");
+                this.Cursor = Cursors.Default;
+                return;
+            }
+
+            this.Cursor = Cursors.Default;
+
+            if (positionIdTelefono != 0)
+            {
+                foreach (DataGridViewRow row in datagridviewTelefonos.Rows)
+                {
+                    if (((TelefonosGridRowData)row.DataBoundItem).IdTelefono == positionIdTelefono)
+                    {
+                        datagridviewTelefonos.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        private void TelefonosAgregar_Click(object sender, EventArgs e)
+        {
+            if (Permisos.Verificar(Permisos.EntidadTelefonoAgregar))
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                FormEntidadTelefono formTelefono = new FormEntidadTelefono();
+                formTelefono.LoadAndShow(true, this, entidad.IdEntidad, 0);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void TelefonosEditar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewTelefonos.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Teléfono para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadTelefonoEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadTelefono formTelefono = new FormEntidadTelefono();
+                    formTelefono.LoadAndShow(true, this, entidad.IdEntidad, ((TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem).IdTelefono);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void TelefonosBorrar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewTelefonos.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Teléfono para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadTelefonoBorrar))
+                {
+                    TelefonosGridRowData rowData = (TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem;
+                    string mensaje = string.Format("Se borrará el teléfono seleccionado.{0}{0}Tipo: {1}{0}Número: {2}{0}{0}¿Confirma el borrado definitivo?", Environment.NewLine, rowData.TelefonoTipoNombre, rowData.Numero);
+                    if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        EntidadTelefono TelefonoEntidad = context.EntidadTelefono.Find(entidad.IdEntidad, rowData.IdTelefono);
+                        context.EntidadTelefono.Remove(TelefonoEntidad);
+                        context.SaveChanges();
+                        TelefonoEntidad = null;
+
+                        TelefonosRefreshData();
+
+                        this.Cursor = Cursors.Default;
+                    }
+                }
+            }
+        }
+
+        private void TelefonosVer_Click(object sender, EventArgs e)
+        {
+            if (datagridviewTelefonos.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ningún Teléfono para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadTelefonoEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadTelefono formTelefono = new FormEntidadTelefono();
+                    formTelefono.LoadAndShow(false, this, entidad.IdEntidad, ((TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem).IdTelefono);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        #endregion
+
+        #region CuentaBancarias
+
+        internal class CuentasBancariasGridRowData
+        {
+            public byte IdCuentaBancaria { get; set; }
+            public string BancoNombre { get; set; }
+            public string TipoNombre { get; set; }
+            public short? Sucursal { get; set; }
+            public string Numero { get; set; }
+        }
+
+        internal void CuentasBancariasRefreshData(byte positionIdCuentaBancaria = 0, bool restorePosition = false)
+        {
+            List<CuentasBancariasGridRowData> listCuentasBancarias;
+
+            if (restorePosition)
+            {
+                if (datagridviewCuentasBancarias.CurrentRow == null)
+                {
+                    positionIdCuentaBancaria = 0;
+                }
+                else
+                {
+                    positionIdCuentaBancaria = ((CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem).IdCuentaBancaria;
+                }
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                listCuentasBancarias = (from ecb in context.EntidadCuentaBancaria
+                                       join b in context.Banco on ecb.IdBanco equals b.IdBanco
+                                       join cbt in context.CuentaBancariaTipo on ecb.IdCuentaBancariaTipo equals cbt.IdCuentaBancariaTipo
+                                       where ecb.IdEntidad == entidad.IdEntidad
+                                       orderby cbt.Nombre
+                                       select new CuentasBancariasGridRowData() { IdCuentaBancaria = ecb.IdCuentaBancaria, BancoNombre = b.Nombre, TipoNombre = cbt.Nombre, Sucursal = ecb.Sucursal, Numero = ecb.Numero }).ToList();
+
+                datagridviewCuentasBancarias.AutoGenerateColumns = false;
+                datagridviewCuentasBancarias.DataSource = listCuentasBancarias;
+            }
+            catch (Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer las Cuentas Bancarias.");
+                this.Cursor = Cursors.Default;
+                return;
+            }
+
+            this.Cursor = Cursors.Default;
+
+            if (positionIdCuentaBancaria != 0)
+            {
+                foreach (DataGridViewRow row in datagridviewCuentasBancarias.Rows)
+                {
+                    if (((CuentasBancariasGridRowData)row.DataBoundItem).IdCuentaBancaria == positionIdCuentaBancaria)
+                    {
+                        datagridviewCuentasBancarias.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        private void CuentaBancariasAgregar_Click(object sender, EventArgs e)
+        {
+            if (Permisos.Verificar(Permisos.EntidadCuentaBancariaAgregar))
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                FormEntidadCuentaBancaria formCuentaBancaria = new FormEntidadCuentaBancaria();
+                formCuentaBancaria.LoadAndShow(true, this, entidad.IdEntidad, 0);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void CuentaBancariasEditar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewCuentasBancarias.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ninguna Cuenta Bancaria para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadCuentaBancariaEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadCuentaBancaria formCuentaBancaria = new FormEntidadCuentaBancaria();
+                    formCuentaBancaria.LoadAndShow(true, this, entidad.IdEntidad, ((CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem).IdCuentaBancaria);
+
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void CuentaBancariasBorrar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewCuentasBancarias.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ninguna Cuenta Bancaria para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadCuentaBancariaBorrar))
+                {
+                    CuentasBancariasGridRowData rowData = (CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem;
+                    string mensaje = string.Format("Se borrará la Cuenta Bancaria seleccionada.{0}{0}Banco: {1}{0}Tipo: {2}{0}Sucursal: {3}{0}Número: {4}{0}{0}¿Confirma el borrado definitivo?", Environment.NewLine, rowData.BancoNombre, rowData.TipoNombre, rowData.Sucursal, rowData.Numero);
+                    if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        EntidadCuentaBancaria CuentaBancariaEntidad = context.EntidadCuentaBancaria.Find(entidad.IdEntidad, rowData.IdCuentaBancaria);
+                        context.EntidadCuentaBancaria.Remove(CuentaBancariaEntidad);
+                        context.SaveChanges();
+                        CuentaBancariaEntidad = null;
+
+                        CuentasBancariasRefreshData();
+
+                        this.Cursor = Cursors.Default;
+                    }
+                }
+            }
+        }
+
+        private void CuentaBancariasVer_Click(object sender, EventArgs e)
+        {
+            if (datagridviewCuentasBancarias.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ninguna Cuenta Bancaria para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadCuentaBancariaEditar))
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+                    FormEntidadCuentaBancaria formCuentaBancaria = new FormEntidadCuentaBancaria();
+                    formCuentaBancaria.LoadAndShow(false, this, entidad.IdEntidad, ((CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem).IdCuentaBancaria);
 
                     this.Cursor = Cursors.Default;
                 }

@@ -19,6 +19,16 @@ namespace CS_Gestion
         internal const string EntidadEmailEditar = "EntidadEmailEditar";
         internal const string EntidadEmailBorrar = "EntidadEmailBorrar";
 
+        internal const string EntidadTelefono = "EntidadTelefono";
+        internal const string EntidadTelefonoAgregar = "EntidadTelefonoAgregar";
+        internal const string EntidadTelefonoEditar = "EntidadTelefonoEditar";
+        internal const string EntidadTelefonoBorrar = "EntidadTelefonoBorrar";
+
+        internal const string EntidadCuentaBancaria = "EntidadCuentaBancaria";
+        internal const string EntidadCuentaBancariaAgregar = "EntidadCuentaBancariaAgregar";
+        internal const string EntidadCuentaBancariaEditar = "EntidadCuentaBancariaEditar";
+        internal const string EntidadCuentaBancariaBorrar = "EntidadCuentaBancariaBorrar";
+
         internal static bool Verificar(string idPermiso, bool mostrarAviso = true)
         {
             if (Program.Usuario.IdUsuarioGrupo == Constantes.IdUsuarioGrupoAdministradores)

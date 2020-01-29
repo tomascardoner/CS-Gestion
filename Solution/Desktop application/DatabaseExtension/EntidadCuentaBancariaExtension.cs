@@ -1,18 +1,18 @@
 ﻿namespace CS_Gestion
 {
-    public partial class EntidadEmail
+    public partial class EntidadCuentaBancaria
     {
-        internal string IdEmailFormatted
+        internal string IdCuentaBancariaFormatted
         {
             get
             {
-                if (IdEmail == 0)
+                if (IdCuentaBancaria == 0)
                 {
                     return Properties.Resources.StringItemNewMale;
                 }
                 else
                 {
-                    return IdEmail.ToString(CardonerSistemas.Constants.FormatStringToNumberInteger);
+                    return IdCuentaBancaria.ToString(CardonerSistemas.Constants.FormatStringToNumberInteger);
                 }
             }
         }
@@ -62,6 +62,5 @@
                 }
             }
         }
-
     }
 }

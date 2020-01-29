@@ -28,7 +28,7 @@
         <EntityTypeShape EntityType="CSGestionModel.MovimientoTipo" Width="1.5" PointX="5.25" PointY="65.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CSGestionModel.Provincia" Width="1.5" PointX="6" PointY="27.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CSGestionModel.TelefonoTipo" Width="1.5" PointX="5.25" PointY="69.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CSGestionModel.Usuario" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSGestionModel.Usuario" Width="2.125" PointX="2.875" PointY="34.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CSGestionModel.UsuarioGrupo" Width="1.5" PointX="0.75" PointY="37.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CSGestionModel.UsuarioGrupoPermiso" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
         <AssociationConnector Association="CSGestionModel.FK__Banco__BancoSucursal" ManuallyRouted="false" />
@@ -86,7 +86,6 @@
         <AssociationConnector Association="CSGestionModel.FK__Usuario__MovimientoTipo__Modificacion" ManuallyRouted="false" />
         <AssociationConnector Association="CSGestionModel.FK__Usuario__TelefonoTipo__Creacion" ManuallyRouted="false" />
         <AssociationConnector Association="CSGestionModel.FK__Usuario__TelefonoTipo__Modificacion" ManuallyRouted="false" />
-        <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario__Creacion" ManuallyRouted="false" />
         <AssociationConnector Association="CSGestionModel.FK__Usuario__Usuario__Modificacion" ManuallyRouted="false" />
         <AssociationConnector Association="CSGestionModel.FK__Usuario__UsuarioGrupo__Creacion" ManuallyRouted="false" />

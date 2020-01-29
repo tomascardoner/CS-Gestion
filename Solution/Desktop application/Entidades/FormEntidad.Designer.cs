@@ -34,6 +34,8 @@
             System.Windows.Forms.Label labelCreacion;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -74,6 +76,24 @@
             this.buttonEmailsAgregar = new System.Windows.Forms.ToolStripButton();
             this.buttonEmailsEditar = new System.Windows.Forms.ToolStripButton();
             this.buttonEmailsBorrar = new System.Windows.Forms.ToolStripButton();
+            this.tabpageTelefonos = new System.Windows.Forms.TabPage();
+            this.datagridviewTelefonos = new System.Windows.Forms.DataGridView();
+            this.columnTelefonosTipoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTelefonosNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolstripTelefonos = new System.Windows.Forms.ToolStrip();
+            this.buttonTelefonosAgregar = new System.Windows.Forms.ToolStripButton();
+            this.buttonTelefonosEditar = new System.Windows.Forms.ToolStripButton();
+            this.buttonTelefonosBorrar = new System.Windows.Forms.ToolStripButton();
+            this.tabpageCuentasBancarias = new System.Windows.Forms.TabPage();
+            this.datagridviewCuentasBancarias = new System.Windows.Forms.DataGridView();
+            this.columnCuentasBancariasBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolstripCuentasBancarias = new System.Windows.Forms.ToolStrip();
+            this.buttonCuentasBancariasAgregar = new System.Windows.Forms.ToolStripButton();
+            this.CuentasBancariasEditar = new System.Windows.Forms.ToolStripButton();
+            this.CuentasBancariasBorrar = new System.Windows.Forms.ToolStripButton();
             this.tabpageNotasAuditoria = new System.Windows.Forms.TabPage();
             this.checkboxEsActivo = new System.Windows.Forms.CheckBox();
             this.labelId = new System.Windows.Forms.Label();
@@ -96,6 +116,12 @@
             this.tabpageEmails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewEmails)).BeginInit();
             this.toolstripEmails.SuspendLayout();
+            this.tabpageTelefonos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewTelefonos)).BeginInit();
+            this.toolstripTelefonos.SuspendLayout();
+            this.tabpageCuentasBancarias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewCuentasBancarias)).BeginInit();
+            this.toolstripCuentasBancarias.SuspendLayout();
             this.tabpageNotasAuditoria.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +175,7 @@
             this.buttonGuardar});
             this.toolstripMain.Location = new System.Drawing.Point(0, 0);
             this.toolstripMain.Name = "toolstripMain";
-            this.toolstripMain.Size = new System.Drawing.Size(522, 39);
+            this.toolstripMain.Size = new System.Drawing.Size(582, 39);
             this.toolstripMain.TabIndex = 1;
             // 
             // buttonCerrar
@@ -348,12 +374,14 @@
             this.tabcontrolMain.Controls.Add(this.tabpageGeneral);
             this.tabcontrolMain.Controls.Add(this.tabpageDomicilios);
             this.tabcontrolMain.Controls.Add(this.tabpageEmails);
+            this.tabcontrolMain.Controls.Add(this.tabpageTelefonos);
+            this.tabcontrolMain.Controls.Add(this.tabpageCuentasBancarias);
             this.tabcontrolMain.Controls.Add(this.tabpageNotasAuditoria);
             this.tabcontrolMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrolMain.Location = new System.Drawing.Point(0, 39);
             this.tabcontrolMain.Name = "tabcontrolMain";
             this.tabcontrolMain.SelectedIndex = 0;
-            this.tabcontrolMain.Size = new System.Drawing.Size(522, 219);
+            this.tabcontrolMain.Size = new System.Drawing.Size(582, 219);
             this.tabcontrolMain.TabIndex = 0;
             this.tabcontrolMain.SelectedIndexChanged += new System.EventHandler(this.TabControlChanged);
             // 
@@ -377,7 +405,7 @@
             this.tabpageGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabpageGeneral.Name = "tabpageGeneral";
             this.tabpageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageGeneral.Size = new System.Drawing.Size(514, 190);
+            this.tabpageGeneral.Size = new System.Drawing.Size(574, 190);
             this.tabpageGeneral.TabIndex = 0;
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
@@ -389,7 +417,7 @@
             this.tabpageDomicilios.Location = new System.Drawing.Point(4, 25);
             this.tabpageDomicilios.Name = "tabpageDomicilios";
             this.tabpageDomicilios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageDomicilios.Size = new System.Drawing.Size(514, 190);
+            this.tabpageDomicilios.Size = new System.Drawing.Size(574, 190);
             this.tabpageDomicilios.TabIndex = 2;
             this.tabpageDomicilios.Text = "Domicilios";
             this.tabpageDomicilios.UseVisualStyleBackColor = true;
@@ -418,7 +446,7 @@
             this.datagridviewDomicilios.RowHeadersVisible = false;
             this.datagridviewDomicilios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewDomicilios.Size = new System.Drawing.Size(422, 184);
+            this.datagridviewDomicilios.Size = new System.Drawing.Size(482, 184);
             this.datagridviewDomicilios.TabIndex = 8;
             this.datagridviewDomicilios.DoubleClick += new System.EventHandler(this.DomiciliosVer_Click);
             // 
@@ -504,7 +532,7 @@
             this.tabpageEmails.Location = new System.Drawing.Point(4, 25);
             this.tabpageEmails.Name = "tabpageEmails";
             this.tabpageEmails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageEmails.Size = new System.Drawing.Size(514, 190);
+            this.tabpageEmails.Size = new System.Drawing.Size(574, 190);
             this.tabpageEmails.TabIndex = 3;
             this.tabpageEmails.Text = "e-Mails";
             this.tabpageEmails.UseVisualStyleBackColor = true;
@@ -533,7 +561,7 @@
             this.datagridviewEmails.RowHeadersVisible = false;
             this.datagridviewEmails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewEmails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewEmails.Size = new System.Drawing.Size(422, 184);
+            this.datagridviewEmails.Size = new System.Drawing.Size(482, 184);
             this.datagridviewEmails.TabIndex = 10;
             this.datagridviewEmails.DoubleClick += new System.EventHandler(this.EmailsVer_Click);
             // 
@@ -612,6 +640,236 @@
             this.buttonEmailsBorrar.Text = "Borrar";
             this.buttonEmailsBorrar.Click += new System.EventHandler(this.EmailsBorrar_Click);
             // 
+            // tabpageTelefonos
+            // 
+            this.tabpageTelefonos.Controls.Add(this.datagridviewTelefonos);
+            this.tabpageTelefonos.Controls.Add(this.toolstripTelefonos);
+            this.tabpageTelefonos.Location = new System.Drawing.Point(4, 25);
+            this.tabpageTelefonos.Name = "tabpageTelefonos";
+            this.tabpageTelefonos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpageTelefonos.Size = new System.Drawing.Size(574, 190);
+            this.tabpageTelefonos.TabIndex = 4;
+            this.tabpageTelefonos.Text = "Teléfonos";
+            this.tabpageTelefonos.UseVisualStyleBackColor = true;
+            // 
+            // datagridviewTelefonos
+            // 
+            this.datagridviewTelefonos.AllowUserToAddRows = false;
+            this.datagridviewTelefonos.AllowUserToDeleteRows = false;
+            this.datagridviewTelefonos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.datagridviewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnTelefonosTipoNombre,
+            this.columnTelefonosNumero});
+            this.datagridviewTelefonos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridviewTelefonos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.datagridviewTelefonos.Location = new System.Drawing.Point(89, 3);
+            this.datagridviewTelefonos.MultiSelect = false;
+            this.datagridviewTelefonos.Name = "datagridviewTelefonos";
+            this.datagridviewTelefonos.ReadOnly = true;
+            this.datagridviewTelefonos.RowHeadersVisible = false;
+            this.datagridviewTelefonos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridviewTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewTelefonos.Size = new System.Drawing.Size(482, 184);
+            this.datagridviewTelefonos.TabIndex = 12;
+            this.datagridviewTelefonos.DoubleClick += new System.EventHandler(this.TelefonosVer_Click);
+            // 
+            // columnTelefonosTipoNombre
+            // 
+            this.columnTelefonosTipoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnTelefonosTipoNombre.DataPropertyName = "TelefonoTipoNombre";
+            this.columnTelefonosTipoNombre.HeaderText = "Tipo";
+            this.columnTelefonosTipoNombre.Name = "columnTelefonosTipoNombre";
+            this.columnTelefonosTipoNombre.ReadOnly = true;
+            this.columnTelefonosTipoNombre.Width = 53;
+            // 
+            // columnTelefonosNumero
+            // 
+            this.columnTelefonosNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnTelefonosNumero.DataPropertyName = "Numero";
+            this.columnTelefonosNumero.HeaderText = "Número";
+            this.columnTelefonosNumero.Name = "columnTelefonosNumero";
+            this.columnTelefonosNumero.ReadOnly = true;
+            this.columnTelefonosNumero.Width = 69;
+            // 
+            // toolstripTelefonos
+            // 
+            this.toolstripTelefonos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolstripTelefonos.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripTelefonos.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolstripTelefonos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonTelefonosAgregar,
+            this.buttonTelefonosEditar,
+            this.buttonTelefonosBorrar});
+            this.toolstripTelefonos.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolstripTelefonos.Location = new System.Drawing.Point(3, 3);
+            this.toolstripTelefonos.Name = "toolstripTelefonos";
+            this.toolstripTelefonos.Size = new System.Drawing.Size(86, 184);
+            this.toolstripTelefonos.TabIndex = 13;
+            // 
+            // buttonTelefonosAgregar
+            // 
+            this.buttonTelefonosAgregar.Image = global::CS_Gestion.Properties.Resources.ImageItemAdd32;
+            this.buttonTelefonosAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTelefonosAgregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonTelefonosAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonTelefonosAgregar.Name = "buttonTelefonosAgregar";
+            this.buttonTelefonosAgregar.Size = new System.Drawing.Size(83, 36);
+            this.buttonTelefonosAgregar.Text = "Agregar";
+            this.buttonTelefonosAgregar.Click += new System.EventHandler(this.TelefonosAgregar_Click);
+            // 
+            // buttonTelefonosEditar
+            // 
+            this.buttonTelefonosEditar.Image = global::CS_Gestion.Properties.Resources.ImageItemEdit32;
+            this.buttonTelefonosEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTelefonosEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonTelefonosEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonTelefonosEditar.Name = "buttonTelefonosEditar";
+            this.buttonTelefonosEditar.Size = new System.Drawing.Size(83, 36);
+            this.buttonTelefonosEditar.Text = "Editar";
+            this.buttonTelefonosEditar.Click += new System.EventHandler(this.TelefonosEditar_Click);
+            // 
+            // buttonTelefonosBorrar
+            // 
+            this.buttonTelefonosBorrar.Image = global::CS_Gestion.Properties.Resources.ImageItemDelete32;
+            this.buttonTelefonosBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTelefonosBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonTelefonosBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonTelefonosBorrar.Name = "buttonTelefonosBorrar";
+            this.buttonTelefonosBorrar.Size = new System.Drawing.Size(83, 36);
+            this.buttonTelefonosBorrar.Text = "Borrar";
+            this.buttonTelefonosBorrar.Click += new System.EventHandler(this.TelefonosBorrar_Click);
+            // 
+            // tabpageCuentasBancarias
+            // 
+            this.tabpageCuentasBancarias.Controls.Add(this.datagridviewCuentasBancarias);
+            this.tabpageCuentasBancarias.Controls.Add(this.toolstripCuentasBancarias);
+            this.tabpageCuentasBancarias.Location = new System.Drawing.Point(4, 25);
+            this.tabpageCuentasBancarias.Name = "tabpageCuentasBancarias";
+            this.tabpageCuentasBancarias.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpageCuentasBancarias.Size = new System.Drawing.Size(574, 190);
+            this.tabpageCuentasBancarias.TabIndex = 5;
+            this.tabpageCuentasBancarias.Text = "Cuentas Bancarias";
+            this.tabpageCuentasBancarias.UseVisualStyleBackColor = true;
+            // 
+            // datagridviewCuentasBancarias
+            // 
+            this.datagridviewCuentasBancarias.AllowUserToAddRows = false;
+            this.datagridviewCuentasBancarias.AllowUserToDeleteRows = false;
+            this.datagridviewCuentasBancarias.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.datagridviewCuentasBancarias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewCuentasBancarias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnCuentasBancariasBanco,
+            this.columnCuentasBancariasTipo,
+            this.columnCuentasBancariasSucursal,
+            this.columnCuentasBancariasNumero});
+            this.datagridviewCuentasBancarias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridviewCuentasBancarias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.datagridviewCuentasBancarias.Location = new System.Drawing.Point(89, 3);
+            this.datagridviewCuentasBancarias.MultiSelect = false;
+            this.datagridviewCuentasBancarias.Name = "datagridviewCuentasBancarias";
+            this.datagridviewCuentasBancarias.ReadOnly = true;
+            this.datagridviewCuentasBancarias.RowHeadersVisible = false;
+            this.datagridviewCuentasBancarias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagridviewCuentasBancarias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewCuentasBancarias.Size = new System.Drawing.Size(482, 184);
+            this.datagridviewCuentasBancarias.TabIndex = 12;
+            this.datagridviewCuentasBancarias.DoubleClick += new System.EventHandler(this.CuentaBancariasVer_Click);
+            // 
+            // columnCuentasBancariasBanco
+            // 
+            this.columnCuentasBancariasBanco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasBanco.DataPropertyName = "BancoNombre";
+            this.columnCuentasBancariasBanco.HeaderText = "Banco";
+            this.columnCuentasBancariasBanco.Name = "columnCuentasBancariasBanco";
+            this.columnCuentasBancariasBanco.ReadOnly = true;
+            this.columnCuentasBancariasBanco.Width = 63;
+            // 
+            // columnCuentasBancariasTipo
+            // 
+            this.columnCuentasBancariasTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasTipo.DataPropertyName = "TipoNombre";
+            this.columnCuentasBancariasTipo.HeaderText = "Tipo";
+            this.columnCuentasBancariasTipo.Name = "columnCuentasBancariasTipo";
+            this.columnCuentasBancariasTipo.ReadOnly = true;
+            this.columnCuentasBancariasTipo.Width = 53;
+            // 
+            // columnCuentasBancariasSucursal
+            // 
+            this.columnCuentasBancariasSucursal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasSucursal.DataPropertyName = "Sucursal";
+            this.columnCuentasBancariasSucursal.HeaderText = "Sucursal";
+            this.columnCuentasBancariasSucursal.Name = "columnCuentasBancariasSucursal";
+            this.columnCuentasBancariasSucursal.ReadOnly = true;
+            this.columnCuentasBancariasSucursal.Width = 73;
+            // 
+            // columnCuentasBancariasNumero
+            // 
+            this.columnCuentasBancariasNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasNumero.DataPropertyName = "Numero";
+            this.columnCuentasBancariasNumero.HeaderText = "Número";
+            this.columnCuentasBancariasNumero.Name = "columnCuentasBancariasNumero";
+            this.columnCuentasBancariasNumero.ReadOnly = true;
+            this.columnCuentasBancariasNumero.Width = 69;
+            // 
+            // toolstripCuentasBancarias
+            // 
+            this.toolstripCuentasBancarias.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolstripCuentasBancarias.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripCuentasBancarias.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolstripCuentasBancarias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonCuentasBancariasAgregar,
+            this.CuentasBancariasEditar,
+            this.CuentasBancariasBorrar});
+            this.toolstripCuentasBancarias.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolstripCuentasBancarias.Location = new System.Drawing.Point(3, 3);
+            this.toolstripCuentasBancarias.Name = "toolstripCuentasBancarias";
+            this.toolstripCuentasBancarias.Size = new System.Drawing.Size(86, 184);
+            this.toolstripCuentasBancarias.TabIndex = 13;
+            // 
+            // buttonCuentasBancariasAgregar
+            // 
+            this.buttonCuentasBancariasAgregar.Image = global::CS_Gestion.Properties.Resources.ImageItemAdd32;
+            this.buttonCuentasBancariasAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCuentasBancariasAgregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buttonCuentasBancariasAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonCuentasBancariasAgregar.Name = "buttonCuentasBancariasAgregar";
+            this.buttonCuentasBancariasAgregar.Size = new System.Drawing.Size(83, 36);
+            this.buttonCuentasBancariasAgregar.Text = "Agregar";
+            this.buttonCuentasBancariasAgregar.Click += new System.EventHandler(this.CuentaBancariasAgregar_Click);
+            // 
+            // CuentasBancariasEditar
+            // 
+            this.CuentasBancariasEditar.Image = global::CS_Gestion.Properties.Resources.ImageItemEdit32;
+            this.CuentasBancariasEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CuentasBancariasEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.CuentasBancariasEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CuentasBancariasEditar.Name = "CuentasBancariasEditar";
+            this.CuentasBancariasEditar.Size = new System.Drawing.Size(83, 36);
+            this.CuentasBancariasEditar.Text = "Editar";
+            this.CuentasBancariasEditar.Click += new System.EventHandler(this.CuentaBancariasEditar_Click);
+            // 
+            // CuentasBancariasBorrar
+            // 
+            this.CuentasBancariasBorrar.Image = global::CS_Gestion.Properties.Resources.ImageItemDelete32;
+            this.CuentasBancariasBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CuentasBancariasBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.CuentasBancariasBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CuentasBancariasBorrar.Name = "CuentasBancariasBorrar";
+            this.CuentasBancariasBorrar.Size = new System.Drawing.Size(83, 36);
+            this.CuentasBancariasBorrar.Text = "Borrar";
+            this.CuentasBancariasBorrar.Click += new System.EventHandler(this.CuentaBancariasBorrar_Click);
+            // 
             // tabpageNotasAuditoria
             // 
             this.tabpageNotasAuditoria.Controls.Add(this.checkboxEsActivo);
@@ -629,7 +887,7 @@
             this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
             this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
             this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(514, 190);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(574, 190);
             this.tabpageNotasAuditoria.TabIndex = 1;
             this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
             this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
@@ -716,7 +974,7 @@
             this.textboxNotas.MaxLength = 0;
             this.textboxNotas.Multiline = true;
             this.textboxNotas.Name = "textboxNotas";
-            this.textboxNotas.Size = new System.Drawing.Size(386, 78);
+            this.textboxNotas.Size = new System.Drawing.Size(448, 78);
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
@@ -724,7 +982,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 258);
+            this.ClientSize = new System.Drawing.Size(582, 258);
             this.Controls.Add(this.tabcontrolMain);
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -750,6 +1008,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewEmails)).EndInit();
             this.toolstripEmails.ResumeLayout(false);
             this.toolstripEmails.PerformLayout();
+            this.tabpageTelefonos.ResumeLayout(false);
+            this.tabpageTelefonos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewTelefonos)).EndInit();
+            this.toolstripTelefonos.ResumeLayout(false);
+            this.toolstripTelefonos.PerformLayout();
+            this.tabpageCuentasBancarias.ResumeLayout(false);
+            this.tabpageCuentasBancarias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewCuentasBancarias)).EndInit();
+            this.toolstripCuentasBancarias.ResumeLayout(false);
+            this.toolstripCuentasBancarias.PerformLayout();
             this.tabpageNotasAuditoria.ResumeLayout(false);
             this.tabpageNotasAuditoria.PerformLayout();
             this.ResumeLayout(false);
@@ -808,5 +1076,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailsNombre;
+        private System.Windows.Forms.TabPage tabpageTelefonos;
+        internal System.Windows.Forms.DataGridView datagridviewTelefonos;
+        internal System.Windows.Forms.ToolStrip toolstripTelefonos;
+        internal System.Windows.Forms.ToolStripButton buttonTelefonosAgregar;
+        internal System.Windows.Forms.ToolStripButton buttonTelefonosEditar;
+        internal System.Windows.Forms.ToolStripButton buttonTelefonosBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnTelefonosTipoNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnTelefonosNumero;
+        private System.Windows.Forms.TabPage tabpageCuentasBancarias;
+        internal System.Windows.Forms.DataGridView datagridviewCuentasBancarias;
+        internal System.Windows.Forms.ToolStrip toolstripCuentasBancarias;
+        internal System.Windows.Forms.ToolStripButton buttonCuentasBancariasAgregar;
+        internal System.Windows.Forms.ToolStripButton CuentasBancariasEditar;
+        internal System.Windows.Forms.ToolStripButton CuentasBancariasBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasSucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasNumero;
     }
 }
