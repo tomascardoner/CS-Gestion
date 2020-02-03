@@ -437,7 +437,7 @@ namespace CS_Gestion
                                   from gl in grupolocalidades.DefaultIfEmpty()
                                   where ed.IdEntidad == entidad.IdEntidad
                                   orderby dt.Nombre
-                                  select new DomiciliosGridRowData() { IdDomicilio = ed.IdDomicilio, DomicilioTipoNombre = dt.Nombre, DomicilioParaMostrar = ed.DomicilioParaMostrar, LocalidadNombre = (gl == null ? string.Empty : gl.Nombre) }).ToList();
+                                  select new DomiciliosGridRowData() { IdDomicilio = ed.IdDomicilio, DomicilioTipoNombre = (dt.IdDomicilioTipo == CardonerSistemas.Constants.ByteFieldValueOther ? ed.TipoOtro : dt.Nombre), DomicilioParaMostrar = ed.DomicilioParaMostrar, LocalidadNombre = (gl == null ? string.Empty : gl.Nombre) }).ToList();
 
                 datagridviewDomicilios.AutoGenerateColumns = false;
                 datagridviewDomicilios.DataSource = listDomicilios;
@@ -583,7 +583,7 @@ namespace CS_Gestion
                                 join et in context.EmailTipo on ee.IdEmailTipo equals et.IdEmailTipo
                                 where ee.IdEntidad == entidad.IdEntidad
                                 orderby et.Nombre
-                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = et.Nombre, Email = ee.Email, Nombre = ee.Nombre }).ToList();
+                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = (et.IdEmailTipo == CardonerSistemas.Constants.ByteFieldValueOther ? ee.TipoOtro : et.Nombre), Email = ee.Email, Nombre = ee.Nombre }).ToList();
 
                 datagridviewEmails.AutoGenerateColumns = false;
                 datagridviewEmails.DataSource = listEmails;
@@ -728,7 +728,7 @@ namespace CS_Gestion
                               join tt in context.TelefonoTipo on et.IdTelefonoTipo equals tt.IdTelefonoTipo
                               where et.IdEntidad == entidad.IdEntidad
                               orderby tt.Nombre
-                              select new TelefonosGridRowData() { IdTelefono = et.IdTelefono, TelefonoTipoNombre = tt.Nombre, Numero = et.Numero }).ToList();
+                              select new TelefonosGridRowData() { IdTelefono = et.IdTelefono, TelefonoTipoNombre = (tt.IdTelefonoTipo == CardonerSistemas.Constants.ByteFieldValueOther ? et.TipoOtro : tt.Nombre), Numero = et.Numero }).ToList();
 
                 datagridviewTelefonos.AutoGenerateColumns = false;
                 datagridviewTelefonos.DataSource = listTelefonos;

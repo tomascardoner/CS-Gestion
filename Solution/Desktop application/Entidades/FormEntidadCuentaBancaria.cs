@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,6 +16,9 @@ namespace CS_Gestion
         private bool isLoading = false;
         private bool isNew = false;
         private bool isEditMode = false;
+
+        private string codigoBanco = "";
+        private List<Banco> bancos = null;
 
         #endregion
 
@@ -180,6 +184,34 @@ namespace CS_Gestion
         private void MaskedTextBoxs_Enter(object sender, EventArgs e)
         {
             ((MaskedTextBox)sender).SelectAll();
+        }
+
+        private void Cbu_TextChanged(object sender, EventArgs e)
+        {
+            if (maskedtextboxCbu.Text.Length >= 3)
+            {
+                if (bancos == null)
+                {
+                    bancos = context.Banco.ToList();
+                }
+                if (codigoBanco != maskedtextboxCbu.Text.Substring(0, 3))
+                {
+                    Banco banco = bancos.Find(b => b.Codigo == maskedtextboxCbu.Text.Substring(0, 3));
+                    if (banco != null)
+                    {
+                        codigoBanco = banco.Codigo;
+                        CardonerSistemas.ComboBox.SetSelectedValue(comboboxBanco, CardonerSistemas.ComboBox.SelectedItemOptions.ValueOrFirst, banco.IdBanco);
+                    }
+                    else
+                    {
+                        comboboxBanco.SelectedIndex = -1;
+                    }
+                }
+            }
+            else
+            {
+                comboboxBanco.SelectedIndex = -1;
+            }
         }
 
         #endregion

@@ -287,6 +287,7 @@
             this.maskedtextboxCbu.Size = new System.Drawing.Size(153, 20);
             this.maskedtextboxCbu.TabIndex = 9;
             this.maskedtextboxCbu.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedtextboxCbu.TextChanged += new System.EventHandler(this.Cbu_TextChanged);
             this.maskedtextboxCbu.Enter += new System.EventHandler(this.MaskedTextBoxs_Enter);
             // 
             // textboxCbuAlias

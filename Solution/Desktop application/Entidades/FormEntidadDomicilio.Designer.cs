@@ -331,9 +331,9 @@
             // textboxTipoOtro
             // 
             this.textboxTipoOtro.Location = new System.Drawing.Point(230, 7);
-            this.textboxTipoOtro.MaxLength = 10;
+            this.textboxTipoOtro.MaxLength = 50;
             this.textboxTipoOtro.Name = "textboxTipoOtro";
-            this.textboxTipoOtro.Size = new System.Drawing.Size(168, 20);
+            this.textboxTipoOtro.Size = new System.Drawing.Size(200, 20);
             this.textboxTipoOtro.TabIndex = 2;
             this.textboxTipoOtro.Visible = false;
             this.textboxTipoOtro.Enter += new System.EventHandler(this.TextBoxs_Enter);
