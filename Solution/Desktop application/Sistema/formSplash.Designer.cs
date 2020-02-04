@@ -95,7 +95,7 @@
             this.labelAppTitle.TabIndex = 6;
             this.labelAppTitle.Text = "Title";
             // 
-            // formSplash
+            // FormSplash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,13 +103,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(393, 259);
             this.ControlBox = false;
-            this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.labelLicensedTo);
-            this.Controls.Add(this.labelCopyright);
             this.Controls.Add(this.labelCompanyName);
             this.Controls.Add(this.labelAppTitle);
+            this.Controls.Add(this.labelLicensedTo);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.labelCopyright);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formSplash";
+            this.Name = "FormSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App.Title";
             this.TopMost = true;
