@@ -12,25 +12,15 @@ namespace CS_Gestion
     using System;
     using System.Collections.Generic;
     
-    public partial class EntidadCuentaBancaria
+    public partial class EntidadProveedorCategoria
     {
         public int IdEntidad { get; set; }
-        public byte IdCuentaBancaria { get; set; }
-        public short IdBanco { get; set; }
-        public Nullable<byte> IdCuentaBancariaTipo { get; set; }
-        public Nullable<short> Sucursal { get; set; }
-        public string Numero { get; set; }
-        public string Cbu { get; set; }
-        public string CbuAlias { get; set; }
-        public string Notas { get; set; }
-        public bool EsActivo { get; set; }
+        public short IdProveedorCategoria { get; set; }
         public short IdUsuarioCreacion { get; set; }
         public System.DateTime FechaHoraCreacion { get; set; }
-        public short IdUsuarioModificacion { get; set; }
-        public System.DateTime FechaHoraModificacion { get; set; }
     
         public virtual Entidad Entidad { get; set; }
-        public virtual Usuario UsuarioCreacion { get; set; }
-        public virtual Usuario UsuarioModificacion { get; set; }
+        public virtual ProveedorCategoria ProveedorCategoria { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

@@ -129,6 +129,9 @@
     <Compile Include="..\..\..\framework-csharp\Forms.cs">
       <Link>Framework\Forms.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\Graphics.cs">
+      <Link>Framework\Graphics.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Instance.cs">
       <Link>Framework\Instance.cs</Link>
     </Compile>
@@ -219,6 +222,9 @@
     <Compile Include="Entidades\FormEntidadEmail.Designer.cs">
       <DependentUpon>FormEntidadEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntidadProveedorCategoria.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntidadTelefono.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -241,13 +247,15 @@
       <DependentUpon>FormEntidadDomicilio.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseExtension\EntidadTelefonoExtension.cs" />
-    <Compile Include="Framework\Graphics.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Listas\ListasComunes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedorCategoria.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Permisos.cs" />
     <Compile Include="Sistema\Appearance.cs" />

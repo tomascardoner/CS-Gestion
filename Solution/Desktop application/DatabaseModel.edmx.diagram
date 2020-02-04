@@ -95,6 +95,13 @@
         <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion__Aplicado" />
         <AssociationConnector Association="CSGestionModel.FK__Movimiento__MovimientoAplicacion_Aplicante" />
         <EntityTypeShape EntityType="CSGestionModel.Parametro" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CSGestionModel.EntidadProveedorCategoria" Width="1.5" PointX="10" PointY="36.375" />
+        <EntityTypeShape EntityType="CSGestionModel.ProveedorCategoria" Width="1.5" PointX="5.75" PointY="13.375" />
+        <AssociationConnector Association="CSGestionModel.FK__Entidad__EntidadProveedorCategoria" />
+        <AssociationConnector Association="CSGestionModel.FK__ProveedorCategoria__EntidadProveedorCategoria" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__EntidadProveedorCategoria__Creacion" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ProveedorCategoria__Creacion" />
+        <AssociationConnector Association="CSGestionModel.FK__Usuario__ProveedorCategoria__Modificacion" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

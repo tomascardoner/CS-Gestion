@@ -52,5 +52,7 @@ namespace CS_Gestion
         public virtual DbSet<UsuarioGrupo> UsuarioGrupo { get; set; }
         public virtual DbSet<UsuarioGrupoPermiso> UsuarioGrupoPermiso { get; set; }
         public virtual DbSet<Parametro> Parametro { get; set; }
+        public virtual DbSet<EntidadProveedorCategoria> EntidadProveedorCategoria { get; set; }
+        public virtual DbSet<ProveedorCategoria> ProveedorCategoria { get; set; }
     }
 }

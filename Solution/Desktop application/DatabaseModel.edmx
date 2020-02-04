@@ -172,6 +172,9 @@
           <Property Name="NombreParaMostrar" Type="varchar" MaxLength="150" StoreGeneratedPattern="Computed" />
           <Property Name="Cuit" Type="char" MaxLength="11" />
           <Property Name="IngresosBrutos" Type="varchar" MaxLength="12" />
+          <Property Name="TipoCliente" Type="bit" Nullable="false" />
+          <Property Name="TipoProveedor" Type="bit" Nullable="false" />
+          <Property Name="TipoTransportista" Type="bit" Nullable="false" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -187,7 +190,7 @@
           <Property Name="IdEntidad" Type="int" Nullable="false" />
           <Property Name="IdCuentaBancaria" Type="tinyint" Nullable="false" />
           <Property Name="IdBanco" Type="smallint" Nullable="false" />
-          <Property Name="IdCuentaBancariaTipo" Type="tinyint" Nullable="false" />
+          <Property Name="IdCuentaBancariaTipo" Type="tinyint" />
           <Property Name="Sucursal" Type="smallint" />
           <Property Name="Numero" Type="varchar" MaxLength="20" />
           <Property Name="Cbu" Type="char" MaxLength="22" />
@@ -250,6 +253,16 @@
           </Key>
           <Property Name="IdEntidad" Type="int" Nullable="false" />
           <Property Name="IdEmpresa" Type="tinyint" Nullable="false" />
+          <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
+          <Property Name="FechaHoraCreacion" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EntidadProveedorCategoria">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+            <PropertyRef Name="IdProveedorCategoria" />
+          </Key>
+          <Property Name="IdEntidad" Type="int" Nullable="false" />
+          <Property Name="IdProveedorCategoria" Type="smallint" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
           <Property Name="FechaHoraCreacion" Type="smalldatetime" Nullable="false" />
         </EntityType>
@@ -350,6 +363,18 @@
           <Property Name="FechaHora" Type="smalldatetime" />
           <Property Name="SiNo" Type="bit" />
           <Property Name="Notas" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ProveedorCategoria">
+          <Key>
+            <PropertyRef Name="IdProveedorCategoria" />
+          </Key>
+          <Property Name="IdProveedorCategoria" Type="smallint" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EsActivo" Type="bit" Nullable="false" />
+          <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
+          <Property Name="FechaHoraCreacion" Type="smalldatetime" Nullable="false" />
+          <Property Name="IdUsuarioModificacion" Type="smallint" Nullable="false" />
+          <Property Name="FechaHoraModificacion" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Provincia">
           <Key>
@@ -528,6 +553,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Entidad__EntidadProveedorCategoria">
+          <End Role="Entidad" Type="Self.Entidad" Multiplicity="1" />
+          <End Role="EntidadProveedorCategoria" Type="Self.EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Entidad__EntidadTelefono">
           <End Role="Entidad" Type="Self.Entidad" Multiplicity="1" />
           <End Role="EntidadTelefono" Type="Self.EntidadTelefono" Multiplicity="*" />
@@ -603,6 +640,18 @@
             </Principal>
             <Dependent Role="Movimiento">
               <PropertyRef Name="IdMovimientoTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProveedorCategoria__EntidadProveedorCategoria">
+          <End Role="ProveedorCategoria" Type="Self.ProveedorCategoria" Multiplicity="1" />
+          <End Role="EntidadProveedorCategoria" Type="Self.EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProveedorCategoria">
+              <PropertyRef Name="IdProveedorCategoria" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdProveedorCategoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -978,6 +1027,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Usuario__EntidadProveedorCategoria__Creacion">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="EntidadProveedorCategoria" Type="Self.EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdUsuarioCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Usuario__EntidadTelefono__Creacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="EntidadTelefono" Type="Self.EntidadTelefono" Multiplicity="*" />
@@ -1074,6 +1135,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Usuario__ProveedorCategoria__Creacion">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="ProveedorCategoria" Type="Self.ProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="ProveedorCategoria">
+              <PropertyRef Name="IdUsuarioCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__ProveedorCategoria__Modificacion">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="ProveedorCategoria" Type="Self.ProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="ProveedorCategoria">
+              <PropertyRef Name="IdUsuarioModificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Usuario__TelefonoTipo__Creacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="TelefonoTipo" Type="Self.TelefonoTipo" Multiplicity="*" />
@@ -1095,6 +1180,18 @@
             </Principal>
             <Dependent Role="TelefonoTipo">
               <PropertyRef Name="IdUsuarioModificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Usuario1" Type="Self.Usuario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Usuario1">
+              <PropertyRef Name="IdUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1186,6 +1283,7 @@
           <EntitySet Name="EntidadDomicilio" EntityType="Self.EntidadDomicilio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntidadEmail" EntityType="Self.EntidadEmail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntidadEmpresa" EntityType="Self.EntidadEmpresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EntidadProveedorCategoria" EntityType="Self.EntidadProveedorCategoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntidadTelefono" EntityType="Self.EntidadTelefono" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Localidad" EntityType="Self.Localidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moneda" EntityType="Self.Moneda" Schema="dbo" store:Type="Tables" />
@@ -1193,6 +1291,7 @@
           <EntitySet Name="MovimientoAplicacion" EntityType="Self.MovimientoAplicacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovimientoTipo" EntityType="Self.MovimientoTipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parametro" EntityType="Self.Parametro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProveedorCategoria" EntityType="Self.ProveedorCategoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TelefonoTipo" EntityType="Self.TelefonoTipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
@@ -1238,6 +1337,10 @@
             <End Role="Entidad" EntitySet="Entidad" />
             <End Role="EntidadEmpresa" EntitySet="EntidadEmpresa" />
           </AssociationSet>
+          <AssociationSet Name="FK__Entidad__EntidadProveedorCategoria" Association="Self.FK__Entidad__EntidadProveedorCategoria">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
+          </AssociationSet>
           <AssociationSet Name="FK__Entidad__EntidadTelefono" Association="Self.FK__Entidad__EntidadTelefono">
             <End Role="Entidad" EntitySet="Entidad" />
             <End Role="EntidadTelefono" EntitySet="EntidadTelefono" />
@@ -1261,6 +1364,10 @@
           <AssociationSet Name="FK__MovimientoTipo__Movimiento" Association="Self.FK__MovimientoTipo__Movimiento">
             <End Role="MovimientoTipo" EntitySet="MovimientoTipo" />
             <End Role="Movimiento" EntitySet="Movimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProveedorCategoria__EntidadProveedorCategoria" Association="Self.FK__ProveedorCategoria__EntidadProveedorCategoria">
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
           </AssociationSet>
           <AssociationSet Name="FK__Provincia__Localidad" Association="Self.FK__Provincia__Localidad">
             <End Role="Provincia" EntitySet="Provincia" />
@@ -1386,6 +1493,10 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="EntidadEmpresa" EntitySet="EntidadEmpresa" />
           </AssociationSet>
+          <AssociationSet Name="FK__Usuario__EntidadProveedorCategoria__Creacion" Association="Self.FK__Usuario__EntidadProveedorCategoria__Creacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
+          </AssociationSet>
           <AssociationSet Name="FK__Usuario__EntidadTelefono__Creacion" Association="Self.FK__Usuario__EntidadTelefono__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="EntidadTelefono" EntitySet="EntidadTelefono" />
@@ -1418,6 +1529,14 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="MovimientoTipo" EntitySet="MovimientoTipo" />
           </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ProveedorCategoria__Creacion" Association="Self.FK__Usuario__ProveedorCategoria__Creacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ProveedorCategoria__Modificacion" Association="Self.FK__Usuario__ProveedorCategoria__Modificacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+          </AssociationSet>
           <AssociationSet Name="FK__Usuario__TelefonoTipo__Creacion" Association="Self.FK__Usuario__TelefonoTipo__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="TelefonoTipo" EntitySet="TelefonoTipo" />
@@ -1425,6 +1544,10 @@
           <AssociationSet Name="FK__Usuario__TelefonoTipo__Modificacion" Association="Self.FK__Usuario__TelefonoTipo__Modificacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="TelefonoTipo" EntitySet="TelefonoTipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Usuario" Association="Self.FK__Usuario__Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario1" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuario__Usuario__Creacion" Association="Self.FK__Usuario__Usuario__Creacion">
             <End Role="Usuario" EntitySet="Usuario" />
@@ -1651,6 +1774,9 @@
           <Property Name="NombreParaMostrar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="IngresosBrutos" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="TipoCliente" Type="Boolean" Nullable="false" />
+          <Property Name="TipoProveedor" Type="Boolean" Nullable="false" />
+          <Property Name="TipoTransportista" Type="Boolean" Nullable="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -1664,6 +1790,7 @@
           <NavigationProperty Name="EntidadTelefono" Relationship="Self.FK__Entidad__EntidadTelefono" FromRole="Entidad" ToRole="EntidadTelefono" />
           <NavigationProperty Name="UsuarioCreacion" Relationship="Self.FK__Usuario__Entidad__Creacion" FromRole="Entidad" ToRole="Usuario" />
           <NavigationProperty Name="UsuarioModificacion" Relationship="Self.FK__Usuario__Entidad__Modificacion" FromRole="Entidad" ToRole="Usuario" />
+          <NavigationProperty Name="EntidadProveedorCategoria" Relationship="CSGestionModel.FK__Entidad__EntidadProveedorCategoria" FromRole="Entidad" ToRole="EntidadProveedorCategoria" />
         </EntityType>
         <EntityType Name="EntidadCuentaBancaria">
           <Key>
@@ -1673,7 +1800,7 @@
           <Property Name="IdEntidad" Type="Int32" Nullable="false" />
           <Property Name="IdCuentaBancaria" Type="Byte" Nullable="false" />
           <Property Name="IdBanco" Type="Int16" Nullable="false" />
-          <Property Name="IdCuentaBancariaTipo" Type="Byte" Nullable="false" />
+          <Property Name="IdCuentaBancariaTipo" Type="Byte" />
           <Property Name="Sucursal" Type="Int16" />
           <Property Name="Numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Cbu" Type="String" MaxLength="22" FixedLength="true" Unicode="false" />
@@ -1944,7 +2071,10 @@
           <NavigationProperty Name="UsuarioGruposCreados" Relationship="Self.FK__Usuario__UsuarioGrupo__Creacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
           <NavigationProperty Name="UsuarioGruposModificados" Relationship="Self.FK__Usuario__UsuarioGrupo__Modificacion" FromRole="Usuario" ToRole="UsuarioGrupo" />
           <NavigationProperty Name="UsuarioGrupo" Relationship="Self.FK__UsuarioGrupo__Usuario" FromRole="Usuario" ToRole="UsuarioGrupo" />
-        </EntityType>
+          <NavigationProperty Name="EntidadProveedorCategoria" Relationship="CSGestionModel.FK__Usuario__EntidadProveedorCategoria__Creacion" FromRole="Usuario" ToRole="EntidadProveedorCategoria" />
+          <NavigationProperty Name="ProveedorCategoriasCreadas" Relationship="CSGestionModel.FK__Usuario__ProveedorCategoria__Creacion" FromRole="Usuario" ToRole="ProveedorCategoria" />
+          <NavigationProperty Name="ProveedorCategoriasModificadas" Relationship="CSGestionModel.FK__Usuario__ProveedorCategoria__Modificacion" FromRole="Usuario" ToRole="ProveedorCategoria" />
+          </EntityType>
         <EntityType Name="UsuarioGrupo">
           <Key>
             <PropertyRef Name="IdUsuarioGrupo" />
@@ -2985,6 +3115,28 @@
             <End Role="MovimientoAplicacion" EntitySet="MovimientoAplicacion" />
           </AssociationSet>
           <EntitySet Name="Parametro" EntityType="CSGestionModel.Parametro" />
+          <EntitySet Name="EntidadProveedorCategoria" EntityType="CSGestionModel.EntidadProveedorCategoria" />
+          <EntitySet Name="ProveedorCategoria" EntityType="CSGestionModel.ProveedorCategoria" />
+          <AssociationSet Name="FK__Entidad__EntidadProveedorCategoria" Association="CSGestionModel.FK__Entidad__EntidadProveedorCategoria">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProveedorCategoria__EntidadProveedorCategoria" Association="CSGestionModel.FK__ProveedorCategoria__EntidadProveedorCategoria">
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__EntidadProveedorCategoria__Creacion" Association="CSGestionModel.FK__Usuario__EntidadProveedorCategoria__Creacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="EntidadProveedorCategoria" EntitySet="EntidadProveedorCategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ProveedorCategoria__Creacion" Association="CSGestionModel.FK__Usuario__ProveedorCategoria__Creacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ProveedorCategoria__Modificacion" Association="CSGestionModel.FK__Usuario__ProveedorCategoria__Modificacion">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProveedorCategoria" EntitySet="ProveedorCategoria" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK__Movimiento__MovimientoAplicacion__Aplicado">
           <End Type="CSGestionModel.Movimiento" Role="Movimiento" Multiplicity="1" />
@@ -3027,6 +3179,94 @@
           <Property Name="SiNo" Type="Boolean" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="EntidadProveedorCategoria">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+            <PropertyRef Name="IdProveedorCategoria" />
+          </Key>
+          <Property Name="IdEntidad" Type="Int32" Nullable="false" />
+          <Property Name="IdProveedorCategoria" Type="Int16" Nullable="false" />
+          <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
+          <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Entidad" Relationship="CSGestionModel.FK__Entidad__EntidadProveedorCategoria" FromRole="EntidadProveedorCategoria" ToRole="Entidad" />
+          <NavigationProperty Name="ProveedorCategoria" Relationship="CSGestionModel.FK__ProveedorCategoria__EntidadProveedorCategoria" FromRole="EntidadProveedorCategoria" ToRole="ProveedorCategoria" />
+          <NavigationProperty Name="Usuario" Relationship="CSGestionModel.FK__Usuario__EntidadProveedorCategoria__Creacion" FromRole="EntidadProveedorCategoria" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="ProveedorCategoria">
+          <Key>
+            <PropertyRef Name="IdProveedorCategoria" />
+          </Key>
+          <Property Name="IdProveedorCategoria" Type="Int16" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EsActivo" Type="Boolean" Nullable="false" />
+          <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
+          <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdUsuarioModificacion" Type="Int16" Nullable="false" />
+          <Property Name="FechaHoraModificacion" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="EntidadProveedorCategoria" Relationship="CSGestionModel.FK__ProveedorCategoria__EntidadProveedorCategoria" FromRole="ProveedorCategoria" ToRole="EntidadProveedorCategoria" />
+          <NavigationProperty Name="UsuarioCreacion" Relationship="CSGestionModel.FK__Usuario__ProveedorCategoria__Creacion" FromRole="ProveedorCategoria" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioModificacion" Relationship="CSGestionModel.FK__Usuario__ProveedorCategoria__Modificacion" FromRole="ProveedorCategoria" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK__Entidad__EntidadProveedorCategoria">
+          <End Type="CSGestionModel.Entidad" Role="Entidad" Multiplicity="1" />
+          <End Type="CSGestionModel.EntidadProveedorCategoria" Role="EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProveedorCategoria__EntidadProveedorCategoria">
+          <End Type="CSGestionModel.ProveedorCategoria" Role="ProveedorCategoria" Multiplicity="1" />
+          <End Type="CSGestionModel.EntidadProveedorCategoria" Role="EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProveedorCategoria">
+              <PropertyRef Name="IdProveedorCategoria" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdProveedorCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__EntidadProveedorCategoria__Creacion">
+          <End Type="CSGestionModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="CSGestionModel.EntidadProveedorCategoria" Role="EntidadProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="EntidadProveedorCategoria">
+              <PropertyRef Name="IdUsuarioCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__ProveedorCategoria__Creacion">
+          <End Type="CSGestionModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="CSGestionModel.ProveedorCategoria" Role="ProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="ProveedorCategoria">
+              <PropertyRef Name="IdUsuarioCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__ProveedorCategoria__Modificacion">
+          <End Type="CSGestionModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="CSGestionModel.ProveedorCategoria" Role="ProveedorCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="ProveedorCategoria">
+              <PropertyRef Name="IdUsuarioModificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3196,6 +3436,9 @@
           <EntitySetMapping Name="Entidad">
             <EntityTypeMapping TypeName="CSGestionModel.Entidad">
               <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="TipoTransportista" ColumnName="TipoTransportista" />
+                <ScalarProperty Name="TipoProveedor" ColumnName="TipoProveedor" />
+                <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
                 <ScalarProperty Name="EsPersonaFisica" ColumnName="EsPersonaFisica" />
                 <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="NombreParaMostrar" ColumnName="NombreParaMostrar" />
@@ -3446,6 +3689,29 @@
                 <ScalarProperty Name="NumeroEntero" ColumnName="NumeroEntero" />
                 <ScalarProperty Name="Texto" ColumnName="Texto" />
                 <ScalarProperty Name="IdParametro" ColumnName="IdParametro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntidadProveedorCategoria">
+            <EntityTypeMapping TypeName="CSGestionModel.EntidadProveedorCategoria">
+              <MappingFragment StoreEntitySet="EntidadProveedorCategoria">
+                <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+                <ScalarProperty Name="IdProveedorCategoria" ColumnName="IdProveedorCategoria" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProveedorCategoria">
+            <EntityTypeMapping TypeName="CSGestionModel.ProveedorCategoria">
+              <MappingFragment StoreEntitySet="ProveedorCategoria">
+                <ScalarProperty Name="FechaHoraModificacion" ColumnName="FechaHoraModificacion" />
+                <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
+                <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+                <ScalarProperty Name="EsActivo" ColumnName="EsActivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdProveedorCategoria" ColumnName="IdProveedorCategoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

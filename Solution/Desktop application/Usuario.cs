@@ -60,6 +60,9 @@ namespace CS_Gestion
             this.UsuariosModificados = new HashSet<Usuario>();
             this.UsuarioGruposCreados = new HashSet<UsuarioGrupo>();
             this.UsuarioGruposModificados = new HashSet<UsuarioGrupo>();
+            this.EntidadProveedorCategoria = new HashSet<EntidadProveedorCategoria>();
+            this.ProveedorCategoriasCreadas = new HashSet<ProveedorCategoria>();
+            this.ProveedorCategoriasModificadas = new HashSet<ProveedorCategoria>();
         }
     
         public short IdUsuario { get; set; }
@@ -164,5 +167,11 @@ namespace CS_Gestion
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UsuarioGrupo> UsuarioGruposModificados { get; set; }
         public virtual UsuarioGrupo UsuarioGrupo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EntidadProveedorCategoria> EntidadProveedorCategoria { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProveedorCategoria> ProveedorCategoriasCreadas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProveedorCategoria> ProveedorCategoriasModificadas { get; set; }
     }
 }

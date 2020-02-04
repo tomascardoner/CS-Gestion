@@ -32,10 +32,10 @@
             System.Windows.Forms.Label labelEsActivo;
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -103,6 +103,10 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.labelTipo = new System.Windows.Forms.Label();
+            this.checkboxTipoCliente = new System.Windows.Forms.CheckBox();
+            this.checkboxTipoProveedor = new System.Windows.Forms.CheckBox();
+            this.checkboxTipoTransportista = new System.Windows.Forms.CheckBox();
             labelNotas = new System.Windows.Forms.Label();
             labelEsActivo = new System.Windows.Forms.Label();
             labelModificacion = new System.Windows.Forms.Label();
@@ -138,7 +142,7 @@
             // 
             labelEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelEsActivo.AutoSize = true;
-            labelEsActivo.Location = new System.Drawing.Point(10, 90);
+            labelEsActivo.Location = new System.Drawing.Point(10, 119);
             labelEsActivo.Name = "labelEsActivo";
             labelEsActivo.Size = new System.Drawing.Size(40, 13);
             labelEsActivo.TabIndex = 2;
@@ -148,7 +152,7 @@
             // 
             labelModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelModificacion.AutoSize = true;
-            labelModificacion.Location = new System.Drawing.Point(10, 165);
+            labelModificacion.Location = new System.Drawing.Point(10, 194);
             labelModificacion.Name = "labelModificacion";
             labelModificacion.Size = new System.Drawing.Size(102, 13);
             labelModificacion.TabIndex = 9;
@@ -158,7 +162,7 @@
             // 
             labelCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelCreacion.AutoSize = true;
-            labelCreacion.Location = new System.Drawing.Point(11, 139);
+            labelCreacion.Location = new System.Drawing.Point(11, 168);
             labelCreacion.Name = "labelCreacion";
             labelCreacion.Size = new System.Drawing.Size(52, 13);
             labelCreacion.TabIndex = 6;
@@ -381,12 +385,16 @@
             this.tabcontrolMain.Location = new System.Drawing.Point(0, 39);
             this.tabcontrolMain.Name = "tabcontrolMain";
             this.tabcontrolMain.SelectedIndex = 0;
-            this.tabcontrolMain.Size = new System.Drawing.Size(582, 219);
+            this.tabcontrolMain.Size = new System.Drawing.Size(582, 248);
             this.tabcontrolMain.TabIndex = 0;
             this.tabcontrolMain.SelectedIndexChanged += new System.EventHandler(this.TabControlChanged);
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(this.checkboxTipoTransportista);
+            this.tabpageGeneral.Controls.Add(this.checkboxTipoProveedor);
+            this.tabpageGeneral.Controls.Add(this.checkboxTipoCliente);
+            this.tabpageGeneral.Controls.Add(this.labelTipo);
             this.tabpageGeneral.Controls.Add(this.labelTipoPersona);
             this.tabpageGeneral.Controls.Add(this.textboxIngresosBrutos);
             this.tabpageGeneral.Controls.Add(this.labelRazonSocial);
@@ -405,7 +413,7 @@
             this.tabpageGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabpageGeneral.Name = "tabpageGeneral";
             this.tabpageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageGeneral.Size = new System.Drawing.Size(574, 190);
+            this.tabpageGeneral.Size = new System.Drawing.Size(574, 219);
             this.tabpageGeneral.TabIndex = 0;
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
@@ -427,11 +435,11 @@
             this.datagridviewDomicilios.AllowUserToAddRows = false;
             this.datagridviewDomicilios.AllowUserToDeleteRows = false;
             this.datagridviewDomicilios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridviewDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewDomicilios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnDomiciliosTipoNombre,
@@ -542,11 +550,11 @@
             this.datagridviewEmails.AllowUserToAddRows = false;
             this.datagridviewEmails.AllowUserToDeleteRows = false;
             this.datagridviewEmails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridviewEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewEmails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnEmailsTipo,
@@ -657,11 +665,11 @@
             this.datagridviewTelefonos.AllowUserToAddRows = false;
             this.datagridviewTelefonos.AllowUserToDeleteRows = false;
             this.datagridviewTelefonos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.datagridviewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnTelefonosTipoNombre,
@@ -762,11 +770,11 @@
             this.datagridviewCuentasBancarias.AllowUserToAddRows = false;
             this.datagridviewCuentasBancarias.AllowUserToDeleteRows = false;
             this.datagridviewCuentasBancarias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.datagridviewCuentasBancarias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewCuentasBancarias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnCuentasBancariasBanco,
@@ -887,7 +895,7 @@
             this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
             this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
             this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(574, 190);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(574, 219);
             this.tabpageNotasAuditoria.TabIndex = 1;
             this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
             this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
@@ -896,7 +904,7 @@
             // 
             this.checkboxEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkboxEsActivo.AutoSize = true;
-            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 90);
+            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 119);
             this.checkboxEsActivo.Name = "checkboxEsActivo";
             this.checkboxEsActivo.Size = new System.Drawing.Size(15, 14);
             this.checkboxEsActivo.TabIndex = 3;
@@ -906,7 +914,7 @@
             // 
             this.labelId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(11, 113);
+            this.labelId.Location = new System.Drawing.Point(11, 142);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(19, 13);
             this.labelId.TabIndex = 4;
@@ -915,7 +923,7 @@
             // textboxUsuarioModificacion
             // 
             this.textboxUsuarioModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 162);
+            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 191);
             this.textboxUsuarioModificacion.MaxLength = 50;
             this.textboxUsuarioModificacion.Name = "textboxUsuarioModificacion";
             this.textboxUsuarioModificacion.ReadOnly = true;
@@ -925,7 +933,7 @@
             // textboxId
             // 
             this.textboxId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxId.Location = new System.Drawing.Point(118, 110);
+            this.textboxId.Location = new System.Drawing.Point(118, 139);
             this.textboxId.MaxLength = 10;
             this.textboxId.Name = "textboxId";
             this.textboxId.ReadOnly = true;
@@ -937,7 +945,7 @@
             // textboxUsuarioCreacion
             // 
             this.textboxUsuarioCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 136);
+            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 165);
             this.textboxUsuarioCreacion.MaxLength = 50;
             this.textboxUsuarioCreacion.Name = "textboxUsuarioCreacion";
             this.textboxUsuarioCreacion.ReadOnly = true;
@@ -947,7 +955,7 @@
             // textboxFechaHoraModificacion
             // 
             this.textboxFechaHoraModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 162);
+            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 191);
             this.textboxFechaHoraModificacion.MaxLength = 0;
             this.textboxFechaHoraModificacion.Name = "textboxFechaHoraModificacion";
             this.textboxFechaHoraModificacion.ReadOnly = true;
@@ -958,7 +966,7 @@
             // textboxFechaHoraCreacion
             // 
             this.textboxFechaHoraCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 136);
+            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 165);
             this.textboxFechaHoraCreacion.MaxLength = 0;
             this.textboxFechaHoraCreacion.Name = "textboxFechaHoraCreacion";
             this.textboxFechaHoraCreacion.ReadOnly = true;
@@ -974,15 +982,54 @@
             this.textboxNotas.MaxLength = 0;
             this.textboxNotas.Multiline = true;
             this.textboxNotas.Name = "textboxNotas";
-            this.textboxNotas.Size = new System.Drawing.Size(448, 78);
+            this.textboxNotas.Size = new System.Drawing.Size(448, 107);
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // labelTipo
+            // 
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Location = new System.Drawing.Point(6, 192);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(84, 13);
+            this.labelTipo.TabIndex = 15;
+            this.labelTipo.Text = "Tipo de entidad:";
+            // 
+            // checkboxTipoCliente
+            // 
+            this.checkboxTipoCliente.AutoSize = true;
+            this.checkboxTipoCliente.Location = new System.Drawing.Point(118, 191);
+            this.checkboxTipoCliente.Name = "checkboxTipoCliente";
+            this.checkboxTipoCliente.Size = new System.Drawing.Size(58, 17);
+            this.checkboxTipoCliente.TabIndex = 16;
+            this.checkboxTipoCliente.Text = "Cliente";
+            this.checkboxTipoCliente.UseVisualStyleBackColor = true;
+            // 
+            // checkboxTipoProveedor
+            // 
+            this.checkboxTipoProveedor.AutoSize = true;
+            this.checkboxTipoProveedor.Location = new System.Drawing.Point(182, 191);
+            this.checkboxTipoProveedor.Name = "checkboxTipoProveedor";
+            this.checkboxTipoProveedor.Size = new System.Drawing.Size(75, 17);
+            this.checkboxTipoProveedor.TabIndex = 17;
+            this.checkboxTipoProveedor.Text = "Proveedor";
+            this.checkboxTipoProveedor.UseVisualStyleBackColor = true;
+            // 
+            // checkboxTipoTransportista
+            // 
+            this.checkboxTipoTransportista.AutoSize = true;
+            this.checkboxTipoTransportista.Location = new System.Drawing.Point(263, 191);
+            this.checkboxTipoTransportista.Name = "checkboxTipoTransportista";
+            this.checkboxTipoTransportista.Size = new System.Drawing.Size(87, 17);
+            this.checkboxTipoTransportista.TabIndex = 18;
+            this.checkboxTipoTransportista.Text = "Transportista";
+            this.checkboxTipoTransportista.UseVisualStyleBackColor = true;
             // 
             // FormEntidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 258);
+            this.ClientSize = new System.Drawing.Size(582, 287);
             this.Controls.Add(this.tabcontrolMain);
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1094,5 +1141,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasSucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasNumero;
+        private System.Windows.Forms.CheckBox checkboxTipoCliente;
+        private System.Windows.Forms.Label labelTipo;
+        private System.Windows.Forms.CheckBox checkboxTipoTransportista;
+        private System.Windows.Forms.CheckBox checkboxTipoProveedor;
     }
 }

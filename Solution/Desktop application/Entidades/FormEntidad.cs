@@ -82,6 +82,9 @@ namespace CS_Gestion
             textboxNombreFantasia.ReadOnly = !isEditMode;
             maskedtextboxCuit.ReadOnly = !isEditMode;
             textboxIngresosBrutos.ReadOnly = !isEditMode;
+            checkboxTipoCliente.Enabled = isEditMode;
+            checkboxTipoProveedor.Enabled = isEditMode;
+            checkboxTipoTransportista.Enabled = isEditMode;
 
             // Grillas
             toolstripDomicilios.Enabled = !isEditMode;
@@ -143,6 +146,9 @@ namespace CS_Gestion
             textboxNombreFantasia.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.NombreFantasia);
             maskedtextboxCuit.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Cuit);
             textboxIngresosBrutos.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.IngresosBrutos);
+            checkboxTipoCliente.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoCliente);
+            checkboxTipoProveedor.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoProveedor);
+            checkboxTipoTransportista.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoTransportista);
 
             // Notas y Auditoría
             textboxNotas.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Notas);
@@ -173,6 +179,9 @@ namespace CS_Gestion
             entidad.NombreFantasia = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNombreFantasia.Text);
             entidad.Cuit = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCuit.Text);
             entidad.IngresosBrutos = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxIngresosBrutos.Text);
+            entidad.TipoCliente = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoCliente.CheckState).Value;
+            entidad.TipoProveedor = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoProveedor.CheckState).Value;
+            entidad.TipoTransportista = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoTransportista.CheckState).Value;
 
             // Notas y Auditoría
             entidad.Notas = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNotas.Text);
@@ -317,6 +326,14 @@ namespace CS_Gestion
                     maskedtextboxCuit.Focus();
                     return;
                 }
+            }
+
+            if (!(checkboxTipoCliente.Checked || checkboxTipoProveedor.Checked || checkboxTipoTransportista.Checked))
+            {
+                tabcontrolMain.SelectedTab = tabpageGeneral;
+                MessageBox.Show("Debe especificar el Tipo de Entidad.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                maskedtextboxCuit.Focus();
+                return;
             }
 
             // Calculo el nuevo Id
