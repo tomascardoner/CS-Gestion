@@ -154,7 +154,10 @@ namespace CS_Gestion
                 case (char)Keys.Return:
                     if (isEditMode)
                     {
-                        buttonGuardar.PerformClick();
+                        if (this.ActiveControl != textboxNotas)
+                        {
+                            buttonGuardar.PerformClick();
+                        }
                     }
                     else
                     {

@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html style="background: white;">
+    <head>
+        <title>Obtener Constancia -  Cuit Online</title>
+        <base href="//www.cuitonline.com/" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta name="robots" content="noindex,follow,noarchive" />
+        <link rel="stylesheet" type="text/css" href="styles-190213171321-c/main.css" media="screen" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+        <link rel="stylesheet" type="text/css" href="styles-190213171321-c/main.css" media="screen" /> 
+        <link rel="stylesheet" type="text/css" href="styles-171231120151-c/main-mid.css" media="(max-width: 990px)" /> 
+        <link rel="stylesheet" type="text/css" href="styles-171231120151-c/main-small.css" media="(max-width: 550px)" />
+    </head> 
+    <body> 
+        <div class="header-popup">
+            <a href="//www.cuitonline.com/" title="Cuit Online, la manera m�s simple de encontrar el cuit que busc�s">
+                <img class="img-logo" src="images/logo-header.png" alt="Cuit Online"/> 
+                <img class="img-logo-mobile" src="images/logo-header-mobile-1-2x.png" alt="Cuit Online"/> 
+            </a>
+        </div>
+        <div style="text-align: center;">   
+            <div class="captcha-text"> Para visualizar la Constancia de <b>Inscripci&oacute;n / Monotributo</b> del CUIT <b>20-23588579-5</b>, &nbsp;debe completar el siguiente c&oacute;digo de verificaci&oacute;n: 
+            </div> 
+            <div class="captcha-form"> 
+                <form method="post" onsubmit="javascript:return disableSubmitButton();" action="https://seti.afip.gob.ar/padron-puc-constancia-internet/ConstanciaAction.do?bar=1580949116777">
+                    <input type="hidden" name="cuit" value="20235885795" /><br/> 
+                    <table align="center" style="margin: 0 auto;">
+                        <tr> 
+                            <td class="captcha-image"> 
+                                <img src="https://seti.afip.gob.ar/padron-puc-constancia-internet/images/CaptchaCode.gif?bar=1580949116777" border="1" style="width: 200px; height: 50px;"/> 
+                            </td> 
+                            <td class="captcha-input-text"> Identifique el C&oacute;digo:<br/> 
+                                <input type="text" name="captchaField" value=""/> 
+                                <input type="hidden" name="bar" value="1580949116777" /> 
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" align="center" class="button-container-table">
+                        <tr>
+                            <td valign="middle"> &nbsp; </td> 
+                            <td> 
+                                <div style="position: relative;"> 
+                                    <img id="_loadingImage" src="images/loading_forbutton.gif"/> 
+                                    <button id="_submitButton" type="submit" name="consultar" class="obtener-constancia"> 
+                                        <span>OBTENER CONSTANCIA</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div> 
+
+        <script>
+            function disableSubmitButton() {
+                var submitButton = document.getElementById("_submitButton");
+                submitButton.disabled = true;
+                submitButton.style.cursor = 'auto';
+                var loadingImage = document.getElementById("_loadingImage");
+                loadingImage.style.display = 'block';
+                return true;
+            }
+        </script>
+
+        <div class="ads-bottom-bar">
+            <div style="margin: 10px auto;width: 100%; max-width:950px;height:auto;">
+                <script type="text/javascript">
+                    document.write(String.fromCharCode(60,105,110,112,117,116,32,116,121,112,101,61,34,104,105,100,100,101,110,34,32,110,97,109,101,61,34,73,76,95,73,78,95,84,65,71,34,32,118,97,108,117,101,61,34,50,34,47,62,13,10,60,115,99,114,105,112,116,32,116,121,112,101,61,34,116,101,120,116,47,106,97,118,97,115,99,114,105,112,116,34,62,13,10,32,32,32,32,118,97,114,32,105,110,102,111,108,105,110,107,95,112,105,100,32,61,32,51,49,51,50,50,53,59,13,10,32,32,32,32,118,97,114,32,105,110,102,111,108,105,110,107,95,119,115,105,100,32,61,32,48,59,13,10,60,47,115,99,114,105,112,116,62,13,10,60,115,99,114,105,112,116,32,116,121,112,101,61,34,116,101,120,116,47,106,97,118,97,115,99,114,105,112,116,34,32,115,114,99,61,34,104,116,116,112,115,58,47,47,114,101,115,111,117,114,99,101,115,46,105,110,102,111,108,105,110,107,115,46,99,111,109,47,106,115,47,105,110,102,111,108,105,110,107,115,95,109,97,105,110,46,106,115,34,62,60,47,115,99,114,105,112,116,62));
+                </script>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.write(String.fromCharCode(60,115,99,114,105,112,116,62,10,9,40,102,117,110,99,116,105,111,110,40,105,44,115,44,111,44,103,44,114,44,97,44,109,41,123,105,91,39,71,111,111,103,108,101,65,110,97,108,121,116,105,99,115,79,98,106,101,99,116,39,93,61,114,59,105,91,114,93,61,105,91,114,93,124,124,102,117,110,99,116,105,111,110,40,41,123,10,32,32,32,32,40,105,91,114,93,46,113,61,105,91,114,93,46,113,124,124,91,93,41,46,112,117,115,104,40,97,114,103,117,109,101,110,116,115,41,125,44,105,91,114,93,46,108,61,49,42,110,101,119,32,68,97,116,101,40,41,59,97,61,115,46,99,114,101,97,116,101,69,108,101,109,101,110,116,40,111,41,44,10,9,109,61,115,46,103,101,116,69,108,101,109,101,110,116,115,66,121,84,97,103,78,97,109,101,40,111,41,91,48,93,59,97,46,97,115,121,110,99,61,49,59,97,46,115,114,99,61,103,59,109,46,112,97,114,101,110,116,78,111,100,101,46,105,110,115,101,114,116,66,101,102,111,114,101,40,97,44,109,41,10,9,125,41,40,119,105,110,100,111,119,44,100,111,99,117,109,101,110,116,44,39,115,99,114,105,112,116,39,44,39,47,47,119,119,119,46,103,111,111,103,108,101,45,97,110,97,108,121,116,105,99,115,46,99,111,109,47,97,110,97,108,121,116,105,99,115,46,106,115,39,44,39,103,97,39,41,59,10,10,9,103,97,40,39,99,114,101,97,116,101,39,44,32,39,85,65,45,50,53,53,48,48,52,57,45,53,39,44,32,39,99,117,105,116,111,110,108,105,110,101,46,99,111,109,39,41,59,10,9,103,97,40,39,115,101,110,100,39,44,32,39,112,97,103,101,118,105,101,119,39,41,59,10,60,47,115,99,114,105,112,116,62));
+        </script>
+    </body>
+</html>
