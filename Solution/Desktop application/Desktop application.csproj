@@ -157,6 +157,7 @@
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseExtension\EntidadCategoriaExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadEmailExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadDomicilioExtension.cs" />
     <Compile Include="DatabaseExtension\EntidadExtension.cs" />
@@ -191,6 +192,9 @@
     <Compile Include="Entidad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntidadCategoria.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntidadCuentaBancaria.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -204,11 +208,26 @@
     <Compile Include="EntidadEmpresa.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntidadEntidadCategoria.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\FormEntidadCuentaBancaria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Entidades\FormEntidadCuentaBancaria.Designer.cs">
       <DependentUpon>FormEntidadCuentaBancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCategorias.Designer.cs">
+      <DependentUpon>FormEntidadCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entidades\FormEntidadCategoria.Designer.cs">
+      <DependentUpon>FormEntidadCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\FormEntidadTelefono.cs">
       <SubType>Form</SubType>
@@ -221,9 +240,6 @@
     </Compile>
     <Compile Include="Entidades\FormEntidadEmail.Designer.cs">
       <DependentUpon>FormEntidadEmail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EntidadProveedorCategoria.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EntidadTelefono.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -254,9 +270,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ProveedorCategoria.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Sistema\CommandToolbar.cs" />
     <Compile Include="Sistema\Permisos.cs" />
     <Compile Include="Sistema\Appearance.cs" />
     <Compile Include="Sistema\FormLogin.cs">
@@ -320,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entidades\FormEntidadCuentaBancaria.resx">
       <DependentUpon>FormEntidadCuentaBancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entidades\FormEntidadCategorias.resx">
+      <DependentUpon>FormEntidadCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entidades\FormEntidadCategoria.resx">
+      <DependentUpon>FormEntidadCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entidades\FormEntidadTelefono.resx">
       <DependentUpon>FormEntidadTelefono.cs</DependentUpon>
@@ -406,6 +426,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ImageItemSelect32.png" />
     <None Include="Resources\ImageUsuarioGrupo16.png" />
     <None Include="Resources\ImageUsuarioGrupo48.png" />
     <None Include="Resources\ImageMujer48.png" />

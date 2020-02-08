@@ -161,10 +161,13 @@
     <value>..\resources\imageitemcopy32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImageItemDelete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\imageitemdelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\ImageItemDelete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImageItemEdit32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\imageitemedit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageItemSelect32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageItemSelect32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImageLogin48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\imagelogin48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

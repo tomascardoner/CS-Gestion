@@ -12,15 +12,15 @@ namespace CS_Gestion
     using System;
     using System.Collections.Generic;
     
-    public partial class EntidadProveedorCategoria
+    public partial class EntidadEntidadCategoria
     {
         public int IdEntidad { get; set; }
-        public short IdProveedorCategoria { get; set; }
+        public short IdEntidadCategoria { get; set; }
         public short IdUsuarioCreacion { get; set; }
         public System.DateTime FechaHoraCreacion { get; set; }
     
         public virtual Entidad Entidad { get; set; }
-        public virtual ProveedorCategoria ProveedorCategoria { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public virtual EntidadCategoria EntidadCategoria { get; set; }
+        public virtual Usuario UsuarioCreacion { get; set; }
     }
 }

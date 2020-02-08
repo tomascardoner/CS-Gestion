@@ -31,6 +31,7 @@ namespace CS_Gestion
             menuitemAyudaAcercaDe.Text = "&Acerca de " + CardonerSistemas.My.Application.Info.Title + "...";
 
             // GroupView de comandos
+            CommandToolbar.AddCommands(this);
             imagelistMain.Images.Add(Properties.Resources.ImageEntidad48);
         }
 
@@ -157,37 +158,65 @@ namespace CS_Gestion
 
         #endregion
 
-        private void groupviewEntidades_GroupViewItemSelected(object sender, EventArgs e)
-        {
-            if (GroupViewItemSelected(sender, "Entidades"))
-            {
-                if (Permisos.Verificar(Permisos.Entidad))
-                {
-                    this.Cursor = Cursors.WaitCursor;
-                    FormEntidades entidades = new FormEntidades();
-                    CardonerSistemas.Forms.MdiChildPositionAndSizeToFit(this, entidades);
-                    entidades.Show();
-                    if (entidades.WindowState == FormWindowState.Minimized)
-                    {
-                        entidades.WindowState = FormWindowState.Normal;
-                    }
-                    entidades.Focus();
-                    this.Cursor = Cursors.Default;
-                }
-            }
-        }
+        #region Comandos - Principal
 
-        private bool GroupViewItemSelected(object sender, string itemText)
+        private void ComandosPrincipales_ItemSelected(object sender, EventArgs e)
         {
             Syncfusion.Windows.Forms.Tools.GroupView group = (Syncfusion.Windows.Forms.Tools.GroupView)sender;
             if (group.SelectedItem >= 0)
             {
-                if (group.GroupViewItems[group.SelectedItem].Text == itemText)
+                switch (group.GroupViewItems[group.SelectedItem].Text)
                 {
-                    return true;
+                    case CommandToolbar.PrincipalEntidades:
+                        MostrarForm(Permisos.Entidad, new FormEntidades());
+                        break;
+                    default:
+                        break;
                 }
             }
-            return false;
         }
+
+        #endregion
+
+        #region Comandos - Tablas
+
+        private void ComandosTablas_ItemSelected(object sender, EventArgs e)
+        {
+            Syncfusion.Windows.Forms.Tools.GroupView group = (Syncfusion.Windows.Forms.Tools.GroupView)sender;
+            if (group.SelectedItem >= 0)
+            {
+                switch (group.GroupViewItems[group.SelectedItem].Text)
+                {
+                    case CommandToolbar.TablasCategoriasEntidades:
+                        MostrarForm(Permisos.EntidadCategoria, new FormEntidadCategorias(false));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Misc functions
+
+        private void MostrarForm(string idPermiso, Form form)
+        {
+            if (Permisos.Verificar(idPermiso))
+            {
+                this.Cursor = Cursors.WaitCursor;
+                CardonerSistemas.Forms.MdiChildPositionAndSizeToFit(this, form);
+                form.Show();
+                if (form.WindowState == FormWindowState.Minimized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
+                form.Focus();
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        #endregion
+
     }
 }

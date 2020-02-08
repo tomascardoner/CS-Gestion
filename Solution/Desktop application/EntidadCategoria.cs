@@ -12,15 +12,15 @@ namespace CS_Gestion
     using System;
     using System.Collections.Generic;
     
-    public partial class ProveedorCategoria
+    public partial class EntidadCategoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProveedorCategoria()
+        public EntidadCategoria()
         {
-            this.EntidadProveedorCategoria = new HashSet<EntidadProveedorCategoria>();
+            this.EntidadEntidadCategorias = new HashSet<EntidadEntidadCategoria>();
         }
     
-        public short IdProveedorCategoria { get; set; }
+        public short IdEntidadCategoria { get; set; }
         public string Nombre { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }
@@ -29,7 +29,7 @@ namespace CS_Gestion
         public System.DateTime FechaHoraModificacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntidadProveedorCategoria> EntidadProveedorCategoria { get; set; }
+        public virtual ICollection<EntidadEntidadCategoria> EntidadEntidadCategorias { get; set; }
         public virtual Usuario UsuarioCreacion { get; set; }
         public virtual Usuario UsuarioModificacion { get; set; }
     }

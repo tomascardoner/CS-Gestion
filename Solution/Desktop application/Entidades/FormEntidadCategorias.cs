@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace CS_Gestion
 {
-    public partial class FormEntidades : Form
+    public partial class FormEntidadCategorias : Form
     {
 
         #region Declarations
 
-        private List<Entidad> listEntidades;
-        private List<Entidad> listEntidadesFiltradaYOrdenada;
+        private List<EntidadCategoria> listEntidadCategorias;
+        private List<EntidadCategoria> listEntidadCategoriasFiltradaYOrdenada;
 
         private bool skipFilterData = false;
         private bool busquedaAplicada = false;
@@ -23,7 +23,7 @@ namespace CS_Gestion
 
         #region Form stuff
 
-        public FormEntidades()
+        public FormEntidadCategorias(bool modoSeleccion)
         {
             InitializeComponent();
 
@@ -35,30 +35,43 @@ namespace CS_Gestion
 
             skipFilterData = false;
 
-            ordenColumna = columnNombreParaMostrar;
+            ordenColumna = columnNombre;
             ordenTipo = SortOrder.Ascending;
+
+            if (modoSeleccion)
+            {
+                FormBorderStyle = FormBorderStyle.FixedDialog;
+                MinimizeBox = false;
+                MaximizeBox = false;
+                datagridviewMain.MultiSelect = true;
+                statusstripMain.SizingGrip = false;
+                datagridviewMain.DoubleClick += new System.EventHandler(Seleccionar);
+            }
+            else
+            {
+                buttonSeleccionar.Visible = false;
+                datagridviewMain.DoubleClick += new System.EventHandler(Ver);
+            }
 
             RefreshData();
         }
 
         private void SetAppearance()
         {
-            this.Icon = CardonerSistemas.Graphics.GetIconFromBitmap(Properties.Resources.ImageEntidad16);
-
             Program.Appearance.DataGrid(datagridviewMain);
         }
 
         private void this_FormClosed(object sender, FormClosedEventArgs e)
         {
-            listEntidades = null;
-            listEntidadesFiltradaYOrdenada = null;
+            listEntidadCategorias = null;
+            listEntidadCategoriasFiltradaYOrdenada = null;
         }
 
         #endregion
 
         #region Load and Set Data
 
-        internal void RefreshData(int positionIdEntidad = 0, bool restorePosition = false)
+        internal void RefreshData(short positionIdEntidadCategoria = 0, bool restorePosition = false)
         {
             this.Cursor = Cursors.WaitCursor;
 
@@ -66,12 +79,12 @@ namespace CS_Gestion
             {
                 using (CSGestionContext context = new CSGestionContext(true))
                 {
-                    listEntidades = context.Entidad.ToList();
+                    listEntidadCategorias = context.EntidadCategoria.ToList();
                 }
             }
             catch (System.Exception ex)
             {
-                CardonerSistemas.Error.ProcessError(ex, "Error al leer las Entidades.");
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer las Categorías de Entidades.");
                 return;
             }
             finally
@@ -83,23 +96,23 @@ namespace CS_Gestion
             {
                 if (datagridviewMain.CurrentRow == null)
                 {
-                    positionIdEntidad = 0;
+                    positionIdEntidadCategoria = 0;
                 }
                 else
                 {
-                    positionIdEntidad = ((Entidad)datagridviewMain.SelectedRows[0].DataBoundItem).IdEntidad;
+                    positionIdEntidadCategoria = ((EntidadCategoria)datagridviewMain.SelectedRows[0].DataBoundItem).IdEntidadCategoria;
                 }
             }
 
             FilterData();
 
-            if (positionIdEntidad != 0)
+            if (positionIdEntidadCategoria != 0)
             {
                 foreach (DataGridViewRow row  in datagridviewMain.Rows)
                 {
-                    if (((Entidad)row.DataBoundItem).IdEntidad == positionIdEntidad)
+                    if (((EntidadCategoria)row.DataBoundItem).IdEntidadCategoria == positionIdEntidadCategoria)
                     {
-                        datagridviewMain.CurrentCell = row.Cells[columnNombreParaMostrar.Name];
+                        datagridviewMain.CurrentCell = row.Cells[columnNombre.Name];
                         break;
                     }
                 }
@@ -114,7 +127,7 @@ namespace CS_Gestion
 
                 try
                 {
-                    listEntidadesFiltradaYOrdenada = listEntidades;
+                    listEntidadCategoriasFiltradaYOrdenada = listEntidadCategorias;
 
                     // Filtro por Activo
                     switch (comboboxActivo.SelectedIndex)
@@ -122,10 +135,10 @@ namespace CS_Gestion
                         case 0:     // Todos
                             break;
                         case 1:     // Sí
-                            listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.Where(ent => ent.EsActivo).ToList();
+                            listEntidadCategoriasFiltradaYOrdenada = listEntidadCategoriasFiltradaYOrdenada.Where(ent => ent.EsActivo).ToList();
                             break;
                         case 2:     // No
-                            listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.Where(ent => !ent.EsActivo).ToList();
+                            listEntidadCategoriasFiltradaYOrdenada = listEntidadCategoriasFiltradaYOrdenada.Where(ent => !ent.EsActivo).ToList();
                             break;
                         default:
                             break;
@@ -134,20 +147,20 @@ namespace CS_Gestion
                     // Filtro por Búsqueda en Apellido y Nombre
                     if (busquedaAplicada)
                     {
-                        listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.Where(ent => ent.NombreParaMostrar.ToLower().Contains(textboxBuscar.Text.ToLower().Trim())).ToList();
+                        listEntidadCategoriasFiltradaYOrdenada = listEntidadCategoriasFiltradaYOrdenada.Where(ent => ent.Nombre.ToLower().Contains(textboxBuscar.Text.ToLower().Trim())).ToList();
                     }
 
                     // Actualizo la cantidad
-                    switch (listEntidadesFiltradaYOrdenada.Count)
+                    switch (listEntidadCategoriasFiltradaYOrdenada.Count)
                     {
                         case 0:
-                            statuslabelMain.Text = "No hay Entidades para mostrar.";
+                            statuslabelMain.Text = "No hay Categorías de Entidades para mostrar.";
                             break;
                         case 1:
-                            statuslabelMain.Text = "Se muestra 1 Entidad.";
+                            statuslabelMain.Text = "Se muestra 1 Categoría de Entidad.";
                             break;
                         default:
-                            statuslabelMain.Text = string.Format("Se muestran {0} Entidades.", listEntidadesFiltradaYOrdenada.Count);
+                            statuslabelMain.Text = string.Format("Se muestran {0} Categorías de Entidades.", listEntidadCategoriasFiltradaYOrdenada.Count);
                             break;
                     }
 
@@ -167,31 +180,20 @@ namespace CS_Gestion
 
         private void OrderData()
         {
-            if (ordenColumna.Name == columnNombreParaMostrar.Name)
+            if (ordenColumna.Name == columnNombre.Name)
             {
                 if (ordenTipo == SortOrder.Ascending)
                 {
-                    listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.OrderBy(ent => ent.NombreParaMostrar).ToList();
+                    listEntidadCategoriasFiltradaYOrdenada = listEntidadCategoriasFiltradaYOrdenada.OrderBy(ent => ent.Nombre).ToList();
                 }
                 else
                 {
-                    listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.OrderByDescending(ent => ent.NombreParaMostrar).ToList();
-                }
-            }
-            else if (ordenColumna.Name == columnCuit.Name)
-            {
-                if (ordenTipo == SortOrder.Ascending)
-                {
-                    listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.OrderBy(ent => ent.Cuit).ToList();
-                }
-                else
-                {
-                    listEntidadesFiltradaYOrdenada = listEntidadesFiltradaYOrdenada.OrderByDescending(ent => ent.Cuit).ToList();
+                    listEntidadCategoriasFiltradaYOrdenada = listEntidadCategoriasFiltradaYOrdenada.OrderByDescending(ent => ent.Nombre).ToList();
                 }
             }
 
             datagridviewMain.AutoGenerateColumns = false;
-            datagridviewMain.DataSource = listEntidadesFiltradaYOrdenada;
+            datagridviewMain.DataSource = listEntidadCategoriasFiltradaYOrdenada;
 
             //  Muestro el ícono de orden en la columna correspondiente
             ordenColumna.HeaderCell.SortGlyphDirection = ordenTipo;
@@ -214,9 +216,9 @@ namespace CS_Gestion
                 {
                     foreach (DataGridViewRow row in datagridviewMain.Rows)
                     {
-                        if (row.Cells[columnNombreParaMostrar.Name].Value.ToString().StartsWith(e.KeyChar.ToString(), System.StringComparison.CurrentCultureIgnoreCase))
+                        if (row.Cells[columnNombre.Name].Value.ToString().StartsWith(e.KeyChar.ToString(), System.StringComparison.CurrentCultureIgnoreCase))
                         {
-                            row.Cells[columnNombreParaMostrar.Name].Selected = true;
+                            row.Cells[columnNombre.Name].Selected = true;
                             datagridviewMain.Focus();
                             return;
                         }
@@ -262,7 +264,7 @@ namespace CS_Gestion
         {
             DataGridViewColumn column = (DataGridViewColumn)datagridviewMain.Columns[e.ColumnIndex];
 
-            if (column.Name == columnNombreParaMostrar.Name | column.Name == columnCuit.Name)
+            if (column.Name == columnNombre.Name)
             {
                 if (column == ordenColumna)
                 {
@@ -298,36 +300,36 @@ namespace CS_Gestion
 
         #region Main toolbar
 
-        private void Agregar_Click(object sender, EventArgs e)
+        private void Agregar(object sender, EventArgs e)
         {
-            if (Permisos.Verificar(Permisos.EntidadAgregar))
+            if (Permisos.Verificar(Permisos.EntidadCategoriaAgregar))
             {
                 this.Cursor = Cursors.WaitCursor;
 
                 datagridviewMain.Enabled = false;
-                FormEntidad entidad = new FormEntidad();
-                entidad.LoadAndShow(true, this, 0);
+                FormEntidadCategoria entidadCategoria = new FormEntidadCategoria();
+                entidadCategoria.LoadAndShow(true, this, 0);
                 datagridviewMain.Enabled = true;
 
                 this.Cursor = Cursors.Default;
             }
         }
 
-        private void Editar_Click(object sender, EventArgs e)
+        private void Editar(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {
-                MessageBox.Show("No hay ninguna Entidad para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay ninguna Categoría de Entidad para editar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadEditar))
+                if (Permisos.Verificar(Permisos.EntidadCategoriaEditar))
                 {
                     this.Cursor = Cursors.WaitCursor;
 
                     datagridviewMain.Enabled = false;
-                    FormEntidad entidad = new FormEntidad();
-                    entidad.LoadAndShow(true, this, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).IdEntidad);
+                    FormEntidadCategoria entidadCategoria = new FormEntidadCategoria();
+                    entidadCategoria.LoadAndShow(true, this, ((EntidadCategoria)datagridviewMain.CurrentRow.DataBoundItem).IdEntidadCategoria);
                     datagridviewMain.Enabled = true;
 
                     this.Cursor = Cursors.Default;
@@ -335,17 +337,17 @@ namespace CS_Gestion
             }
         }
 
-        private void Borrar_Click(object sender, EventArgs e)
+        private void Borrar(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {
-                MessageBox.Show("No hay ninguna Entidad para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay ninguna Categoría de Entidad para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadBorrar))
+                if (Permisos.Verificar(Permisos.EntidadCategoriaBorrar))
                 {
-                    string mensaje = string.Format("Se borrará la Entidad seleccionada.{0}{0}Nombre: {1}{0}CUIT: {2}{0}{0}¿Confirma el borrado definitivo?", System.Environment.NewLine, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).NombreParaMostrar, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).Cuit);
+                    string mensaje = string.Format("Se borrará la Categoría de Entidad seleccionada.{0}{0}Nombre: {1}{0}{0}¿Confirma el borrado definitivo?", System.Environment.NewLine, ((EntidadCategoria)datagridviewMain.CurrentRow.DataBoundItem).Nombre);
                     if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.Cursor = Cursors.WaitCursor;
@@ -354,10 +356,10 @@ namespace CS_Gestion
                         {
                             using (CSGestionContext context = new CSGestionContext(true))
                             {
-                                Entidad entidad = context.Entidad.Find(((Entidad)datagridviewMain.SelectedRows[0].DataBoundItem).IdEntidad);
+                                EntidadCategoria entidadCategoria = context.EntidadCategoria.Find(((EntidadCategoria)datagridviewMain.SelectedRows[0].DataBoundItem).IdEntidadCategoria);
 
-                                context.Entidad.Attach(entidad);
-                                context.Entidad.Remove(entidad);
+                                context.EntidadCategoria.Attach(entidadCategoria);
+                                context.EntidadCategoria.Remove(entidadCategoria);
                                 context.SaveChanges();
                             }
                         }
@@ -366,7 +368,7 @@ namespace CS_Gestion
                             switch (CardonerSistemas.Database.EntityFramework.TryDecodeDbUpdateException(dbuex))
                             {
                                 case CardonerSistemas.Database.EntityFramework.Errors.RelatedEntity:
-                                    MessageBox.Show("No se puede borrar la Entidad porque tiene datos relacionados.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("No se puede borrar la Categoría de Entidad porque tiene datos relacionados.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
                                 default:
                                     break;
@@ -374,7 +376,7 @@ namespace CS_Gestion
                         }
                         catch (System.Exception ex)
                         {
-                            CardonerSistemas.Error.ProcessError(ex, "Error al borrar la Entidad.");
+                            CardonerSistemas.Error.ProcessError(ex, "Error al borrar la Categoría de Entidad.");
                         }
 
                         RefreshData();
@@ -385,22 +387,35 @@ namespace CS_Gestion
             }
         }
 
-        private void Ver_Click(object sender, EventArgs e)
+        private void Ver(object sender, EventArgs e)
         {
             if (datagridviewMain.CurrentRow == null)
             {
-                MessageBox.Show("No hay ninguna Entidad para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay ninguna Categoría de Entidad para ver.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 this.Cursor = Cursors.WaitCursor;
 
                 datagridviewMain.Enabled = false;
-                FormEntidad entidad = new FormEntidad();
-                entidad.LoadAndShow(false, this, ((Entidad)datagridviewMain.CurrentRow.DataBoundItem).IdEntidad);
+                FormEntidadCategoria entidadCategoria = new FormEntidadCategoria();
+                entidadCategoria.LoadAndShow(false, this, ((EntidadCategoria)datagridviewMain.CurrentRow.DataBoundItem).IdEntidadCategoria);
                 datagridviewMain.Enabled = true;
 
                 this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void Seleccionar(object sender, EventArgs e)
+        {
+            if (datagridviewMain.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ninguna Categoría de Entidad seleccionada.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
             }
         }
 

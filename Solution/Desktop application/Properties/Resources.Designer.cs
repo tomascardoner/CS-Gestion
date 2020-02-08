@@ -223,6 +223,16 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageItemSelect32 {
+            get {
+                object obj = ResourceManager.GetObject("ImageItemSelect32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImageLogin48 {
             get {
                 object obj = ResourceManager.GetObject("ImageLogin48", resourceCulture);

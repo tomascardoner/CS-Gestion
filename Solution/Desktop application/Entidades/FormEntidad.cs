@@ -91,6 +91,7 @@ namespace CS_Gestion
             toolstripEmails.Enabled = !isEditMode;
             toolstripTelefonos.Enabled = !isEditMode;
             toolstripCuentasBancarias.Enabled = !isEditMode;
+            toolstripCategorias.Enabled = !isEditMode;
 
             // Notas y Auditoría
             textboxNotas.ReadOnly = !isEditMode;
@@ -215,6 +216,11 @@ namespace CS_Gestion
                 {
                     CuentasBancariasRefreshData();
                     tabpageCuentasBancarias.Tag = "Refreshed";
+                }
+                if (tabcontrolMain.SelectedTab.Name == tabpageCategorias.Name && tabpageCategorias.Tag == null)
+                {
+                    CategoriasRefreshData();
+                    tabpageCategorias.Tag = "Refreshed";
                 }
             }
         }
@@ -555,15 +561,12 @@ namespace CS_Gestion
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadDomicilioEditar))
-                {
-                    this.Cursor = Cursors.WaitCursor;
+                this.Cursor = Cursors.WaitCursor;
 
-                    FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
-                    formDomicilio.LoadAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio);
+                FormEntidadDomicilio formDomicilio = new FormEntidadDomicilio();
+                formDomicilio.LoadAndShow(false, this, entidad.IdEntidad, ((DomiciliosGridRowData)datagridviewDomicilios.CurrentRow.DataBoundItem).IdDomicilio);
 
-                    this.Cursor = Cursors.Default;
-                }
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -701,15 +704,12 @@ namespace CS_Gestion
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadEmailEditar))
-                {
-                    this.Cursor = Cursors.WaitCursor;
+                this.Cursor = Cursors.WaitCursor;
 
-                    FormEntidadEmail formEmail = new FormEntidadEmail();
-                    formEmail.LoadAndShow(false, this, entidad.IdEntidad, ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail);
+                FormEntidadEmail formEmail = new FormEntidadEmail();
+                formEmail.LoadAndShow(false, this, entidad.IdEntidad, ((EmailsGridRowData)datagridviewEmails.CurrentRow.DataBoundItem).IdEmail);
 
-                    this.Cursor = Cursors.Default;
-                }
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -846,15 +846,12 @@ namespace CS_Gestion
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadTelefonoEditar))
-                {
-                    this.Cursor = Cursors.WaitCursor;
+                this.Cursor = Cursors.WaitCursor;
 
-                    FormEntidadTelefono formTelefono = new FormEntidadTelefono();
-                    formTelefono.LoadAndShow(false, this, entidad.IdEntidad, ((TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem).IdTelefono);
+                FormEntidadTelefono formTelefono = new FormEntidadTelefono();
+                formTelefono.LoadAndShow(false, this, entidad.IdEntidad, ((TelefonosGridRowData)datagridviewTelefonos.CurrentRow.DataBoundItem).IdTelefono);
 
-                    this.Cursor = Cursors.Default;
-                }
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -893,10 +890,11 @@ namespace CS_Gestion
             {
                 listCuentasBancarias = (from ecb in context.EntidadCuentaBancaria
                                        join b in context.Banco on ecb.IdBanco equals b.IdBanco
-                                       join cbt in context.CuentaBancariaTipo on ecb.IdCuentaBancariaTipo equals cbt.IdCuentaBancariaTipo
+                                       join cbt in context.CuentaBancariaTipo on ecb.IdCuentaBancariaTipo equals cbt.IdCuentaBancariaTipo into cuentabancariatipogrupo
+                                       from cbtg in cuentabancariatipogrupo.DefaultIfEmpty()
                                        where ecb.IdEntidad == entidad.IdEntidad
-                                       orderby cbt.Nombre
-                                       select new CuentasBancariasGridRowData() { IdCuentaBancaria = ecb.IdCuentaBancaria, BancoNombre = b.Nombre, TipoNombre = cbt.Nombre, Sucursal = ecb.Sucursal, Numero = ecb.Numero }).ToList();
+                                       orderby b.Nombre, cbtg.Nombre
+                                       select new CuentasBancariasGridRowData() { IdCuentaBancaria = ecb.IdCuentaBancaria, BancoNombre = b.Nombre, TipoNombre = (cbtg == null ? string.Empty : cbtg.Nombre), Sucursal = ecb.Sucursal, Numero = ecb.Numero }).ToList();
 
                 datagridviewCuentasBancarias.AutoGenerateColumns = false;
                 datagridviewCuentasBancarias.DataSource = listCuentasBancarias;
@@ -994,14 +992,166 @@ namespace CS_Gestion
             }
             else
             {
-                if (Permisos.Verificar(Permisos.EntidadCuentaBancariaEditar))
+                this.Cursor = Cursors.WaitCursor;
+
+                FormEntidadCuentaBancaria formCuentaBancaria = new FormEntidadCuentaBancaria();
+                formCuentaBancaria.LoadAndShow(false, this, entidad.IdEntidad, ((CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem).IdCuentaBancaria);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        #endregion
+
+        #region Categorias
+
+        internal class CategoriasGridRowData
+        {
+            public short IdCategoria { get; set; }
+            public string Nombre { get; set; }
+        }
+
+        internal void CategoriasRefreshData(short positionIdCategoria = 0, bool restorePosition = false)
+        {
+            List<CategoriasGridRowData> listCategorias;
+
+            if (restorePosition)
+            {
+                if (datagridviewCategorias.CurrentRow == null)
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                    positionIdCategoria = 0;
+                }
+                else
+                {
+                    positionIdCategoria = ((CategoriasGridRowData)datagridviewCategorias.CurrentRow.DataBoundItem).IdCategoria;
+                }
+            }
 
-                    FormEntidadCuentaBancaria formCuentaBancaria = new FormEntidadCuentaBancaria();
-                    formCuentaBancaria.LoadAndShow(false, this, entidad.IdEntidad, ((CuentasBancariasGridRowData)datagridviewCuentasBancarias.CurrentRow.DataBoundItem).IdCuentaBancaria);
+            this.Cursor = Cursors.WaitCursor;
 
-                    this.Cursor = Cursors.Default;
+            try
+            {
+                listCategorias = (from eec in context.EntidadEntidadCategoria
+                                    join ec in context.EntidadCategoria on eec.IdEntidadCategoria equals ec.IdEntidadCategoria
+                                    where eec.IdEntidad == entidad.IdEntidad
+                                    orderby ec.Nombre
+                                    select new CategoriasGridRowData() { IdCategoria = eec.IdEntidadCategoria, Nombre = ec.Nombre }).ToList();
+
+                datagridviewCategorias.AutoGenerateColumns = false;
+                datagridviewCategorias.DataSource = listCategorias;
+            }
+            catch (Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer las Categorías.");
+                this.Cursor = Cursors.Default;
+                return;
+            }
+
+            this.Cursor = Cursors.Default;
+
+            if (positionIdCategoria != 0)
+            {
+                foreach (DataGridViewRow row in datagridviewCategorias.Rows)
+                {
+                    if (((CategoriasGridRowData)row.DataBoundItem).IdCategoria == positionIdCategoria)
+                    {
+                        datagridviewCategorias.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        private void CategoriasAgregar_Click(object sender, EventArgs e)
+        {
+            if (Permisos.Verificar(Permisos.EntidadCategoriaAgregar))
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                FormEntidadCategorias entidadCategorias = new FormEntidadCategorias(true);
+                CardonerSistemas.Forms.CenterToParent(this, entidadCategorias);
+                if (entidadCategorias.ShowDialog(this) == DialogResult.Yes)
+                {
+                    short idCategoria = 0;
+
+                    foreach (DataGridViewRow row in entidadCategorias.datagridviewMain.SelectedRows)
+                    {
+                        idCategoria = ((EntidadCategoria)row.DataBoundItem).IdEntidadCategoria;
+                        List<CategoriasGridRowData> categorias = (List<CategoriasGridRowData>)datagridviewCategorias.DataSource;
+                        if (!categorias.Exists(ec => ec.IdCategoria == idCategoria))
+                        {
+                            EntidadEntidadCategoria categoria = new EntidadEntidadCategoria();
+                            categoria.IdEntidad = entidad.IdEntidad;
+                            categoria.IdEntidadCategoria = idCategoria;
+                            categoria.IdUsuarioCreacion = Program.Usuario.IdUsuario;
+                            categoria.FechaHoraCreacion = DateTime.Now;
+                            context.EntidadEntidadCategoria.Add(categoria);
+                        }
+                    }
+                    if (context.ChangeTracker.HasChanges())
+                    {
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (System.Data.Entity.Infrastructure.DbUpdateException dbuex)
+                        {
+                            this.Cursor = Cursors.Default;
+
+                            switch (CardonerSistemas.Database.EntityFramework.TryDecodeDbUpdateException(dbuex))
+                            {
+                                case CardonerSistemas.Database.EntityFramework.Errors.DuplicatedEntity:
+                                    MessageBox.Show("No se puede agregar la Categoría porque ya existe en esta Entidad.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    break;
+                                case CardonerSistemas.Database.EntityFramework.Errors.Unknown:
+                                    CardonerSistemas.Error.ProcessError((Exception)dbuex, Properties.Resources.StringErrorSavingChanges);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            this.Cursor = Cursors.Default;
+                            CardonerSistemas.Error.ProcessError(ex, Properties.Resources.StringErrorSavingChanges);
+                            return;
+                        }
+
+                        CategoriasRefreshData(idCategoria);
+                    }
+                }
+                entidadCategorias = null;
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void CategoriasBorrar_Click(object sender, EventArgs e)
+        {
+            if (datagridviewCategorias.CurrentRow == null)
+            {
+                MessageBox.Show("No hay ninguna Categoría para borrar.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (Permisos.Verificar(Permisos.EntidadCategoriaBorrar))
+                {
+                    CategoriasGridRowData rowData = (CategoriasGridRowData)datagridviewCategorias.CurrentRow.DataBoundItem;
+                    string mensaje = string.Format("Se borrará la Categoría seleccionada.{0}{0}Nombre: {1}{0}{0}¿Confirma el borrado definitivo?", Environment.NewLine, rowData.Nombre);
+                    if (MessageBox.Show(mensaje, CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        EntidadEntidadCategoria entidadEntidadCategoria = context.EntidadEntidadCategoria.Find(entidad.IdEntidad, rowData.IdCategoria);
+                        context.EntidadEntidadCategoria.Remove(entidadEntidadCategoria);
+                        context.SaveChanges();
+                        entidadEntidadCategoria = null;
+
+                        CategoriasRefreshData();
+
+                        this.Cursor = Cursors.Default;
+                    }
                 }
             }
         }

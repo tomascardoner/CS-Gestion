@@ -132,7 +132,7 @@ namespace CS_Gestion
         {
             // General
             entidadCuentaBancaria.IdBanco = CardonerSistemas.ControlValueTranslation.ComboBoxToByte(comboboxBanco.SelectedValue).Value;
-            entidadCuentaBancaria.IdCuentaBancariaTipo = CardonerSistemas.ControlValueTranslation.ComboBoxToByte(comboboxTipo.SelectedValue).Value;
+            entidadCuentaBancaria.IdCuentaBancariaTipo = CardonerSistemas.ControlValueTranslation.ComboBoxToByte(comboboxTipo.SelectedValue);
             entidadCuentaBancaria.Sucursal = CardonerSistemas.ControlValueTranslation.TextBoxToShort(maskedtextboxSucursal.Text);
             entidadCuentaBancaria.Numero = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNumero.Text);
             entidadCuentaBancaria.Cbu = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCbu.Text);
@@ -257,13 +257,6 @@ namespace CS_Gestion
                 tabMain.SelectedTab = tabpageGeneral;
                 MessageBox.Show("Debe especificar el Banco.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 comboboxBanco.Focus();
-                return;
-            }
-            if (comboboxTipo.SelectedValue == null)
-            {
-                tabMain.SelectedTab = tabpageGeneral;
-                MessageBox.Show("Debe especificar el Tipo de Cuenta Bancaria.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                comboboxTipo.Focus();
                 return;
             }
 

@@ -22,7 +22,7 @@ namespace CS_Gestion
             this.EntidadEmail = new HashSet<EntidadEmail>();
             this.EntidadEmpresa = new HashSet<EntidadEmpresa>();
             this.EntidadTelefono = new HashSet<EntidadTelefono>();
-            this.EntidadProveedorCategoria = new HashSet<EntidadProveedorCategoria>();
+            this.EntidadEntidadCategorias = new HashSet<EntidadEntidadCategoria>();
         }
     
         public int IdEntidad { get; set; }
@@ -57,6 +57,6 @@ namespace CS_Gestion
         public virtual Usuario UsuarioCreacion { get; set; }
         public virtual Usuario UsuarioModificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntidadProveedorCategoria> EntidadProveedorCategoria { get; set; }
+        public virtual ICollection<EntidadEntidadCategoria> EntidadEntidadCategorias { get; set; }
     }
 }
