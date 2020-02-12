@@ -12,12 +12,17 @@ namespace CS_Gestion
 
         private List<Entidad> listEntidades;
         private List<Entidad> listEntidadesFiltradaYOrdenada;
+        private List<EntidadCategoria> listEntidadCategorias;
+        private List<EntidadEntidadCategoria> listEntidadEntidadCategorias;
 
         private bool skipFilterData = false;
         private bool busquedaAplicada = false;
 
         private DataGridViewColumn ordenColumna;
         private SortOrder ordenTipo;
+
+        private bool entidadCategoriasNeedRefresh = true;
+        private bool entidadEntidadCategoriasNeedRefresh = true;
 
         #endregion
 
@@ -46,6 +51,9 @@ namespace CS_Gestion
             this.Icon = CardonerSistemas.Graphics.GetIconFromBitmap(Properties.Resources.ImageEntidad16);
 
             Program.Appearance.DataGrid(datagridviewMain);
+
+            textboxCategorias.Text = Properties.Resources.StringItemAllFemale;
+            panelCategorias.Visible = false;
         }
 
         private void this_FormClosed(object sender, FormClosedEventArgs e)
@@ -401,6 +409,66 @@ namespace CS_Gestion
                 datagridviewMain.Enabled = true;
 
                 this.Cursor = Cursors.Default;
+            }
+        }
+
+        #endregion
+
+        #region Filter of categories
+
+        internal void RefreshCategoriasData()
+        {
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                using (CSGestionContext context = new CSGestionContext(true))
+                {
+                    listEntidadCategorias = context.EntidadCategoria.ToList();
+                    listEntidadEntidadCategorias = context.EntidadEntidadCategoria.ToList();
+                }
+                entidadCategoriasNeedRefresh = true;
+                entidadEntidadCategoriasNeedRefresh = true;
+            }
+            catch (System.Exception ex)
+            {
+                CardonerSistemas.Error.ProcessError(ex, "Error al leer las Categorías.");
+                return;
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void MostrarCategorias(object sender, EventArgs e)
+        {
+            if (entidadCategoriasNeedRefresh)
+            {
+                RefreshCategoriasData();
+
+                // TODO: guardar los items checkeados
+                checkedlistboxCategorias.Items.Clear();
+                foreach (EntidadCategoria item in listEntidadCategorias)
+                {
+                    checkedlistboxCategorias.Items.Add(item.Nombre, true);
+                }
+            }
+
+            int locationX = textboxCategorias.Bounds.X;
+            int locationY = textboxCategorias.Bounds.Y + textboxCategorias.Height;
+
+            panelCategorias.Left = locationX;
+            panelCategorias.Top = locationY;
+
+            panelCategorias.Show();
+        }
+
+        private void Categorias(object sender, EventArgs e)
+        {
+            if (!panelCategorias.Visible)
+            {
+                //MostrarCategorias();
             }
         }
 

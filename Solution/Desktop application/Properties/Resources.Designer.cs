@@ -73,6 +73,16 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageCancel16 {
+            get {
+                object obj = ResourceManager.GetObject("ImageCancel16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImageCancel32 {
             get {
                 object obj = ResourceManager.GetObject("ImageCancel32", resourceCulture);
@@ -266,6 +276,16 @@ namespace CS_Gestion.Properties {
         internal static System.Drawing.Bitmap ImageNext24 {
             get {
                 object obj = ResourceManager.GetObject("ImageNext24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageOk16 {
+            get {
+                object obj = ResourceManager.GetObject("ImageOk16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -478,7 +498,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Todas».
+        ///   Looks up a localized string similar to Todas.
         /// </summary>
         internal static string StringItemAllFemale {
             get {
@@ -487,7 +507,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Todos».
+        ///   Looks up a localized string similar to Todos.
         /// </summary>
         internal static string StringItemAllMale {
             get {
@@ -496,7 +516,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Completa».
+        ///   Looks up a localized string similar to Completa.
         /// </summary>
         internal static string StringItemCompleteFemale {
             get {
@@ -505,7 +525,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Completo».
+        ///   Looks up a localized string similar to Completo.
         /// </summary>
         internal static string StringItemCompleteMale {
             get {
@@ -514,7 +534,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Vacía».
+        ///   Looks up a localized string similar to Vacía.
         /// </summary>
         internal static string StringItemEmptyFemale {
             get {
@@ -523,7 +543,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Vacío».
+        ///   Looks up a localized string similar to Vacío.
         /// </summary>
         internal static string StringItemEmptyMale {
             get {
@@ -541,7 +561,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Nueva».
+        ///   Looks up a localized string similar to Nueva.
         /// </summary>
         internal static string StringItemNewFemale {
             get {
@@ -550,7 +570,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Nuevo».
+        ///   Looks up a localized string similar to Nuevo.
         /// </summary>
         internal static string StringItemNewMale {
             get {
@@ -595,7 +615,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Ninguna».
+        ///   Looks up a localized string similar to Ninguna.
         /// </summary>
         internal static string StringItemNoneFemale {
             get {
@@ -604,7 +624,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «Ninguno».
+        ///   Looks up a localized string similar to Ninguno.
         /// </summary>
         internal static string StringItemNoneMale {
             get {
@@ -613,7 +633,7 @@ namespace CS_Gestion.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to «No especifica».
+        ///   Looks up a localized string similar to No especifica.
         /// </summary>
         internal static string StringItemNotSpecified {
             get {

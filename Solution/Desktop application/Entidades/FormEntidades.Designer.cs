@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntidades));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelToolbars = new System.Windows.Forms.FlowLayoutPanel();
@@ -43,17 +44,31 @@
             this.toolstripActivo = new System.Windows.Forms.ToolStrip();
             this.labelActivo = new System.Windows.Forms.ToolStripLabel();
             this.comboboxActivo = new System.Windows.Forms.ToolStripComboBox();
+            this.toolstripCategorias = new System.Windows.Forms.ToolStrip();
+            this.labelCategorias = new System.Windows.Forms.ToolStripLabel();
+            this.textboxCategorias = new System.Windows.Forms.ToolStripTextBox();
+            this.buttonCategorias = new System.Windows.Forms.ToolStripButton();
             this.statusstripMain = new System.Windows.Forms.StatusStrip();
             this.statuslabelMain = new System.Windows.Forms.ToolStripStatusLabel();
             this.datagridviewMain = new System.Windows.Forms.DataGridView();
             this.columnNombreParaMostrar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelCategorias = new System.Windows.Forms.TableLayoutPanel();
+            this.checkedlistboxCategorias = new System.Windows.Forms.CheckedListBox();
+            this.panelCategoriasBotones = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonCategoriasCancelar = new System.Windows.Forms.Button();
+            this.buttonCategoriasAceptar = new System.Windows.Forms.Button();
+            this.buttonCategoriasSeleccionarTodas = new System.Windows.Forms.Button();
+            this.buttonCategoriasSeleccionarNinguna = new System.Windows.Forms.Button();
             this.panelToolbars.SuspendLayout();
             this.toolstripButtons.SuspendLayout();
             this.toolstripBuscar.SuspendLayout();
             this.toolstripActivo.SuspendLayout();
+            this.toolstripCategorias.SuspendLayout();
             this.statusstripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewMain)).BeginInit();
+            this.panelCategorias.SuspendLayout();
+            this.panelCategoriasBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelToolbars
@@ -63,10 +78,11 @@
             this.panelToolbars.Controls.Add(this.toolstripButtons);
             this.panelToolbars.Controls.Add(this.toolstripBuscar);
             this.panelToolbars.Controls.Add(this.toolstripActivo);
+            this.panelToolbars.Controls.Add(this.toolstripCategorias);
             this.panelToolbars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelToolbars.Location = new System.Drawing.Point(0, 0);
             this.panelToolbars.Name = "panelToolbars";
-            this.panelToolbars.Size = new System.Drawing.Size(724, 39);
+            this.panelToolbars.Size = new System.Drawing.Size(859, 64);
             this.panelToolbars.TabIndex = 3;
             // 
             // toolstripButtons
@@ -186,19 +202,55 @@
             this.comboboxActivo.Size = new System.Drawing.Size(75, 39);
             this.comboboxActivo.SelectedIndexChanged += new System.EventHandler(this.Activo_SelectedIndexChanged);
             // 
+            // toolstripCategorias
+            // 
+            this.toolstripCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolstripCategorias.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolstripCategorias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelCategorias,
+            this.textboxCategorias,
+            this.buttonCategorias});
+            this.toolstripCategorias.Location = new System.Drawing.Point(0, 39);
+            this.toolstripCategorias.Name = "toolstripCategorias";
+            this.toolstripCategorias.Size = new System.Drawing.Size(225, 25);
+            this.toolstripCategorias.TabIndex = 14;
+            // 
+            // labelCategorias
+            // 
+            this.labelCategorias.Name = "labelCategorias";
+            this.labelCategorias.Size = new System.Drawing.Size(66, 22);
+            this.labelCategorias.Text = "Categorías:";
+            // 
+            // textboxCategorias
+            // 
+            this.textboxCategorias.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textboxCategorias.Name = "textboxCategorias";
+            this.textboxCategorias.ReadOnly = true;
+            this.textboxCategorias.Size = new System.Drawing.Size(100, 25);
+            // 
+            // buttonCategorias
+            // 
+            this.buttonCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonCategorias.Image = ((System.Drawing.Image)(resources.GetObject("buttonCategorias.Image")));
+            this.buttonCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonCategorias.Name = "buttonCategorias";
+            this.buttonCategorias.Size = new System.Drawing.Size(23, 22);
+            this.buttonCategorias.Text = "...";
+            this.buttonCategorias.Click += new System.EventHandler(this.Categorias);
+            // 
             // statusstripMain
             // 
             this.statusstripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabelMain});
             this.statusstripMain.Location = new System.Drawing.Point(0, 351);
             this.statusstripMain.Name = "statusstripMain";
-            this.statusstripMain.Size = new System.Drawing.Size(724, 22);
+            this.statusstripMain.Size = new System.Drawing.Size(859, 22);
             this.statusstripMain.TabIndex = 4;
             // 
             // statuslabelMain
             // 
             this.statuslabelMain.Name = "statuslabelMain";
-            this.statuslabelMain.Size = new System.Drawing.Size(709, 17);
+            this.statuslabelMain.Size = new System.Drawing.Size(844, 17);
             this.statuslabelMain.Spring = true;
             this.statuslabelMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -218,14 +270,14 @@
             this.columnNombreParaMostrar,
             this.columnCuit});
             this.datagridviewMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewMain.Location = new System.Drawing.Point(0, 39);
+            this.datagridviewMain.Location = new System.Drawing.Point(0, 64);
             this.datagridviewMain.MultiSelect = false;
             this.datagridviewMain.Name = "datagridviewMain";
             this.datagridviewMain.ReadOnly = true;
             this.datagridviewMain.RowHeadersVisible = false;
             this.datagridviewMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewMain.Size = new System.Drawing.Size(724, 312);
+            this.datagridviewMain.Size = new System.Drawing.Size(859, 287);
             this.datagridviewMain.TabIndex = 5;
             this.datagridviewMain.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_ColumnHeaderMouseClick);
             this.datagridviewMain.DoubleClick += new System.EventHandler(this.Ver_Click);
@@ -250,11 +302,95 @@
             this.columnCuit.ReadOnly = true;
             this.columnCuit.Width = 57;
             // 
+            // panelCategorias
+            // 
+            this.panelCategorias.ColumnCount = 1;
+            this.panelCategorias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelCategorias.Controls.Add(this.checkedlistboxCategorias, 0, 1);
+            this.panelCategorias.Controls.Add(this.panelCategoriasBotones, 0, 0);
+            this.panelCategorias.Location = new System.Drawing.Point(687, 45);
+            this.panelCategorias.Margin = new System.Windows.Forms.Padding(0);
+            this.panelCategorias.Name = "panelCategorias";
+            this.panelCategorias.RowCount = 2;
+            this.panelCategorias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.panelCategorias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelCategorias.Size = new System.Drawing.Size(160, 264);
+            this.panelCategorias.TabIndex = 7;
+            // 
+            // checkedlistboxCategorias
+            // 
+            this.checkedlistboxCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedlistboxCategorias.FormattingEnabled = true;
+            this.checkedlistboxCategorias.Location = new System.Drawing.Point(3, 73);
+            this.checkedlistboxCategorias.Name = "checkedlistboxCategorias";
+            this.checkedlistboxCategorias.Size = new System.Drawing.Size(154, 188);
+            this.checkedlistboxCategorias.TabIndex = 7;
+            // 
+            // panelCategoriasBotones
+            // 
+            this.panelCategoriasBotones.ColumnCount = 2;
+            this.panelCategoriasBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelCategoriasBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelCategoriasBotones.Controls.Add(this.buttonCategoriasCancelar, 1, 0);
+            this.panelCategoriasBotones.Controls.Add(this.buttonCategoriasAceptar, 0, 0);
+            this.panelCategoriasBotones.Controls.Add(this.buttonCategoriasSeleccionarTodas, 0, 1);
+            this.panelCategoriasBotones.Controls.Add(this.buttonCategoriasSeleccionarNinguna, 1, 1);
+            this.panelCategoriasBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCategoriasBotones.Location = new System.Drawing.Point(0, 0);
+            this.panelCategoriasBotones.Margin = new System.Windows.Forms.Padding(0);
+            this.panelCategoriasBotones.Name = "panelCategoriasBotones";
+            this.panelCategoriasBotones.RowCount = 2;
+            this.panelCategoriasBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelCategoriasBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelCategoriasBotones.Size = new System.Drawing.Size(160, 70);
+            this.panelCategoriasBotones.TabIndex = 0;
+            // 
+            // buttonCategoriasCancelar
+            // 
+            this.buttonCategoriasCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCategoriasCancelar.Image = global::CS_Gestion.Properties.Resources.ImageCancel16;
+            this.buttonCategoriasCancelar.Location = new System.Drawing.Point(83, 3);
+            this.buttonCategoriasCancelar.Name = "buttonCategoriasCancelar";
+            this.buttonCategoriasCancelar.Size = new System.Drawing.Size(74, 29);
+            this.buttonCategoriasCancelar.TabIndex = 3;
+            this.buttonCategoriasCancelar.UseVisualStyleBackColor = true;
+            // 
+            // buttonCategoriasAceptar
+            // 
+            this.buttonCategoriasAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCategoriasAceptar.Image = global::CS_Gestion.Properties.Resources.ImageOk16;
+            this.buttonCategoriasAceptar.Location = new System.Drawing.Point(3, 3);
+            this.buttonCategoriasAceptar.Name = "buttonCategoriasAceptar";
+            this.buttonCategoriasAceptar.Size = new System.Drawing.Size(74, 29);
+            this.buttonCategoriasAceptar.TabIndex = 2;
+            this.buttonCategoriasAceptar.UseVisualStyleBackColor = true;
+            // 
+            // buttonCategoriasSeleccionarTodas
+            // 
+            this.buttonCategoriasSeleccionarTodas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCategoriasSeleccionarTodas.Location = new System.Drawing.Point(3, 38);
+            this.buttonCategoriasSeleccionarTodas.Name = "buttonCategoriasSeleccionarTodas";
+            this.buttonCategoriasSeleccionarTodas.Size = new System.Drawing.Size(74, 29);
+            this.buttonCategoriasSeleccionarTodas.TabIndex = 0;
+            this.buttonCategoriasSeleccionarTodas.Text = "All";
+            this.buttonCategoriasSeleccionarTodas.UseVisualStyleBackColor = true;
+            // 
+            // buttonCategoriasSeleccionarNinguna
+            // 
+            this.buttonCategoriasSeleccionarNinguna.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCategoriasSeleccionarNinguna.Location = new System.Drawing.Point(83, 38);
+            this.buttonCategoriasSeleccionarNinguna.Name = "buttonCategoriasSeleccionarNinguna";
+            this.buttonCategoriasSeleccionarNinguna.Size = new System.Drawing.Size(74, 29);
+            this.buttonCategoriasSeleccionarNinguna.TabIndex = 1;
+            this.buttonCategoriasSeleccionarNinguna.Text = "None";
+            this.buttonCategoriasSeleccionarNinguna.UseVisualStyleBackColor = true;
+            // 
             // FormEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 373);
+            this.ClientSize = new System.Drawing.Size(859, 373);
+            this.Controls.Add(this.panelCategorias);
             this.Controls.Add(this.datagridviewMain);
             this.Controls.Add(this.statusstripMain);
             this.Controls.Add(this.panelToolbars);
@@ -271,9 +407,13 @@
             this.toolstripBuscar.PerformLayout();
             this.toolstripActivo.ResumeLayout(false);
             this.toolstripActivo.PerformLayout();
+            this.toolstripCategorias.ResumeLayout(false);
+            this.toolstripCategorias.PerformLayout();
             this.statusstripMain.ResumeLayout(false);
             this.statusstripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewMain)).EndInit();
+            this.panelCategorias.ResumeLayout(false);
+            this.panelCategoriasBotones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +439,16 @@
         internal System.Windows.Forms.ToolStrip toolstripActivo;
         internal System.Windows.Forms.ToolStripLabel labelActivo;
         internal System.Windows.Forms.ToolStripComboBox comboboxActivo;
+        internal System.Windows.Forms.ToolStrip toolstripCategorias;
+        internal System.Windows.Forms.ToolStripLabel labelCategorias;
+        private System.Windows.Forms.ToolStripTextBox textboxCategorias;
+        private System.Windows.Forms.ToolStripButton buttonCategorias;
+        private System.Windows.Forms.TableLayoutPanel panelCategorias;
+        private System.Windows.Forms.CheckedListBox checkedlistboxCategorias;
+        private System.Windows.Forms.TableLayoutPanel panelCategoriasBotones;
+        private System.Windows.Forms.Button buttonCategoriasSeleccionarTodas;
+        private System.Windows.Forms.Button buttonCategoriasSeleccionarNinguna;
+        private System.Windows.Forms.Button buttonCategoriasCancelar;
+        private System.Windows.Forms.Button buttonCategoriasAceptar;
     }
 }

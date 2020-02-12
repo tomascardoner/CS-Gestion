@@ -28,5 +28,16 @@
         internal const int EventApplicationEnded = 1000;
 
         internal const int EventApplicationConfigurationError = 5000;
+
+        internal static string StringItemAllFemaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemAllFemale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemAllMaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemAllMale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemCompleteFemaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemCompleteFemale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemCompleteMaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemCompleteMale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemEmptyFemaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemEmptyFemale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemEmptyMaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemEmptyMale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemNewFemaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemNewFemale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemNewMaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemNewMale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemNoneFemaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemNoneFemale + Properties.Resources.StringItemEndChar;
+        internal static string StringItemNoneMaleEnclosed = Properties.Resources.StringItemStartChar + Properties.Resources.StringItemNoneMale + Properties.Resources.StringItemEndChar;
     }
 }
