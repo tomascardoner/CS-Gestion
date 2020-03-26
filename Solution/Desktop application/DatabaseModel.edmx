@@ -1757,7 +1757,7 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NombreParaMostrar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-          <Property Name="IngresosBrutos" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="IngresosBrutos" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
           <Property Name="TipoCliente" Type="Boolean" Nullable="false" />
           <Property Name="TipoProveedor" Type="Boolean" Nullable="false" />
           <Property Name="TipoTransportista" Type="Boolean" Nullable="false" />
