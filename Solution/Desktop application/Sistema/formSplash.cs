@@ -8,7 +8,7 @@ namespace CS_Gestion
         {
             InitializeComponent();
 
-            this.Icon = Properties.Resources.IconApplication32;
+            this.Icon = Properties.Resources.IconApplication;
             this.Text = CardonerSistemas.My.Application.Info.Title;
             labelCompanyName.Text = CardonerSistemas.My.Application.Info.CompanyName;
             labelAppTitle.Text = CardonerSistemas.My.Application.Info.Title;

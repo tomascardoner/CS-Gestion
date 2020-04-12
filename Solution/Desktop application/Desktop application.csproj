@@ -271,6 +271,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\CommandToolbar.cs" />
+    <Compile Include="Sistema\FormAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\FormAboutBox.Designer.cs">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sistema\Permisos.cs" />
     <Compile Include="Sistema\Appearance.cs" />
     <Compile Include="Sistema\FormLogin.cs">
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entidades\FormEntidadDomicilio.resx">
       <DependentUpon>FormEntidadDomicilio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\FormAboutBox.resx">
+      <DependentUpon>FormAboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -456,12 +465,12 @@
     <None Include="Resources\Actions\ImageOk32.png" />
     <None Include="Resources\Actions\ImageOk16.png" />
     <None Include="Resources\Actions\ImageCancel16.png" />
+    <Content Include="Resources\Application\ImageApplication256.png" />
     <Content Include="Resources\Application\ImageSplash.png" />
     <Content Include="Resources\Misc\ImageEntidad16.png" />
     <Content Include="Resources\Misc\ImageEntidad48.png" />
     <Content Include="Resources\Application\IconApplication.ico" />
     <None Include="Resources\Users\ImageLogin48.png" />
-    <None Include="Resources\Application\Application32.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

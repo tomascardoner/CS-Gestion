@@ -30,7 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMdi));
-            this.menustripMain = new System.Windows.Forms.MenuStrip();
+            this.menuitemVentana = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaMosaicoHorizontal = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaMosaicoVertical = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaCascada = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaOrganizarIconos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaSeparadorCerrarTodas = new System.Windows.Forms.ToolStripSeparator();
+            this.menuitemVentanaCerrarTodas = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaEncajarEnVentana = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuitemVentanaSeparadorListaVentanas = new System.Windows.Forms.ToolStripSeparator();
             this.menuitemArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemArchivoOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemArchivoSeparadorCerrarSesion = new System.Windows.Forms.ToolStripSeparator();
@@ -47,15 +55,6 @@
             this.menuitemEditarSeparadorSeleccionarTodo = new System.Windows.Forms.ToolStripSeparator();
             this.menuitemEditarSeleccionarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemDebug = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentana = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaMosaicoHorizontal = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaMosaicoVertical = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaCascada = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaOrganizarIconos = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaSeparadorCerrarTodas = new System.Windows.Forms.ToolStripSeparator();
-            this.menuitemVentanaCerrarTodas = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaEncajarEnVentana = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemVentanaSeparadorListaVentanas = new System.Windows.Forms.ToolStripSeparator();
             this.menuitemAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemAyudaAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.statusstripMain = new System.Windows.Forms.StatusStrip();
@@ -70,25 +69,82 @@
             this.groupbaritemEntidades = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
             this.groupbaritemTablas = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
             this.groupbaritemReportes = new Syncfusion.Windows.Forms.Tools.GroupBarItem();
-            this.menustripMain.SuspendLayout();
+            this.menustripMain = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).BeginInit();
             this.groupbarMain.SuspendLayout();
+            this.menustripMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menustripMain
+            // menuitemVentana
             // 
-            this.menustripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemArchivo,
-            this.menuitemEditar,
-            this.menuitemDebug,
-            this.menuitemVentana,
-            this.menuitemAyuda});
-            this.menustripMain.Location = new System.Drawing.Point(0, 0);
-            this.menustripMain.MdiWindowListItem = this.menuitemVentana;
-            this.menustripMain.Name = "menustripMain";
-            this.menustripMain.Size = new System.Drawing.Size(768, 24);
-            this.menustripMain.TabIndex = 0;
-            this.menustripMain.Text = "MenuStrip";
+            this.menuitemVentana.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuitemVentanaMosaicoHorizontal,
+            this.menuitemVentanaMosaicoVertical,
+            this.menuitemVentanaCascada,
+            this.menuitemVentanaOrganizarIconos,
+            this.menuitemVentanaSeparadorCerrarTodas,
+            this.menuitemVentanaCerrarTodas,
+            this.menuitemVentanaEncajarEnVentana,
+            this.menuitemVentanaSeparadorListaVentanas});
+            this.menuitemVentana.Name = "menuitemVentana";
+            this.menuitemVentana.Size = new System.Drawing.Size(61, 20);
+            this.menuitemVentana.Text = "&Ventana";
+            // 
+            // menuitemVentanaMosaicoHorizontal
+            // 
+            this.menuitemVentanaMosaicoHorizontal.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileHorizontally;
+            this.menuitemVentanaMosaicoHorizontal.Name = "menuitemVentanaMosaicoHorizontal";
+            this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaMosaicoHorizontal.Text = "Mosaico &Horizontal";
+            this.menuitemVentanaMosaicoHorizontal.Click += new System.EventHandler(this.menuitemVentanaMosaicoHorizontal_Click);
+            // 
+            // menuitemVentanaMosaicoVertical
+            // 
+            this.menuitemVentanaMosaicoVertical.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileVertically;
+            this.menuitemVentanaMosaicoVertical.Name = "menuitemVentanaMosaicoVertical";
+            this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaMosaicoVertical.Text = "Mosaico &Vertical";
+            this.menuitemVentanaMosaicoVertical.Click += new System.EventHandler(this.menuitemVentanaMosaicoVertical_Click);
+            // 
+            // menuitemVentanaCascada
+            // 
+            this.menuitemVentanaCascada.Name = "menuitemVentanaCascada";
+            this.menuitemVentanaCascada.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaCascada.Text = "&Cascada";
+            this.menuitemVentanaCascada.Click += new System.EventHandler(this.menuitemVentanaCascada_Click);
+            // 
+            // menuitemVentanaOrganizarIconos
+            // 
+            this.menuitemVentanaOrganizarIconos.Name = "menuitemVentanaOrganizarIconos";
+            this.menuitemVentanaOrganizarIconos.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaOrganizarIconos.Text = "&Organizar Íconos";
+            this.menuitemVentanaOrganizarIconos.Click += new System.EventHandler(this.menuitemVentanaOrganizarIconos_Click);
+            // 
+            // menuitemVentanaSeparadorCerrarTodas
+            // 
+            this.menuitemVentanaSeparadorCerrarTodas.Name = "menuitemVentanaSeparadorCerrarTodas";
+            this.menuitemVentanaSeparadorCerrarTodas.Size = new System.Drawing.Size(174, 6);
+            // 
+            // menuitemVentanaCerrarTodas
+            // 
+            this.menuitemVentanaCerrarTodas.Image = global::CS_Gestion.Properties.Resources.ImageWindowCloseAll;
+            this.menuitemVentanaCerrarTodas.Name = "menuitemVentanaCerrarTodas";
+            this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaCerrarTodas.Text = "Ce&rrar Todas";
+            this.menuitemVentanaCerrarTodas.Click += new System.EventHandler(this.menuitemVentanaCerrarTodas_Click);
+            // 
+            // menuitemVentanaEncajarEnVentana
+            // 
+            this.menuitemVentanaEncajarEnVentana.Image = global::CS_Gestion.Properties.Resources.ImageWindowFitToSize;
+            this.menuitemVentanaEncajarEnVentana.Name = "menuitemVentanaEncajarEnVentana";
+            this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaEncajarEnVentana.Text = "Encajar en ventana";
+            this.menuitemVentanaEncajarEnVentana.Click += new System.EventHandler(this.menuitemVentanaEncajarEnVentana_Click);
+            // 
+            // menuitemVentanaSeparadorListaVentanas
+            // 
+            this.menuitemVentanaSeparadorListaVentanas.Name = "menuitemVentanaSeparadorListaVentanas";
+            this.menuitemVentanaSeparadorListaVentanas.Size = new System.Drawing.Size(174, 6);
             // 
             // menuitemArchivo
             // 
@@ -220,77 +276,6 @@
             this.menuitemDebug.Size = new System.Drawing.Size(54, 20);
             this.menuitemDebug.Text = "&Debug";
             // 
-            // menuitemVentana
-            // 
-            this.menuitemVentana.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemVentanaMosaicoHorizontal,
-            this.menuitemVentanaMosaicoVertical,
-            this.menuitemVentanaCascada,
-            this.menuitemVentanaOrganizarIconos,
-            this.menuitemVentanaSeparadorCerrarTodas,
-            this.menuitemVentanaCerrarTodas,
-            this.menuitemVentanaEncajarEnVentana,
-            this.menuitemVentanaSeparadorListaVentanas});
-            this.menuitemVentana.Name = "menuitemVentana";
-            this.menuitemVentana.Size = new System.Drawing.Size(61, 20);
-            this.menuitemVentana.Text = "&Ventana";
-            // 
-            // menuitemVentanaMosaicoHorizontal
-            // 
-            this.menuitemVentanaMosaicoHorizontal.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileHorizontally;
-            this.menuitemVentanaMosaicoHorizontal.Name = "menuitemVentanaMosaicoHorizontal";
-            this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaMosaicoHorizontal.Text = "Mosaico &Horizontal";
-            this.menuitemVentanaMosaicoHorizontal.Click += new System.EventHandler(this.menuitemVentanaMosaicoHorizontal_Click);
-            // 
-            // menuitemVentanaMosaicoVertical
-            // 
-            this.menuitemVentanaMosaicoVertical.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileVertically;
-            this.menuitemVentanaMosaicoVertical.Name = "menuitemVentanaMosaicoVertical";
-            this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaMosaicoVertical.Text = "Mosaico &Vertical";
-            this.menuitemVentanaMosaicoVertical.Click += new System.EventHandler(this.menuitemVentanaMosaicoVertical_Click);
-            // 
-            // menuitemVentanaCascada
-            // 
-            this.menuitemVentanaCascada.Name = "menuitemVentanaCascada";
-            this.menuitemVentanaCascada.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaCascada.Text = "&Cascada";
-            this.menuitemVentanaCascada.Click += new System.EventHandler(this.menuitemVentanaCascada_Click);
-            // 
-            // menuitemVentanaOrganizarIconos
-            // 
-            this.menuitemVentanaOrganizarIconos.Name = "menuitemVentanaOrganizarIconos";
-            this.menuitemVentanaOrganizarIconos.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaOrganizarIconos.Text = "&Organizar Íconos";
-            this.menuitemVentanaOrganizarIconos.Click += new System.EventHandler(this.menuitemVentanaOrganizarIconos_Click);
-            // 
-            // menuitemVentanaSeparadorCerrarTodas
-            // 
-            this.menuitemVentanaSeparadorCerrarTodas.Name = "menuitemVentanaSeparadorCerrarTodas";
-            this.menuitemVentanaSeparadorCerrarTodas.Size = new System.Drawing.Size(174, 6);
-            // 
-            // menuitemVentanaCerrarTodas
-            // 
-            this.menuitemVentanaCerrarTodas.Image = global::CS_Gestion.Properties.Resources.ImageWindowCloseAll;
-            this.menuitemVentanaCerrarTodas.Name = "menuitemVentanaCerrarTodas";
-            this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaCerrarTodas.Text = "Ce&rrar Todas";
-            this.menuitemVentanaCerrarTodas.Click += new System.EventHandler(this.menuitemVentanaCerrarTodas_Click);
-            // 
-            // menuitemVentanaEncajarEnVentana
-            // 
-            this.menuitemVentanaEncajarEnVentana.Image = global::CS_Gestion.Properties.Resources.ImageWindowFitToSize;
-            this.menuitemVentanaEncajarEnVentana.Name = "menuitemVentanaEncajarEnVentana";
-            this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(177, 22);
-            this.menuitemVentanaEncajarEnVentana.Text = "Encajar en ventana";
-            this.menuitemVentanaEncajarEnVentana.Click += new System.EventHandler(this.menuitemVentanaEncajarEnVentana_Click);
-            // 
-            // menuitemVentanaSeparadorListaVentanas
-            // 
-            this.menuitemVentanaSeparadorListaVentanas.Name = "menuitemVentanaSeparadorListaVentanas";
-            this.menuitemVentanaSeparadorListaVentanas.Size = new System.Drawing.Size(174, 6);
-            // 
             // menuitemAyuda
             // 
             this.menuitemAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -302,8 +287,9 @@
             // menuitemAyudaAcercaDe
             // 
             this.menuitemAyudaAcercaDe.Name = "menuitemAyudaAcercaDe";
-            this.menuitemAyudaAcercaDe.Size = new System.Drawing.Size(135, 22);
+            this.menuitemAyudaAcercaDe.Size = new System.Drawing.Size(180, 22);
             this.menuitemAyudaAcercaDe.Text = "&Acerca de...";
+            this.menuitemAyudaAcercaDe.Click += new System.EventHandler(this.menuitemAyudaAcercaDe_Click);
             // 
             // statusstripMain
             // 
@@ -333,8 +319,8 @@
             this.groupbarMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.groupbarMain.CollapseImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.CollapseImage")));
             this.groupbarMain.Controls.Add(this.groupviewPrincipal);
-            this.groupbarMain.Controls.Add(this.groupviewTablas);
             this.groupbarMain.Controls.Add(this.groupviewReportes);
+            this.groupbarMain.Controls.Add(this.groupviewTablas);
             this.groupbarMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupbarMain.ExpandButtonToolTip = null;
             this.groupbarMain.ExpandImage = ((System.Drawing.Image)(resources.GetObject("groupbarMain.ExpandImage")));
@@ -425,6 +411,21 @@
             this.groupbaritemReportes.Client = this.groupviewReportes;
             this.groupbaritemReportes.Text = "Reportes";
             // 
+            // menustripMain
+            // 
+            this.menustripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuitemArchivo,
+            this.menuitemEditar,
+            this.menuitemDebug,
+            this.menuitemVentana,
+            this.menuitemAyuda});
+            this.menustripMain.Location = new System.Drawing.Point(0, 0);
+            this.menustripMain.MdiWindowListItem = this.menuitemVentana;
+            this.menustripMain.Name = "menustripMain";
+            this.menustripMain.Size = new System.Drawing.Size(768, 24);
+            this.menustripMain.TabIndex = 0;
+            this.menustripMain.Text = "MenuStrip";
+            // 
             // FormMdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,18 +442,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Me_Closing);
             this.Resize += new System.EventHandler(this.Me_Resize);
-            this.menustripMain.ResumeLayout(false);
-            this.menustripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupbarMain)).EndInit();
             this.groupbarMain.ResumeLayout(false);
+            this.menustripMain.ResumeLayout(false);
+            this.menustripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
 
-
-        private System.Windows.Forms.MenuStrip menustripMain;
         private System.Windows.Forms.StatusStrip statusstripMain;
         private System.Windows.Forms.ToolStripSeparator menuitemArchivoSeparadorCerrarSesion;
         private System.Windows.Forms.ToolStripSeparator menuitemArchivoSeparadorSalir;
@@ -492,6 +491,7 @@
         internal Syncfusion.Windows.Forms.Tools.GroupView groupviewTablas;
         internal Syncfusion.Windows.Forms.Tools.GroupView groupviewPrincipal;
         internal Syncfusion.Windows.Forms.Tools.GroupView groupviewReportes;
+        private System.Windows.Forms.MenuStrip menustripMain;
     }
 }
 

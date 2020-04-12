@@ -24,7 +24,7 @@ namespace CS_Gestion
         private void SetAppearance()
         {
             this.Cursor = Cursors.AppStarting;
-            this.Icon = Properties.Resources.IconApplication32;
+            this.Icon = Properties.Resources.IconApplication;
             this.Enabled = false;
             this.Text = CardonerSistemas.My.Application.Info.Title;
 
@@ -155,6 +155,12 @@ namespace CS_Gestion
 
         #region Menú Ayuda
 
+        private void menuitemAyudaAcercaDe_Click(object sender, EventArgs e)
+        {
+            FormAboutBox formAboutBox = new FormAboutBox();
+            formAboutBox.ShowDialog(this);
+            formAboutBox.Dispose();
+        }
 
         #endregion
 
