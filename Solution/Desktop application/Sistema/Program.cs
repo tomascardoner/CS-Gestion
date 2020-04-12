@@ -112,7 +112,7 @@ namespace CS_Gestion
             splash.labelLicensedTo.Text = LicensedTo;
             Application.DoEvents();
 
-            // Preparo los parámetros que hacen a la apriencia
+            // Preparo los parámetros que hacen a la apariencia
             Appearance = new Appearance();
 
             // Tomo el tiempo de inicio para controlar los segundos mínimos que se debe mostrar el Splash Screen

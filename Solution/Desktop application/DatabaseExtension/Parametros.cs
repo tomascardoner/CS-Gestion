@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 
 namespace CS_Gestion
@@ -74,6 +76,33 @@ namespace CS_Gestion
             else
             {
                 return parametro.Texto.Trim();
+            }
+        }
+
+        static public Font GetStringAsFont(string idParametro, string defaultValue = null)
+        {
+            Parametro parametro;
+            string fontString;
+
+            parametro = Program.Parametros.Find(param => param.IdParametro.TrimEnd() == idParametro);
+            if (parametro == null || parametro.Texto == null)
+            {
+                fontString = defaultValue;
+            }
+            else
+            {
+                fontString = parametro.Texto;
+            }
+
+            try
+            {
+                TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
+                Font font = (Font)converter.ConvertFromString(parametro.Texto);
+                return font;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
