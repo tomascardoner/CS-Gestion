@@ -226,13 +226,13 @@
             this.comboboxTipo.FormattingEnabled = true;
             this.comboboxTipo.Location = new System.Drawing.Point(74, 6);
             this.comboboxTipo.Name = "comboboxTipo";
-            this.comboboxTipo.Size = new System.Drawing.Size(150, 21);
+            this.comboboxTipo.Size = new System.Drawing.Size(224, 21);
             this.comboboxTipo.TabIndex = 1;
             this.comboboxTipo.SelectedValueChanged += new System.EventHandler(this.Tipo_Cambio);
             // 
             // textboxTipoOtro
             // 
-            this.textboxTipoOtro.Location = new System.Drawing.Point(230, 7);
+            this.textboxTipoOtro.Location = new System.Drawing.Point(304, 6);
             this.textboxTipoOtro.MaxLength = 50;
             this.textboxTipoOtro.Name = "textboxTipoOtro";
             this.textboxTipoOtro.Size = new System.Drawing.Size(200, 20);
@@ -245,7 +245,7 @@
             this.textboxNombre.Location = new System.Drawing.Point(74, 59);
             this.textboxNombre.MaxLength = 50;
             this.textboxNombre.Name = "textboxNombre";
-            this.textboxNombre.Size = new System.Drawing.Size(150, 20);
+            this.textboxNombre.Size = new System.Drawing.Size(289, 20);
             this.textboxNombre.TabIndex = 12;
             this.textboxNombre.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
@@ -254,7 +254,7 @@
             this.textboxEmail.Location = new System.Drawing.Point(74, 33);
             this.textboxEmail.MaxLength = 50;
             this.textboxEmail.Name = "textboxEmail";
-            this.textboxEmail.Size = new System.Drawing.Size(150, 20);
+            this.textboxEmail.Size = new System.Drawing.Size(289, 20);
             this.textboxEmail.TabIndex = 4;
             this.textboxEmail.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
