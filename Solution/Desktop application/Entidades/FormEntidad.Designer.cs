@@ -368,9 +368,9 @@
             // textboxIngresosBrutos
             // 
             this.textboxIngresosBrutos.Location = new System.Drawing.Point(118, 163);
-            this.textboxIngresosBrutos.MaxLength = 13;
+            this.textboxIngresosBrutos.MaxLength = 20;
             this.textboxIngresosBrutos.Name = "textboxIngresosBrutos";
-            this.textboxIngresosBrutos.Size = new System.Drawing.Size(94, 20);
+            this.textboxIngresosBrutos.Size = new System.Drawing.Size(133, 20);
             this.textboxIngresosBrutos.TabIndex = 14;
             this.textboxIngresosBrutos.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
