@@ -9,6 +9,12 @@ namespace CS_Gestion
     {
         static internal EventLog EventLog = new EventLog(Constantes.EventLogName);
 
+        // Config files
+        static internal AppearanceConfig appearanceConfig;
+        static internal DatabaseConfig databaseConfig;
+        static internal EmailConfig emailConfig;
+        static internal GeneralConfig generalConfig;
+
         static internal CardonerSistemas.Database.ADO.SQLServer Database;
         static internal FormMdi FormMdi;
         static internal List<UsuarioGrupoPermiso> Permisos;
@@ -29,8 +35,15 @@ namespace CS_Gestion
             EventLog.Source = CardonerSistemas.My.Application.Info.Title;
             EventLog.WriteEntry("La Aplicación se está iniciando.", EventLogEntryType.Information, Constantes.EventApplicationStarting );
 
+            // Cargo los archivos de configuración de la aplicación
+            if (!Configuration.LoadFiles())
+            {
+                TerminateApplication();
+                return;
+            }
+
             // Verifico si ya hay una instancia ejecutandose, si permite iniciar otra, o de lo contrario, muestro la instancia original
-            if (Properties.Settings.Default.SingleInstanceApplication)
+            if (generalConfig.SingleInstanceApplication)
             {
             }
 
@@ -47,13 +60,13 @@ namespace CS_Gestion
             // Obtengo el Connection String para las conexiones de ADO .NET
             Database = new CardonerSistemas.Database.ADO.SQLServer();
             Database.ApplicationName = CardonerSistemas.My.Application.Info.Title;
-            Database.Datasource = Properties.Settings.Default.DatabaseConnectionDatasource;
-            Database.InitialCatalog = Properties.Settings.Default.DatabaseConnectionDatabase;
-            Database.UserID = Properties.Settings.Default.DatabaseConnectionUserID;
+            Database.Datasource = databaseConfig.Datasource;
+            Database.InitialCatalog = databaseConfig.Database;
+            Database.UserID = databaseConfig.UserId;
             // Desencripto la contraseña de la conexión a la base de datos que está en el archivo app.config
             CardonerSistemas.Encrypt.TripleDES passwordDecrypter = new CardonerSistemas.Encrypt.TripleDES(CardonerSistemas.Constants.PublicEncryptionPassword);
             string unencryptedPassword = "";
-            if (!passwordDecrypter.Decrypt(Properties.Settings.Default.DatabaseConnectionPassword, ref unencryptedPassword))
+            if (!passwordDecrypter.Decrypt(databaseConfig.Password, ref unencryptedPassword))
             {
                 EventLog.WriteEntry("No se pudo desencriptar la contraseña de conexión a la base de datos.", EventLogEntryType.Error, Constantes.EventApplicationConfigurationError);
                 MessageBox.Show("No se pudo desencriptar la contraseña de conexión a la base de datos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,7 +84,7 @@ namespace CS_Gestion
             Database.CreateConnectionString();
 
             // Obtengo el Connection String para las conexiones de Entity Framework
-            CSGestionContext.ConnectionString = CardonerSistemas.Database.EntityFramework.CreateConnectionString(Properties.Settings.Default.DatabaseConnectionProvider, Database.ConnectionString, "DatabaseModel");
+            CSGestionContext.ConnectionString = CardonerSistemas.Database.EntityFramework.CreateConnectionString(databaseConfig.Provider, Database.ConnectionString, "DatabaseModel");
 
             // Cargos los Parámetros desde la Base de datos
             splash.labelStatus.Text = "Cargando los parámetros desde la Base de datos...";
@@ -128,7 +141,7 @@ namespace CS_Gestion
             // Espero el tiempo mínimo para mostrar el Splash Screen y después lo cierro
             if (!CardonerSistemas.Instance.IsRunningUnderIde())
             {
-                while (DateTime.Now.Subtract(startupDateTime).Seconds < Properties.Settings.Default.SplashScreenMinimumDisplaySeconds)
+                while (DateTime.Now.Subtract(startupDateTime).Seconds < appearanceConfig.MinimumSplashScreenDisplaySeconds)
                 {
                     Application.DoEvents();
                 }

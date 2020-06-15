@@ -14,9 +14,9 @@ namespace CS_Gestion
 
             context = new CSGestionContext(true);
 
-            if (Properties.Settings.Default.LastUserLoggedInShow && Properties.Settings.Default.LastUserLoggedIn.Length > 0)
+            if (Program.appearanceConfig.ShowLastLoggedInUser && Properties.Settings.Default.LastLoggedInUser.Length > 0)
             {
-                textboxNombre.Text = Properties.Settings.Default.LastUserLoggedIn;
+                textboxNombre.Text = Properties.Settings.Default.LastLoggedInUser;
                 labelPassword.TabIndex = 0;
                 textboxPassword.TabIndex = 1;
                 labelNombre.TabIndex = 6;
@@ -135,7 +135,7 @@ namespace CS_Gestion
             usuario = null;
 
             // Guardo el Nombre de Usuario para mostrarlo la próxima vez
-            Properties.Settings.Default.LastUserLoggedIn = Program.Usuario.Nombre;
+            Properties.Settings.Default.LastLoggedInUser = Program.Usuario.Nombre;
             Properties.Settings.Default.Save();
 
             this.Cursor = Cursors.Default;

@@ -100,6 +100,9 @@
     <Compile Include="..\..\..\framework-csharp\ComboBox.cs">
       <Link>Framework\ComboBox.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\Configuration.cs">
+      <Link>Framework\Configuration.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Constants.cs">
       <Link>Framework\Constants.cs</Link>
     </Compile>
@@ -153,6 +156,11 @@
     <Compile Include="ChequeTalonarioTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Config\AppearanceConfig.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Config\DatabaseConfig.cs" />
+    <Compile Include="Config\EmailConfig.cs" />
+    <Compile Include="Config\GeneralConfig.cs" />
     <Compile Include="DatabaseExtension\CSGestionContext.cs" />
     <Compile Include="CuentaBancariaTipo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -383,6 +391,18 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Config\Appearance.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Database.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Email.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\General.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </None>
