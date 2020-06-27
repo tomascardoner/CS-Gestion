@@ -199,6 +199,14 @@ namespace CS_Gestion
             ((TextBox)sender).SelectAll();
         }
 
+        private void buttonEmailEnviar_Click(object sender, EventArgs e)
+        {
+            if (textboxEmail.Text.Trim().Length > 0)
+            {
+                CardonerSistemas.Process.Start($"mailto:{textboxEmail.Text.Trim()}");
+            }
+        }
+
         #endregion
 
         #region Main toolbar
@@ -245,6 +253,13 @@ namespace CS_Gestion
             {
                 tabMain.SelectedTab = tabpageGeneral;
                 MessageBox.Show("Debe especificar la dirección de e-mail.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textboxEmail.Focus();
+                return;
+            }
+            if (!CardonerSistemas.Email.IsValidAddress(textboxEmail.Text.Trim()))
+            {
+                tabMain.SelectedTab = tabpageGeneral;
+                MessageBox.Show("La dirección de e-mail es incorrecta.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textboxEmail.Focus();
                 return;
             }

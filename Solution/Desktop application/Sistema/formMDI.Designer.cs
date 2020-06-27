@@ -45,15 +45,6 @@
             this.menuitemArchivoCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemArchivoSeparadorSalir = new System.Windows.Forms.ToolStripSeparator();
             this.menuitemArchivoSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarDeshacer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarRehacer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarSeparadorCortar = new System.Windows.Forms.ToolStripSeparator();
-            this.menuitemEditarCortar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarCopiar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarPegar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuitemEditarSeparadorSeleccionarTodo = new System.Windows.Forms.ToolStripSeparator();
-            this.menuitemEditarSeleccionarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemAyudaAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +85,7 @@
             // 
             this.menuitemVentanaMosaicoHorizontal.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileHorizontally;
             this.menuitemVentanaMosaicoHorizontal.Name = "menuitemVentanaMosaicoHorizontal";
-            this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaMosaicoHorizontal.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaMosaicoHorizontal.Text = "Mosaico &Horizontal";
             this.menuitemVentanaMosaicoHorizontal.Click += new System.EventHandler(this.menuitemVentanaMosaicoHorizontal_Click);
             // 
@@ -102,34 +93,34 @@
             // 
             this.menuitemVentanaMosaicoVertical.Image = global::CS_Gestion.Properties.Resources.ImageWindowTileVertically;
             this.menuitemVentanaMosaicoVertical.Name = "menuitemVentanaMosaicoVertical";
-            this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaMosaicoVertical.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaMosaicoVertical.Text = "Mosaico &Vertical";
             this.menuitemVentanaMosaicoVertical.Click += new System.EventHandler(this.menuitemVentanaMosaicoVertical_Click);
             // 
             // menuitemVentanaCascada
             // 
             this.menuitemVentanaCascada.Name = "menuitemVentanaCascada";
-            this.menuitemVentanaCascada.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaCascada.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaCascada.Text = "&Cascada";
             this.menuitemVentanaCascada.Click += new System.EventHandler(this.menuitemVentanaCascada_Click);
             // 
             // menuitemVentanaOrganizarIconos
             // 
             this.menuitemVentanaOrganizarIconos.Name = "menuitemVentanaOrganizarIconos";
-            this.menuitemVentanaOrganizarIconos.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaOrganizarIconos.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaOrganizarIconos.Text = "&Organizar Íconos";
             this.menuitemVentanaOrganizarIconos.Click += new System.EventHandler(this.menuitemVentanaOrganizarIconos_Click);
             // 
             // menuitemVentanaSeparadorCerrarTodas
             // 
             this.menuitemVentanaSeparadorCerrarTodas.Name = "menuitemVentanaSeparadorCerrarTodas";
-            this.menuitemVentanaSeparadorCerrarTodas.Size = new System.Drawing.Size(174, 6);
+            this.menuitemVentanaSeparadorCerrarTodas.Size = new System.Drawing.Size(177, 6);
             // 
             // menuitemVentanaCerrarTodas
             // 
             this.menuitemVentanaCerrarTodas.Image = global::CS_Gestion.Properties.Resources.ImageWindowCloseAll;
             this.menuitemVentanaCerrarTodas.Name = "menuitemVentanaCerrarTodas";
-            this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaCerrarTodas.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaCerrarTodas.Text = "Ce&rrar Todas";
             this.menuitemVentanaCerrarTodas.Click += new System.EventHandler(this.menuitemVentanaCerrarTodas_Click);
             // 
@@ -137,14 +128,14 @@
             // 
             this.menuitemVentanaEncajarEnVentana.Image = global::CS_Gestion.Properties.Resources.ImageWindowFitToSize;
             this.menuitemVentanaEncajarEnVentana.Name = "menuitemVentanaEncajarEnVentana";
-            this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(177, 22);
+            this.menuitemVentanaEncajarEnVentana.Size = new System.Drawing.Size(180, 22);
             this.menuitemVentanaEncajarEnVentana.Text = "Encajar en ventana";
             this.menuitemVentanaEncajarEnVentana.Click += new System.EventHandler(this.menuitemVentanaEncajarEnVentana_Click);
             // 
             // menuitemVentanaSeparadorListaVentanas
             // 
             this.menuitemVentanaSeparadorListaVentanas.Name = "menuitemVentanaSeparadorListaVentanas";
-            this.menuitemVentanaSeparadorListaVentanas.Size = new System.Drawing.Size(174, 6);
+            this.menuitemVentanaSeparadorListaVentanas.Size = new System.Drawing.Size(177, 6);
             // 
             // menuitemArchivo
             // 
@@ -190,86 +181,6 @@
             this.menuitemArchivoSalir.Text = "&Salir";
             this.menuitemArchivoSalir.Click += new System.EventHandler(this.menuitemArchivoSalir_Click);
             // 
-            // menuitemEditar
-            // 
-            this.menuitemEditar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuitemEditarDeshacer,
-            this.menuitemEditarRehacer,
-            this.menuitemEditarSeparadorCortar,
-            this.menuitemEditarCortar,
-            this.menuitemEditarCopiar,
-            this.menuitemEditarPegar,
-            this.menuitemEditarSeparadorSeleccionarTodo,
-            this.menuitemEditarSeleccionarTodo});
-            this.menuitemEditar.Name = "menuitemEditar";
-            this.menuitemEditar.Size = new System.Drawing.Size(49, 20);
-            this.menuitemEditar.Text = "&Editar";
-            // 
-            // menuitemEditarDeshacer
-            // 
-            this.menuitemEditarDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("menuitemEditarDeshacer.Image")));
-            this.menuitemEditarDeshacer.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuitemEditarDeshacer.Name = "menuitemEditarDeshacer";
-            this.menuitemEditarDeshacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.menuitemEditarDeshacer.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarDeshacer.Text = "&Deshacer";
-            // 
-            // menuitemEditarRehacer
-            // 
-            this.menuitemEditarRehacer.Image = ((System.Drawing.Image)(resources.GetObject("menuitemEditarRehacer.Image")));
-            this.menuitemEditarRehacer.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuitemEditarRehacer.Name = "menuitemEditarRehacer";
-            this.menuitemEditarRehacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.menuitemEditarRehacer.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarRehacer.Text = "&Rehacer";
-            // 
-            // menuitemEditarSeparadorCortar
-            // 
-            this.menuitemEditarSeparadorCortar.Name = "menuitemEditarSeparadorCortar";
-            this.menuitemEditarSeparadorCortar.Size = new System.Drawing.Size(201, 6);
-            // 
-            // menuitemEditarCortar
-            // 
-            this.menuitemEditarCortar.Image = ((System.Drawing.Image)(resources.GetObject("menuitemEditarCortar.Image")));
-            this.menuitemEditarCortar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuitemEditarCortar.Name = "menuitemEditarCortar";
-            this.menuitemEditarCortar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.menuitemEditarCortar.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarCortar.Text = "C&ortar";
-            this.menuitemEditarCortar.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
-            // 
-            // menuitemEditarCopiar
-            // 
-            this.menuitemEditarCopiar.Image = ((System.Drawing.Image)(resources.GetObject("menuitemEditarCopiar.Image")));
-            this.menuitemEditarCopiar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuitemEditarCopiar.Name = "menuitemEditarCopiar";
-            this.menuitemEditarCopiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.menuitemEditarCopiar.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarCopiar.Text = "&Copiar";
-            this.menuitemEditarCopiar.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
-            // 
-            // menuitemEditarPegar
-            // 
-            this.menuitemEditarPegar.Image = ((System.Drawing.Image)(resources.GetObject("menuitemEditarPegar.Image")));
-            this.menuitemEditarPegar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuitemEditarPegar.Name = "menuitemEditarPegar";
-            this.menuitemEditarPegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.menuitemEditarPegar.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarPegar.Text = "&Pegar";
-            this.menuitemEditarPegar.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
-            // 
-            // menuitemEditarSeparadorSeleccionarTodo
-            // 
-            this.menuitemEditarSeparadorSeleccionarTodo.Name = "menuitemEditarSeparadorSeleccionarTodo";
-            this.menuitemEditarSeparadorSeleccionarTodo.Size = new System.Drawing.Size(201, 6);
-            // 
-            // menuitemEditarSeleccionarTodo
-            // 
-            this.menuitemEditarSeleccionarTodo.Name = "menuitemEditarSeleccionarTodo";
-            this.menuitemEditarSeleccionarTodo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.menuitemEditarSeleccionarTodo.Size = new System.Drawing.Size(204, 22);
-            this.menuitemEditarSeleccionarTodo.Text = "Seleccionar &todo";
-            // 
             // menuitemDebug
             // 
             this.menuitemDebug.Name = "menuitemDebug";
@@ -287,7 +198,7 @@
             // menuitemAyudaAcercaDe
             // 
             this.menuitemAyudaAcercaDe.Name = "menuitemAyudaAcercaDe";
-            this.menuitemAyudaAcercaDe.Size = new System.Drawing.Size(180, 22);
+            this.menuitemAyudaAcercaDe.Size = new System.Drawing.Size(135, 22);
             this.menuitemAyudaAcercaDe.Text = "&Acerca de...";
             this.menuitemAyudaAcercaDe.Click += new System.EventHandler(this.menuitemAyudaAcercaDe_Click);
             // 
@@ -415,7 +326,6 @@
             // 
             this.menustripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuitemArchivo,
-            this.menuitemEditar,
             this.menuitemDebug,
             this.menuitemVentana,
             this.menuitemAyuda});
@@ -455,20 +365,12 @@
         private System.Windows.Forms.StatusStrip statusstripMain;
         private System.Windows.Forms.ToolStripSeparator menuitemArchivoSeparadorCerrarSesion;
         private System.Windows.Forms.ToolStripSeparator menuitemArchivoSeparadorSalir;
-        private System.Windows.Forms.ToolStripSeparator menuitemEditarSeparadorCortar;
-        private System.Windows.Forms.ToolStripSeparator menuitemEditarSeparadorSeleccionarTodo;
         private System.Windows.Forms.ToolStripMenuItem menuitemAyudaAcercaDe;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaMosaicoHorizontal;
         private System.Windows.Forms.ToolStripMenuItem menuitemArchivo;
         private System.Windows.Forms.ToolStripMenuItem menuitemArchivoOpciones;
         private System.Windows.Forms.ToolStripMenuItem menuitemArchivoCerrarSesion;
         private System.Windows.Forms.ToolStripMenuItem menuitemArchivoSalir;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditar;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarRehacer;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarCortar;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarCopiar;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarPegar;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarSeleccionarTodo;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentana;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaCascada;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaMosaicoVertical;
@@ -477,7 +379,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuitemAyuda;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel labelEstado;
-        private System.Windows.Forms.ToolStripMenuItem menuitemEditarDeshacer;
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorCerrarTodas;
         private System.Windows.Forms.ToolStripMenuItem menuitemVentanaEncajarEnVentana;
         private System.Windows.Forms.ToolStripSeparator menuitemVentanaSeparadorListaVentanas;

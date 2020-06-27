@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardonerSistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -273,6 +274,14 @@ namespace CS_Gestion
         private void MaskedTextBoxs_Enter(object sender, EventArgs e)
         {
             ((MaskedTextBox)sender).SelectAll();
+        }
+
+        private void buttonPaginaWebAbrir_Click(object sender, EventArgs e)
+        {
+            if (textboxPaginaWeb.Text.Trim().Length > 0)
+            {
+                CardonerSistemas.Process.Start(textboxPaginaWeb.Text.Trim());
+            }
         }
 
         #endregion
@@ -609,7 +618,7 @@ namespace CS_Gestion
                                 join et in context.EmailTipo on ee.IdEmailTipo equals et.IdEmailTipo
                                 where ee.IdEntidad == entidad.IdEntidad
                                 orderby et.Nombre
-                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = (et.IdEmailTipo == CardonerSistemas.Constants.ByteFieldValueOther ? ee.TipoOtro : et.Nombre), Email = ee.Email, Nombre = ee.Nombre }).ToList();
+                                select new EmailsGridRowData() { IdEmail = ee.IdEmail, EmailTipoNombre = ((et.IdEmailTipo == CardonerSistemas.Constants.ByteFieldValueOther & ee.TipoOtro != null) ? ee.TipoOtro : et.Nombre), Email = ee.Email, Nombre = ee.Nombre }).ToList();
 
                 datagridviewEmails.AutoGenerateColumns = false;
                 datagridviewEmails.DataSource = listEmails;
@@ -751,7 +760,7 @@ namespace CS_Gestion
                               join tt in context.TelefonoTipo on et.IdTelefonoTipo equals tt.IdTelefonoTipo
                               where et.IdEntidad == entidad.IdEntidad
                               orderby tt.Nombre
-                              select new TelefonosGridRowData() { IdTelefono = et.IdTelefono, TelefonoTipoNombre = (tt.IdTelefonoTipo == CardonerSistemas.Constants.ByteFieldValueOther ? et.TipoOtro : tt.Nombre), Numero = et.Numero }).ToList();
+                              select new TelefonosGridRowData() { IdTelefono = et.IdTelefono, TelefonoTipoNombre = ((tt.IdTelefonoTipo == CardonerSistemas.Constants.ByteFieldValueOther & et.TipoOtro != null) ? et.TipoOtro : tt.Nombre), Numero = et.Numero }).ToList();
 
                 datagridviewTelefonos.AutoGenerateColumns = false;
                 datagridviewTelefonos.DataSource = listTelefonos;

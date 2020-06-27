@@ -32,12 +32,12 @@
             System.Windows.Forms.Label labelEsActivo;
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntidad));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -117,6 +117,7 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.buttonPaginaWebAbrir = new System.Windows.Forms.Button();
             labelNotas = new System.Windows.Forms.Label();
             labelEsActivo = new System.Windows.Forms.Label();
             labelModificacion = new System.Windows.Forms.Label();
@@ -405,6 +406,7 @@
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(this.buttonPaginaWebAbrir);
             this.tabpageGeneral.Controls.Add(this.textboxPaginaWeb);
             this.tabpageGeneral.Controls.Add(this.labelPaginaWeb);
             this.tabpageGeneral.Controls.Add(this.checkboxTipoTransportista);
@@ -439,7 +441,7 @@
             this.textboxPaginaWeb.Location = new System.Drawing.Point(118, 189);
             this.textboxPaginaWeb.MaxLength = 200;
             this.textboxPaginaWeb.Name = "textboxPaginaWeb";
-            this.textboxPaginaWeb.Size = new System.Drawing.Size(448, 20);
+            this.textboxPaginaWeb.Size = new System.Drawing.Size(414, 20);
             this.textboxPaginaWeb.TabIndex = 16;
             this.textboxPaginaWeb.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
@@ -458,7 +460,7 @@
             this.checkboxTipoTransportista.Location = new System.Drawing.Point(263, 216);
             this.checkboxTipoTransportista.Name = "checkboxTipoTransportista";
             this.checkboxTipoTransportista.Size = new System.Drawing.Size(87, 17);
-            this.checkboxTipoTransportista.TabIndex = 20;
+            this.checkboxTipoTransportista.TabIndex = 21;
             this.checkboxTipoTransportista.Text = "Transportista";
             this.checkboxTipoTransportista.UseVisualStyleBackColor = true;
             // 
@@ -468,7 +470,7 @@
             this.checkboxTipoProveedor.Location = new System.Drawing.Point(182, 216);
             this.checkboxTipoProveedor.Name = "checkboxTipoProveedor";
             this.checkboxTipoProveedor.Size = new System.Drawing.Size(75, 17);
-            this.checkboxTipoProveedor.TabIndex = 19;
+            this.checkboxTipoProveedor.TabIndex = 20;
             this.checkboxTipoProveedor.Text = "Proveedor";
             this.checkboxTipoProveedor.UseVisualStyleBackColor = true;
             // 
@@ -478,7 +480,7 @@
             this.checkboxTipoCliente.Location = new System.Drawing.Point(118, 216);
             this.checkboxTipoCliente.Name = "checkboxTipoCliente";
             this.checkboxTipoCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkboxTipoCliente.TabIndex = 18;
+            this.checkboxTipoCliente.TabIndex = 19;
             this.checkboxTipoCliente.Text = "Cliente";
             this.checkboxTipoCliente.UseVisualStyleBackColor = true;
             // 
@@ -488,7 +490,7 @@
             this.labelTipo.Location = new System.Drawing.Point(6, 217);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(84, 13);
-            this.labelTipo.TabIndex = 17;
+            this.labelTipo.TabIndex = 18;
             this.labelTipo.Text = "Tipo de entidad:";
             // 
             // tabpageDomicilios
@@ -508,11 +510,11 @@
             this.datagridviewDomicilios.AllowUserToAddRows = false;
             this.datagridviewDomicilios.AllowUserToDeleteRows = false;
             this.datagridviewDomicilios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.datagridviewDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewDomicilios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnDomiciliosTipoNombre,
@@ -623,11 +625,11 @@
             this.datagridviewEmails.AllowUserToAddRows = false;
             this.datagridviewEmails.AllowUserToDeleteRows = false;
             this.datagridviewEmails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.datagridviewEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewEmails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnEmailsTipo,
@@ -738,11 +740,11 @@
             this.datagridviewTelefonos.AllowUserToAddRows = false;
             this.datagridviewTelefonos.AllowUserToDeleteRows = false;
             this.datagridviewTelefonos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.datagridviewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnTelefonosTipoNombre,
@@ -843,11 +845,11 @@
             this.datagridviewCuentasBancarias.AllowUserToAddRows = false;
             this.datagridviewCuentasBancarias.AllowUserToDeleteRows = false;
             this.datagridviewCuentasBancarias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.datagridviewCuentasBancarias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewCuentasBancarias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnCuentasBancariasBanco,
@@ -968,11 +970,11 @@
             this.datagridviewCategorias.AllowUserToAddRows = false;
             this.datagridviewCategorias.AllowUserToDeleteRows = false;
             this.datagridviewCategorias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.datagridviewCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnCategoriasNombre});
@@ -1141,6 +1143,16 @@
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
+            // buttonPaginaWebAbrir
+            // 
+            this.buttonPaginaWebAbrir.Location = new System.Drawing.Point(539, 188);
+            this.buttonPaginaWebAbrir.Name = "buttonPaginaWebAbrir";
+            this.buttonPaginaWebAbrir.Size = new System.Drawing.Size(28, 22);
+            this.buttonPaginaWebAbrir.TabIndex = 17;
+            this.buttonPaginaWebAbrir.Text = "→";
+            this.buttonPaginaWebAbrir.UseVisualStyleBackColor = true;
+            this.buttonPaginaWebAbrir.Click += new System.EventHandler(this.buttonPaginaWebAbrir_Click);
+            // 
             // FormEntidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1275,5 +1287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCategoriasNombre;
         private System.Windows.Forms.TextBox textboxPaginaWeb;
         private System.Windows.Forms.Label labelPaginaWeb;
+        private System.Windows.Forms.Button buttonPaginaWebAbrir;
     }
 }

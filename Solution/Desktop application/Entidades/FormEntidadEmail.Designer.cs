@@ -55,6 +55,7 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.buttonEmailEnviar = new System.Windows.Forms.Button();
             labelNombre = new System.Windows.Forms.Label();
             labelEmail = new System.Windows.Forms.Label();
             labelTipo = new System.Windows.Forms.Label();
@@ -74,7 +75,7 @@
             labelNombre.Location = new System.Drawing.Point(8, 62);
             labelNombre.Name = "labelNombre";
             labelNombre.Size = new System.Drawing.Size(47, 13);
-            labelNombre.TabIndex = 11;
+            labelNombre.TabIndex = 6;
             labelNombre.Text = "Nombre:";
             // 
             // labelEmail
@@ -205,6 +206,7 @@
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(this.buttonEmailEnviar);
             this.tabpageGeneral.Controls.Add(this.comboboxTipo);
             this.tabpageGeneral.Controls.Add(this.textboxTipoOtro);
             this.tabpageGeneral.Controls.Add(labelTipo);
@@ -246,7 +248,7 @@
             this.textboxNombre.MaxLength = 50;
             this.textboxNombre.Name = "textboxNombre";
             this.textboxNombre.Size = new System.Drawing.Size(289, 20);
-            this.textboxNombre.TabIndex = 12;
+            this.textboxNombre.TabIndex = 7;
             this.textboxNombre.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
             // textboxEmail
@@ -364,6 +366,16 @@
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
+            // buttonEmailEnviar
+            // 
+            this.buttonEmailEnviar.Image = global::CS_Gestion.Properties.Resources.ImageEmail24;
+            this.buttonEmailEnviar.Location = new System.Drawing.Point(369, 32);
+            this.buttonEmailEnviar.Name = "buttonEmailEnviar";
+            this.buttonEmailEnviar.Size = new System.Drawing.Size(28, 22);
+            this.buttonEmailEnviar.TabIndex = 5;
+            this.buttonEmailEnviar.UseVisualStyleBackColor = true;
+            this.buttonEmailEnviar.Click += new System.EventHandler(this.buttonEmailEnviar_Click);
+            // 
             // FormEntidadEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,5 +427,6 @@
         internal System.Windows.Forms.TextBox textboxFechaHoraModificacion;
         internal System.Windows.Forms.TextBox textboxFechaHoraCreacion;
         internal System.Windows.Forms.TextBox textboxNotas;
+        private System.Windows.Forms.Button buttonEmailEnviar;
     }
 }

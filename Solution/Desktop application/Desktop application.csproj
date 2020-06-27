@@ -115,6 +115,9 @@
     <Compile Include="..\..\..\framework-csharp\Database.EntityFramework.cs">
       <Link>Framework\Database.EntityFramework.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\Email.cs">
+      <Link>Framework\Email.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Encrypt.TripleDES.cs">
       <Link>Framework\Encrypt.TripleDES.cs</Link>
     </Compile>
@@ -140,6 +143,9 @@
     </Compile>
     <Compile Include="..\..\..\framework-csharp\My.cs">
       <Link>Framework\My.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Process.cs">
+      <Link>Framework\Process.cs</Link>
     </Compile>
     <Compile Include="Banco.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
