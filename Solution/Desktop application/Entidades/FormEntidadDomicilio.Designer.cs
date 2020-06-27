@@ -387,10 +387,11 @@
             // 
             // textboxCodigoPostal
             // 
+            this.textboxCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textboxCodigoPostal.Location = new System.Drawing.Point(74, 191);
             this.textboxCodigoPostal.MaxLength = 8;
             this.textboxCodigoPostal.Name = "textboxCodigoPostal";
-            this.textboxCodigoPostal.Size = new System.Drawing.Size(50, 20);
+            this.textboxCodigoPostal.Size = new System.Drawing.Size(74, 20);
             this.textboxCodigoPostal.TabIndex = 20;
             this.textboxCodigoPostal.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
@@ -539,6 +540,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEntidadDomicilio";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Domicilio de la Entidad";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);

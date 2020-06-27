@@ -352,6 +352,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEntidadTelefono";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Teléfono de la Entidad";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);

@@ -15,7 +15,7 @@ namespace CS_Gestion
             this.Text = $"Acerca de {CardonerSistemas.My.Application.Info.Title}";
 
             labelApplicationTitle.Text = CardonerSistemas.My.Application.Info.Title;
-            labelVersion.Text = $"Version {CardonerSistemas.My.Application.Info.Version.ToString()} - ({System.IO.File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location)})";
+            labelVersion.Text = $"Version {CardonerSistemas.My.Application.Info.Version.ToString()} - ({System.IO.File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location).ToString("yyyyMMdd")})";
             labelCopyright.Text = CardonerSistemas.My.Application.Info.Copyright;
             labelLicensedTo.Text = Program.LicensedTo;
 

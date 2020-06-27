@@ -7,9 +7,6 @@ namespace CS_Gestion
 {
     static public class Parametros
     {
-        // Appearance
-        internal const string AppearanceGridFont = "AppearanceGridFont";
-
         // Aplicación
         public const string ApplicationDatabaseGuid = "ApplicationDatabaseGuid";
         public const string LicenseCompanyName = "LicenseCompanyName";

@@ -60,6 +60,8 @@
             this.labelIngresosBrutos = new System.Windows.Forms.Label();
             this.tabcontrolMain = new CardonerSistemas.TabControl();
             this.tabpageGeneral = new System.Windows.Forms.TabPage();
+            this.textboxPaginaWeb = new System.Windows.Forms.TextBox();
+            this.labelPaginaWeb = new System.Windows.Forms.Label();
             this.checkboxTipoTransportista = new System.Windows.Forms.CheckBox();
             this.checkboxTipoProveedor = new System.Windows.Forms.CheckBox();
             this.checkboxTipoCliente = new System.Windows.Forms.CheckBox();
@@ -397,12 +399,14 @@
             this.tabcontrolMain.Location = new System.Drawing.Point(0, 39);
             this.tabcontrolMain.Name = "tabcontrolMain";
             this.tabcontrolMain.SelectedIndex = 0;
-            this.tabcontrolMain.Size = new System.Drawing.Size(582, 248);
+            this.tabcontrolMain.Size = new System.Drawing.Size(582, 271);
             this.tabcontrolMain.TabIndex = 0;
             this.tabcontrolMain.SelectedIndexChanged += new System.EventHandler(this.TabControlChanged);
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(this.textboxPaginaWeb);
+            this.tabpageGeneral.Controls.Add(this.labelPaginaWeb);
             this.tabpageGeneral.Controls.Add(this.checkboxTipoTransportista);
             this.tabpageGeneral.Controls.Add(this.checkboxTipoProveedor);
             this.tabpageGeneral.Controls.Add(this.checkboxTipoCliente);
@@ -425,48 +429,66 @@
             this.tabpageGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabpageGeneral.Name = "tabpageGeneral";
             this.tabpageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageGeneral.Size = new System.Drawing.Size(574, 219);
+            this.tabpageGeneral.Size = new System.Drawing.Size(574, 242);
             this.tabpageGeneral.TabIndex = 0;
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
             // 
+            // textboxPaginaWeb
+            // 
+            this.textboxPaginaWeb.Location = new System.Drawing.Point(118, 189);
+            this.textboxPaginaWeb.MaxLength = 200;
+            this.textboxPaginaWeb.Name = "textboxPaginaWeb";
+            this.textboxPaginaWeb.Size = new System.Drawing.Size(448, 20);
+            this.textboxPaginaWeb.TabIndex = 16;
+            this.textboxPaginaWeb.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // labelPaginaWeb
+            // 
+            this.labelPaginaWeb.AutoSize = true;
+            this.labelPaginaWeb.Location = new System.Drawing.Point(6, 192);
+            this.labelPaginaWeb.Name = "labelPaginaWeb";
+            this.labelPaginaWeb.Size = new System.Drawing.Size(66, 13);
+            this.labelPaginaWeb.TabIndex = 15;
+            this.labelPaginaWeb.Text = "Página web:";
+            // 
             // checkboxTipoTransportista
             // 
             this.checkboxTipoTransportista.AutoSize = true;
-            this.checkboxTipoTransportista.Location = new System.Drawing.Point(263, 191);
+            this.checkboxTipoTransportista.Location = new System.Drawing.Point(263, 216);
             this.checkboxTipoTransportista.Name = "checkboxTipoTransportista";
             this.checkboxTipoTransportista.Size = new System.Drawing.Size(87, 17);
-            this.checkboxTipoTransportista.TabIndex = 18;
+            this.checkboxTipoTransportista.TabIndex = 20;
             this.checkboxTipoTransportista.Text = "Transportista";
             this.checkboxTipoTransportista.UseVisualStyleBackColor = true;
             // 
             // checkboxTipoProveedor
             // 
             this.checkboxTipoProveedor.AutoSize = true;
-            this.checkboxTipoProveedor.Location = new System.Drawing.Point(182, 191);
+            this.checkboxTipoProveedor.Location = new System.Drawing.Point(182, 216);
             this.checkboxTipoProveedor.Name = "checkboxTipoProveedor";
             this.checkboxTipoProveedor.Size = new System.Drawing.Size(75, 17);
-            this.checkboxTipoProveedor.TabIndex = 17;
+            this.checkboxTipoProveedor.TabIndex = 19;
             this.checkboxTipoProveedor.Text = "Proveedor";
             this.checkboxTipoProveedor.UseVisualStyleBackColor = true;
             // 
             // checkboxTipoCliente
             // 
             this.checkboxTipoCliente.AutoSize = true;
-            this.checkboxTipoCliente.Location = new System.Drawing.Point(118, 191);
+            this.checkboxTipoCliente.Location = new System.Drawing.Point(118, 216);
             this.checkboxTipoCliente.Name = "checkboxTipoCliente";
             this.checkboxTipoCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkboxTipoCliente.TabIndex = 16;
+            this.checkboxTipoCliente.TabIndex = 18;
             this.checkboxTipoCliente.Text = "Cliente";
             this.checkboxTipoCliente.UseVisualStyleBackColor = true;
             // 
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(6, 192);
+            this.labelTipo.Location = new System.Drawing.Point(6, 217);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(84, 13);
-            this.labelTipo.TabIndex = 15;
+            this.labelTipo.TabIndex = 17;
             this.labelTipo.Text = "Tipo de entidad:";
             // 
             // tabpageDomicilios
@@ -476,7 +498,7 @@
             this.tabpageDomicilios.Location = new System.Drawing.Point(4, 25);
             this.tabpageDomicilios.Name = "tabpageDomicilios";
             this.tabpageDomicilios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageDomicilios.Size = new System.Drawing.Size(574, 219);
+            this.tabpageDomicilios.Size = new System.Drawing.Size(574, 242);
             this.tabpageDomicilios.TabIndex = 2;
             this.tabpageDomicilios.Text = "Domicilios";
             this.tabpageDomicilios.UseVisualStyleBackColor = true;
@@ -505,7 +527,7 @@
             this.datagridviewDomicilios.RowHeadersVisible = false;
             this.datagridviewDomicilios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewDomicilios.Size = new System.Drawing.Size(482, 213);
+            this.datagridviewDomicilios.Size = new System.Drawing.Size(482, 236);
             this.datagridviewDomicilios.TabIndex = 8;
             this.datagridviewDomicilios.DoubleClick += new System.EventHandler(this.DomiciliosVer_Click);
             // 
@@ -548,7 +570,7 @@
             this.toolstripDomicilios.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolstripDomicilios.Location = new System.Drawing.Point(3, 3);
             this.toolstripDomicilios.Name = "toolstripDomicilios";
-            this.toolstripDomicilios.Size = new System.Drawing.Size(86, 213);
+            this.toolstripDomicilios.Size = new System.Drawing.Size(86, 236);
             this.toolstripDomicilios.TabIndex = 9;
             // 
             // buttonDomiciliosAgregar
@@ -591,7 +613,7 @@
             this.tabpageEmails.Location = new System.Drawing.Point(4, 25);
             this.tabpageEmails.Name = "tabpageEmails";
             this.tabpageEmails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageEmails.Size = new System.Drawing.Size(574, 219);
+            this.tabpageEmails.Size = new System.Drawing.Size(574, 242);
             this.tabpageEmails.TabIndex = 3;
             this.tabpageEmails.Text = "e-Mails";
             this.tabpageEmails.UseVisualStyleBackColor = true;
@@ -620,7 +642,7 @@
             this.datagridviewEmails.RowHeadersVisible = false;
             this.datagridviewEmails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewEmails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewEmails.Size = new System.Drawing.Size(482, 213);
+            this.datagridviewEmails.Size = new System.Drawing.Size(482, 236);
             this.datagridviewEmails.TabIndex = 10;
             this.datagridviewEmails.DoubleClick += new System.EventHandler(this.EmailsVer_Click);
             // 
@@ -663,7 +685,7 @@
             this.toolstripEmails.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolstripEmails.Location = new System.Drawing.Point(3, 3);
             this.toolstripEmails.Name = "toolstripEmails";
-            this.toolstripEmails.Size = new System.Drawing.Size(86, 213);
+            this.toolstripEmails.Size = new System.Drawing.Size(86, 236);
             this.toolstripEmails.TabIndex = 11;
             // 
             // buttonEmailsAgregar
@@ -706,7 +728,7 @@
             this.tabpageTelefonos.Location = new System.Drawing.Point(4, 25);
             this.tabpageTelefonos.Name = "tabpageTelefonos";
             this.tabpageTelefonos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageTelefonos.Size = new System.Drawing.Size(574, 219);
+            this.tabpageTelefonos.Size = new System.Drawing.Size(574, 242);
             this.tabpageTelefonos.TabIndex = 4;
             this.tabpageTelefonos.Text = "Teléfonos";
             this.tabpageTelefonos.UseVisualStyleBackColor = true;
@@ -734,7 +756,7 @@
             this.datagridviewTelefonos.RowHeadersVisible = false;
             this.datagridviewTelefonos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewTelefonos.Size = new System.Drawing.Size(482, 213);
+            this.datagridviewTelefonos.Size = new System.Drawing.Size(482, 236);
             this.datagridviewTelefonos.TabIndex = 12;
             this.datagridviewTelefonos.DoubleClick += new System.EventHandler(this.TelefonosVer_Click);
             // 
@@ -768,7 +790,7 @@
             this.toolstripTelefonos.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolstripTelefonos.Location = new System.Drawing.Point(3, 3);
             this.toolstripTelefonos.Name = "toolstripTelefonos";
-            this.toolstripTelefonos.Size = new System.Drawing.Size(86, 213);
+            this.toolstripTelefonos.Size = new System.Drawing.Size(86, 236);
             this.toolstripTelefonos.TabIndex = 13;
             // 
             // buttonTelefonosAgregar
@@ -811,7 +833,7 @@
             this.tabpageCuentasBancarias.Location = new System.Drawing.Point(4, 25);
             this.tabpageCuentasBancarias.Name = "tabpageCuentasBancarias";
             this.tabpageCuentasBancarias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageCuentasBancarias.Size = new System.Drawing.Size(574, 219);
+            this.tabpageCuentasBancarias.Size = new System.Drawing.Size(574, 242);
             this.tabpageCuentasBancarias.TabIndex = 5;
             this.tabpageCuentasBancarias.Text = "Cuentas Bancarias";
             this.tabpageCuentasBancarias.UseVisualStyleBackColor = true;
@@ -841,7 +863,7 @@
             this.datagridviewCuentasBancarias.RowHeadersVisible = false;
             this.datagridviewCuentasBancarias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewCuentasBancarias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewCuentasBancarias.Size = new System.Drawing.Size(482, 213);
+            this.datagridviewCuentasBancarias.Size = new System.Drawing.Size(482, 236);
             this.datagridviewCuentasBancarias.TabIndex = 12;
             this.datagridviewCuentasBancarias.DoubleClick += new System.EventHandler(this.CuentaBancariasVer_Click);
             // 
@@ -893,7 +915,7 @@
             this.toolstripCuentasBancarias.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolstripCuentasBancarias.Location = new System.Drawing.Point(3, 3);
             this.toolstripCuentasBancarias.Name = "toolstripCuentasBancarias";
-            this.toolstripCuentasBancarias.Size = new System.Drawing.Size(86, 213);
+            this.toolstripCuentasBancarias.Size = new System.Drawing.Size(86, 236);
             this.toolstripCuentasBancarias.TabIndex = 13;
             // 
             // buttonCuentasBancariasAgregar
@@ -936,7 +958,7 @@
             this.tabpageCategorias.Location = new System.Drawing.Point(4, 25);
             this.tabpageCategorias.Name = "tabpageCategorias";
             this.tabpageCategorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageCategorias.Size = new System.Drawing.Size(574, 219);
+            this.tabpageCategorias.Size = new System.Drawing.Size(574, 242);
             this.tabpageCategorias.TabIndex = 6;
             this.tabpageCategorias.Text = "Categorías";
             this.tabpageCategorias.UseVisualStyleBackColor = true;
@@ -963,7 +985,7 @@
             this.datagridviewCategorias.RowHeadersVisible = false;
             this.datagridviewCategorias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewCategorias.Size = new System.Drawing.Size(482, 213);
+            this.datagridviewCategorias.Size = new System.Drawing.Size(482, 236);
             this.datagridviewCategorias.TabIndex = 14;
             // 
             // columnCategoriasNombre
@@ -986,7 +1008,7 @@
             this.toolstripCategorias.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolstripCategorias.Location = new System.Drawing.Point(3, 3);
             this.toolstripCategorias.Name = "toolstripCategorias";
-            this.toolstripCategorias.Size = new System.Drawing.Size(86, 213);
+            this.toolstripCategorias.Size = new System.Drawing.Size(86, 236);
             this.toolstripCategorias.TabIndex = 15;
             // 
             // buttonCategoriasAgregar
@@ -1028,7 +1050,7 @@
             this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
             this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
             this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(574, 219);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(574, 242);
             this.tabpageNotasAuditoria.TabIndex = 1;
             this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
             this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
@@ -1123,13 +1145,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 287);
+            this.ClientSize = new System.Drawing.Size(582, 310);
             this.Controls.Add(this.tabcontrolMain);
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormEntidad";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Entidad";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);
@@ -1250,5 +1273,7 @@
         internal System.Windows.Forms.ToolStripButton buttonCategoriasAgregar;
         internal System.Windows.Forms.ToolStripButton buttonCategoriasBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCategoriasNombre;
+        private System.Windows.Forms.TextBox textboxPaginaWeb;
+        private System.Windows.Forms.Label labelPaginaWeb;
     }
 }

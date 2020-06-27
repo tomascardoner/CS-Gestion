@@ -82,7 +82,7 @@
             this.panelToolbars.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelToolbars.Location = new System.Drawing.Point(0, 0);
             this.panelToolbars.Name = "panelToolbars";
-            this.panelToolbars.Size = new System.Drawing.Size(859, 64);
+            this.panelToolbars.Size = new System.Drawing.Size(859, 39);
             this.panelToolbars.TabIndex = 3;
             // 
             // toolstripButtons
@@ -160,7 +160,6 @@
             // 
             // textboxBuscar
             // 
-            this.textboxBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textboxBuscar.MaxLength = 100;
             this.textboxBuscar.Name = "textboxBuscar";
             this.textboxBuscar.Size = new System.Drawing.Size(120, 39);
@@ -210,23 +209,22 @@
             this.labelCategorias,
             this.textboxCategorias,
             this.buttonCategorias});
-            this.toolstripCategorias.Location = new System.Drawing.Point(0, 39);
+            this.toolstripCategorias.Location = new System.Drawing.Point(654, 0);
             this.toolstripCategorias.Name = "toolstripCategorias";
-            this.toolstripCategorias.Size = new System.Drawing.Size(225, 25);
+            this.toolstripCategorias.Size = new System.Drawing.Size(194, 39);
             this.toolstripCategorias.TabIndex = 14;
             // 
             // labelCategorias
             // 
             this.labelCategorias.Name = "labelCategorias";
-            this.labelCategorias.Size = new System.Drawing.Size(66, 22);
+            this.labelCategorias.Size = new System.Drawing.Size(66, 36);
             this.labelCategorias.Text = "Categorías:";
             // 
             // textboxCategorias
             // 
-            this.textboxCategorias.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textboxCategorias.Name = "textboxCategorias";
             this.textboxCategorias.ReadOnly = true;
-            this.textboxCategorias.Size = new System.Drawing.Size(100, 25);
+            this.textboxCategorias.Size = new System.Drawing.Size(100, 39);
             // 
             // buttonCategorias
             // 
@@ -234,7 +232,7 @@
             this.buttonCategorias.Image = ((System.Drawing.Image)(resources.GetObject("buttonCategorias.Image")));
             this.buttonCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonCategorias.Name = "buttonCategorias";
-            this.buttonCategorias.Size = new System.Drawing.Size(23, 22);
+            this.buttonCategorias.Size = new System.Drawing.Size(23, 36);
             this.buttonCategorias.Text = "...";
             this.buttonCategorias.Click += new System.EventHandler(this.Categorias);
             // 
@@ -270,14 +268,14 @@
             this.columnNombreParaMostrar,
             this.columnCuit});
             this.datagridviewMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewMain.Location = new System.Drawing.Point(0, 64);
+            this.datagridviewMain.Location = new System.Drawing.Point(0, 39);
             this.datagridviewMain.MultiSelect = false;
             this.datagridviewMain.Name = "datagridviewMain";
             this.datagridviewMain.ReadOnly = true;
             this.datagridviewMain.RowHeadersVisible = false;
             this.datagridviewMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagridviewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewMain.Size = new System.Drawing.Size(859, 287);
+            this.datagridviewMain.Size = new System.Drawing.Size(859, 312);
             this.datagridviewMain.TabIndex = 5;
             this.datagridviewMain.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_ColumnHeaderMouseClick);
             this.datagridviewMain.DoubleClick += new System.EventHandler(this.Ver_Click);
@@ -396,6 +394,7 @@
             this.Controls.Add(this.panelToolbars);
             this.KeyPreview = true;
             this.Name = "FormEntidades";
+            this.ShowInTaskbar = false;
             this.Text = "Entidades";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.this_KeyPress);

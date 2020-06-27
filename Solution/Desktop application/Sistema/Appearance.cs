@@ -12,7 +12,7 @@ namespace CS_Gestion
 
         internal Appearance()
         {
-            _GridFont = Parametros.GetStringAsFont(CS_Gestion.Parametros.AppearanceGridFont, Constantes.DefaultFontString);
+            _GridFont = Program.appearanceConfig.ListsFont;
         }
 
         internal void DataGrid(DataGridView dataGridView)

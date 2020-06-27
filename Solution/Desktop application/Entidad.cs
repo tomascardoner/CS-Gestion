@@ -34,6 +34,7 @@ namespace CS_Gestion
         public string NombreParaMostrar { get; set; }
         public string Cuit { get; set; }
         public string IngresosBrutos { get; set; }
+        public string PaginaWeb { get; set; }
         public bool TipoCliente { get; set; }
         public bool TipoProveedor { get; set; }
         public bool TipoTransportista { get; set; }

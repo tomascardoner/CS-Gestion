@@ -376,6 +376,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEntidadEmail";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "e-Mail de la Entidad";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.this_FormClosed);

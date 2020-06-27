@@ -82,6 +82,7 @@ namespace CS_Gestion
             textboxNombreFantasia.ReadOnly = !isEditMode;
             maskedtextboxCuit.ReadOnly = !isEditMode;
             textboxIngresosBrutos.ReadOnly = !isEditMode;
+            textboxPaginaWeb.ReadOnly = !isEditMode;
             checkboxTipoCliente.Enabled = isEditMode;
             checkboxTipoProveedor.Enabled = isEditMode;
             checkboxTipoTransportista.Enabled = isEditMode;
@@ -147,6 +148,7 @@ namespace CS_Gestion
             textboxNombreFantasia.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.NombreFantasia);
             maskedtextboxCuit.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.Cuit);
             textboxIngresosBrutos.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.IngresosBrutos);
+            textboxPaginaWeb.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidad.PaginaWeb);
             checkboxTipoCliente.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoCliente);
             checkboxTipoProveedor.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoProveedor);
             checkboxTipoTransportista.CheckState = CardonerSistemas.ControlValueTranslation.BooleanToCheckBox(entidad.TipoTransportista);
@@ -180,6 +182,7 @@ namespace CS_Gestion
             entidad.NombreFantasia = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNombreFantasia.Text);
             entidad.Cuit = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCuit.Text);
             entidad.IngresosBrutos = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxIngresosBrutos.Text);
+            entidad.PaginaWeb = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxPaginaWeb.Text);
             entidad.TipoCliente = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoCliente.CheckState).Value;
             entidad.TipoProveedor = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoProveedor.CheckState).Value;
             entidad.TipoTransportista = CardonerSistemas.ControlValueTranslation.CheckBoxToBoolean(checkboxTipoTransportista.CheckState).Value;
