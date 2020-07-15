@@ -69,6 +69,7 @@ namespace CS_Gestion
             if (!passwordDecrypter.Decrypt(databaseConfig.Password, ref unencryptedPassword))
             {
                 EventLog.WriteEntry("No se pudo desencriptar la contraseña de conexión a la base de datos.", EventLogEntryType.Error, Constantes.EventApplicationConfigurationError);
+                splash.Focus();
                 MessageBox.Show("No se pudo desencriptar la contraseña de conexión a la base de datos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 passwordDecrypter = null;
                 splash.Close();
@@ -84,9 +85,10 @@ namespace CS_Gestion
             Database.CreateConnectionString();
 
             // Obtengo el Connection String para las conexiones de Entity Framework
-            CSGestionContext.ConnectionString = CardonerSistemas.Database.EntityFramework.CreateConnectionString(databaseConfig.Provider, Database.ConnectionString, "DatabaseModel");
+            CSGestionContext.ConnectionString = CardonerSistemas.Database.EntityFramework.CreateConnectionString(databaseConfig.Provider, Database.ConnectionString,  "DatabaseModel");
 
             // Cargos los Parámetros desde la Base de datos
+            splash.Focus();
             splash.labelStatus.Text = "Cargando los parámetros desde la Base de datos...";
             Application.DoEvents();
             if (!CS_Gestion.Parametros.CargarTodos())
@@ -102,6 +104,7 @@ namespace CS_Gestion
             if (CS_Gestion.Parametros.GetString(CS_Gestion.Parametros.ApplicationDatabaseGuid) != Constantes.ApplicationDatabaseGuid)
             {
                 EventLog.WriteEntry("La Base de Datos especificada no corresponde a esta aplicación.", EventLogEntryType.Error, Constantes.EventApplicationConfigurationError);
+                splash.Focus();
                 MessageBox.Show("La Base de Datos especificada no corresponde a esta aplicación.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 splash.Close();
                 splash.Dispose();
@@ -114,6 +117,7 @@ namespace CS_Gestion
             if (!licenseDecrypter.Decrypt(CS_Gestion.Parametros.GetString(CS_Gestion.Parametros.LicenseCompanyName, "EMPTY"), ref LicensedTo))
             {
                 EventLog.WriteEntry("La Aplicación ha finalizado porque la Licencia especificada es incorrecta.", EventLogEntryType.Error, Constantes.EventApplicationConfigurationError);
+                splash.Focus();
                 MessageBox.Show("La Licencia especificada es incorrecta.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 licenseDecrypter = null;
                 splash.Close();
@@ -123,6 +127,7 @@ namespace CS_Gestion
             }
             licenseDecrypter = null;
             splash.labelLicensedTo.Text = LicensedTo;
+            splash.Focus();
             Application.DoEvents();
 
             // Preparo los parámetros que hacen a la apariencia
@@ -136,6 +141,7 @@ namespace CS_Gestion
             FormMdi.Show();
 
             splash.labelStatus.Text = "Todo completado.";
+            splash.Focus();
             Application.DoEvents();
 
             // Espero el tiempo mínimo para mostrar el Splash Screen y después lo cierro

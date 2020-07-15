@@ -112,7 +112,6 @@
             this.Name = "FormSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App.Title";
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
