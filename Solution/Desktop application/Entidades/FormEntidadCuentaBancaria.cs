@@ -191,6 +191,10 @@ namespace CS_Gestion
 
         private void Cbu_TextChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+            {
+                return;
+            }
             if (maskedtextboxCbu.Text.Length >= 3)
             {
                 if (bancos == null)

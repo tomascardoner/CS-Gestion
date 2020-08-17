@@ -62,7 +62,7 @@ namespace CS_Gestion
             Database.ApplicationName = CardonerSistemas.My.Application.Info.Title;
             Database.Datasource = databaseConfig.Datasource;
             Database.InitialCatalog = databaseConfig.Database;
-            Database.UserID = databaseConfig.UserId;
+            Database.UserId = databaseConfig.UserId;
             // Desencripto la contraseña de la conexión a la base de datos que está en el archivo app.config
             CardonerSistemas.Encrypt.TripleDES passwordDecrypter = new CardonerSistemas.Encrypt.TripleDES(CardonerSistemas.Constants.PublicEncryptionPassword);
             string unencryptedPassword = "";

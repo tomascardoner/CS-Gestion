@@ -171,7 +171,7 @@
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="NombreParaMostrar" Type="varchar" MaxLength="150" StoreGeneratedPattern="Computed" />
           <Property Name="Cuit" Type="char" MaxLength="11" />
-          <Property Name="IngresosBrutos" Type="varchar" MaxLength="20" />
+          <Property Name="IngresosBrutos" Type="varchar" MaxLength="13" />
           <Property Name="PaginaWeb" Type="varchar" MaxLength="200" />
           <Property Name="TipoCliente" Type="bit" Nullable="false" />
           <Property Name="TipoProveedor" Type="bit" Nullable="false" />
@@ -230,7 +230,8 @@
           <Property Name="Departamento" Type="varchar" MaxLength="10" />
           <Property Name="Calle2" Type="varchar" MaxLength="50" />
           <Property Name="Calle3" Type="varchar" MaxLength="50" />
-          <Property Name="DomicilioParaMostrar" Type="varchar" MaxLength="250" StoreGeneratedPattern="Computed" />
+          <Property Name="Barrio" Type="varchar" MaxLength="50" />
+          <Property Name="DomicilioParaMostrar" Type="varchar" MaxLength="300" StoreGeneratedPattern="Computed" />
           <Property Name="CodigoPostal" Type="varchar" MaxLength="8" />
           <Property Name="IdProvincia" Type="tinyint" />
           <Property Name="IdLocalidad" Type="smallint" />
@@ -1758,7 +1759,7 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NombreParaMostrar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-          <Property Name="IngresosBrutos" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IngresosBrutos" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
           <Property Name="PaginaWeb" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="TipoCliente" Type="Boolean" Nullable="false" />
           <Property Name="TipoProveedor" Type="Boolean" Nullable="false" />
@@ -1816,7 +1817,8 @@
           <Property Name="Departamento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Calle2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Calle3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DomicilioParaMostrar" Type="String" MaxLength="250" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+          <Property Name="Barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DomicilioParaMostrar" Type="String" MaxLength="300" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="CodigoPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="IdProvincia" Type="Byte" />
           <Property Name="IdLocalidad" Type="Int16" />
@@ -3467,6 +3469,7 @@
           <EntitySetMapping Name="EntidadDomicilio">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadDomicilio">
               <MappingFragment StoreEntitySet="EntidadDomicilio">
+                <ScalarProperty Name="Barrio" ColumnName="Barrio" />
                 <ScalarProperty Name="DomicilioParaMostrar" ColumnName="DomicilioParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="IdDomicilio" ColumnName="IdDomicilio" />

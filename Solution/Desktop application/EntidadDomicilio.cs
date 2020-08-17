@@ -24,6 +24,7 @@ namespace CS_Gestion
         public string Departamento { get; set; }
         public string Calle2 { get; set; }
         public string Calle3 { get; set; }
+        public string Barrio { get; set; }
         public string DomicilioParaMostrar { get; set; }
         public string CodigoPostal { get; set; }
         public Nullable<byte> IdProvincia { get; set; }

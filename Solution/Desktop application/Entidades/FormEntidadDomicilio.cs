@@ -78,6 +78,7 @@ namespace CS_Gestion
             textboxDepartamento.ReadOnly = !isEditMode;
             textboxCalle2.ReadOnly = !isEditMode;
             textboxCalle3.ReadOnly = !isEditMode;
+            textboxBarrio.ReadOnly = !isEditMode;
             comboboxProvincia.Enabled = isEditMode;
             comboboxLocalidad.Enabled = isEditMode;
             textboxCodigoPostal.ReadOnly = !isEditMode;
@@ -130,6 +131,7 @@ namespace CS_Gestion
             textboxDepartamento.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Departamento);
             textboxCalle2.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Calle2);
             textboxCalle3.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Calle3);
+            textboxBarrio.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadDomicilio.Barrio);
             CardonerSistemas.ComboBox.SetSelectedValue(comboboxProvincia, CardonerSistemas.ComboBox.SelectedItemOptions.Value, entidadDomicilio.IdProvincia, CardonerSistemas.Constants.ByteFieldValueNotSpecified);
             CardonerSistemas.ComboBox.SetSelectedValue(comboboxLocalidad, CardonerSistemas.ComboBox.SelectedItemOptions.Value, entidadDomicilio.IdLocalidad, CardonerSistemas.Constants.ShortFieldValueNotSpecified);
             if (!isNew)
@@ -165,6 +167,7 @@ namespace CS_Gestion
             entidadDomicilio.Departamento = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxDepartamento.Text);
             entidadDomicilio.Calle2 = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxCalle2.Text);
             entidadDomicilio.Calle3 = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxCalle3.Text);
+            entidadDomicilio.Barrio = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxBarrio.Text);
             entidadDomicilio.IdProvincia = CardonerSistemas.ControlValueTranslation.ComboBoxToByte(comboboxProvincia.SelectedValue, CardonerSistemas.Constants.ByteFieldValueNotSpecified);
             entidadDomicilio.IdLocalidad = CardonerSistemas.ControlValueTranslation.ComboBoxToShort(comboboxLocalidad.SelectedValue, CardonerSistemas.Constants.ShortFieldValueNotSpecified);
             entidadDomicilio.CodigoPostal = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxCodigoPostal.Text);

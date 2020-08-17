@@ -115,6 +115,13 @@
     <Compile Include="..\..\..\framework-csharp\Database.EntityFramework.cs">
       <Link>Framework\Database.EntityFramework.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\framework-csharp\Database.SelectDatasource.cs">
+      <Link>Framework\Database.SelectDatasource.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\framework-csharp\Database.SelectDatasource.designer.cs">
+      <Link>Framework\Database.SelectDatasource.designer.cs</Link>
+      <DependentUpon>Database.SelectDatasource.cs</DependentUpon>
+    </Compile>
     <Compile Include="..\..\..\framework-csharp\Email.cs">
       <Link>Framework\Email.cs</Link>
     </Compile>
@@ -348,6 +355,10 @@
     <Compile Include="UsuarioGrupoPermiso.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="..\..\..\framework-csharp\Database.SelectDatasource.resx">
+      <Link>Framework\Database.SelectDatasource.resx</Link>
+      <DependentUpon>Database.SelectDatasource.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\..\..\framework-csharp\ErrorMessageBox.resx">
       <Link>Framework\ErrorMessageBox.resx</Link>
       <DependentUpon>ErrorMessageBox.cs</DependentUpon>

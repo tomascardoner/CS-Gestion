@@ -42,6 +42,7 @@
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
             System.Windows.Forms.Label labelNotas;
+            System.Windows.Forms.Label labelBarrio;
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -69,6 +70,7 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.textboxBarrio = new System.Windows.Forms.TextBox();
             labelCalle3 = new System.Windows.Forms.Label();
             labelCalle2 = new System.Windows.Forms.Label();
             labelCalle1 = new System.Windows.Forms.Label();
@@ -83,6 +85,7 @@
             labelModificacion = new System.Windows.Forms.Label();
             labelCreacion = new System.Windows.Forms.Label();
             labelNotas = new System.Windows.Forms.Label();
+            labelBarrio = new System.Windows.Forms.Label();
             this.toolstripMain.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabpageGeneral.SuspendLayout();
@@ -119,10 +122,10 @@
             // labelCodigoPostal
             // 
             labelCodigoPostal.AutoSize = true;
-            labelCodigoPostal.Location = new System.Drawing.Point(8, 194);
+            labelCodigoPostal.Location = new System.Drawing.Point(8, 220);
             labelCodigoPostal.Name = "labelCodigoPostal";
             labelCodigoPostal.Size = new System.Drawing.Size(59, 13);
-            labelCodigoPostal.TabIndex = 19;
+            labelCodigoPostal.TabIndex = 21;
             labelCodigoPostal.Text = "Cód. Post.:";
             // 
             // labelDepartamento
@@ -137,19 +140,19 @@
             // labelLocalidad
             // 
             labelLocalidad.AutoSize = true;
-            labelLocalidad.Location = new System.Drawing.Point(8, 167);
+            labelLocalidad.Location = new System.Drawing.Point(8, 193);
             labelLocalidad.Name = "labelLocalidad";
             labelLocalidad.Size = new System.Drawing.Size(56, 13);
-            labelLocalidad.TabIndex = 17;
+            labelLocalidad.TabIndex = 19;
             labelLocalidad.Text = "Localidad:";
             // 
             // labelProvincia
             // 
             labelProvincia.AutoSize = true;
-            labelProvincia.Location = new System.Drawing.Point(8, 140);
+            labelProvincia.Location = new System.Drawing.Point(8, 166);
             labelProvincia.Name = "labelProvincia";
             labelProvincia.Size = new System.Drawing.Size(54, 13);
-            labelProvincia.TabIndex = 15;
+            labelProvincia.TabIndex = 17;
             labelProvincia.Text = "Provincia:";
             // 
             // labelNumero
@@ -183,7 +186,7 @@
             // 
             labelEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelEsActivo.AutoSize = true;
-            labelEsActivo.Location = new System.Drawing.Point(10, 120);
+            labelEsActivo.Location = new System.Drawing.Point(10, 148);
             labelEsActivo.Name = "labelEsActivo";
             labelEsActivo.Size = new System.Drawing.Size(40, 13);
             labelEsActivo.TabIndex = 2;
@@ -193,7 +196,7 @@
             // 
             labelModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelModificacion.AutoSize = true;
-            labelModificacion.Location = new System.Drawing.Point(10, 195);
+            labelModificacion.Location = new System.Drawing.Point(10, 223);
             labelModificacion.Name = "labelModificacion";
             labelModificacion.Size = new System.Drawing.Size(102, 13);
             labelModificacion.TabIndex = 9;
@@ -203,7 +206,7 @@
             // 
             labelCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelCreacion.AutoSize = true;
-            labelCreacion.Location = new System.Drawing.Point(11, 169);
+            labelCreacion.Location = new System.Drawing.Point(11, 197);
             labelCreacion.Name = "labelCreacion";
             labelCreacion.Size = new System.Drawing.Size(52, 13);
             labelCreacion.TabIndex = 6;
@@ -284,11 +287,13 @@
             this.tabMain.Location = new System.Drawing.Point(0, 39);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(520, 249);
+            this.tabMain.Size = new System.Drawing.Size(520, 277);
             this.tabMain.TabIndex = 0;
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(labelBarrio);
+            this.tabpageGeneral.Controls.Add(this.textboxBarrio);
             this.tabpageGeneral.Controls.Add(this.comboboxTipo);
             this.tabpageGeneral.Controls.Add(this.textboxTipoOtro);
             this.tabpageGeneral.Controls.Add(labelTipo);
@@ -313,7 +318,7 @@
             this.tabpageGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabpageGeneral.Name = "tabpageGeneral";
             this.tabpageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageGeneral.Size = new System.Drawing.Size(512, 220);
+            this.tabpageGeneral.Size = new System.Drawing.Size(512, 248);
             this.tabpageGeneral.TabIndex = 0;
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
@@ -360,20 +365,20 @@
             // 
             this.comboboxLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxLocalidad.FormattingEnabled = true;
-            this.comboboxLocalidad.Location = new System.Drawing.Point(74, 164);
+            this.comboboxLocalidad.Location = new System.Drawing.Point(74, 190);
             this.comboboxLocalidad.Name = "comboboxLocalidad";
             this.comboboxLocalidad.Size = new System.Drawing.Size(258, 21);
-            this.comboboxLocalidad.TabIndex = 18;
+            this.comboboxLocalidad.TabIndex = 20;
             this.comboboxLocalidad.SelectedValueChanged += new System.EventHandler(this.Localidad_Cambio);
             // 
             // comboboxProvincia
             // 
             this.comboboxProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxProvincia.FormattingEnabled = true;
-            this.comboboxProvincia.Location = new System.Drawing.Point(74, 137);
+            this.comboboxProvincia.Location = new System.Drawing.Point(74, 163);
             this.comboboxProvincia.Name = "comboboxProvincia";
             this.comboboxProvincia.Size = new System.Drawing.Size(258, 21);
-            this.comboboxProvincia.TabIndex = 16;
+            this.comboboxProvincia.TabIndex = 18;
             this.comboboxProvincia.SelectedValueChanged += new System.EventHandler(this.Provincia_Cambio);
             // 
             // textboxCalle1
@@ -388,11 +393,11 @@
             // textboxCodigoPostal
             // 
             this.textboxCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textboxCodigoPostal.Location = new System.Drawing.Point(74, 191);
+            this.textboxCodigoPostal.Location = new System.Drawing.Point(74, 217);
             this.textboxCodigoPostal.MaxLength = 8;
             this.textboxCodigoPostal.Name = "textboxCodigoPostal";
             this.textboxCodigoPostal.Size = new System.Drawing.Size(74, 20);
-            this.textboxCodigoPostal.TabIndex = 20;
+            this.textboxCodigoPostal.TabIndex = 22;
             this.textboxCodigoPostal.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
             // textboxDepartamento
@@ -439,7 +444,7 @@
             this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
             this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
             this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(512, 220);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(512, 248);
             this.tabpageNotasAuditoria.TabIndex = 1;
             this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
             this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
@@ -448,7 +453,7 @@
             // 
             this.checkboxEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkboxEsActivo.AutoSize = true;
-            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 120);
+            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 148);
             this.checkboxEsActivo.Name = "checkboxEsActivo";
             this.checkboxEsActivo.Size = new System.Drawing.Size(15, 14);
             this.checkboxEsActivo.TabIndex = 3;
@@ -458,7 +463,7 @@
             // 
             this.labelId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(11, 143);
+            this.labelId.Location = new System.Drawing.Point(11, 171);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(19, 13);
             this.labelId.TabIndex = 4;
@@ -467,7 +472,7 @@
             // textboxUsuarioModificacion
             // 
             this.textboxUsuarioModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 192);
+            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 220);
             this.textboxUsuarioModificacion.MaxLength = 50;
             this.textboxUsuarioModificacion.Name = "textboxUsuarioModificacion";
             this.textboxUsuarioModificacion.ReadOnly = true;
@@ -477,7 +482,7 @@
             // textboxId
             // 
             this.textboxId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxId.Location = new System.Drawing.Point(118, 140);
+            this.textboxId.Location = new System.Drawing.Point(118, 168);
             this.textboxId.MaxLength = 10;
             this.textboxId.Name = "textboxId";
             this.textboxId.ReadOnly = true;
@@ -489,7 +494,7 @@
             // textboxUsuarioCreacion
             // 
             this.textboxUsuarioCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 166);
+            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 194);
             this.textboxUsuarioCreacion.MaxLength = 50;
             this.textboxUsuarioCreacion.Name = "textboxUsuarioCreacion";
             this.textboxUsuarioCreacion.ReadOnly = true;
@@ -499,7 +504,7 @@
             // textboxFechaHoraModificacion
             // 
             this.textboxFechaHoraModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 192);
+            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 220);
             this.textboxFechaHoraModificacion.MaxLength = 0;
             this.textboxFechaHoraModificacion.Name = "textboxFechaHoraModificacion";
             this.textboxFechaHoraModificacion.ReadOnly = true;
@@ -510,7 +515,7 @@
             // textboxFechaHoraCreacion
             // 
             this.textboxFechaHoraCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 166);
+            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 194);
             this.textboxFechaHoraCreacion.MaxLength = 0;
             this.textboxFechaHoraCreacion.Name = "textboxFechaHoraCreacion";
             this.textboxFechaHoraCreacion.ReadOnly = true;
@@ -520,19 +525,39 @@
             // 
             // textboxNotas
             // 
+            this.textboxNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textboxNotas.Location = new System.Drawing.Point(118, 6);
             this.textboxNotas.MaxLength = 0;
             this.textboxNotas.Multiline = true;
             this.textboxNotas.Name = "textboxNotas";
-            this.textboxNotas.Size = new System.Drawing.Size(386, 108);
+            this.textboxNotas.Size = new System.Drawing.Size(386, 136);
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // labelBarrio
+            // 
+            labelBarrio.AutoSize = true;
+            labelBarrio.Location = new System.Drawing.Point(8, 140);
+            labelBarrio.Name = "labelBarrio";
+            labelBarrio.Size = new System.Drawing.Size(37, 13);
+            labelBarrio.TabIndex = 15;
+            labelBarrio.Text = "Barrio:";
+            // 
+            // textboxBarrio
+            // 
+            this.textboxBarrio.Location = new System.Drawing.Point(74, 137);
+            this.textboxBarrio.MaxLength = 50;
+            this.textboxBarrio.Name = "textboxBarrio";
+            this.textboxBarrio.Size = new System.Drawing.Size(258, 20);
+            this.textboxBarrio.TabIndex = 16;
+            this.textboxBarrio.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
             // FormEntidadDomicilio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 288);
+            this.ClientSize = new System.Drawing.Size(520, 316);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -586,5 +611,6 @@
         internal System.Windows.Forms.TextBox textboxFechaHoraModificacion;
         internal System.Windows.Forms.TextBox textboxFechaHoraCreacion;
         internal System.Windows.Forms.TextBox textboxNotas;
+        internal System.Windows.Forms.TextBox textboxBarrio;
     }
 }
