@@ -413,29 +413,9 @@ namespace CS_Gestion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ImageUsuarioGrupo161 {
-            get {
-                object obj = ResourceManager.GetObject("ImageUsuarioGrupo161", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ImageUsuarioGrupo48 {
             get {
                 object obj = ResourceManager.GetObject("ImageUsuarioGrupo48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ImageUsuarioGrupo481 {
-            get {
-                object obj = ResourceManager.GetObject("ImageUsuarioGrupo481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
