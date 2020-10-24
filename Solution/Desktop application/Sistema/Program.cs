@@ -59,29 +59,17 @@ namespace CS_Gestion
 
             // Obtengo el Connection String para las conexiones de ADO .NET
             Database = new CardonerSistemas.Database.ADO.SQLServer();
-            Database.ApplicationName = CardonerSistemas.My.Application.Info.Title;
-            Database.Datasource = databaseConfig.Datasource;
-            Database.InitialCatalog = databaseConfig.Database;
-            Database.UserId = databaseConfig.UserId;
-            // Desencripto la contraseña de la conexión a la base de datos que está en el archivo app.config
-            CardonerSistemas.Encrypt.TripleDES passwordDecrypter = new CardonerSistemas.Encrypt.TripleDES(CardonerSistemas.Constants.PublicEncryptionPassword);
-            string unencryptedPassword = "";
-            if (!passwordDecrypter.Decrypt(databaseConfig.Password, ref unencryptedPassword))
+            if (!Database.SetProperties(databaseConfig.Datasource, databaseConfig.Database, databaseConfig.UserId, databaseConfig.Password))
             {
-                EventLog.WriteEntry("No se pudo desencriptar la contraseña de conexión a la base de datos.", EventLogEntryType.Error, Constantes.EventApplicationConfigurationError);
-                splash.Focus();
-                MessageBox.Show("No se pudo desencriptar la contraseña de conexión a la base de datos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                passwordDecrypter = null;
-                splash.Close();
-                splash.Dispose();
                 TerminateApplication();
                 return;
             }
-            Database.Password = unencryptedPassword;
-            unencryptedPassword = null;
-            passwordDecrypter = null;
-            Database.MultipleActiveResultsets = true;
-            Database.WorkstationID = Environment.MachineName;
+            if (!Database.PasswordUnencrypt())
+            {
+                MessageBox.Show("No se pudo desencriptar la contraseña de conexión a la base de datos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TerminateApplication();
+                return;
+            }
             Database.CreateConnectionString();
 
             // Obtengo el Connection String para las conexiones de Entity Framework
