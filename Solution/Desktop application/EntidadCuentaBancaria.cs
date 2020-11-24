@@ -22,6 +22,9 @@ namespace CS_Gestion
         public string Numero { get; set; }
         public string Cbu { get; set; }
         public string CbuAlias { get; set; }
+        public string Cuit { get; set; }
+        public string Titular { get; set; }
+        public string Identificacion { get; set; }
         public string Notas { get; set; }
         public bool EsActivo { get; set; }
         public short IdUsuarioCreacion { get; set; }

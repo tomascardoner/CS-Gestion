@@ -77,6 +77,9 @@ namespace CS_Gestion
             textboxNumero.ReadOnly = !isEditMode;
             maskedtextboxCbu.ReadOnly = !isEditMode;
             textboxCbuAlias.ReadOnly = !isEditMode;
+            maskedtextboxCuit.ReadOnly = !isEditMode;
+            textboxTitular.ReadOnly = !isEditMode;
+            textboxIdentificacion.ReadOnly = !isEditMode;
 
             // Notas y Auditoría
             textboxNotas.ReadOnly = !isEditMode;
@@ -117,6 +120,9 @@ namespace CS_Gestion
             textboxNumero.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Numero);
             maskedtextboxCbu.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Cbu);
             textboxCbuAlias.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.CbuAlias);
+            maskedtextboxCuit.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Cuit);
+            textboxTitular.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Titular);
+            textboxIdentificacion.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Identificacion);
 
             // Notas y Auditoría
             textboxNotas.Text = CardonerSistemas.ControlValueTranslation.StringToTextBox(entidadCuentaBancaria.Notas);
@@ -137,6 +143,9 @@ namespace CS_Gestion
             entidadCuentaBancaria.Numero = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNumero.Text);
             entidadCuentaBancaria.Cbu = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCbu.Text);
             entidadCuentaBancaria.CbuAlias = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxCbuAlias.Text);
+            entidadCuentaBancaria.Cuit = CardonerSistemas.ControlValueTranslation.TextBoxToString(maskedtextboxCuit.Text);
+            entidadCuentaBancaria.Titular = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxTitular.Text);
+            entidadCuentaBancaria.Identificacion = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxIdentificacion.Text);
 
             // Notas y Auditoría
             entidadCuentaBancaria.Notas = CardonerSistemas.ControlValueTranslation.TextBoxToString(textboxNotas.Text);
@@ -293,6 +302,25 @@ namespace CS_Gestion
                         return;
                     default:
                         break;
+                }
+            }
+
+            // Verifico el CUIT
+            if (maskedtextboxCuit.Text.Length > 0)
+            {
+                if (maskedtextboxCuit.Text.Length < 11)
+                {
+                    tabMain.SelectedTab = tabpageGeneral;
+                    MessageBox.Show("El CUIT está incompleto. Debe tener 11 dígitos.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    maskedtextboxCuit.Focus();
+                    return;
+                }
+                if (!CardonerSistemas.Afip.VerificarCuit(maskedtextboxCuit.Text))
+                {
+                    tabMain.SelectedTab = tabpageGeneral;
+                    MessageBox.Show("El CUIT es incorrecto. Verifíquelo.", CardonerSistemas.My.Application.Info.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    maskedtextboxCuit.Focus();
+                    return;
                 }
             }
 

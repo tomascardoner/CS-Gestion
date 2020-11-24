@@ -208,6 +208,9 @@
           <Property Name="Numero" Type="varchar" MaxLength="20" />
           <Property Name="Cbu" Type="char" MaxLength="22" />
           <Property Name="CbuAlias" Type="varchar" MaxLength="20" />
+          <Property Name="Cuit" Type="char" MaxLength="11" />
+          <Property Name="Titular" Type="varchar" MaxLength="50" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="50" />
           <Property Name="Notas" Type="varchar(max)" />
           <Property Name="EsActivo" Type="bit" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="smallint" Nullable="false" />
@@ -1792,6 +1795,9 @@
           <Property Name="Numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Cbu" Type="String" MaxLength="22" FixedLength="true" Unicode="false" />
           <Property Name="CbuAlias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cuit" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Titular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EsActivo" Type="Boolean" Nullable="false" />
           <Property Name="IdUsuarioCreacion" Type="Int16" Nullable="false" />
@@ -3449,6 +3455,9 @@
           <EntitySetMapping Name="EntidadCuentaBancaria">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadCuentaBancaria">
               <MappingFragment StoreEntitySet="EntidadCuentaBancaria">
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
                 <ScalarProperty Name="CbuAlias" ColumnName="CbuAlias" />
                 <ScalarProperty Name="Cbu" ColumnName="Cbu" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
@@ -3469,7 +3478,6 @@
           <EntitySetMapping Name="EntidadDomicilio">
             <EntityTypeMapping TypeName="CSGestionModel.EntidadDomicilio">
               <MappingFragment StoreEntitySet="EntidadDomicilio">
-                <ScalarProperty Name="Barrio" ColumnName="Barrio" />
                 <ScalarProperty Name="DomicilioParaMostrar" ColumnName="DomicilioParaMostrar" />
                 <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
                 <ScalarProperty Name="IdDomicilio" ColumnName="IdDomicilio" />
@@ -3481,6 +3489,7 @@
                 <ScalarProperty Name="Departamento" ColumnName="Departamento" />
                 <ScalarProperty Name="Calle2" ColumnName="Calle2" />
                 <ScalarProperty Name="Calle3" ColumnName="Calle3" />
+                <ScalarProperty Name="Barrio" ColumnName="Barrio" />
                 <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
                 <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
                 <ScalarProperty Name="IdLocalidad" ColumnName="IdLocalidad" />

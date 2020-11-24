@@ -32,12 +32,12 @@
             System.Windows.Forms.Label labelEsActivo;
             System.Windows.Forms.Label labelModificacion;
             System.Windows.Forms.Label labelCreacion;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntidad));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripMain = new System.Windows.Forms.ToolStrip();
             this.buttonCerrar = new System.Windows.Forms.ToolStripButton();
             this.buttonEditar = new System.Windows.Forms.ToolStripButton();
@@ -60,6 +60,7 @@
             this.labelIngresosBrutos = new System.Windows.Forms.Label();
             this.tabcontrolMain = new CardonerSistemas.TabControl();
             this.tabpageGeneral = new System.Windows.Forms.TabPage();
+            this.buttonPaginaWebAbrir = new System.Windows.Forms.Button();
             this.textboxPaginaWeb = new System.Windows.Forms.TextBox();
             this.labelPaginaWeb = new System.Windows.Forms.Label();
             this.checkboxTipoTransportista = new System.Windows.Forms.CheckBox();
@@ -94,10 +95,6 @@
             this.buttonTelefonosBorrar = new System.Windows.Forms.ToolStripButton();
             this.tabpageCuentasBancarias = new System.Windows.Forms.TabPage();
             this.datagridviewCuentasBancarias = new System.Windows.Forms.DataGridView();
-            this.columnCuentasBancariasBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuentasBancariasTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuentasBancariasSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuentasBancariasNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolstripCuentasBancarias = new System.Windows.Forms.ToolStrip();
             this.buttonCuentasBancariasAgregar = new System.Windows.Forms.ToolStripButton();
             this.CuentasBancariasEditar = new System.Windows.Forms.ToolStripButton();
@@ -117,7 +114,11 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
-            this.buttonPaginaWebAbrir = new System.Windows.Forms.Button();
+            this.columnCuentasBancariasIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentasBancariasNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             labelNotas = new System.Windows.Forms.Label();
             labelEsActivo = new System.Windows.Forms.Label();
             labelModificacion = new System.Windows.Forms.Label();
@@ -436,6 +437,16 @@
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
             // 
+            // buttonPaginaWebAbrir
+            // 
+            this.buttonPaginaWebAbrir.Location = new System.Drawing.Point(539, 188);
+            this.buttonPaginaWebAbrir.Name = "buttonPaginaWebAbrir";
+            this.buttonPaginaWebAbrir.Size = new System.Drawing.Size(28, 22);
+            this.buttonPaginaWebAbrir.TabIndex = 17;
+            this.buttonPaginaWebAbrir.Text = "→";
+            this.buttonPaginaWebAbrir.UseVisualStyleBackColor = true;
+            this.buttonPaginaWebAbrir.Click += new System.EventHandler(this.buttonPaginaWebAbrir_Click);
+            // 
             // textboxPaginaWeb
             // 
             this.textboxPaginaWeb.Location = new System.Drawing.Point(118, 189);
@@ -510,11 +521,11 @@
             this.datagridviewDomicilios.AllowUserToAddRows = false;
             this.datagridviewDomicilios.AllowUserToDeleteRows = false;
             this.datagridviewDomicilios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewDomicilios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridviewDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewDomicilios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnDomiciliosTipoNombre,
@@ -625,11 +636,11 @@
             this.datagridviewEmails.AllowUserToAddRows = false;
             this.datagridviewEmails.AllowUserToDeleteRows = false;
             this.datagridviewEmails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewEmails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridviewEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewEmails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnEmailsTipo,
@@ -740,11 +751,11 @@
             this.datagridviewTelefonos.AllowUserToAddRows = false;
             this.datagridviewTelefonos.AllowUserToDeleteRows = false;
             this.datagridviewTelefonos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridviewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnTelefonosTipoNombre,
@@ -845,13 +856,14 @@
             this.datagridviewCuentasBancarias.AllowUserToAddRows = false;
             this.datagridviewCuentasBancarias.AllowUserToDeleteRows = false;
             this.datagridviewCuentasBancarias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCuentasBancarias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridviewCuentasBancarias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewCuentasBancarias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnCuentasBancariasIdentificacion,
             this.columnCuentasBancariasBanco,
             this.columnCuentasBancariasTipo,
             this.columnCuentasBancariasSucursal,
@@ -868,42 +880,6 @@
             this.datagridviewCuentasBancarias.Size = new System.Drawing.Size(482, 236);
             this.datagridviewCuentasBancarias.TabIndex = 12;
             this.datagridviewCuentasBancarias.DoubleClick += new System.EventHandler(this.CuentaBancariasVer_Click);
-            // 
-            // columnCuentasBancariasBanco
-            // 
-            this.columnCuentasBancariasBanco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columnCuentasBancariasBanco.DataPropertyName = "BancoNombre";
-            this.columnCuentasBancariasBanco.HeaderText = "Banco";
-            this.columnCuentasBancariasBanco.Name = "columnCuentasBancariasBanco";
-            this.columnCuentasBancariasBanco.ReadOnly = true;
-            this.columnCuentasBancariasBanco.Width = 63;
-            // 
-            // columnCuentasBancariasTipo
-            // 
-            this.columnCuentasBancariasTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columnCuentasBancariasTipo.DataPropertyName = "TipoNombre";
-            this.columnCuentasBancariasTipo.HeaderText = "Tipo";
-            this.columnCuentasBancariasTipo.Name = "columnCuentasBancariasTipo";
-            this.columnCuentasBancariasTipo.ReadOnly = true;
-            this.columnCuentasBancariasTipo.Width = 53;
-            // 
-            // columnCuentasBancariasSucursal
-            // 
-            this.columnCuentasBancariasSucursal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columnCuentasBancariasSucursal.DataPropertyName = "Sucursal";
-            this.columnCuentasBancariasSucursal.HeaderText = "Sucursal";
-            this.columnCuentasBancariasSucursal.Name = "columnCuentasBancariasSucursal";
-            this.columnCuentasBancariasSucursal.ReadOnly = true;
-            this.columnCuentasBancariasSucursal.Width = 73;
-            // 
-            // columnCuentasBancariasNumero
-            // 
-            this.columnCuentasBancariasNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columnCuentasBancariasNumero.DataPropertyName = "Numero";
-            this.columnCuentasBancariasNumero.HeaderText = "Número";
-            this.columnCuentasBancariasNumero.Name = "columnCuentasBancariasNumero";
-            this.columnCuentasBancariasNumero.ReadOnly = true;
-            this.columnCuentasBancariasNumero.Width = 69;
             // 
             // toolstripCuentasBancarias
             // 
@@ -970,11 +946,11 @@
             this.datagridviewCategorias.AllowUserToAddRows = false;
             this.datagridviewCategorias.AllowUserToDeleteRows = false;
             this.datagridviewCategorias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            this.datagridviewCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.datagridviewCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridviewCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnCategoriasNombre});
@@ -1143,15 +1119,50 @@
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
             // 
-            // buttonPaginaWebAbrir
+            // columnCuentasBancariasIdentificacion
             // 
-            this.buttonPaginaWebAbrir.Location = new System.Drawing.Point(539, 188);
-            this.buttonPaginaWebAbrir.Name = "buttonPaginaWebAbrir";
-            this.buttonPaginaWebAbrir.Size = new System.Drawing.Size(28, 22);
-            this.buttonPaginaWebAbrir.TabIndex = 17;
-            this.buttonPaginaWebAbrir.Text = "→";
-            this.buttonPaginaWebAbrir.UseVisualStyleBackColor = true;
-            this.buttonPaginaWebAbrir.Click += new System.EventHandler(this.buttonPaginaWebAbrir_Click);
+            this.columnCuentasBancariasIdentificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.columnCuentasBancariasIdentificacion.DataPropertyName = "Identificacion";
+            this.columnCuentasBancariasIdentificacion.HeaderText = "Identificación";
+            this.columnCuentasBancariasIdentificacion.Name = "columnCuentasBancariasIdentificacion";
+            this.columnCuentasBancariasIdentificacion.ReadOnly = true;
+            this.columnCuentasBancariasIdentificacion.Width = 5;
+            // 
+            // columnCuentasBancariasBanco
+            // 
+            this.columnCuentasBancariasBanco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasBanco.DataPropertyName = "BancoNombre";
+            this.columnCuentasBancariasBanco.HeaderText = "Banco";
+            this.columnCuentasBancariasBanco.Name = "columnCuentasBancariasBanco";
+            this.columnCuentasBancariasBanco.ReadOnly = true;
+            this.columnCuentasBancariasBanco.Width = 63;
+            // 
+            // columnCuentasBancariasTipo
+            // 
+            this.columnCuentasBancariasTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasTipo.DataPropertyName = "TipoNombre";
+            this.columnCuentasBancariasTipo.HeaderText = "Tipo";
+            this.columnCuentasBancariasTipo.Name = "columnCuentasBancariasTipo";
+            this.columnCuentasBancariasTipo.ReadOnly = true;
+            this.columnCuentasBancariasTipo.Width = 53;
+            // 
+            // columnCuentasBancariasSucursal
+            // 
+            this.columnCuentasBancariasSucursal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasSucursal.DataPropertyName = "Sucursal";
+            this.columnCuentasBancariasSucursal.HeaderText = "Sucursal";
+            this.columnCuentasBancariasSucursal.Name = "columnCuentasBancariasSucursal";
+            this.columnCuentasBancariasSucursal.ReadOnly = true;
+            this.columnCuentasBancariasSucursal.Width = 73;
+            // 
+            // columnCuentasBancariasNumero
+            // 
+            this.columnCuentasBancariasNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnCuentasBancariasNumero.DataPropertyName = "Numero";
+            this.columnCuentasBancariasNumero.HeaderText = "Número";
+            this.columnCuentasBancariasNumero.Name = "columnCuentasBancariasNumero";
+            this.columnCuentasBancariasNumero.ReadOnly = true;
+            this.columnCuentasBancariasNumero.Width = 69;
             // 
             // FormEntidad
             // 
@@ -1271,10 +1282,6 @@
         internal System.Windows.Forms.ToolStripButton buttonCuentasBancariasAgregar;
         internal System.Windows.Forms.ToolStripButton CuentasBancariasEditar;
         internal System.Windows.Forms.ToolStripButton CuentasBancariasBorrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasBanco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasSucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasNumero;
         private System.Windows.Forms.CheckBox checkboxTipoCliente;
         private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.CheckBox checkboxTipoTransportista;
@@ -1288,5 +1295,10 @@
         private System.Windows.Forms.TextBox textboxPaginaWeb;
         private System.Windows.Forms.Label labelPaginaWeb;
         private System.Windows.Forms.Button buttonPaginaWebAbrir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasIdentificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasSucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCuentasBancariasNumero;
     }
 }

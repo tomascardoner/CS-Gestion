@@ -331,6 +331,7 @@ namespace CS_Gestion
                 }
             }
 
+            // Verifico el CUIT
             if (maskedtextboxCuit.Text.Length > 0)
             {
                 if (maskedtextboxCuit.Text.Length < 11)
@@ -878,6 +879,7 @@ namespace CS_Gestion
             public string TipoNombre { get; set; }
             public short? Sucursal { get; set; }
             public string Numero { get; set; }
+            public string Identificacion { get; set; }
         }
 
         internal void CuentasBancariasRefreshData(byte positionIdCuentaBancaria = 0, bool restorePosition = false)
@@ -906,7 +908,7 @@ namespace CS_Gestion
                                        from cbtg in cuentabancariatipogrupo.DefaultIfEmpty()
                                        where ecb.IdEntidad == entidad.IdEntidad
                                        orderby b.Nombre, cbtg.Nombre
-                                       select new CuentasBancariasGridRowData() { IdCuentaBancaria = ecb.IdCuentaBancaria, BancoNombre = b.Nombre, TipoNombre = (cbtg == null ? string.Empty : cbtg.Nombre), Sucursal = ecb.Sucursal, Numero = ecb.Numero }).ToList();
+                                       select new CuentasBancariasGridRowData() { IdCuentaBancaria = ecb.IdCuentaBancaria, BancoNombre = b.Nombre, TipoNombre = (cbtg == null ? string.Empty : cbtg.Nombre), Sucursal = ecb.Sucursal, Numero = ecb.Numero, Identificacion = ecb.Identificacion }).ToList();
 
                 datagridviewCuentasBancarias.AutoGenerateColumns = false;
                 datagridviewCuentasBancarias.DataSource = listCuentasBancarias;

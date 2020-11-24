@@ -45,6 +45,10 @@
             this.buttonGuardar = new System.Windows.Forms.ToolStripButton();
             this.tabMain = new CardonerSistemas.TabControl();
             this.tabpageGeneral = new System.Windows.Forms.TabPage();
+            this.textboxTitular = new System.Windows.Forms.TextBox();
+            this.labelTitular = new System.Windows.Forms.Label();
+            this.labelCuit = new System.Windows.Forms.Label();
+            this.maskedtextboxCuit = new System.Windows.Forms.MaskedTextBox();
             this.maskedtextboxSucursal = new System.Windows.Forms.MaskedTextBox();
             this.maskedtextboxCbu = new System.Windows.Forms.MaskedTextBox();
             this.textboxCbuAlias = new System.Windows.Forms.TextBox();
@@ -60,6 +64,8 @@
             this.textboxFechaHoraModificacion = new System.Windows.Forms.TextBox();
             this.textboxFechaHoraCreacion = new System.Windows.Forms.TextBox();
             this.textboxNotas = new System.Windows.Forms.TextBox();
+            this.textboxIdentificacion = new System.Windows.Forms.TextBox();
+            this.labelIdentificacion = new System.Windows.Forms.Label();
             labelNumero = new System.Windows.Forms.Label();
             labelSucursal = new System.Windows.Forms.Label();
             labelBanco = new System.Windows.Forms.Label();
@@ -107,7 +113,7 @@
             // 
             labelEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelEsActivo.AutoSize = true;
-            labelEsActivo.Location = new System.Drawing.Point(10, 79);
+            labelEsActivo.Location = new System.Drawing.Point(10, 120);
             labelEsActivo.Name = "labelEsActivo";
             labelEsActivo.Size = new System.Drawing.Size(40, 13);
             labelEsActivo.TabIndex = 2;
@@ -117,7 +123,7 @@
             // 
             labelModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelModificacion.AutoSize = true;
-            labelModificacion.Location = new System.Drawing.Point(10, 154);
+            labelModificacion.Location = new System.Drawing.Point(10, 195);
             labelModificacion.Name = "labelModificacion";
             labelModificacion.Size = new System.Drawing.Size(102, 13);
             labelModificacion.TabIndex = 9;
@@ -127,7 +133,7 @@
             // 
             labelCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             labelCreacion.AutoSize = true;
-            labelCreacion.Location = new System.Drawing.Point(11, 128);
+            labelCreacion.Location = new System.Drawing.Point(11, 169);
             labelCreacion.Name = "labelCreacion";
             labelCreacion.Size = new System.Drawing.Size(52, 13);
             labelCreacion.TabIndex = 6;
@@ -235,11 +241,17 @@
             this.tabMain.Location = new System.Drawing.Point(0, 39);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(520, 208);
+            this.tabMain.Size = new System.Drawing.Size(520, 274);
             this.tabMain.TabIndex = 0;
             // 
             // tabpageGeneral
             // 
+            this.tabpageGeneral.Controls.Add(this.textboxIdentificacion);
+            this.tabpageGeneral.Controls.Add(this.labelIdentificacion);
+            this.tabpageGeneral.Controls.Add(this.textboxTitular);
+            this.tabpageGeneral.Controls.Add(this.labelTitular);
+            this.tabpageGeneral.Controls.Add(this.labelCuit);
+            this.tabpageGeneral.Controls.Add(this.maskedtextboxCuit);
             this.tabpageGeneral.Controls.Add(this.maskedtextboxSucursal);
             this.tabpageGeneral.Controls.Add(this.maskedtextboxCbu);
             this.tabpageGeneral.Controls.Add(labelCbuAlias);
@@ -255,10 +267,51 @@
             this.tabpageGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabpageGeneral.Name = "tabpageGeneral";
             this.tabpageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageGeneral.Size = new System.Drawing.Size(512, 179);
+            this.tabpageGeneral.Size = new System.Drawing.Size(512, 245);
             this.tabpageGeneral.TabIndex = 0;
             this.tabpageGeneral.Text = "General";
             this.tabpageGeneral.UseVisualStyleBackColor = true;
+            // 
+            // textboxTitular
+            // 
+            this.textboxTitular.Location = new System.Drawing.Point(87, 190);
+            this.textboxTitular.MaxLength = 50;
+            this.textboxTitular.Name = "textboxTitular";
+            this.textboxTitular.Size = new System.Drawing.Size(270, 20);
+            this.textboxTitular.TabIndex = 15;
+            this.textboxTitular.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // labelTitular
+            // 
+            this.labelTitular.AutoSize = true;
+            this.labelTitular.Location = new System.Drawing.Point(8, 193);
+            this.labelTitular.Name = "labelTitular";
+            this.labelTitular.Size = new System.Drawing.Size(39, 13);
+            this.labelTitular.TabIndex = 14;
+            this.labelTitular.Text = "Titular:";
+            // 
+            // labelCuit
+            // 
+            this.labelCuit.AutoSize = true;
+            this.labelCuit.Location = new System.Drawing.Point(8, 167);
+            this.labelCuit.Name = "labelCuit";
+            this.labelCuit.Size = new System.Drawing.Size(35, 13);
+            this.labelCuit.TabIndex = 12;
+            this.labelCuit.Text = "CUIT:";
+            // 
+            // maskedtextboxCuit
+            // 
+            this.maskedtextboxCuit.AllowPromptAsInput = false;
+            this.maskedtextboxCuit.AsciiOnly = true;
+            this.maskedtextboxCuit.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedtextboxCuit.HidePromptOnLeave = true;
+            this.maskedtextboxCuit.Location = new System.Drawing.Point(87, 164);
+            this.maskedtextboxCuit.Mask = "00-00000000-0";
+            this.maskedtextboxCuit.Name = "maskedtextboxCuit";
+            this.maskedtextboxCuit.Size = new System.Drawing.Size(94, 20);
+            this.maskedtextboxCuit.TabIndex = 13;
+            this.maskedtextboxCuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedtextboxCuit.Enter += new System.EventHandler(this.MaskedTextBoxs_Enter);
             // 
             // maskedtextboxSucursal
             // 
@@ -266,7 +319,7 @@
             this.maskedtextboxSucursal.AsciiOnly = true;
             this.maskedtextboxSucursal.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskedtextboxSucursal.HidePromptOnLeave = true;
-            this.maskedtextboxSucursal.Location = new System.Drawing.Point(74, 60);
+            this.maskedtextboxSucursal.Location = new System.Drawing.Point(87, 60);
             this.maskedtextboxSucursal.Mask = "9999";
             this.maskedtextboxSucursal.Name = "maskedtextboxSucursal";
             this.maskedtextboxSucursal.Size = new System.Drawing.Size(40, 20);
@@ -280,7 +333,7 @@
             this.maskedtextboxCbu.AsciiOnly = true;
             this.maskedtextboxCbu.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskedtextboxCbu.HidePromptOnLeave = true;
-            this.maskedtextboxCbu.Location = new System.Drawing.Point(74, 112);
+            this.maskedtextboxCbu.Location = new System.Drawing.Point(87, 112);
             this.maskedtextboxCbu.Margin = new System.Windows.Forms.Padding(2);
             this.maskedtextboxCbu.Mask = "0000000-0 0000000000000-0";
             this.maskedtextboxCbu.Name = "maskedtextboxCbu";
@@ -292,7 +345,7 @@
             // 
             // textboxCbuAlias
             // 
-            this.textboxCbuAlias.Location = new System.Drawing.Point(74, 138);
+            this.textboxCbuAlias.Location = new System.Drawing.Point(87, 138);
             this.textboxCbuAlias.MaxLength = 50;
             this.textboxCbuAlias.Name = "textboxCbuAlias";
             this.textboxCbuAlias.Size = new System.Drawing.Size(150, 20);
@@ -303,7 +356,7 @@
             // 
             this.comboboxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxTipo.FormattingEnabled = true;
-            this.comboboxTipo.Location = new System.Drawing.Point(74, 33);
+            this.comboboxTipo.Location = new System.Drawing.Point(87, 33);
             this.comboboxTipo.Name = "comboboxTipo";
             this.comboboxTipo.Size = new System.Drawing.Size(150, 21);
             this.comboboxTipo.TabIndex = 3;
@@ -312,14 +365,14 @@
             // 
             this.comboboxBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxBanco.FormattingEnabled = true;
-            this.comboboxBanco.Location = new System.Drawing.Point(74, 6);
+            this.comboboxBanco.Location = new System.Drawing.Point(87, 6);
             this.comboboxBanco.Name = "comboboxBanco";
             this.comboboxBanco.Size = new System.Drawing.Size(270, 21);
             this.comboboxBanco.TabIndex = 1;
             // 
             // textboxNumero
             // 
-            this.textboxNumero.Location = new System.Drawing.Point(74, 86);
+            this.textboxNumero.Location = new System.Drawing.Point(87, 86);
             this.textboxNumero.MaxLength = 50;
             this.textboxNumero.Name = "textboxNumero";
             this.textboxNumero.Size = new System.Drawing.Size(150, 20);
@@ -343,7 +396,7 @@
             this.tabpageNotasAuditoria.Location = new System.Drawing.Point(4, 25);
             this.tabpageNotasAuditoria.Name = "tabpageNotasAuditoria";
             this.tabpageNotasAuditoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(512, 179);
+            this.tabpageNotasAuditoria.Size = new System.Drawing.Size(512, 253);
             this.tabpageNotasAuditoria.TabIndex = 1;
             this.tabpageNotasAuditoria.Text = "Notas y Auditoría";
             this.tabpageNotasAuditoria.UseVisualStyleBackColor = true;
@@ -352,7 +405,7 @@
             // 
             this.checkboxEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkboxEsActivo.AutoSize = true;
-            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 79);
+            this.checkboxEsActivo.Location = new System.Drawing.Point(118, 153);
             this.checkboxEsActivo.Name = "checkboxEsActivo";
             this.checkboxEsActivo.Size = new System.Drawing.Size(15, 14);
             this.checkboxEsActivo.TabIndex = 3;
@@ -362,7 +415,7 @@
             // 
             this.labelId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(11, 102);
+            this.labelId.Location = new System.Drawing.Point(11, 143);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(19, 13);
             this.labelId.TabIndex = 4;
@@ -371,7 +424,7 @@
             // textboxUsuarioModificacion
             // 
             this.textboxUsuarioModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 151);
+            this.textboxUsuarioModificacion.Location = new System.Drawing.Point(245, 192);
             this.textboxUsuarioModificacion.MaxLength = 50;
             this.textboxUsuarioModificacion.Name = "textboxUsuarioModificacion";
             this.textboxUsuarioModificacion.ReadOnly = true;
@@ -381,7 +434,7 @@
             // textboxId
             // 
             this.textboxId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxId.Location = new System.Drawing.Point(118, 99);
+            this.textboxId.Location = new System.Drawing.Point(118, 140);
             this.textboxId.MaxLength = 10;
             this.textboxId.Name = "textboxId";
             this.textboxId.ReadOnly = true;
@@ -393,7 +446,7 @@
             // textboxUsuarioCreacion
             // 
             this.textboxUsuarioCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 125);
+            this.textboxUsuarioCreacion.Location = new System.Drawing.Point(245, 166);
             this.textboxUsuarioCreacion.MaxLength = 50;
             this.textboxUsuarioCreacion.Name = "textboxUsuarioCreacion";
             this.textboxUsuarioCreacion.ReadOnly = true;
@@ -403,7 +456,7 @@
             // textboxFechaHoraModificacion
             // 
             this.textboxFechaHoraModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 151);
+            this.textboxFechaHoraModificacion.Location = new System.Drawing.Point(118, 192);
             this.textboxFechaHoraModificacion.MaxLength = 0;
             this.textboxFechaHoraModificacion.Name = "textboxFechaHoraModificacion";
             this.textboxFechaHoraModificacion.ReadOnly = true;
@@ -414,7 +467,7 @@
             // textboxFechaHoraCreacion
             // 
             this.textboxFechaHoraCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 125);
+            this.textboxFechaHoraCreacion.Location = new System.Drawing.Point(118, 166);
             this.textboxFechaHoraCreacion.MaxLength = 0;
             this.textboxFechaHoraCreacion.Name = "textboxFechaHoraCreacion";
             this.textboxFechaHoraCreacion.ReadOnly = true;
@@ -424,19 +477,40 @@
             // 
             // textboxNotas
             // 
+            this.textboxNotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textboxNotas.Location = new System.Drawing.Point(118, 6);
             this.textboxNotas.MaxLength = 0;
             this.textboxNotas.Multiline = true;
             this.textboxNotas.Name = "textboxNotas";
-            this.textboxNotas.Size = new System.Drawing.Size(386, 66);
+            this.textboxNotas.Size = new System.Drawing.Size(386, 108);
             this.textboxNotas.TabIndex = 1;
             this.textboxNotas.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // textboxIdentificacion
+            // 
+            this.textboxIdentificacion.Location = new System.Drawing.Point(87, 216);
+            this.textboxIdentificacion.MaxLength = 50;
+            this.textboxIdentificacion.Name = "textboxIdentificacion";
+            this.textboxIdentificacion.Size = new System.Drawing.Size(270, 20);
+            this.textboxIdentificacion.TabIndex = 17;
+            this.textboxIdentificacion.Enter += new System.EventHandler(this.TextBoxs_Enter);
+            // 
+            // labelIdentificacion
+            // 
+            this.labelIdentificacion.AutoSize = true;
+            this.labelIdentificacion.Location = new System.Drawing.Point(8, 219);
+            this.labelIdentificacion.Name = "labelIdentificacion";
+            this.labelIdentificacion.Size = new System.Drawing.Size(73, 13);
+            this.labelIdentificacion.TabIndex = 16;
+            this.labelIdentificacion.Text = "Identificación:";
             // 
             // FormEntidadCuentaBancaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 247);
+            this.ClientSize = new System.Drawing.Size(520, 313);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.toolstripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -485,5 +559,11 @@
         internal System.Windows.Forms.TextBox textboxCbuAlias;
         internal System.Windows.Forms.MaskedTextBox maskedtextboxCbu;
         private System.Windows.Forms.MaskedTextBox maskedtextboxSucursal;
+        private System.Windows.Forms.Label labelCuit;
+        internal System.Windows.Forms.MaskedTextBox maskedtextboxCuit;
+        private System.Windows.Forms.TextBox textboxTitular;
+        private System.Windows.Forms.Label labelTitular;
+        private System.Windows.Forms.TextBox textboxIdentificacion;
+        private System.Windows.Forms.Label labelIdentificacion;
     }
 }
