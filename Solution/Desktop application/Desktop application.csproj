@@ -100,8 +100,8 @@
     <Compile Include="..\..\..\framework-csharp\ComboBox.cs">
       <Link>Framework\ComboBox.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\framework-csharp\Configuration.cs">
-      <Link>Framework\Configuration.cs</Link>
+    <Compile Include="..\..\..\framework-csharp\ConfigurationXml.cs">
+      <Link>Framework\ConfigurationXml.cs</Link>
     </Compile>
     <Compile Include="..\..\..\framework-csharp\Constants.cs">
       <Link>Framework\Constants.cs</Link>
@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="..\..\..\framework-csharp\Database.SelectDatasource.cs">
       <Link>Framework\Database.SelectDatasource.cs</Link>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="..\..\..\framework-csharp\Database.SelectDatasource.designer.cs">
       <Link>Framework\Database.SelectDatasource.designer.cs</Link>

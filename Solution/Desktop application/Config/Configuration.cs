@@ -24,19 +24,19 @@ namespace CS_Gestion
                 ConfigFolder = Application.StartupPath + @"\" + ConfigSubFolder + @"\";
             }
 
-            if (!CardonerSistemas.Configuration.LoadFile(ConfigFolder, AppearanceFileName, ref Program.appearanceConfig))
+            if (!CardonerSistemas.ConfigurationXml.LoadFile(ConfigFolder, AppearanceFileName, ref Program.appearanceConfig))
             {
                 return false;
             }
-            if (!CardonerSistemas.Configuration.LoadFile(ConfigFolder, DatabaseFileName, ref Program.databaseConfig))
+            if (!CardonerSistemas.ConfigurationXml.LoadFile(ConfigFolder, DatabaseFileName, ref Program.databaseConfig))
             {
                 return false;
             }
-            if (!CardonerSistemas.Configuration.LoadFile(ConfigFolder, EmailFileName, ref Program.emailConfig))
+            if (!CardonerSistemas.ConfigurationXml.LoadFile(ConfigFolder, EmailFileName, ref Program.emailConfig))
             {
                 return false;
             }
-            if (!CardonerSistemas.Configuration.LoadFile(ConfigFolder, GeneralFileName, ref Program.generalConfig))
+            if (!CardonerSistemas.ConfigurationXml.LoadFile(ConfigFolder, GeneralFileName, ref Program.generalConfig))
             {
                 return false;
             }
